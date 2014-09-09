@@ -107,13 +107,13 @@ def start():
 
     # Default options
     db_driver = 'mysql'
-    db_user = 'root'
-    db_password = 'root'
-    db_hostname = 'localhost'
+    db_user = None
+    db_password = None
+    db_hostname = None
     db_name = 'mlstats'
     web_user = None
     web_password = None
-    report_filename = 'report.txt'
+    report_filename = ''
     report = True
     quiet = False
     force = False

@@ -1,0 +1,7 @@
+SQLAlchemy >= 0.7
+
+[mysql]
+MySQL-python
+
+[postgres]
+psycopg2

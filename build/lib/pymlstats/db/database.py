@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-# Copyright (C) 2014 Germ·n Poo-CaamaÒo <gpoo@calcifer.org>
+# Copyright (C) 2014 Germ√°n Poo-Caama√±o <gpoo@calcifer.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,15 +22,20 @@ This module contains a the definition of the generic SQL tables used
 by mlstats.
 """
 
+import sqlalchemy
 from sqlalchemy import create_engine, Column, ForeignKey, ForeignKeyConstraint
-from sqlalchemy import DateTime, Enum, NUMERIC, VARCHAR
-from sqlalchemy.dialects.mysql import LONGTEXT
+from sqlalchemy import DateTime, Enum, NUMERIC, TEXT, VARCHAR
+from sqlalchemy.dialects.mysql import MEDIUMTEXT
 from sqlalchemy.ext.declarative import declarative_base
 
 __all__ = ['Base', 'MailingLists', 'CompressedFiles', 'People',
            'Messages', 'MessagesPeople', 'MailingListsPeople']
 
 Base = declarative_base()
+
+
+def MediumText():
+    return sqlalchemy.Text().with_variant(MEDIUMTEXT(), 'mysql')
 
 
 class MailingLists(Base):
@@ -109,9 +114,9 @@ class Messages(Base):
     arrival_date = Column(DateTime)
     arrival_date_tz = Column(NUMERIC(11))
     subject = Column(VARCHAR(1024))
-    message_body = Column(LONGTEXT)
+    message_body = Column(MediumText())
     is_response_of = Column(VARCHAR(255), index=True)
-    mail_path = Column(LONGTEXT)
+    mail_path = Column(TEXT)
 
     def __repr__(self):
         return u"<Messages(message_id='{0}', " \

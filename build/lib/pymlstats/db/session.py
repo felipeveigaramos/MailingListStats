@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-# Copyright (C) 2014 Germ·n Poo-CaamaÒo <gpoo@calcifer.org>
+# Copyright (C) 2014 Germ√°n Poo-Caama√±o <gpoo@calcifer.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +31,10 @@ import database as db
 
 class Database(object):
     (VISITED, NEW, FAILED) = ('visited', 'new', 'failed')
+
+    INSERT_ERROR_INTEGRITY_ERROR = -1
+
+    INSERT_ERROR_DATA_ERROR = -2
 
     def __init__(self):
         self.log = logging.getLogger(__name__)
@@ -117,9 +121,9 @@ class Database(object):
                           first_date=message['date'],
                           first_date_tz=message['date_tz'],
                           arrival_date=message['received'],
-                          subject=self.truncate(message['subject'],1024),
+                          subject=message['subject'],
                           message_body=message['body'],
-                          is_response_of='')
+                          is_response_of=message['in-reply-to'])
         try:
             self.session.add(msg)
             self.session.commit()
@@ -127,15 +131,19 @@ class Database(object):
         except IntegrityError:
             self.log.debug(self.truncate(u'Integrity: {}'.format(msg), 68))
             self.session.rollback()
+            result = self.INSERT_ERROR_INTEGRITY_ERROR
         except DataError:
             self.log.warning(u'DataError: {}'.format(msg))
+            result = self.INSERT_ERROR_DATA_ERROR
 
         return result
 
     def store_messages(self, message_list, mailing_list_url):
         stored_messages = 0
+        duplicated_messages = 0
+        error_messages = 0
+
         for m in message_list:
-            # FIXME: If primary key check fails, ignore and continue
             msgs_people_value = {}
             for header in ('from', 'to', 'cc'):
                 addresses = self.filter(m[header])
@@ -151,12 +159,25 @@ class Database(object):
                     msgs_people_value.setdefault(key, value)
 
             # Write the rest of the message
-            stored_messages += self.insert_messages(m,  mailing_list_url)
+            insert_result = self.insert_messages(m,  mailing_list_url)
+
+            # Everything works fine
+            if insert_result > 0:
+                stored_messages += insert_result
+
+            # IntegrityError
+            elif insert_result == -1:
+                duplicated_messages += 1
+                continue
+
+            # DataError
+            elif insert_result == -2:
+                error_messages += 1
 
             for key, value in msgs_people_value.iteritems():
                 self.insert_messages_people(value)
 
-        return stored_messages
+        return stored_messages, duplicated_messages, error_messages
 
     def update_mailing_list(self, url, name, last_analysis):
         """

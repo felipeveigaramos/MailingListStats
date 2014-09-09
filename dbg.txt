@@ -1,0 +1,244 @@
+ÿþAlready downloaded http://lists.freedesktop.org/archives/libreoffice/2010-September.txt.g
+z
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2010-October.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2010-November.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2010-December.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-January.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-February.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-March.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-April.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-May.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-June.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-July.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-August.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-September.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-October.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-November.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2011-December.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-January.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-February.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-March.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-April.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-May.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-June.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-July.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-August.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-September.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-October.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-November.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2012-December.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-January.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-February.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-March.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-April.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-May.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-June.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-July.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-August.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-September.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-October.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-November.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2013-December.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-January.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-February.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-March.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-April.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-May.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-June.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-July.txt.gz
+Already downloaded http://lists.freedesktop.org/archives/libreoffice/2014-August.txt.gz
+Found substring 2014-September in URL http://lists.freedesktop.org/archives/libreoffice/20
+14-September.txt.gz...
+Retrieving http://lists.freedesktop.org/archives/libreoffice/2014-September.txt.gz...
+Analyzing C:/archives/libreoffice/2010-September.txt.gz
+   ***WARNING: 167 messages (out of 167) parsed but not stored***
+Analyzing C:/archives/libreoffice/2010-October.txt.gz
+   ***WARNING: 1616 messages (out of 1616) parsed but not stored***
+Analyzing C:/archives/libreoffice/2010-November.txt.gz
+   ***WARNING: 1966 messages (out of 1966) parsed but not stored***
+Analyzing C:/archives/libreoffice/2010-December.txt.gz
+   ***WARNING: 1580 messages (out of 1580) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-January.txt.gz
+   ***WARNING: 1715 messages (out of 1715) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-February.txt.gz
+   ***WARNING: 1620 messages (out of 1620) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-March.txt.gz
+   ***WARNING: 1320 messages (out of 1320) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-April.txt.gz
+   ***WARNING: 1303 messages (out of 1303) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-May.txt.gz
+   ***WARNING: 1846 messages (out of 1846) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-June.txt.gz
+   ***WARNING: 1503 messages (out of 1503) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-July.txt.gz
+   ***WARNING: 1234 messages (out of 1234) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-August.txt.gz
+   ***WARNING: 1635 messages (out of 1635) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-September.txt.gz
+   ***WARNING: 1500 messages (out of 1500) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-October.txt.gz
+   ***WARNING: 1086 messages (out of 1086) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-November.txt.gz
+   ***WARNING: 1589 messages (out of 1589) parsed but not stored***
+Analyzing C:/archives/libreoffice/2011-December.txt.gz
+   ***WARNING: 1515 messages (out of 1515) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-January.txt.gz
+   ***WARNING: 1939 messages (out of 1939) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-February.txt.gz
+   ***WARNING: 2350 messages (out of 2350) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-March.txt.gz
+   ***WARNING: 1849 messages (out of 1849) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-April.txt.gz
+   ***WARNING: 1797 messages (out of 1797) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-May.txt.gz
+   ***WARNING: 1551 messages (out of 1551) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-June.txt.gz
+   ***WARNING: 1716 messages (out of 1716) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-July.txt.gz
+   ***WARNING: 1749 messages (out of 1749) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-August.txt.gz
+   ***WARNING: 1661 messages (out of 1661) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-September.txt.gz
+   ***WARNING: 1396 messages (out of 1396) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-October.txt.gz
+   ***WARNING: 1375 messages (out of 1375) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-November.txt.gz
+   ***WARNING: 1480 messages (out of 1480) parsed but not stored***
+Analyzing C:/archives/libreoffice/2012-December.txt.gz
+   ***WARNING: 1284 messages (out of 1284) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-January.txt.gz
+   ***WARNING: 1904 messages (out of 1904) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-February.txt.gz
+   ***WARNING: 1535 messages (out of 1535) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-March.txt.gz
+   ***WARNING: 2348 messages (out of 2348) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-April.txt.gz
+   ***WARNING: 2142 messages (out of 2291) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-May.txt.gz
+   ***WARNING: 1 messages (out of 1482) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-June.txt.gz
+   ***WARNING: 3 messages (out of 1089) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-July.txt.gz
+   ***WARNING: 1 messages (out of 972) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-August.txt.gz
+Analyzing C:/archives/libreoffice/2013-September.txt.gz
+Analyzing C:/archives/libreoffice/2013-October.txt.gz
+Analyzing C:/archives/libreoffice/2013-November.txt.gz
+   ***WARNING: 3 messages (out of 725) parsed but not stored***
+Analyzing C:/archives/libreoffice/2013-December.txt.gz
+Analyzing C:/archives/libreoffice/2014-January.txt.gz
+   ***WARNING: 1 messages (out of 632) parsed but not stored***
+Analyzing C:/archives/libreoffice/2014-February.txt.gz
+Analyzing C:/archives/libreoffice/2014-March.txt.gz
+Analyzing C:/archives/libreoffice/2014-April.txt.gz
+Analyzing C:/archives/libreoffice/2014-May.txt.gz
+Analyzing C:/archives/libreoffice/2014-June.txt.gz
+Analyzing C:/archives/libreoffice/2014-July.txt.gz
+Analyzing C:/archives/libreoffice/2014-August.txt.gz
+Analyzing C:/archives/libreoffice/2014-September.txt.gz
+63290 messages analyzed
+12010 messages stored in database mlstats
+0 messages ignored by the parser
+WARNING: Some messages were parsed but not stored
+MLStats report
+--------------
+Total messages by domain name (only top 10 per list):
+Mailing list            Domain name
+----------------        -----------        ----
+libreoffice        gmail.com        11255
+libreoffice        gerrit.libreoffice.org        7392
+libreoffice        redhat.com        6922
+libreoffice        freedesktop.org        6087
+libreoffice        suse.cz        3204
+libreoffice        novell.com        2966
+libreoffice        suse.com        2813
+libreoffice        documentfoundation.org        1679
+libreoffice        googlemail.com        1536
+libreoffice        yahoo.fr        1100
+Total people posting by domain name (only top 10 per list):
+Mailing list            Domain name
+----------------        -----------        ----
+libreoffice        gmail.com        838
+libreoffice        mail.ru        61
+libreoffice        yahoo.com        51
+libreoffice        googlemail.com        37
+libreoffice        hotmail.com        33
+libreoffice        gmx.de        28
+libreoffice        free.fr        19
+libreoffice        novell.com        17
+libreoffice        libreoffice.org        16
+libreoffice        documentfoundation.org        14
+Total messages by top level domain(only top 10 per list):
+Mailing list                TLD
+----------------        -----------        ----
+libreoffice        com        29853
+libreoffice        org        18477
+libreoffice        cz        3221
+libreoffice        de        2241
+libreoffice        fr        1988
+libreoffice        nl        1029
+libreoffice        fi        878
+libreoffice        net        754
+libreoffice        lu        730
+libreoffice        ch        678
+Total people posting by top level domain(only top 10 per list):
+Mailing list                TLD
+----------------        -----------        ----
+libreoffice        com        1473
+libreoffice        org        174
+libreoffice        net        138
+libreoffice        de        135
+libreoffice        ru        89
+libreoffice        br        77
+libreoffice        info        59
+libreoffice        fr        50
+libreoffice        uk        38
+libreoffice        it        33
+Total messages by year:
+Mailing list                Year
+----------------        -----------        ----
+libreoffice        2010        5315
+libreoffice        2011        17860
+libreoffice        2012        20064
+libreoffice        2013        15001
+libreoffice        2014        4734
+Total people posting by year:
+Mailing list                Year
+----------------        -----------        ----
+libreoffice        2010        319
+libreoffice        2011        1053
+libreoffice        2012        835
+libreoffice        2013        801
+libreoffice        2014        459
+Total messages by email address (only top 10 in total):
+Mailing list               Email
+----------------        -----------        ----
+libreoffice        gerrit@gerrit.libreoffice.org        7392
+libreoffice        bugzilla-daemon@freedesktop.org        6087
+libreoffice        caolanm@redhat.com        2605
+libreoffice        sbergman@redhat.com        1950
+libreoffice        michael.meeks@suse.com        1941
+libreoffice        michael.meeks@novell.com        1434
+libreoffice        nthiebaud@gmail.com        1210
+libreoffice        pmladek@suse.cz        1164
+libreoffice        thb@documentfoundation.org        1141
+libreoffice        mstahl@redhat.com        1060
+Total people posting in each list:
+Mailing list
+----------------        ----
+libreoffice        2686
+Total messages in each list:
+Mailing list
+----------------        ----
+libreoffice        62974
+           MLStats, Copyright (C) 2007-2010 Libresoft Research Group
+           MLStats is Open Source Software/Free Software, licensed under
+           the GNU GPL.
+"
+           MLStats comes with ABSOLUTELY NO WARRANTY, and you are welcome
+           to
+           redistribute it under certain conditions as specified by
+           the GNU GPL license;
+"
+           see the documentation for details.
+           Please credit this data as "generated using Libresoft's 'MLStats'.
