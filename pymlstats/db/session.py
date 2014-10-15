@@ -119,7 +119,9 @@ class Database(object):
                           arrival_date=message['received'],
                           subject=self.truncate(message['subject'],1024),
                           message_body=message['body'],
-                          is_response_of='')
+                          is_response_of='',
+                          references = message['references'] or '',
+                          in_reply_to = message['in-reply-to'])
         try:
             self.session.add(msg)
             self.session.commit()

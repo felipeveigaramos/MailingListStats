@@ -1,0 +1,3 @@
+select p.email_address, p.name, p.username from people p, messages m, messages_people mp where
+(m.message_body like '%All of my past & future contributions to LibreOffice may be licensed under the MPL/LGPLv3+ dual license%' and m.message_id = mp.message_id 
+and m.mailing_list_url = mp.mailing_list_url) and mp.email_address = p.email_address;

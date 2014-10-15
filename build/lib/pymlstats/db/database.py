@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-# Copyright (C) 2014 Germ√°n Poo-Caama√±o <gpoo@calcifer.org>
+# Copyright (C) 2014 Germ·n Poo-CaamaÒo <gpoo@calcifer.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,20 +22,15 @@ This module contains a the definition of the generic SQL tables used
 by mlstats.
 """
 
-import sqlalchemy
 from sqlalchemy import create_engine, Column, ForeignKey, ForeignKeyConstraint
-from sqlalchemy import DateTime, Enum, NUMERIC, TEXT, VARCHAR
-from sqlalchemy.dialects.mysql import MEDIUMTEXT
+from sqlalchemy import DateTime, Enum, NUMERIC, VARCHAR, TEXT
+from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.ext.declarative import declarative_base
 
 __all__ = ['Base', 'MailingLists', 'CompressedFiles', 'People',
            'Messages', 'MessagesPeople', 'MailingListsPeople']
 
 Base = declarative_base()
-
-
-def MediumText():
-    return sqlalchemy.Text().with_variant(MEDIUMTEXT(), 'mysql')
 
 
 class MailingLists(Base):
@@ -114,9 +109,12 @@ class Messages(Base):
     arrival_date = Column(DateTime)
     arrival_date_tz = Column(NUMERIC(11))
     subject = Column(VARCHAR(1024))
-    message_body = Column(MediumText())
+    message_body = Column(LONGTEXT)
+    #keeps the true answered-message reference
     is_response_of = Column(VARCHAR(255), index=True)
-    mail_path = Column(TEXT)
+    mail_path = Column(LONGTEXT)
+    references = Column(TEXT)
+    in_reply_to = Column(VARCHAR(1024))
 
     def __repr__(self):
         return u"<Messages(message_id='{0}', " \
@@ -126,7 +124,9 @@ class Messages(Base):
                "arrival_date='{5}', arrival_date_tz='{6}', " \
                "subject='{7}', message_body='{8}', " \
                "is_response_of='{9}', " \
-               "mail_path='{10}')>".format(self.message_id,
+               "mail_path='{10}', " \
+               "references='{11}', " \
+               "in_reply_to='{12}')>".format(self.message_id,
                                            self.mailing_list_url,
                                            self.mailing_list,
                                            self.first_date,
@@ -136,7 +136,9 @@ class Messages(Base):
                                            self.subject,
                                            self.message_body,
                                            self.is_response_of,
-                                           self.mail_path)
+                                           self.mail_path,
+                                           self.references,
+                                           self.in_reply_to)
 
 
 class MessagesPeople(Base):

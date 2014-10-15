@@ -18,8 +18,10 @@ mlstats.egg-info/requires.txt
 mlstats.egg-info/top_level.txt
 pymlstats/__init__.py
 pymlstats/analyzer.py
+pymlstats/answer.py
 pymlstats/fileextractor.py
 pymlstats/htmlparser.py
+pymlstats/info.py
 pymlstats/main.py
 pymlstats/strictmbox.py
 pymlstats/utils.py

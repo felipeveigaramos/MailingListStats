@@ -27,6 +27,7 @@ Main funcion of mlstats. Fun starts here!
 @contact:      libresoft-tools-devel@lists.morfeo-project.org
 """
 
+#import answer
 import bz2
 import gzip
 import zipfile
@@ -193,6 +194,8 @@ class Application(object):
             self.__print_output("WARNING: Some messages were ignored by "
                                 "the parser (probably because they were "
                                 "ill formed messages)")
+        #answer.procura_respostas(session, False)
+
         if make_report:
             report = Report()
             report.set_session(session)
@@ -314,9 +317,8 @@ class Application(object):
                 this_month = find_current_month(link)
 
                 if this_month:
-                    self.__print_output(
-                        'Current month detected: '
-                        'Found substring %s in URL %s...' % (this_month, link))
+                    self.__print_output('Found substring %s in URL %s...' %
+                                        (this_month, link))
                     self.__print_output('Retrieving %s...' % link)
                     retrieve_remote_file(link, destfilename,
                                          self.web_user, self.web_password)
@@ -387,17 +389,13 @@ class Application(object):
                 continue
 
             total_messages = len(messages)
-            stored_messages, \
-                duplicated_messages, \
-                error_messages = self.db.store_messages(messages,
-                                                        mailing_list.location)
+            stored_messages = self.db.store_messages(messages,
+                                                     mailing_list.location)
             difference = total_messages-stored_messages
             if difference > 0:
                 self.__print_output("   ***WARNING: %d messages (out of %d) "
-                                    "parsed but not stored "
-                                    "(%d duplicate, %d errors)***" %
-                                    (difference, total_messages,
-                                     duplicated_messages, error_messages))
+                                    "parsed but not stored***" %
+                                    (difference, total_messages))
             if non_parsed_messages > 0:
                 self.__print_output("   ***WARNING: %d messages (out of %d) "
                                     "were ignored by the parser***" %

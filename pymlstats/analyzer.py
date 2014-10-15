@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 # Copyright (C) 2007-2010 Libresoft Research Group
-# Copyright (C) 2011-2014 Germ√°n Poo-Caama√±o <gpoo@gnome.org>
+# Copyright (C) 2011-2014 Germ·n Poo-CaamaÒo <gpoo@gnome.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -86,7 +86,8 @@ class MailArchiveAnalyzer:
                         'list-id',
                         'in-reply-to',
                         'subject',
-                        'body']
+                        'body',
+                        'references']
     common_headers = ['message-id', 'in-reply-to', 'list-id',
                       'content-type', 'references']
 

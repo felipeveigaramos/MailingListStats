@@ -27,6 +27,7 @@ Main funcion of mlstats. Fun starts here!
 @contact:      libresoft-tools-devel@lists.morfeo-project.org
 """
 
+import answer
 import bz2
 import gzip
 import zipfile
@@ -193,6 +194,8 @@ class Application(object):
             self.__print_output("WARNING: Some messages were ignored by "
                                 "the parser (probably because they were "
                                 "ill formed messages)")
+        #answer.procura_respostas(session, False)
+
         if make_report:
             report = Report()
             report.set_session(session)
