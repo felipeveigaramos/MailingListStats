@@ -111,7 +111,8 @@ class Messages(Base):
     subject = Column(VARCHAR(1024))
     message_body = Column(LONGTEXT)
     #keeps the true answered-message reference
-    is_response_of = Column(VARCHAR(255), index=True)
+    is_response_of = Column(VARCHAR(255), index=True, default='')
+    answer = Column(VARCHAR(255), index=True, default='')
     mail_path = Column(LONGTEXT)
     references = Column(VARCHAR(10240))
     in_reply_to = Column(VARCHAR(1024))
