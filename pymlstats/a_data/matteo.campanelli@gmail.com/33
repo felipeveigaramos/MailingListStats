@@ -1,0 +1,84 @@
+<Messages(message_id='<CAMuW_XzjBiv2VOH9HdB8UfGvaox9s4zOiCB37f6KSVRdqB31qg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-27 13:57:30', first_date_tz='-14400', arrival_date='2014-05-27 10:57:30', arrival_date_tz='None', subject='Using OutputDevice::DrawTransparent fails', message_body='Hi all,
+i was trying to set a transparent background in text areas in Draw.
+
+I replaced the call to mpGraphics->DrawRect in OutputDevice::ImplDrawText
+with a call to DrawTransparent on the same area. However the result has
+issues such as [see attached picture]:
+- not giving the expected color (the arrow text in the picture should be
+the same color as the text area's),
+- leaving old rendering leftovers around when text is moved (or the related
+arrow in this case).
+
+I tried to debug how other transparent areas are drawn but that didn't give
+much insight.
+Does anyone any experience with this or any guess on what may be going
+wrong?
+
+Thanks,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140527/e61639ef/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screenshot from 2014-05-27 13:08:09.png
+Type: image/png
+Size: 170369 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140527/e61639ef/attachment-0001.png>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CAMuW_XwAF+hRfmfBx4_6YZ8uh2sLaZ44f9N8ktaE0wFVCQLfBQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-27 16:13:24', first_date_tz='-14400', arrival_date='2014-05-27 13:13:24', arrival_date_tz='None', subject='Using OutputDevice::DrawTransparent fails', message_body='Some further experiments:
+- changing the text color to non-black did not change the grey-ish
+background for the arrow's text;
+- using SetTextFillColor immediately before does not change anything;
+- debugging inside DrawTransparent I've seen that there is a "return false"
+that is triggered three frames deeper: DrawTransparent ->
+OutputDevice::DrawTransparentNatively -> SalGraphics::DrawPolyPolygon ->
+X11SalGraphics::drawPolyPolygon.
+In the last function this if-statement is triggered and the polypolygon is
+never drawn I suspect:
+[in core/vcl/unx/generic/gdi/salgdi.cxx:1023 ]
+"""
+// cannot handle pencolor!=brushcolor yet
+    if( (nPenColor_ != SALCOLOR_NONE)
+    &&  (nPenColor_ != nBrushColor_) )
+        return false;
+"""
+
+*Errata on my last commit message*: It is mpGraphics->DrawRect to be
+commented, not DrawTextRect.
+
+Matteo
+
+
+On Tue, May 27, 2014 at 1:57 PM, Matteo Campanelli <
+matteo.campanelli at gmail.com> wrote:
+
+> Hi all,
+> i was trying to set a transparent background in text areas in Draw.
+>
+> I replaced the call to mpGraphics->DrawRect in OutputDevice::ImplDrawText
+> with a call to DrawTransparent on the same area. However the result has
+> issues such as [see attached picture]:
+> - not giving the expected color (the arrow text in the picture should be
+> the same color as the text area's),
+> - leaving old rendering leftovers around when text is moved (or the
+> related arrow in this case).
+>
+> I tried to debug how other transparent areas are drawn but that didn't
+> give much insight.
+> Does anyone any experience with this or any guess on what may be going
+> wrong?
+>
+> Thanks,
+> Matteo
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140527/d24b0670/attachment.html>
+
+', is_response_of='<CAMuW_XzjBiv2VOH9HdB8UfGvaox9s4zOiCB37f6KSVRdqB31qg@mail.gmail.com>', mail_path='None', references='<CAMuW_XzjBiv2VOH9HdB8UfGvaox9s4zOiCB37f6KSVRdqB31qg@mail.gmail.com>', in_reply_to='<CAMuW_XzjBiv2VOH9HdB8UfGvaox9s4zOiCB37f6KSVRdqB31qg@mail.gmail.com>')>

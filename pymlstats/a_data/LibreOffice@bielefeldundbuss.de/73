@@ -1,0 +1,68 @@
+<Messages(message_id='<5120CBE7.9020905@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-17 13:24:07', first_date_tz='3600', arrival_date='2013-02-17 04:24:07', arrival_date_tz='None', subject='mingw build is currently broken', message_body='Andras Timar schrieb:
+
+> I moved the SyntaxHighlighter class to comphelper
+> (c16e9f4ed97f65357e9986f46ad88ee9f2237997). MinGW tinderbox is green
+> again.
+
+Hi Andr?s,
+
+thank you for the fix, indeed, we get new builds.
+
+But the bad thing is, the last MinGW build that was at least a little 
+useful I saw 1 year ago (or so). For example, build in 
+"master~2013-02-17_08.19.43_LibO-Dev_4.1.0.0.alpha0_Win_x86_archive" 
+terminates launch with a C++ Rungime Lib error message.
+
+Is it useful to report such MinGW problems? It seems currently the 
+Tinderbox produces builds nobody cares.
+
+Best regards
+
+
+Rainer
+
+', is_response_of='<1360927392.2588.58.camel@ferb.suse.cz>', mail_path='None', references='<20130215105932.18834eu2jhgbg4qs@webmail.idaia.de>
+	<CANGFS+8cZT0rfeO3XDLKaoGqpPpqDOFhLWGzKL1j-W_NLVZoMg@mail.gmail.com>
+	<1360927392.2588.58.camel@ferb.suse.cz>
+	<kfl7fq$nuj$1@ger.gmane.org>
+	<CAKqTfXbQt+SNQXOxaOYOHfqCUT62_ssFM3x8i999i+AMzQ7cfQ@mail.gmail.com>
+	<CAKqTfXbgFuLPXCHiLJRkYYuKXM-sKJZYELo79tbY7BTYeuPBUQ@mail.gmail.com>', in_reply_to='<CAKqTfXbgFuLPXCHiLJRkYYuKXM-sKJZYELo79tbY7BTYeuPBUQ@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<CAKqTfXYf9x56NXO6Pwe-LeqxC7NbN-jgJVfawOGED8Qc3KCjbg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-17 17:53:16', first_date_tz='3600', arrival_date='2013-02-17 08:53:16', arrival_date_tz='None', subject='mingw build is currently broken', message_body='Hi Rainer,
+
+On Sun, Feb 17, 2013 at 1:24 PM, Rainer Bielefeld
+<LibreOffice at bielefeldundbuss.de> wrote:
+> Andras Timar schrieb:
+>
+>
+>> I moved the SyntaxHighlighter class to comphelper
+>> (c16e9f4ed97f65357e9986f46ad88ee9f2237997). MinGW tinderbox is green
+>> again.
+>
+>
+> Hi Andr?s,
+>
+> thank you for the fix, indeed, we get new builds.
+>
+> But the bad thing is, the last MinGW build that was at least a little useful
+> I saw 1 year ago (or so). For example, build in
+> "master~2013-02-17_08.19.43_LibO-Dev_4.1.0.0.alpha0_Win_x86_archive"
+> terminates launch with a C++ Rungime Lib error message.
+>
+> Is it useful to report such MinGW problems? It seems currently the Tinderbox
+> produces builds nobody cares.
+>
+
+master~2013-02-17_08.19.43_LibO-Dev_4.1.0.0.alpha0_Win_x86_archive.tar.gz
+works for me (on Windows 7 64-bit)
+
+Regards,
+Andras
+
+', is_response_of='<5120CBE7.9020905@bielefeldundbuss.de>', mail_path='None', references='<20130215105932.18834eu2jhgbg4qs@webmail.idaia.de>
+	<CANGFS+8cZT0rfeO3XDLKaoGqpPpqDOFhLWGzKL1j-W_NLVZoMg@mail.gmail.com>
+	<1360927392.2588.58.camel@ferb.suse.cz>
+	<kfl7fq$nuj$1@ger.gmane.org>
+	<CAKqTfXbQt+SNQXOxaOYOHfqCUT62_ssFM3x8i999i+AMzQ7cfQ@mail.gmail.com>
+	<CAKqTfXbgFuLPXCHiLJRkYYuKXM-sKJZYELo79tbY7BTYeuPBUQ@mail.gmail.com>
+	<5120CBE7.9020905@bielefeldundbuss.de>', in_reply_to='<5120CBE7.9020905@bielefeldundbuss.de>')>

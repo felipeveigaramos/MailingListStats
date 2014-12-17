@@ -1,0 +1,196 @@
+<Messages(message_id='<CAMuW_XyaBWn00nS8RhDYS-GFfoF8xdXoxj0QdO3KBzkKVmB5VA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-18 01:23:58', first_date_tz='-14400', arrival_date='2014-03-17 22:23:58', arrival_date_tz='None', subject='[GSoc 14] On "Improve Text Boxes in Draw" - towards a more specific
+ description and starting directions', message_body='Hi all,
+I'm Matteo, I'm planning to apply for GSoC and I'm wondering if anyone
+could answer a few questions on the GSoC idea proposal in the subject
+([1]<https://wiki.documentfoundation.org/Development/GSoC/Ideas#Improve_Text_Boxes_in_Draw>
+).
+Some specific tasks that would be involved in this project are not totally
+clear to me yet.
+Simply enough, the general problem seems to be that of enhancing text
+frames in Draw.
+Quoting from the official description, some missing features of text frames
+are:
+(my personal comments and questions right indented below each item)
+
+- *"text background color":*
+
+It seems to me that it is possible to specify a text box background in
+color in Draw. Are we then referring to background color of the text only?
+Would that be, in other words, some colored rectangle around only part of
+the text in the box (a bit like text background color in Writer)?
+
+- *"flow of contents from one frame to another":*
+
+I am not sure I know what we are talking about here, but I would imagine it
+as "The text in a frame may (dynamically) constitute part of the text in
+another frame".
+Let me illustrate this: Alice has two text frames, named respectively TF1
+and TF2. The text in TF1 may look like:
+"""
+Lorem ipsum...
+As illustrated in the box above:
+[TF2.text]
+Ut enim ad minim...
+"""
+Here, the macro TF2.text would expand to whatever text is contained in the
+other frame.
+Is this in any way close to what the project description is talking about?
+Is there already something like this in Draw or LO in general, i..e ways.
+to reference other objects' properties explicitly?
+
+- *"hyphenation":*
+
+About this point, I wanted to ask a more technical and at the same time
+general type of question:
+from the documentation on the class ImpEditEngine
+([2]<http://docs.libreoffice.org/editeng/html/classImpEditEngine.html#a6163e18b8db452f3324561f933332542>)
+I see that there are getters and setters for "hyphenators" and a method
+called ImpBreakLine. This suggests to me that ImpEditEngine may be involved
+directly in how or whether hyphenation is done in text frames.
+How does this class actually works?
+What are its responsibilities (since it seems to deal with a LOT of stuff)?
+Could anyone exemplify or point how this class affects hyphenation in, say,
+Writer or any other parts of LO? (or alternatively could anyone redirect me
+to some semi-digestible snippets of code in LOI see  where this magic
+happens?)
+
+
+- *"support of style":*
+
+I see that Draw already has a "Style and Formatting" dialog offering
+several options. What would be the specific enhancements for this point?
+
+
+I had a hard time finding which source files in sd/ are strictly related to
+text frames, could anyone please give me a direction for that?
+(textapi.{hxx,cxx} by any chance?)
+
+I'm still a little bit confused on the specific scope/aim of the items
+above, does anyone have an opinion on how much/which parts of this project
+idea would be sensible to incorporate in a concrete proposal for the summer?
+
+Thank you for your time.
+Best,
+Matteo
+
+References:
+[1] Original GSoC idea description
+(link<https://wiki.documentfoundation.org/Development/GSoC/Ideas#Improve_Text_Boxes_in_Draw>
+)
+[2] Reference documentation for ImpEditEngine
+(link<http://docs.libreoffice.org/editeng/html/classImpEditEngine.html#a6163e18b8db452f3324561f933332542>
+)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140318/6fb06d95/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<53282B75.1010702@graduateinstitute.ch>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-18 12:18:13', first_date_tz='3600', arrival_date='2014-03-18 04:18:13', arrival_date_tz='None', subject='[GSoc 14] On "Improve Text Boxes in Draw" - towards a more
+ specific description and starting directions', message_body='Hello, Matteo,
+
+Un piacere di vederti interessato in questo progetto.
+
+On 18/03/14 06:23, Matteo Campanelli wrote:
+> - /"text background color":/
+> 
+>     It seems to me that it is possible to specify a text box background
+>     in color in Draw. Are we then referring to background color of the
+>     text only?
+
+Yes, it is possible to specify the colour of the text box itself, but it
+is not possible to specify the background of the text itself. The
+problem can be seen in import filters, where in the original
+applications the text, that has non-transparent (i.e. white) background,
+is describing lines (like in technical drawings). Because the background
+is transparent, the text is basically unreadable because of the line
+that is under it.
+
+>     Would that be, in other words, some colored rectangle around only
+>     part of the text in the box (a bit like text background color in
+>     Writer)?
+
+Exactly, including different degrees of transparency.
+
+> - /"flow of contents from one frame to another":/
+> 
+>     I am not sure I know what we are talking about here, but I would
+>     imagine it as "The text in a frame may (dynamically) constitute part
+>     of the text in another frame".
+>     Let me illustrate this: Alice has two text frames, named
+>     respectively TF1 and TF2. The text in TF1 may look like:
+>     """
+>     Lorem ipsum...
+>     As illustrated in the box above:
+>     [TF2.text]
+>     Ut enim ad minim...
+>     """ 
+>     Here, the macro TF2.text would expand to whatever text is contained
+>     in the other frame.
+
+In the ODF file-format, there is a possibility to specify a sequence of
+frames where text, when arrives at the end of one frame overflows into
+the next one.
+
+>     Is this in any way close to what the project description is talking
+>     about?
+>     Is there already something like this in Draw or LO in general, i..e
+>     ways. to reference other objects' properties explicitly?
+
+Not in Draw yet. We have in LibreOffice already this feature implemented
+for Writer, where you can do this kind of "linked frames". The goal
+would be to implement something similar in Draw. What exists in Draw is
+a code that actually detects whether a text overflows beyond a height of
+a frame. This code is used for frames whose height is (in the
+file-format) specified as a minimum height and where if the text does
+not fit, you have to grow the frame. Ideally, it would be possible to
+reuse that code, but I am not sure completely.
+
+
+> - /"hyphenation":/
+> 
+>     About this point, I wanted to ask a more technical and at the same
+>     time general type of question:
+>     from the documentation on the class ImpEditEngine ([2]
+>     <http://docs.libreoffice.org/editeng/html/classImpEditEngine.html#a6163e18b8db452f3324561f933332542>)
+>     I see that there are getters and setters for "hyphenators" and a
+>     method called ImpBreakLine. This suggests to me that ImpEditEngine
+>     may be involved directly in how or whether hyphenation is done in
+>     text frames.
+>     How does this class actually works?
+>     What are its responsibilities (since it seems to deal with a LOT of
+>     stuff)?
+>     Could anyone exemplify or point how this class affects hyphenation
+>     in, say, Writer or any other parts of LO? (or alternatively could
+>     anyone redirect me to some semi-digestible snippets of code in LOI
+>     see  where this magic happens?)
+
+This is something that Thorsten or Kohei could answer better, since they
+are more conversant with the edit engine.
+
+> - /"support of style":/
+> 
+>     I see that Draw already has a "Style and Formatting" dialog offering
+>     several options. What would be the specific enhancements for this point?
+
+I would in the first time look what is possible to specify in the Style
+and Formatting in Draw and what is possible in Writer. The first goal
+would be to bring them at the same level.
+
+Now, be aware that we might discover that any of this task is more
+complicated then what we think. Therefore, the work could be done from
+the highest to the lowest priority. The priorities go roughly in the
+order of your questions. First the text background, then linked frames
+and then the other two in whichever order. Even though the hyphenation
+is slightly more important since having it would allow Draw to start to
+function as a simple DTP application.
+
+Thanks for your interest. I hope that I answered at least some of your
+questions.
+
+Cheers
+
+Fridrich
+
+
+', is_response_of='<CAMuW_XyaBWn00nS8RhDYS-GFfoF8xdXoxj0QdO3KBzkKVmB5VA@mail.gmail.com>', mail_path='None', references='<CAMuW_XyaBWn00nS8RhDYS-GFfoF8xdXoxj0QdO3KBzkKVmB5VA@mail.gmail.com>', in_reply_to='<CAMuW_XyaBWn00nS8RhDYS-GFfoF8xdXoxj0QdO3KBzkKVmB5VA@mail.gmail.com>')>

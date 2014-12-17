@@ -1,0 +1,101 @@
+<Messages(message_id='<CAHW+f2+WhsV7rwEF6ThMYX0gZY4AmQkRc6L6AnQSzm1otPsQ7g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-11 17:25:41', first_date_tz='-18000', arrival_date='2013-12-11 14:25:41', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='I wanted to follow up with the underline issue clipping code below and send
+a new patch.
+
+I have looked again at the code and did more testing. I started by
+commenting out the check again and was able to see problems so I can say
+that code is sometimes still important. But it doesn't appear to need a fix
+for the yStart++ statement. I didn't increment the nEndY because the value
+is currently unused later in the function ;-)
+
+The maMetric.mnWUnderlineSize value is itself a calculated value that tries
+to be about 1/2 the descent, and so not entirely to be trusted on how much
+space is actually available. Between that logic, and the logic to shrink
+the wave line at small descents, it appears fine. At the very least this
+bug will only show up on HiDPI computers so that decreases the risk.
+
+Respecting that clipping boundary by setting nStartAddditional = 1 often
+makes the spelling underlines only 4 pixels tall at normal zooms with 12
+point text on my screen. As I say in the comment, the check should be using
+the full descent which gives it more space, but that diff is bigger.
+
+In any case, in this new version I have put in a variable that handles that
+issue if someone runs into problems. I'm happy to look at bugs but in here
+I've got a fix ready to go. I could consider to fix properly for a future
+version, but for now small fixes are best.
+
+Finding the relevant code is often harder than making the fix. It is like
+digging in the desert. Opengrok is invaluable. I can fix about 2 places per
+session. Yesterday I wrote the code to fix the treeelistview + / - controls
+only to eventually find out it was a native one that doesn't seem to allow
+being drawn bigger! So I gave up on that issue. If the fix isn't relevant
+to Linux, then screw it ;-) Hopefully it is native on all platforms and the
+internal bitmaps, etc. can be removed.
+
+-Keith
+------------
+diff --git a/vcl/source/gdi/outdev3.cxx b/vcl/source/gdi/outdev3.cxx
+index f3f5a77..c6de53f 100644
+--- a/vcl/source/gdi/outdev3.cxx
++++ b/vcl/source/gdi/outdev3.cxx
+@@ -5299,11 +5299,28 @@ void OutputDevice::DrawWaveLine( const Point&
+rStartPos, const Point& rEndPos,
+     }
+
+     long nWaveHeight;
++    long nStartAdditional = 0;
++
+     if ( nStyle == WAVE_NORMAL )
+     {
+         nWaveHeight = 3;
+         nStartY++;
+         nEndY++;
++
++        if (1) //hidpi
++        {
++            nWaveHeight = 5;
++            nStartY++; //Shift down an additional pixel for hidpi screens.
++                       //TODO: Probably should be done above, before the
+rotation happens
++
++            //Shifting down an additional pixel could cause problems
+because the #109280# code below
++            //doesn't know. However, the value itself is about half the
+descent and so we do have more
++            //space than we think.
++            //Furthermore, when I did enable nStartAdditional = 1, then
+the lines LibreOffice
++            //drew were very frequently just 4 pixels at normal zooms and
+don't look as good. If that pixel causes
++            //repaint problems, set this value to 1 and consider to
+revisit the below check to do something
++            //based on descent which is a better measure of space
+available. Why LO isn't already doing that is beyond me.
++            nStartAdditional = 0;      //Set to 1 if HiDPI redraw problems.
++        }
+     }
+     else if( nStyle == WAVE_SMALL )
+     {
+@@ -5316,11 +5333,11 @@ void OutputDevice::DrawWaveLine( const Point&
+rStartPos, const Point& rEndPos,
+
+      // #109280# make sure the waveline does not exceed the descent to
+avoid paint problems
+      ImplFontEntry* pFontEntry = mpFontEntry;
+-     if( nWaveHeight > pFontEntry->maMetric.mnWUnderlineSize )
+-         nWaveHeight = pFontEntry->maMetric.mnWUnderlineSize;
++     if( nWaveHeight + nStartAdditional >
+pFontEntry->maMetric.mnWUnderlineSize )
++         nWaveHeight = pFontEntry->maMetric.mnWUnderlineSize -
+nStartAdditional;
+
+      ImplDrawWaveLine( nStartX, nStartY, 0, 0,
+-                      nEndX-nStartX, nWaveHeight, 1,
++                      nEndX-nStartX, nWaveHeight, 2,
+                       nOrientation, GetLineColor() );
+     if( mpAlphaVDev )
+         mpAlphaVDev->DrawWaveLine( rStartPos, rEndPos, nStyle );
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131211/9f209e6a/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>', in_reply_to='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>')>

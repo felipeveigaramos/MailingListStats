@@ -1,0 +1,35 @@
+<Messages(message_id='<507B9FAC.7020102@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-10-15 07:31:24', first_date_tz='7200', arrival_date='2012-10-14 22:31:24', arrival_date_tz='None', subject='[PATCH] fdo#53482 UI: Option 'Range contains column headings' ignored', message_body='We have a patch for
+<https://bugs.freedesktop.org/show_bug.cgi?id=53482>,
+
+can someone please review?
+
+CU
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20121022150006.GG8572@isigqoko.erack.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-10-22 17:00:07', first_date_tz='7200', arrival_date='2012-10-22 08:00:07', arrival_date_tz='None', subject='[PUSHED] fdo#53482 UI: Option 'Range contains column headings'
+	ignored', message_body='Hi,
+
+On Monday, 2012-10-15 07:31:24 +0200, Rainer Bielefeld wrote:
+> We have a patch for
+> <https://bugs.freedesktop.org/show_bug.cgi?id=53482>,
+
+Found pushed, see bug, marking thread.
+
+  Eike
+
+-- 
+LibreOffice Calc developer. Number formatter stricken i18n transpositionizer.
+GnuPG key 0x293C05FD : 997A 4C60 CE41 0149 0DB3  9E96 2F1A D073 293C 05FD
+Support the FSFE, care about Free Software! https://fsfe.org/support/?erack
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20121022/6f7ba7a1/attachment.pgp>
+
+', is_response_of='<507B9FAC.7020102@bielefeldundbuss.de>', mail_path='None', references='<507B9FAC.7020102@bielefeldundbuss.de>', in_reply_to='<507B9FAC.7020102@bielefeldundbuss.de>')>

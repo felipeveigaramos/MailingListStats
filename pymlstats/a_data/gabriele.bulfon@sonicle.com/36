@@ -1,0 +1,52 @@
+<Messages(message_id='<33067564.576.1372920292475.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-04 08:44:52', first_date_tz='7200', arrival_date='2013-07-03 23:44:52', arrival_date_tz='None', subject='OConnection.cxx patch', message_body='Hi,
+I had to patch this file to build without errors:
+--- libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:33:42 2013
++++ libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:34:55 2013
+@@ -417,7 +417,7 @@
+checkDisposed(OConnection_BASE::rBHelper.bDisposed);
+-    sal_Int32 nValueLen;
++    SQLINTEGER nValueLen;
+char pCat[1024];
+OTools::ThrowException(this,
+N3SQLGetConnectAttr(m_aConnectionHandle,SQL_ATTR_CURRENT_CATALOG,(SDB_ODBC_CHAR*)pCat,(sizeof pCat)-1,&nValueLen),
+Gabriele Bulfon - Sonicle S.r.l.
+Tel +39 028246016 Int. 30 - Fax +39 028243880
+via Santa Maria Valle 3 - 20123 - Milano - Italy
+http://www.sonicle.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130704/ef518e16/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130705072034.GA25300@capsaicin.mamane.lu>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-05 09:20:34', first_date_tz='7200', arrival_date='2013-07-05 00:20:34', arrival_date_tz='None', subject='OConnection.cxx patch', message_body='On Thu, Jul 04, 2013 at 08:44:52AM +0200, Gabriele Bulfon wrote:
+
+> I had to patch this file to build without errors:
+> --- libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:33:42 2013
+> +++ libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:34:55 2013
+> @@ -417,7 +417,7 @@ checkDisposed(OConnection_BASE::rBHelper.bDisposed);
+> -    sal_Int32 nValueLen;
+> +    SQLINTEGER nValueLen;
+
+This change makes sense. Thank you for your contribution. However,
+before I can use it, could you please confirm that you allow us to use
+it under the MPLv2/LGPLv3+ dual license? I don't find your name on the
+list of people that have already agreed to that
+https://wiki.documentfoundation.org/Development/Developers
+
+It is customary to do a general statement that covers all your past,
+present and future contributions; see
+https://wiki.documentfoundation.org/Development/Developers#Example_Statement
+and
+https://wiki.documentfoundation.org/Development/Developers#Where_do_I_send_the_Statement.3F
+
+
+Also, please send your patches as attachments, to avoid your mail user
+agent (email program) to change spacing, do word wrapping, etc, which
+makes the patch harder to read, and makes the "patch" program fail to
+use it automatically.
+
+-- 
+Lionel
+
+', is_response_of='<33067564.576.1372920292475.JavaMail.sonicle@www>', mail_path='None', references='<33067564.576.1372920292475.JavaMail.sonicle@www>', in_reply_to='<33067564.576.1372920292475.JavaMail.sonicle@www>')>

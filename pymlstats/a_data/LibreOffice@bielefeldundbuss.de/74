@@ -1,0 +1,62 @@
+<Messages(message_id='<51234A52.90009@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-19 10:48:02', first_date_tz='3600', arrival_date='2013-02-19 01:48:02', arrival_date_tz='None', subject='[Libreoffice-ux-advise] EasyHack proposals', message_body='Rainer Bielefeld schrieb:
+
+> But to be honest, it's long ago that I read the HeasHack Wiki page,
+
+Well,
+
+currently there on
+
+<https://wiki.documentfoundation.org/Development/EasyHacks#Creating_new_EasyHacks>
+
+I read "New EasyHacks should be created by developers ... Write 
+"EasyHack" (or "ProposedEasyHack") ... "
+
+I do not think that that is very useful, IMHO to imprecise! My suggestions:
+
+Whiteboard
+-------------
+We have 2 accepted Whiteboard tags: "EasyHack" and "ProposedEasyHack", 
+IMHO we should use tem as following:
+
+* "ProposedEasyHack": added by experienced QA users or developers, if 
+applicable with skills. Will be rejected by a developer if too difficult
+
+  or
+
+* "EasyHack": Replaces ProposedEasyHack, only added by developers who 
+really can estimate the easiness, and only if a developer is in CC (or 
+can be added) who can be mentor.
+
+
+If there are no concerns or different suggestions and nobody else does 
+I will complete the Wiki text.
+
+
+Proceeding:
+-----------
+We need a proceeding how to track success. Currently I count 43 
+ProposedEasyHack  Bugs without any action within 1/4 years [1]. Best 
+would be if some willing mentors check these bugs whether really EH.
+
+We need experienced QA staff who actively encourage new developers 
+(especially who already did an EasyHack fix) to try more fixes. I 
+already planned to do so, but Developers' feedback es required, for 
+example whether tat is useful or whether mentoring costs too much time 
+or whatever.
+
+I suggest to continue discussion with all interested people ONLY on
+<libreoffice-qa at lists.freedesktop.org>.
+
+Best regards
+
+Rainer
+
+Hyperlinks
+----------
+[1] 
+<https://bugs.freedesktop.org/buglist.cgi?f1=days_elapsed&list_id=236007&o1=greaterthan&resolution=---&status_whiteboard_type=allwordssubstr&query_format=advanced&status_whiteboard=ProposedEasyHack&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=REOPENED&bug_status=NEEDINFO&bug_status=PLEASETEST&v1=90&product=LibreOffice>
+
+', is_response_of='', mail_path='None', references='<CAPnUALKWZUD2Cdyt8zT1KYKn1jw+1TEKp5W6u+wWwansY7A_8w@mail.gmail.com>
+	<CAPnUALLFOCmeL0nL7YQ2v7vdahfMTinFS+Svn4U-7qx0s4TwWA@mail.gmail.com>
+	<1361219276.30464.88.camel@linux-d2lh.site>
+	<51229ED3.2040405@bielefeldundbuss.de>', in_reply_to='<51229ED3.2040405@bielefeldundbuss.de>')>

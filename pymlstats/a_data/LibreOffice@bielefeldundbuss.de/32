@@ -1,0 +1,30 @@
+<Messages(message_id='<4FEC2E05.9040701@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-28 12:12:21', first_date_tz='7200', arrival_date='2012-06-28 03:12:21', arrival_date_tz='None', subject='[PUSHED] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Petr Mladek schrieb:
+
+> This is the problem. The bugzilla assistant is in the website
+> repository.
+
+Hi Petr,
+
+I can't remember that that ever caused problems. During all the early 
+times when BSA has been developed we never had a conflict. But I will 
+keep your concerns in mind and be watchful.
+
+> Let's ask Thorsten to pull and restart the service once I push the other
+> fix for fdo#41601.
+
+Please push ASAP to get that fix included;  Thorsten has an update 
+request (from yesterday evening) in the line because of new 3.5.5.2
+
+Best regards
+
+Rainer
+
+', is_response_of='<1340874356.6136.2195.camel@walk.suse.cz>', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>
+	<1340366943.10027.23.camel@Brinn>
+	<4FE4A331.50605@bielefeldundbuss.de> <4FE4CD23.30209@ertai.nl>
+	<1340726339.6136.2143.camel@walk.suse.cz>
+	<4FE9E128.7040207@bielefeldundbuss.de>
+	<1340801544.6136.2177.camel@walk.suse.cz>
+	<4FEB4A51.3080301@bielefeldundbuss.de>
+	<1340874356.6136.2195.camel@walk.suse.cz>', in_reply_to='<1340874356.6136.2195.camel@walk.suse.cz>')>

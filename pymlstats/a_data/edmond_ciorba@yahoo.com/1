@@ -1,0 +1,18 @@
+<Messages(message_id='<1371562723.61632.YahooMailNeo@web125804.mail.ne1.yahoo.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-18 06:38:43', first_date_tz='-25200', arrival_date='2013-06-18 06:38:43', arrival_date_tz='None', subject='bug 65456 ', message_body='Hi Thorsten,
+
+??? I'm working on bug 65456, I have started
+with the hint in the description. The getMainSequence() function
+returns a pointer,when that is null it's sure that the slide doesn't
+have animation on, but if that is not null it doesn't mean the slide
+has animation. 
+???? Than I thought it would work, if I'd
+iterate all over the objects of the page and after that I could use
+the hasEffect() function to determinate whether the object has
+animation on, or not. This solution was working, but it took to a
+problem, when I added a new object and set an animation on it, it
+wasn't working (see Patch 6).
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130618/a143a403/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

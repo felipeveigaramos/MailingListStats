@@ -24,6 +24,7 @@ by mlstats.
 
 from sqlalchemy.orm import aliased
 from sqlalchemy.exc import IntegrityError, DataError
+from sqlalchemy.orm.exc import NoResultFound
 import logging
 
 import database as db
@@ -67,6 +68,12 @@ class Database(object):
         self.session = session
 
     def insert_people(self, name, email):
+        novato = False
+        try:
+            self.session.query(db.People).filter(db.People.email_address == email).one()
+        except NoResultFound, e:
+            novato = True
+
         tld = get_top_level_domain_from_email(email)
         user, domain = get_user_and_domain_from_email(email)
 
@@ -80,6 +87,8 @@ class Database(object):
             self.session.rollback()
         except DataError:
             self.log.warning(u'DataError: {}'.format(people))
+
+        return novato
 
     def insert_mailing_list_people(self, email, mailing_list_url):
         mlp = db.MailingListsPeople(email_address=email,
@@ -136,6 +145,7 @@ class Database(object):
 
     def store_messages(self, message_list, mailing_list_url):
         stored_messages = 0
+        novatos = []
         for m in message_list:
             # FIXME: If primary key check fails, ignore and continue
             msgs_people_value = {}
@@ -145,7 +155,8 @@ class Database(object):
                     continue
 
                 for name, email in addresses:
-                    self.insert_people(name, email)
+                    if (self.insert_people(name, email)):
+                        novatos.append(email)
                     self.insert_mailing_list_people(email, mailing_list_url)
                     key = '%s-%s' % (header, email)
                     value = (email, header.capitalize(), m['message-id'],
@@ -158,7 +169,7 @@ class Database(object):
             for key, value in msgs_people_value.iteritems():
                 self.insert_messages_people(value)
 
-        return stored_messages
+        return stored_messages, novatos
 
     def update_mailing_list(self, url, name, last_analysis):
         """

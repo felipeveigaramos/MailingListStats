@@ -1,0 +1,76 @@
+<Messages(message_id='<CA+_jvazYKHmT0_N2h8J1BM3bM7ExgYR46TgNbq+FJp4eUVQ2tw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-24 14:54:10', first_date_tz='19800', arrival_date='2013-04-24 02:24:10', arrival_date_tz='None', subject='[Patch] Bug 47302-Adding a new field in "Insert->Fields"', message_body='Hi,
+
+I am hereby attaching my patch for review.
+
+Please guide me, if I have made any mistakes.
+
+Also there is new file created
+@offapi/com/sun/star/text/textfield/SlideName.idl for the patch. So I am
+attaching that file too.
+
+Thanks and Regards,
+Vishv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130424/fb5aef80/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 1_Bug47302.patch
+Type: application/octet-stream
+Size: 20412 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130424/fb5aef80/attachment.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: SlideName.idl
+Type: application/octet-stream
+Size: 1414 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130424/fb5aef80/attachment-0001.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130424180121.GF8190@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-24 20:01:21', first_date_tz='7200', arrival_date='2013-04-24 11:01:21', arrival_date_tz='None', subject='[Patch] Bug 47302-Adding a new field in "Insert->Fields"', message_body='Vishv Brahmbhatt wrote:
+> I am hereby attaching my patch for review.
+> 
+Hi Vishv,
+
+wow, impressive work - compiles & works mostly fine here!!
+
+Two things - there's a lot of whitespace change in your patch, and
+also some trailing whitespace on some lines (the git commit hooks
+complain about it) - could you clean that up?
+
+And then, loading and saving this new field does not yet work. I think
+the relevant code lives here:
+
+ xmloff/source/text/txtfld{ei}.cxx
+
+The scripting/workben/bindings/impressmenubar.xml change, you can just
+skip, that seems example code.
+
+As an extra, it seems changing the slide name does not update the
+field content, possibly some
+Broadcast(SfxSimpleHint(SFX_HINT_DATACHANGED)) or somesuch missing at
+a strategic place? Of course, happy to merge w/o, and/or help with
+tracking that nit down. :)
+
+> Also there is new file created
+> @offapi/com/sun/star/text/textfield/SlideName.idl for the patch. So I am
+> attaching that file too.
+> 
+You can just git add offapi/com/sun/star/text/textfield/SlideName.idl
+it, will then be included in your subsequent commit.
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130424/bc6e8185/attachment.pgp>
+
+', is_response_of='<CA+_jvazYKHmT0_N2h8J1BM3bM7ExgYR46TgNbq+FJp4eUVQ2tw@mail.gmail.com>', mail_path='None', references='<CA+_jvazYKHmT0_N2h8J1BM3bM7ExgYR46TgNbq+FJp4eUVQ2tw@mail.gmail.com>', in_reply_to='<CA+_jvazYKHmT0_N2h8J1BM3bM7ExgYR46TgNbq+FJp4eUVQ2tw@mail.gmail.com>')>

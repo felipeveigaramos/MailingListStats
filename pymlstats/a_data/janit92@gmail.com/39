@@ -1,0 +1,61 @@
+<Messages(message_id='<CAFrS=rfEj_rj1-C4PtbSf1zMpcjfwx0pHVxCmeTT2=a5gfM7+A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-09 23:22:45', first_date_tz='19800', arrival_date='2013-04-09 10:52:45', arrival_date_tz='None', subject='[PATCH]BUG#57950 Replace chained O(U)StringBuffer::append() with
+	operator+', message_body='Hey!
+
+I am hereby attaching my patch on fdo#57950 where the .append() calls are
+replaced by  + operator.
+
+
+Regards,
+Janit
+
+
+On Tue, Apr 9, 2013 at 7:00 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Thorsten!
+> As a mentor it would be great if you review my bug and tell me if i need
+> to further make any kinda changes.
+>
+> Then i would email it on the list.
+>
+> Regards,
+> Janit
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130409/7db0853f/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-57950-Replace-chained-O-U-StringBuffer-append-wi.patch
+Type: application/octet-stream
+Size: 1310 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130409/7db0853f/attachment.obj>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rfvTOJTndbFx1=obyPvs3U+mpgSm0sShO605CUFcNBm1A@mail.gmail.com>', in_reply_to='<CAFrS=rfvTOJTndbFx1=obyPvs3U+mpgSm0sShO605CUFcNBm1A@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<20130410095232.GX475@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-10 11:52:32', first_date_tz='7200', arrival_date='2013-04-10 02:52:32', arrival_date_tz='None', subject='[PATCH]BUG#57950 Replace chained O(U)StringBuffer::append() with
+	operator+', message_body='Janit Anjaria wrote:
+> I am hereby attaching my patch on fdo#57950 where the .append() calls are
+> replaced by  + operator.
+> 
+Hi Janit,
+
+this does not seem to be a patch against master - the code there has
+OUStringBuffer sBuffer etc etc, not OUString sBuffer as required by
+your patch. Please squash your various changes you did to that file
+into one commit, see e.g.
+http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/ac3aa853/attachment.pgp>
+
+', is_response_of='<CAFrS=rfEj_rj1-C4PtbSf1zMpcjfwx0pHVxCmeTT2=a5gfM7+A@mail.gmail.com>', mail_path='None', references='<CAFrS=rfvTOJTndbFx1=obyPvs3U+mpgSm0sShO605CUFcNBm1A@mail.gmail.com>
+	<CAFrS=rfEj_rj1-C4PtbSf1zMpcjfwx0pHVxCmeTT2=a5gfM7+A@mail.gmail.com>', in_reply_to='<CAFrS=rfEj_rj1-C4PtbSf1zMpcjfwx0pHVxCmeTT2=a5gfM7+A@mail.gmail.com>')>

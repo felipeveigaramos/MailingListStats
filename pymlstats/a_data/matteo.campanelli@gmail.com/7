@@ -1,0 +1,21 @@
+<Messages(message_id='<CAMuW_XwGusXOb2Rr=70GpTTBjthKwqE6EwsQqO5UND=X+UkFRw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-14 10:23:15', first_date_tz='7200', arrival_date='2014-07-14 01:23:15', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 13/07/2014', message_body='Hi all,
+on last week:
+- managed to truncate arbitrary portion of text in a box;
+- formulated a general model of what the flow should look like:
+
+a) editeng (ImpEditEngine::FormatDoc?) realizes there is an overflow in
+text box with a successor;
+b) [still editeng] the overflowing point in the overflowing text portion
+ (possibly empty) is marked;
+c) [svx] the first part of the overflowing portion is rendered, the rest of
+it is sent to the successor text box in the chain. Both this second part of
+the first overflowing portion as well as all the remaining following
+overflowing portions are sent back to editeng for new layouting.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140714/e2c94503/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

@@ -1,0 +1,77 @@
+<Messages(message_id='<CANaJiRqcsBqRaP-WQo8990iQ5kR3CxEL_N=0OqqtPUbSY-gw+Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-10-10 03:28:50', first_date_tz='7200', arrival_date='2014-10-09 18:28:50', arrival_date_tz='None', subject='Unittest fails building on OS X 10.9', message_body='Hi,
+
+I've added the section "Minimal Setup with MacPorts for external
+dependencies" [1] which can be very helpful to build LO easily.
+
+[1]
+https://wiki.documentfoundation.org/Development/BuildingOnMac#Minimal_Setup_with_MacPorts_for_external_dependencies
+
+Regards,
+Robert
+
+On Thu, Oct 9, 2014 at 9:38 PM, Joost Eekhoorn <joost.eekhoorn at gmail.com>
+wrote:
+
+> Build has succeeded.
+> I saw in this that --disable-cve-test is needed on OS X Mavericks
+>
+> Still I had to do 2 little, dirty hacks:
+> - Moved away 4 CVE-test file from
+> ~/lo/core/writerfilter/qa/cppunittest/data/pass/
+>       (CVE-2010-333-1.rtf, CVE-2014-1761-1.rtf, CVE-2014-1761-2.rtf and
+> CVS-pseudo-2009-0238-1.rtf)
+> - Edited ~/lo/core/sw/qa/extras/rtfimport/rtfimport.cxx
+>       (skipping testN192129)
+>
+> Beside that, this is what I have done:
+>
+> Install Ant (OS X Mavericks does not have that anymore)
+>
+> ./autogen.sh
+>     --with-ant-home="/usr/local/bin/apache-ant"
+>     --wiithout-junit
+>     --enable-python=internal
+>     --disable-cve-tests
+>
+> I could not found instdir/program/soffice to start the program, but used:
+> instdir/LibreOfficeDev.app/Contents/MacOS/soffice
+>
+> It would be nice if someone would review my information and update the
+> building instructions for Mac:
+> https://wiki.documentfoundation.org/Development/BuildingOnMac
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+>
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141010/15bf7ed1/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAMGYdVA8BBeDv=JQKZufp-uriSh=Ygm1WiUgmxj7qt=_KELGmQ@mail.gmail.com>
+ <CAMGYdVBxCzs5eVjzbFDUx3VkKqY+HFipT_5HpuJ97KyFM+a=fQ@mail.gmail.com>', in_reply_to='<CAMGYdVBxCzs5eVjzbFDUx3VkKqY+HFipT_5HpuJ97KyFM+a=fQ@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<CANGFS+9rh08Pg6Q4yJ-5=YbG7qZugSDXw5ZB4-doMuo=28-ddw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-10-10 10:59:03', first_date_tz='10800', arrival_date='2014-10-10 00:59:03', arrival_date_tz='None', subject='Unittest fails building on OS X 10.9', message_body='> so it is not really a
+> requirement to have MacPorts.
+>
+
+Indeed not. The wiki page needs to say more clearly that there are two
+fundamentally different ways to set up a build environment now, and that
+they shouldn't be mixed.
+
+--tml
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141010/911c6d0d/attachment.html>
+
+', is_response_of='<CANaJiRqcsBqRaP-WQo8990iQ5kR3CxEL_N=0OqqtPUbSY-gw+Q@mail.gmail.com>', mail_path='None', references='<CAMGYdVA8BBeDv=JQKZufp-uriSh=Ygm1WiUgmxj7qt=_KELGmQ@mail.gmail.com>
+ <CAMGYdVBxCzs5eVjzbFDUx3VkKqY+HFipT_5HpuJ97KyFM+a=fQ@mail.gmail.com>
+ <CANaJiRqcsBqRaP-WQo8990iQ5kR3CxEL_N=0OqqtPUbSY-gw+Q@mail.gmail.com>
+ <m1835t$30v$1@ger.gmane.org>', in_reply_to='<m1835t$30v$1@ger.gmane.org>')>

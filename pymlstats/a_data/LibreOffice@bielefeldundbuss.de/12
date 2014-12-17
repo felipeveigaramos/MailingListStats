@@ -1,0 +1,81 @@
+<Messages(message_id='<4FC7A9DF.70603@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-31 19:26:55', first_date_tz='7200', arrival_date='2012-05-31 10:26:55', arrival_date_tz='None', subject='Disabling file opening and saving in print preview mode', message_body='Kohei Yoshida schrieb:
+
+> What do you think about disabling these operations while in print
+> preview mode?
+
+
+Hi,
+My POV: I would LIKE a "save (or better: close) and reopen in PP mode" 
+for some  WRITER  documents. Those are data sheets and small catalogs, 
+what mostly are opened to print some pages of the document as attachment 
+for a delivery of goods or similar. So my suggestion would have been 
+"let WRITER documents open documents in PP mode if they have been saved 
+from PP mode", in some cases that saves some mouse clicks.
+
+But that is a very low-value desire.
+
+Currently Writer always will open in normal view mode (or Web view), 
+even if the document has been saved from PP mode.
+
+So we should eliminate that inconsistence by always opening documents in 
+Normal View (or Page break preview mode, if selected), even if document 
+has been saved from PP view. But I do not recommend to disable "save" as 
+long as PP is active. That would be inconsistent compared to writer and 
+might be worrying. Simply ignore "was in PP mode when has been saved".
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<1338479308.4602.6.camel@dell-t3500>', in_reply_to='<1338479308.4602.6.camel@dell-t3500>')>
+****************************************
+<Messages(message_id='<1338517334.17695.13.camel@dell-t3500>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-31 22:22:14', first_date_tz='-14400', arrival_date='2012-05-31 19:22:14', arrival_date_tz='None', subject='Disabling file opening and saving in print preview mode', message_body='On Thu, 2012-05-31 at 19:26 +0200, Rainer Bielefeld wrote:
+> Kohei Yoshida schrieb:
+> 
+> > What do you think about disabling these operations while in print
+> > preview mode?
+> 
+> 
+> Hi,
+> My POV: I would LIKE a "save (or better: close) and reopen in PP mode" 
+> for some  WRITER  documents. Those are data sheets and small catalogs, 
+> what mostly are opened to print some pages of the document as attachment 
+> for a delivery of goods or similar. So my suggestion would have been 
+> "let WRITER documents open documents in PP mode if they have been saved 
+> from PP mode", in some cases that saves some mouse clicks.
+
+Well, unfortunately we will probably have to adopt the Writer way (of
+never opening in PP mode) in Calc too, due to the limitation I already
+outlined in my other mails.  The preview window needs parts of the view
+properties transferred from the main Calc window when it launches, and
+if we launch the preview window first before we initialize the view
+properties in the main Calc window first, we'd lose that opportunity.
+This may have worked okay in the past when we didn't do any clever
+pagination in the preview mode.  But now we do more sophisticated
+pagination based on selected sheets, losing the proper initialization in
+the main Calc window would be detrimental...
+
+> But that is a very low-value desire.
+
+And hopefully you'll be okay with it.
+
+> Currently Writer always will open in normal view mode (or Web view), 
+> even if the document has been saved from PP mode.
+> 
+> So we should eliminate that inconsistence by always opening documents in 
+> Normal View (or Page break preview mode, if selected), even if document 
+> has been saved from PP view. But I do not recommend to disable "save" as 
+> long as PP is active. That would be inconsistent compared to writer and 
+> might be worrying. Simply ignore "was in PP mode when has been saved".
+
+Then I would propose disabling save in Writer too.  I have enough
+reasons to believe that, in Calc at least, saving the document from the
+preview mode would never work to everyone's satisfaction.  It would
+always leave some weird corner cases even if we fix this particular bug
+that Terrence reported.
+
+Kohei
+
+
+', is_response_of='<4FC7A9DF.70603@bielefeldundbuss.de>', mail_path='None', references='<1338479308.4602.6.camel@dell-t3500>
+	<4FC7A9DF.70603@bielefeldundbuss.de>', in_reply_to='<4FC7A9DF.70603@bielefeldundbuss.de>')>

@@ -1,0 +1,76 @@
+<Messages(message_id='<4FE4A331.50605@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-22 18:54:09', first_date_tz='7200', arrival_date='2012-06-22 09:54:09', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Caol?n McNamara schrieb:
+
+> Use localization, globalization, etc., throughout regardless of US/UK
+> English IMO.
+
+
+Hi,
+
+I think so, too, and will modify that for next new LibO release we get, 
+so that no extra Assistant update will be required.
+
+<https://wiki.documentfoundation.org/BugReport_Details#Localisation>
+
+> http://en.wikipedia.org/wiki/Eats,_Shoots_%26_Leaves
+
+:-)  :-)
+
+Best regards
+
+
+Rainer
+
+
+', is_response_of='', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>
+	<1340366943.10027.23.camel@Brinn>', in_reply_to='<1340366943.10027.23.camel@Brinn>')>
+****************************************
+<Messages(message_id='<4FE4CD23.30209@ertai.nl>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-22 21:53:07', first_date_tz='7200', arrival_date='2012-06-22 12:53:07', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Hi,
+
+I also created a patch for when the component is renamed.
+
+--
+Greetings,
+Rob Snelders
+
+
+Op 22-06-12 18:54, Rainer Bielefeld schreef:
+> Caol?n McNamara schrieb:
+>
+>> Use localization, globalization, etc., throughout regardless of US/UK
+>> English IMO.
+>
+>
+> Hi,
+>
+> I think so, too, and will modify that for next new LibO release we 
+> get, so that no extra Assistant update will be required.
+>
+> <https://wiki.documentfoundation.org/BugReport_Details#Localisation>
+>
+>> http://en.wikipedia.org/wiki/Eats,_Shoots_%26_Leaves
+>
+> :-)  :-)
+>
+> Best regards
+>
+>
+> Rainer
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-Localisation-changed-to-Localization.patch
+Type: text/x-patch
+Size: 4881 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20120622/47282b07/attachment.bin>
+
+', is_response_of='<4FE4A331.50605@bielefeldundbuss.de>', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>
+	<1340366943.10027.23.camel@Brinn>
+	<4FE4A331.50605@bielefeldundbuss.de>', in_reply_to='<4FE4A331.50605@bielefeldundbuss.de>')>

@@ -1,0 +1,36 @@
+<Messages(message_id='<18612290.8.1374245192934.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-19 16:46:32', first_date_tz='7200', arrival_date='2013-07-19 07:46:32', arrival_date_tz='None', subject='LibreOffice Works on XStream/illumos! - questions about packaging', message_body='Hi,
+I'm excited to announce that I finished building and installing LO inside a prototype area, and it works great directly from there.
+The prototype area is somthing like prototype/usr/lib/libreoffice/.....
+Now I have to publish it into my dev IPS repository, and decide how to make the layout.
+What is the usual layout?
+Should I just place everything in /usr/lib/libreoffice as in prototype, or also provide links
+in /usr/bin to run common executables? (soffice,swriter and so on).
+Suggestions would be great!
+Thanx for all your help, we're excited to have LO inside our upcoming Sonicle XStreamOS Desktop distro!
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130719/2063c705/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130722082205.GG6037@suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-22 10:22:05', first_date_tz='7200', arrival_date='2013-07-22 01:22:05', arrival_date_tz='None', subject='LibreOffice Works on XStream/illumos! - questions about packaging', message_body='On Fri, Jul 19, 2013 at 04:46:32PM +0200, Gabriele Bulfon <gabriele.bulfon at sonicle.com> wrote:
+> Should I just place everything in /usr/lib/libreoffice as in prototype, or also provide links
+> in /usr/bin to run common executables? (soffice,swriter and so on).
+
+Linux distros do that, also you probably want to symlink a few more
+things:
+
+- .desktop files
+- icons
+- mime config
+- manpages
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130722/1270b82b/attachment.pgp>
+
+', is_response_of='<18612290.8.1374245192934.JavaMail.sonicle@www>', mail_path='None', references='<18612290.8.1374245192934.JavaMail.sonicle@www>', in_reply_to='<18612290.8.1374245192934.JavaMail.sonicle@www>')>

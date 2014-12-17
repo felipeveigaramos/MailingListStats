@@ -1,0 +1,41 @@
+<Messages(message_id='<CAFrS=rfqN_7=w5yH1nrbrT8xu2dC8hxUom01fqjaWdnmDqMyZg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-10 15:50:43', first_date_tz='19800', arrival_date='2013-04-10 03:20:43', arrival_date_tz='None', subject='[PATCH]BUG#57950 Replace chained O(U)StringBuffer::append() with
+	operator+', message_body='Hey!
+I aam sure the mentor at that point in time initially when i started my
+work on the LO codebase...he asked me to do the same ,and that is why i
+made the following changes....
+But yeah if you still feel i need to change the patch according with the
+buffer thing resolved,ill do it and mail it to you asap.
+
+:)
+
+Regards,
+Janit
+
+
+
+On Wed, Apr 10, 2013 at 3:22 PM, Thorsten Behrens <
+thb at documentfoundation.org> wrote:
+
+> Janit Anjaria wrote:
+> > I am hereby attaching my patch on fdo#57950 where the .append() calls are
+> > replaced by  + operator.
+> >
+> Hi Janit,
+>
+> this does not seem to be a patch against master - the code there has
+> OUStringBuffer sBuffer etc etc, not OUString sBuffer as required by
+> your patch. Please squash your various changes you did to that file
+> into one commit, see e.g.
+> http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
+>
+> Cheers,
+>
+> -- Thorsten
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/5be91f18/attachment-0001.html>
+
+', is_response_of='<20130410095232.GX475@thinkpad.thebehrens.net>', mail_path='None', references='<CAFrS=rfvTOJTndbFx1=obyPvs3U+mpgSm0sShO605CUFcNBm1A@mail.gmail.com>
+	<CAFrS=rfEj_rj1-C4PtbSf1zMpcjfwx0pHVxCmeTT2=a5gfM7+A@mail.gmail.com>
+	<20130410095232.GX475@thinkpad.thebehrens.net>', in_reply_to='<20130410095232.GX475@thinkpad.thebehrens.net>')>

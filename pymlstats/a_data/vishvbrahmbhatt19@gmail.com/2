@@ -1,0 +1,153 @@
+<Messages(message_id='<CA+_jvawVJwDUzZXSzHozjUTP9R+=m_0kZdvrPtMExcB_kq_c7w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-01 16:15:40', first_date_tz='19800', arrival_date='2013-04-01 03:45:40', arrival_date_tz='None', subject='Need Help for Bug:47302', message_body='Hi,
+
+I need help for Bug 47302.
+https://bugs.freedesktop.org/show_bug.cgi?id=47302
+
+For  *impress* : I have to get slide name in the text-field through
+option *Insert->Fields->Slide
+Name*. Similar to the Page Number option in the Insert->Fields->Page Number
+
+I  am not completely sure of  the correct mechanism of storing slide name
+for different slides.But through bits and pieces of understanding,I have
+been able to get the *Slidename* in the Text-Field and store it (because
+slide name appears perfectly in *Notes(page)* even after closing &
+reopening of *impress* file). But still ,I am facing some problems in *Normal
+View* ,as the slide name(in text-field)  doesn't change automatically with *
+renaming* of the Slide.
+
+I am attaching my *git-diff patch* for current status on the bug.
+
+So following are my Questions :
+
+(1) What is the exact mechanism that works behind in storing page number
+(in text field)(like some array or data structure) and how it can be used
+for *Slide Name* too?
+
+(2) How can I handle renaming of the Slide (with my existing code) and the
+slide name can automatically change in the text-field?
+
+(3) In this code ,I am using *pagenumber service* which will affect
+*Insert->Fields->Page
+Number* option (and it will not work properly).So I need to define a new *
+service* for *slide name*,but how can I create a new service and use it?
+Because my attempt to define a new service through IDL file was
+not successful ,as compiler did not recognize it.So how can I handle this
+problem?
+
+
+In-spite of many attempts ,I am not able to get further clue about this
+problem.So any sort of help is appreciated.
+
+
+Thanks and Regards,
+Vishv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130401/21716d7e/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Bug47302.patch
+Type: application/octet-stream
+Size: 18926 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130401/21716d7e/attachment-0001.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<515E864A.8060708@suse.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-05 13:37:38', first_date_tz='19800', arrival_date='2013-04-05 01:07:38', arrival_date_tz='None', subject='Need Help for Bug:47302', message_body='Hi Vishv,
+
+On 04/01/2013 04:15 PM, Vishv Brahmbhatt wrote:
+> Hi,
+>
+> I need help for Bug 47302.
+> https://bugs.freedesktop.org/show_bug.cgi?id=47302
+>
+> For *impress* : I have to get slide name in the text-field through
+> option *Insert->Fields->Slide Name*. Similar to the Page Number option
+> in the Insert->Fields->Page Number
+That's a good start. You could refer to the SvxAuthorField as well for 
+reference.
+
+>
+> I  am not completely sure of  the correct mechanism of storing slide
+> name for different slides.But through bits and pieces of understanding,I
+> have been able to get the *Slidename* in the Text-Field and store it
+> (because slide name appears perfectly in *Notes(page)* even after
+> closing & reopening of *impress* file). But still ,I am facing some
+> problems in *Normal View* ,as the slide name(in text-field)  doesn't
+> change automatically with *renaming* of the Slide.
+You could refer to the code where the slide numbers are reset.
+I am guessing it should be called with some Invalidate()
+
+>
+> I am attaching my *git-diff patch* for current status on the bug.
+>
+> So following are my Questions :
+>
+> (1) What is the exact mechanism that works behind in storing page number
+> (in text field)(like some array or data structure) and how it can be
+> used for *Slide Name* too?
+http://opengrok.libreoffice.org/search?q=SvxPageField&project=core
+throws up some interesting results for you.
+
+I think you missed,
+http://opengrok.libreoffice.org/xref/core/tools/inc/tools/pstm.hxx#SV_DECL_PERSIST
+
+Which is kind of the the first line in the class definition of SvxPageField:
+
+SV_DECL_PERSIST1( SvxPageField, SvxFieldData, 
+com::sun::star::text::textfield::Type::PAGE )
+
+Trace it through and you should be able to find out, how it works.
+
+>
+> (2) How can I handle renaming of the Slide (with my existing code) and
+> the slide name can automatically change in the text-field?
+Some kind of refresh needs to occur when the slide orders change - trace 
+the pagefield.
+
+>
+> (3) In this code ,I am using *pagenumber service* which will affect
+> *Insert->Fields->Page Number* option (and it will not work properly).So
+> I need to define a new *service* for *slide name*,but how can I create a
+> new service and use it?
+You would have to create the idls and create the corresponding services.
+The easiest way to start is to copy those files and change it accordingly.
+
+> Because my attempt to define a new service through IDL file was
+> not successful ,as compiler did not recognize it.So how can I handle
+> this problem?
+May be you you missed changing some files (?)
+Also don't forget to compile modules like officecfg, offapi, etc (afaik) 
+- which does the additional work of creating the corresponding C++ 
+header files.
+The best is to do a 'make' in the root (at least the first time) and a 
+fresh make dev-install.
+
+>
+>
+> In-spite of many attempts ,I am not able to get further clue about this
+> problem.So any sort of help is appreciated.
+Hope these help.
+And its a very nice patch for the first time. I really liked your 
+efforts in adding the UI changes as well!
+
+A little more digging and you should be able to complete this.
+
+Thanks a lot for the patch again!
+Muthu Subramanian
+
+>
+>
+> Thanks and Regards,
+> Vishv
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+
+', is_response_of='<CA+_jvawVJwDUzZXSzHozjUTP9R+=m_0kZdvrPtMExcB_kq_c7w@mail.gmail.com>', mail_path='None', references='<CA+_jvawVJwDUzZXSzHozjUTP9R+=m_0kZdvrPtMExcB_kq_c7w@mail.gmail.com>', in_reply_to='<CA+_jvawVJwDUzZXSzHozjUTP9R+=m_0kZdvrPtMExcB_kq_c7w@mail.gmail.com>')>

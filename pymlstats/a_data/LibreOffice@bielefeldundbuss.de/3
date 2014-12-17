@@ -1,0 +1,29 @@
+<Messages(message_id='<4FAFB355.5040601@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-13 15:12:53', first_date_tz='7200', arrival_date='2012-05-13 06:12:53', arrival_date_tz='None', subject='[Libreoffice-qa] minutes of ESC call ...', message_body='Tommy schrieb:
+
+> this looks quite worrisome:
+> https://bugs.freedesktop.org/show_bug.cgi?id=38432
+
+Hi Tommy,
+
+yes, I thought about sorting out invalid ones ;-)
+
+I created a shared query [2] where INVALID Bugs are excluded and also 
+Bugs that already have been posted for review on 
+<libreoffice at lists.freedesktop.org> or where at least a solution is on 
+the way.
+
+Please tell me Bug numbers by mail so that I can add them to the 
+"exclude" list in the query.
+
+Best regards
+
+Rainer
+
+
+Hyperlinks:
+[2] 
+<https://bugs.freedesktop.org/buglist.cgi?cmdtype=dorem&remaction=run&namedcmd=PatchNeedsReview&sharer_id=19321&list_id=75849>
+
+', is_response_of='', mail_path='None', references='<1336668461.4785.226.camel@linux-yjtf.site>
+	<4FAF93AF.7010405@bielefeldundbuss.de>
+	<op.wd8xkdea028w62@pc-tommaso>', in_reply_to='<op.wd8xkdea028w62@pc-tommaso>')>

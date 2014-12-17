@@ -1,0 +1,39 @@
+<Messages(message_id='<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-10 16:51:39', first_date_tz='-18000', arrival_date='2014-03-10 14:51:39', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='Perhaps it would be good to have Norbert double-check his work, but it
+seems logical the later changes aren't necessary without his first
+retina change to turn off auto-doubling mode, which is not a part of
+this set.
+
+Norbert is still in the investigation phase, and there are multiple
+ways to implement this on the Mac, so there is no need to optimize for
+cleanliness until it works. It should be put in the release notes that
+this is for Linux and Windows only as Mac will still run in
+compatibility mode.
+
+Doubling bitmaps is a "hack" but since bigger bitmaps don't exist, it
+is better than doing nothing. I haven't looked into the low-level
+resource loading code, but there are very probably VCL changes
+required once those new bitmaps are created. Once that happens, then
+the doubling code can be removed, but only at the end, and it might be
+a while given how many bitmaps exist in all the icon packs out there.
+
+-Keith
+
+', is_response_of='', mail_path='None', references='<1394475851.1785.33.camel@lump.site>
+	<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>', in_reply_to='<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-10 19:15:17', first_date_tz='-18000', arrival_date='2014-03-10 17:15:17', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='On Mon, Mar 10, 2014 at 4:51 PM, Keith Curtis <keithcu at gmail.com> wrote:
+> Doubling bitmaps is a "hack" but since bigger bitmaps don't exist, it
+> is better than doing nothing.
+
+The problem is that mac, in compatibility mode, already auto-double..
+so we end-up with a quadrupling
+of the bitmap, which mean you in the end only see a quarter of the
+intended icon.
+
+', is_response_of='<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>', mail_path='None', references='<1394475851.1785.33.camel@lump.site>
+	<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>', in_reply_to='<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>')>

@@ -1,0 +1,49 @@
+<Messages(message_id='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-05 02:32:35', first_date_tz='19800', arrival_date='2013-05-04 14:02:35', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master slides', message_body='Hey !
+
+I am hereby attaching a patch that shows my initial work on the task ,and
+it would be great if someone can guide if i am going swrong somewhere.
+Though it is not complete according to my plans on the code,but still it
+would be great if there is some more efficient code pointers someone can
+provide.
+
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130505/0fd0f44e/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-41572-Making-it-possible-to-add-Custom-Animation.patch
+Type: application/octet-stream
+Size: 1761 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130505/0fd0f44e/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130506055358.GM2152@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-06 07:53:58', first_date_tz='7200', arrival_date='2013-05-05 22:53:58', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Janit Anjaria wrote:
+> it would be great if someone can guide if i am going swrong
+> somewhere.
+>
+Hi Janit,
+
+a bit hard to tell without further explanations to the intended use of
+the code. A few comments in the header would already go a long
+way. Also, I suggest to make it a habit for new files to add the
+LibreOffice license header from TEMPLATE.SOURCECODE.HEADER right from
+the start. ;)
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130506/f76f2d34/attachment.pgp>
+
+', is_response_of='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>', in_reply_to='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>')>

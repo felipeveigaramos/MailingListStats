@@ -1,0 +1,39 @@
+<Messages(message_id='<5022482A.4050600@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-08-08 13:06:18', first_date_tz='7200', arrival_date='2012-08-08 04:06:18', arrival_date_tz='None', subject='About the download page (FTP server)', message_body='Tor Lillqvist schrieb:
+
+> I loathe having to use non-standard archive formats. I really
+> dislike having to install 3rd-party Windows software
+
+Hello Tor,
+
+I agree with your preference for standard formats, but if the few users 
+working with those particular builds *agree* on using 7z, I believe it's 
+ok.
+
+I would like Media Type application/x-7z-compressed for those builds.
+
+Best regards
+
+Rainer
+
+', is_response_of='<CANGFS+_5Fi_TojRr=+RVoDbxhYnAomx1G+5n59Vw0kj+t8AEww@mail.gmail.com>', mail_path='None', references='<1344411764368-3999800.post@n3.nabble.com>
+	<1344418998.10712.289.camel@walk.suse.cz>
+	<CANGFS+_5Fi_TojRr=+RVoDbxhYnAomx1G+5n59Vw0kj+t8AEww@mail.gmail.com>', in_reply_to='<CANGFS+_5Fi_TojRr=+RVoDbxhYnAomx1G+5n59Vw0kj+t8AEww@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<20120808130550.GZ3691@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-08-08 15:05:50', first_date_tz='7200', arrival_date='2012-08-08 06:05:50', arrival_date_tz='None', subject='About the download page (FTP server)', message_body='Rainer Bielefeld wrote:
+> I would like Media Type application/x-7z-compressed for those builds.
+> 
+That can be arranged for, once those files are available.
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20120808/1a614500/attachment.pgp>
+
+', is_response_of='<5022482A.4050600@bielefeldundbuss.de>', mail_path='None', references='<1344411764368-3999800.post@n3.nabble.com>
+	<1344418998.10712.289.camel@walk.suse.cz>
+	<CANGFS+_5Fi_TojRr=+RVoDbxhYnAomx1G+5n59Vw0kj+t8AEww@mail.gmail.com>
+	<5022482A.4050600@bielefeldundbuss.de>', in_reply_to='<5022482A.4050600@bielefeldundbuss.de>')>

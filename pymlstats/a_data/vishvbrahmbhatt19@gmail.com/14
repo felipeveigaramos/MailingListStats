@@ -1,0 +1,177 @@
+<Messages(message_id='<CA+_jvazJsjXhYrP2GnRtzgqwwAdO2Zn8pr8+2QDgONcW=CtegQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-14 00:00:02', first_date_tz='19800', arrival_date='2013-02-13 10:30:02', arrival_date_tz='None', subject='Need Help for Bug 47302 - Adding a new field in "Insert->Fields"', message_body='Hi,
+I need help for this bug https://bugs.freedesktop.org/show_bug.cgi?id=47302 .I
+am little inexperienced at scripting(xml). So I want help for my Query.
+
+As per  *comment#1* at the above link.I have done following steps:
+
+1)Added a menuitem with label "*~Slide Name*" at
+http://opengrok.libreoffice.org/xref/core/scripting/workben/bindings/impressmenubar.xml#190
+.
+
+2)Added a node oor:name=".uno:*InsertSlideField*" with value="*~Slide Name*"
+at
+http://opengrok.libreoffice.org/xref/core/officecfg/registry/data/org/openoffice/Office/UI/DrawImpressCommands.xcu#534
+
+3)Added a menuitem with menu:id="*.uno:InsertSlideField*" at
+http://opengrok.libreoffice.org/xref/core/sd/uiconfig/simpress/menubar/menubar.xml#147
+
+4)Define *SID_INSERT_FLD_SLIDE* at
+http://opengrok.libreoffice.org/xref/core/sd/inc/app.hrc#379
+
+5)Added a function *SfxVoidItem InsertSlideField SID_INSERT_FLD_SLIDE* at
+http://opengrok.libreoffice.org/xref/core/sd/sdi/sdraw.sdi#3472
+
+
+Using above procedure I am able to get "~*Slide Name*" option in
+*Insert->Fields->Slide
+Name*.But it is not active/working.
+
+*So here is my Query:*
+
+(1)Do I need to use some helper functions for viewing & getting "*Slide Name
+*" ?
+
+If yes ,then which function do I have to use and where can I use it to make
+"*Slide Name*" option active?
+
+Or I have to make some *changes* in the above given steps?
+
+
+Eagerly waiting to get some answers in this query.
+
+Regards,
+Vishv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130214/442d8f91/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CA+_jvaypJzUG52B_MhWWEJVWE4ZQq++eWcwZOoX4ENPMRXAemA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-17 18:09:50', first_date_tz='19800', arrival_date='2013-02-17 04:39:50', arrival_date_tz='None', subject='Need Help for Bug 47302 - Adding a new field in "Insert->Fields"', message_body='I have the following(attached) *Reply* from one of the developers for my
+Earlier Query. But I am slightly confused with my approach in solving the
+problem:
+
+After testing some code instances ,I have found out that code  for
+"Insert->Fields->Slide Name" (impress) can be added here * drviewsb.cxx file
+*
+
+And Using the method define at  *drviewsb.cxx*,
+
+I am planning to follow this approach:
+
+(1)For getting a *Slide Name. *Create a class (similar to the class) which
+is define at *flditem.hxx* .
+
+(2)Use the class created above in deriving the SvxFieldItem( )  at *
+drviewsb.cxx* .
+
+(3)As I am not familiar with UNO references used in the *flditem.hxx* , I
+am not sure whether this is a right approach or some other approach is
+available.
+
+So if someone can guide me with the  approach ,it would be really helpful.
+
+*drviewsb.cxx file* -
+http://opengrok.libreoffice.org/xref/core/sd/source/ui/view/drviewsb.cxx#520
+
+*flditem.hxx*-
+http://opengrok.libreoffice.org/xref/core/editeng/inc/editeng/flditem.hxx#182
+
+Eagerly waiting for the needed answer.
+
+Regards,
+Vishv
+
+*Reply*
+
+
+> In order to actually implement the feature, you should follow the
+> SID_INSERT_FLD_PAGE use cases in .cxx files also:
+>
+> http://opengrok.libreoffice.org/search?q=&project=core&defs=&refs=SID_INSERT_FLD_PAGE&path=%2Fcore%2Fsd%2Fsource%2Fui%2Fview%2F&hist=
+>
+> Here you can see what "insert field page" does (when in draw view):
+>
+> http://opengrok.libreoffice.org/xref/core/sd/source/ui/view/drviewsb.cxx#484
+>
+> As far as I understand, you should derive an SvxFieldItem for hold a
+> text data - but I'm not sure at all. Maybe you should check some
+> Writer fields...
+>
+> You can get slide name by SdPage::GetName()
+> http://opengrok.libreoffice.org/xref/core/sd/inc/sdpage.hxx#282
+> http://opengrok.libreoffice.org/xref/core/sd/source/core/sdpage.cxx#2508
+>
+> while you can retrieve the SdPage by index here SdDrawDocument::GetSdPage()
+> http://opengrok.libreoffice.org/xref/core/sd/source/core/drawdoc2.cxx#199
+>
+> Maybe you can get some clues here
+>
+> http://opengrok.libreoffice.org/xref/core/sd/source/ui/view/drviewsb.cxx#710
+>
+>
+> Regards.
+>
+> 2013/2/13 Vishv Brahmbhatt <vishvbrahmbhatt19 at gmail.com>:
+> > Hi,
+> > I need help for this bug
+> https://bugs.freedesktop.org/show_bug.cgi?id=47302
+> > .I am little inexperienced at scripting(xml). So I want help for my
+> Query.
+> >
+> > As per  comment#1 at the above link.I have done following steps:
+> >
+> > 1)Added a menuitem with label "~Slide Name" at
+> >
+> http://opengrok.libreoffice.org/xref/core/scripting/workben/bindings/impressmenubar.xml#190
+> .
+> >
+> > 2)Added a node oor:name=".uno:InsertSlideField" with value="~Slide Name"
+> at
+> >
+> http://opengrok.libreoffice.org/xref/core/officecfg/registry/data/org/openoffice/Office/UI/DrawImpressCommands.xcu#534
+> >
+> > 3)Added a menuitem with menu:id=".uno:InsertSlideField" at
+> >
+> http://opengrok.libreoffice.org/xref/core/sd/uiconfig/simpress/menubar/menubar.xml#147
+> >
+> > 4)Define SID_INSERT_FLD_SLIDE at
+> > http://opengrok.libreoffice.org/xref/core/sd/inc/app.hrc#379
+> >
+> > 5)Added a function SfxVoidItem InsertSlideField SID_INSERT_FLD_SLIDE at
+> > http://opengrok.libreoffice.org/xref/core/sd/sdi/sdraw.sdi#3472
+> >
+> >
+> > Using above procedure I am able to get "~Slide Name" option in
+> > Insert->Fields->Slide Name.But it is not active/working.
+> >
+> > So here is my Query:
+> >
+> > (1)Do I need to use some helper functions for viewing & getting "Slide
+> Name"
+> > ?
+> >
+> > If yes ,then which function do I have to use and where can I use it to
+> make
+> > "Slide Name" option active?
+> >
+> > Or I have to make some changes in the above given steps?
+> >
+> >
+> > Eagerly waiting to get some answers in this query.
+> >
+> > Regards,
+> > Vishv
+> >
+> > _______________________________________________
+> > LibreOffice mailing list
+> > LibreOffice at lists.freedesktop.org
+> > http://lists.freedesktop.org/mailman/listinfo/libreoffice
+> >
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130217/3ded2f8b/attachment.html>
+
+', is_response_of='<CA+_jvazJsjXhYrP2GnRtzgqwwAdO2Zn8pr8+2QDgONcW=CtegQ@mail.gmail.com>', mail_path='None', references='<CA+_jvazJsjXhYrP2GnRtzgqwwAdO2Zn8pr8+2QDgONcW=CtegQ@mail.gmail.com>
+	<CADvm5Jp5cAozX1fjYfM5av2cm_eoKLwLr_hd0ODo_dGyuJc2Ww@mail.gmail.com>', in_reply_to='<CADvm5Jp5cAozX1fjYfM5av2cm_eoKLwLr_hd0ODo_dGyuJc2Ww@mail.gmail.com>')>

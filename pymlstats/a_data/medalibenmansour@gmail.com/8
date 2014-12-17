@@ -1,0 +1,66 @@
+<Messages(message_id='<CAPLGrgWgDdPbhYOMeP9aFwkgg+kUe7xTHWO0d5auKUbfj_c4ug@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-26 10:49:06', first_date_tz='3600', arrival_date='2013-11-26 01:49:06', arrival_date_tz='None', subject='LibreOffice 4.1: Mozilla build option to ignore', message_body='Hi everyone,
+
+I was building LO 4.1 version and i've found this option in
+distro-configs\LibreOfficeWin32.conf:
+--enable-win-mozab-driver
+
+According to the wiki:
+https://wiki.documentfoundation.org/Development/Windows_Build_Dependencies#Install_Windows_Build_Requirements,
+Mozilla build tooling is only used for LibreOffice versions older than
+4.1.
+I propose to remove this option from the file (LibreOfficeWin32.conf).
+
+We also need to modify the autogen.lastrun for builds at this link:
+http://dev-builds.libreoffice.org/daily/libreoffice-4-1/Win-x86_9-Voreppe/2013-11-11_21.19.15/libreoffice-4-1~2013-11-11_21.19.15_build_info.txt
+Actually, we have in the same file: "--enable-win-mozab-driver" and
+"--disable-win-mozab-driver"
+
+By the way, is it normal that we can't see any build in this directory:
+http://dev-builds.libreoffice.org/daily/libreoffice-4-1/Win-x86 at 42 ?
+
+Thanks
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131126/326e1d3c/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<52947BD5.9010102@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-26 11:45:41', first_date_tz='3600', arrival_date='2013-11-26 02:45:41', arrival_date_tz='None', subject='LibreOffice 4.1: Mozilla build option to ignore', message_body='On 26/11/13 10:49, Mohamed-Ali BEN MANSOUR wrote:
+> 
+> Hi everyone,
+> 
+> I was building LO 4.1 version and i've found this option in
+> distro-configs\LibreOfficeWin32.conf:
+> --enable-win-mozab-driver
+> 
+> According to the wiki:
+> https://wiki.documentfoundation.org/Development/Windows_Build_Dependencies#Install_Windows_Build_Requirements
+> , Mozilla build tooling is only used for LibreOffice versions older than
+> 4.1.
+
+that is true, but...
+
+> I propose to remove this option from the file (LibreOfficeWin32.conf)..
+
+... what it actually means is that in contemporary releases it's no
+longer possible to build the mozilla stuff from source (hence no need
+for the tools); what --enable-win-mozab-driver does instead is to
+download and unpack pre-built binaries and put them into the
+installation set.
+
+of course if we had somebody implement native Outlook / Outlook Express
+address book driver we could remove that too :)
+
+> We also need to modify the autogen.lastrun for builds at this link:
+> http://dev-builds.libreoffice.org/daily/libreoffice-4-1/Win-x86_9-Voreppe/2013-11-11_21.19.15/libreoffice-4-1~2013-11-11_21.19.15_build_info.txt
+> Actually, we have in the same file: "--enable-win-mozab-driver" and 
+> "--disable-win-mozab-driver"
+
+that is indeed funny to have both of these in there.
+
+> By the way, is it normal that we can't see any build in this directory:
+> http://dev-builds.libreoffice.org/daily/libreoffice-4-1/Win-x86 at 42 ?
+
+that's a good question - Thorsten, why isn't Win-x86 at 42 doing uploads?
+
+', is_response_of='<CAPLGrgWgDdPbhYOMeP9aFwkgg+kUe7xTHWO0d5auKUbfj_c4ug@mail.gmail.com>', mail_path='None', references='<CAPLGrgWgDdPbhYOMeP9aFwkgg+kUe7xTHWO0d5auKUbfj_c4ug@mail.gmail.com>', in_reply_to='<CAPLGrgWgDdPbhYOMeP9aFwkgg+kUe7xTHWO0d5auKUbfj_c4ug@mail.gmail.com>')>

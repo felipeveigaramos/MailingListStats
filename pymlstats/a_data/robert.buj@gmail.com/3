@@ -1,0 +1,33 @@
+<Messages(message_id='<CANaJiRoZiX+bL+G1EmLxaPMBQf7MBu2rHMDeH3tUw9Q52tQD_w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-29 15:53:18', first_date_tz='7200', arrival_date='2014-08-29 06:53:18', arrival_date_tz='None', subject='WIP: some improvements in javadoc', message_body='Ok, now I'm working on xmerge module.
+
+
+On Fri, Aug 29, 2014 at 3:45 PM, Stephan Bergmann <sbergman at redhat.com>
+wrote:
+
+> On 08/29/2014 02:30 PM, Robert Antoni wrote:
+>
+>> I'm going to replace the javadoc tags <code>..</code> and <tt>..</tt>
+>> with {@code ...}.
+>> Next, I will replace package.html with package-info.java.
+>>
+>
+> ...just make sure that what gets installed to instdir/sdk/docs/java/ref/index.html
+> keeps looking good
+>
+> Stephan
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140829/79dae1cb/attachment.html>
+
+', is_response_of='<54008403.4080509@redhat.com>', mail_path='None', references='<CANaJiRpSkO352diOU01cvLREnV0Z9sFYFWqDaVziE1vsE7cqSQ@mail.gmail.com>
+ <54008403.4080509@redhat.com>', in_reply_to='<54008403.4080509@redhat.com>')>

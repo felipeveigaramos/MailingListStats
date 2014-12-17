@@ -1,0 +1,33 @@
+<Messages(message_id='<CAFrS=rcrLRkUzED7M_ELJziTH-imdw1g2EKgXVBNV=8HOWXwQA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-10-15 15:19:31', first_date_tz='19800', arrival_date='2013-10-15 02:49:31', arrival_date_tz='None', subject='I need some help and workaround on the following.', message_body='Hey Guys!
+
+I just have a friend who faces the following problems on his machine which
+he needs fixed for his work to move smoothly.He is actually shifting from
+MS Office to LO , and hence asked me to do some changes to the code so as
+to solve the following problems.
+
+1. Filter by color caption in LibreCalc not available
+
+2. Print Quality ( MS Vs LibreOffice ) - lighter prints
+
+3. Default Header and Footer in Calc cannot be suppressed
+
+4. Not all complex macros of Excel are recognized by Calc and vice-versa
+However same function can be done by re-writing in Calc.
+
+5. Print 'Current selection' page ? not supported. You have to write the
+page number to be printed.
+
+I have a general idea of the flow of logic that would happen due to prior
+experience on Impress and Writer. But what i need here is code-pointers so
+i can finish this work and make LO a better experience. And also restart my
+work on adding Custom Animations to Master Slides.
+
+Happy Hacking ;D
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131015/5935130d/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

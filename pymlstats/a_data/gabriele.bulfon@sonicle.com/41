@@ -1,0 +1,51 @@
+<Messages(message_id='<6602396.491.1374131522243.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-18 09:12:02', first_date_tz='7200', arrival_date='2013-07-18 00:12:02', arrival_date_tz='None', subject='Error building sc on XStreamOS/illumos', message_body='Hi,
+building went on after setup_native, and I got an error while building sc:
+In file included from /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/column.hxx:28,
+from /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/table.hxx:28,
+from /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/source/core/data/bcaslot.cxx:30:
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66: error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error: provided for 'template
+struct mdds::mtv::custom_block_func1'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66: error: invalid type in declaration before ';' token
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:70: error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error: provided for 'template
+struct mdds::mtv::custom_block_func1'
+what's wrong?
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130718/810fe893/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130718121740.GE2956@isigqoko.erack.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-18 14:17:41', first_date_tz='7200', arrival_date='2013-07-18 05:17:41', arrival_date_tz='None', subject='Error building sc on XStreamOS/illumos', message_body='Hi Gabriele,
+
+On Thursday, 2013-07-18 09:12:02 +0200, Gabriele Bulfon wrote:
+
+> building went on after setup_native, and I got an error while building sc:
+> /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66: error: wrong number of template arguments (2, should be 1)
+> /usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error: provided for 'template
+> struct mdds::mtv::custom_block_func1'
+
+This looks like your system mdds is outdated; please try our internal
+one with configure --with-system-mdds=no
+
+I wonder though because configure apparently does check for mdds >= 0.9.0,
+but maybe your build is older than that check..
+
+  Eike
+
+-- 
+LibreOffice Calc developer. Number formatter stricken i18n transpositionizer.
+GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563 2D3A
+For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+Support the FSFE, care about Free Software! https://fsfe.org/support/?erack
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130718/60e4be18/attachment.pgp>
+
+', is_response_of='<6602396.491.1374131522243.JavaMail.sonicle@www>', mail_path='None', references='<6602396.491.1374131522243.JavaMail.sonicle@www>', in_reply_to='<6602396.491.1374131522243.JavaMail.sonicle@www>')>

@@ -1,0 +1,66 @@
+<Messages(message_id='<507F054E.3070200@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-10-17 21:21:50', first_date_tz='7200', arrival_date='2012-10-17 12:21:50', arrival_date_tz='None', subject='Minutes of the ESC call 2012-10-11', message_body='Thorsten Behrens schrieb:
+
+>      + 3.5 MAB needs cherry-picking and folding into 3.6 MAB (some
+>        don't seem to be valid most annoying)
+
+Hi,
+
+I already started my traditional "End of Lifecycle MAB cleanup", results on
+<http://wiki.documentfoundation.org/HardHacks#Proposed_Hard_Hacks>
+I will shift 3.5 MAB to 3.6 MAB if appropriate of make different 
+suggestions.
+Keeping current speed this will take until end 2012
+
+>      + some thoughts around another 3.5 release
+
+Although I was one of those who brought up these thoughts, I believe 
+it's not realistic to hope that an other 3.5 release with 2 or 3 
+additional bugfixes will bring significant benefit.
+But I believe for 3.6 we should rethink our release policy. We should 
+not terminate work on a version  3.6 because most people loose interest 
+(because they are busy with next release 3.7), that leads to a situation 
+as we have with 3.5.7 that still 77 MAB are unfixed and nobody know why, 
+but because the version is ready.
+
+Of course I know that it never will be possible to get really all Bugs 
+fixed, but selection what these "remaining unfixed bugs" should be done 
+by a founded decision and not by coincidence.
+
+May be something like this can help to avoid surprises 8only a first 
+thought):
+
+final release -4 is out:
+-----------------------
+QA does all possible efforts to sort out inappropriate MAB and and to 
+add all required info to those bug so that they are really "ready for 
+fixing" by developers.
+
+final release -3 is out:
+------------------------
+Remaining well prepared MAB will be deployed to developers similar to 
+the HardHack proceeding. (QA-calls, ESC-calls, ...)
+
+final release -2 is out:
+------------------------
+If developers recognize that it will not be possible to fix particular 
+bugs with acceptable "costs" and risk, they add them to a Wiki table 
+(prepared by QA) with a short statement concerning these problems.
+That will allow additional efforts to get fixes "somehow" overcoming 
+these problems
+
+final release -1 is out:
+------------------------
+Same as before
+
+Final is out
+------------
+final discussion concerning remaining unfixed MAB, shift to next 
+version's MAB, if appropriate, or what ever else, even may be to do a 
+"Final + 1 release" because a solution to fix important remaining MAB 
+has been found.
+
+Best regards
+
+Rainer
+
+', is_response_of='<20121012220458.GY14240@thinkpad.thebehrens.net>', mail_path='None', references='<20121012220458.GY14240@thinkpad.thebehrens.net>', in_reply_to='<20121012220458.GY14240@thinkpad.thebehrens.net>')>

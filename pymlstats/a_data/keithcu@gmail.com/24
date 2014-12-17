@@ -1,0 +1,29 @@
+<Messages(message_id='<CAHW+f2Ljv+k=KnMODwMB78P7ufgs6mpL74_QEEbzuG+ThLkvfw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-19 16:35:43', first_date_tz='-18000', arrival_date='2013-12-19 13:35:43', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='HI Kendy,
+
+Thank you! I've pulled your diff and doing a rebuild now. I have found that
+5 pixels is a good value on my machine but I'll try 6, and it needs to be
+shifted down one more pixel. Also, there may be dirt because it increases
+the waveheight after the check. I believe Linux will return 96 dpi, but I
+will check all this and improve as necessary, code against the new OutDev
+value, and submit an initial set of fixes to Gerrit. The toolbar work was
+being handled by Andrzej so I'll work on the other aspects. I've focused on
+Writer, because that is what I use the most, but many of the changes help
+all the apps and I've done some work in Calc and Impress also. I've made
+one fix in the Sidebar, but it needs a few hours by someone who knows the
+code, or a few days by someone who doesn't.
+
+It would be great to get this in somehow as things are much prettier
+already. I do this work because it is fun and easy, but there isn't much
+value in icons and controls too small to easily recognize or click on.
+
+Regards,
+
+-Keith
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131219/2a79ca51/attachment.html>
+
+', is_response_of='<1387463174.1793.237.camel@lump.site>', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>
+	<1386946478.4321.52.camel@lump.site>
+	<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>
+	<1387463174.1793.237.camel@lump.site>', in_reply_to='<1387463174.1793.237.camel@lump.site>')>

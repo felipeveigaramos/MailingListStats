@@ -1,0 +1,17 @@
+<Messages(message_id='<5135D3A5.2060407@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-03-05 12:14:45', first_date_tz='3600', arrival_date='2013-03-05 03:14:45', arrival_date_tz='None', subject='Please consider Bug 61845 - Attachment ODF document" recognized as
+	"text/plain" by auto detect.', message_body='Hi all,
+
+it seems that Auto Mime Type recognition is completely broken in Bugzilla
+  <https://bugs.freedesktop.org/show_bug.cgi?id=61845>.
+Please always correct mime type if necessary after you attached a file, 
+and please leave a comment in the Bug if your experience is different to 
+mine.
+
+Discussion if required please on <libreoffice-qa at lists.freedesktop.org>
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

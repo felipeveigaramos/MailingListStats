@@ -1,0 +1,48 @@
+<Messages(message_id='<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-10 20:11:18', first_date_tz='-18000', arrival_date='2014-03-10 18:11:18', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='On Mon, Mar 10, 2014 at 7:15 PM, Norbert Thiebaud <nthiebaud at gmail.com> wrote:
+> On Mon, Mar 10, 2014 at 4:51 PM, Keith Curtis <keithcu at gmail.com> wrote:
+>> Doubling bitmaps is a "hack" but since bigger bitmaps don't exist, it
+>> is better than doing nothing.
+>
+> The problem is that mac, in compatibility mode, already auto-double..
+> so we end-up with a quadrupling
+> of the bitmap, which mean you in the end only see a quarter of the
+> intended icon.
+
+Have you made a build with it turned back on? I ask because it doesn't
+make sense the OS would return DPI != 96 while in auto-doubling mode.
+That would seemingly break the backward compatibility support the Mac
+is trying to achieve.
+
+Thanks,
+
+-Keith
+
+', is_response_of='', mail_path='None', references='<1394475851.1785.33.camel@lump.site>
+	<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>
+	<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>', in_reply_to='<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<CAFWMYEG4Da9r171azgR+Sre3H2EHr6QZJifU=GmWjELSBdjY=A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-11 04:57:27', first_date_tz='-18000', arrival_date='2014-03-11 02:57:27', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='On Tue, Mar 11, 2014 at 3:53 AM, Keith Curtis <keithcu at gmail.com> wrote:
+
+> That picture is bizarre in that the gridlines drawn by Calc are not being
+> doubled. Have you fiddled with the OS DPI stuff?
+>
+
+The grid lines are not bitmap, they are vector drawing...
+ but more importantly... _WITH_ the #ifdef to prevent the meddling with
+bitmap everything looks 'fine'.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140311/eacaff16/attachment.html>
+
+', is_response_of='<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>', mail_path='None', references='<1394475851.1785.33.camel@lump.site>
+	<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>
+	<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>
+	<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>
+	<CAFWMYEEDsFBzOu6A_qAHz6ag1N-5Wb5dcwkCZKJrmdz43g33Hw@mail.gmail.com>
+	<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>', in_reply_to='<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>')>

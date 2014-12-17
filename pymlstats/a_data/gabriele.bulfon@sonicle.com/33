@@ -1,0 +1,111 @@
+<Messages(message_id='<32017269.623.1373004867389.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-05 08:14:27', first_date_tz='7200', arrival_date='2013-07-04 23:14:27', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi Michael, would be a great idea the tinderbox setup.
+I will send you the link of the XStream Desktop iso as soon as we have it out.
+BTW, can you help me with this? I really don't know what problem is this....must be something
+about gnu ld, but I had more experience with Sun ld.
+Gabriele.
+On Thursday, 2013-07-04 at 09:32, Gabriele Bulfon wrote:
+Hi,
+after long building LO 4.1.0.1 on illumos based OS, I reached this error:
+[build LNK] Executable/unopkg.bin
+/usr/gnu/bin/ld: /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/Executable/unopkg.bin: hidden symbol `main' in/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/CObject/desktop/source/pkgchk/unopkg/unopkg_main.o is referenced byDSO
+/usr/gnu/bin/ld: final link failed: Bad value
+collect2: ld returned 1 exit status
+Any idea?
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130705/d4b64e68/attachment.html>
+
+', is_response_of='<51D19606.9000202@redhat.com>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>', in_reply_to='<1372936833.13079.17.camel@linux-d2lh.site>')>
+****************************************
+<Messages(message_id='<23809188.676.1373049210122.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-05 20:33:30', first_date_tz='7200', arrival_date='2013-07-05 11:33:30', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi Gabriele,
+On Fri, 2013-07-05 at 08:14 +0200, Gabriele Bulfon wrote:
+Hi Michael, would be a great idea the tinderbox setup.
+I will send you the link of the XStream Desktop iso as soon as we have
+it out.
+Wonderful.
+BTW, can you help me with this? I really don't know what problem is
+this....must be something
+about gnu ld, but I had more experience with Sun ld.
+...
+[build LNK] Executable/unopkg.bin
+/usr/gnu/bin/ld: /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/Executable/unopkg.bin: hidden symbol`main' in/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/CObject/desktop/source/pkgchk/unopkg/unopkg_main.o isreferenced byDSO
+/usr/gnu/bin/ld: final link failed: Bad value
+collect2: ld returned 1 exit status
+Looks like a mis-interaction with some visibility markup - though
+clearly getting more output would be good:
+cd desktop
+make
+gives a more verbose make. Try something like the attached; if that
+works we should get it into master and -4-1 :-)
+HTH,
+Michael.
+--
+michael.meeks at suse.com
+Here is what I got after applying your patch (causing a lot of rebuilding of previous code). Later I will send you the output of the detail you aksed:
+[build LNK] Library/libunopkgapp.so
+[build C  ] desktop/source/pkgchk/unopkg/unopkg_main.c
+[build LNK] Executable/unopkg.bin
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `PR_Now'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `CERT_DecodeCertFromPackage'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_AddCertificate'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_IncludeCerts'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSEncoder_Finish'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_Destroy'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_AddSignerInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_AddSigningTime'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSEncoder_Start'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_NoDB_Init'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Begin'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_End'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_GetContentInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_GetContentInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSContentInfo_SetContent_SignedData'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Update'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_SetDigestValue'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSContentInfo_SetContent_Data'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `PORT_NewArena'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Destroy'
+collect2: ld returned 1 exit status
+make[2]: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/Executable/unopkg.bin] Error 1
+make[2]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+make[1]: *** [build] Error 2
+make[1]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+gmake: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/build/i86/.built] Error 2
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130705/f433c73e/attachment.html>
+
+', is_response_of='<32017269.623.1373004867389.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>', in_reply_to='<1373021699.16440.41.camel@linux-d2lh.site>')>

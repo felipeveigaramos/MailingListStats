@@ -1,0 +1,64 @@
+<Messages(message_id='<50F5AA0F.6040306@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-15 20:12:15', first_date_tz='3600', arrival_date='2013-01-15 11:12:15', arrival_date_tz='None', subject='Bug Status NEW but Assigned to Someone - Please Change', message_body='Kohei Yoshida schrieb:
+
+Hi all,
+
+I think I understand Joel's intention. I also have problems to find out 
+whether a bug already is under observation of a developer (because he is 
+in CC), that was more easy in the early time with very few developers. 
+And I believe developers should become involved when all necessary info 
+is in the report. So I also see some advantages (concerning queries) to 
+add a developer to the "Assigned to" field.
+
+But on the other hand, that might discourage volunteers (for EasyHacks 
+and similar), and developers might feel pressed to start work on that 
+particular bug. Most engraving disadvantage of changing the current 
+proceeding is that it is a change of the current proceeding ;-)
+It always takes long time with lots of discussion until  new proceeding 
+will be accepted.
+
+So I agree with Kohei, we should not modify this if we do not have very 
+good reasons with really promising prospects for benefit. Of course, if 
+someone has ideas here, we should discuss that (may be better on qa list?).
+
+And - Thanks to Calc Team for reliably handling the bugzilla dashboard 
+concerning Assignee, Target, ... . This eases our (at least my) work 
+very much.
+
+Best regards
+
+
+Rainer
+
+
+', is_response_of='', mail_path='None', references='<CAPcxoX4nS9jhSqECqC1UgaYQJ8XXbh1c-Jm+5Hi88S+xVOA9Kg@mail.gmail.com>
+	<50F5A264.8070003@gmail.com>', in_reply_to='<50F5A264.8070003@gmail.com>')>
+****************************************
+<Messages(message_id='<CAPcxoX4NARFZTwn5ewL7t8PW66tPQsb7VddYh5Dn9808ncF7gQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-15 11:16:44', first_date_tz='-28800', arrival_date='2013-01-15 11:16:44', arrival_date_tz='None', subject='Bug Status NEW but Assigned to Someone - Please Change', message_body='> So I agree with Kohei, we should not modify this if we do not have very
+> good reasons with really promising prospects for benefit. Of course, if
+> someone has ideas here, we should discuss that (may be better on qa list?).
+>
+
++1, let's take this off developer list and come up with a good solution
+from QA team.
+
+Apologies for moving too quickly on this and bringing it right to dev list.
+
+
+Rainer, I'll start the conversation on QA list shortly, it might move to
+the next call but I think there is room for improvement here.
+
+Best Regards,
+Joel
+
+
+
+-- 
+*Joel Madero*
+LibO QA Volunteer
+jmadero.dev at gmail.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130115/ffa9c2a7/attachment-0001.html>
+
+', is_response_of='<50F5AA0F.6040306@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX4nS9jhSqECqC1UgaYQJ8XXbh1c-Jm+5Hi88S+xVOA9Kg@mail.gmail.com>
+	<50F5A264.8070003@gmail.com> <50F5AA0F.6040306@bielefeldundbuss.de>', in_reply_to='<50F5AA0F.6040306@bielefeldundbuss.de>')>

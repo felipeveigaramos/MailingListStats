@@ -1,0 +1,61 @@
+<Messages(message_id='<4FEF3C1D.5030508@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-30 19:49:17', first_date_tz='7200', arrival_date='2012-06-30 10:49:17', arrival_date_tz='None', subject='[Libreoffice-qa] Importing from Mindview worth our time??', message_body='Joel Madero schrieb:
+
+> We could put WONTFIX with a message to the reporter that states.
+
+Hi all,
+
+during the last QA call we decided to do a mass close for NEEDINFO bugs 
+without reaction for a too long time (>> 1000). There simply is too much 
+time wasted by several people asking again and again for details without 
+an answer. A very polite comment will be added that that closing was not 
+because of a explicit refusal to a request or because we decided that we 
+can live with a particular bug, but because we currently have no time to 
+ask more than 2 times for more information. Additionally it is planned 
+to add a key word to the whiteboard, so that these bugs can be found 
+easily if required or if QA / developers will have boredom and too much 
+time some day in future tho that they need something where they can work 
+on ;-)
+
+Details will be published and discussed the next days here, who wants to 
+know more details or  wants to influence should join the next QA call 
+(2012-07-13).
+
+Best regards
+
+
+Rainer
+
+', is_response_of='<CAPcxoX5=gi92umg-toSHC78shvWZh8YYRXkDZywSQuotSC2uhQ@mail.gmail.com>', mail_path='None', references='<CAPcxoX78fc+rciD4n5rK3vXujYsa-Or8fTvYffJ-OnOxFw-Mxg@mail.gmail.com>
+	<1341009113.1622.89.camel@Brinn>
+	<CAPcxoX5=gi92umg-toSHC78shvWZh8YYRXkDZywSQuotSC2uhQ@mail.gmail.com>
+	<1341010827.1622.105.camel@Brinn>
+	<CAPcxoX6AoR=Azf6zBQt+2JdxHFhYbvb8m1sDnejC5AnFhwnbBg@mail.gmail.com>
+	<1341046402.14752.120.camel@linux-d2lh.site>
+	<CAPcxoX7D3Ntgfnh4RvAZxnHUM4KUi2J5FiqXz8-e5cu0=TCK1Q@mail.gmail.com>', in_reply_to='<CAPcxoX7D3Ntgfnh4RvAZxnHUM4KUi2J5FiqXz8-e5cu0=TCK1Q@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<1341223595.14752.187.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-07-02 11:06:35', first_date_tz='3600', arrival_date='2012-07-02 03:06:35', arrival_date_tz='None', subject='[Libreoffice-qa] Importing from Mindview worth our time??', message_body='
+On Sat, 2012-06-30 at 19:49 +0200, Rainer Bielefeld wrote:
+> during the last QA call we decided to do a mass close for NEEDINFO bugs 
+> without reaction for a too long time (>> 1000). There simply is too much 
+> time wasted by several people asking again and again for details without 
+> an answer.
+
+	Hopefully it'll help get the open count down a lot & reduce
+frustration.
+
+	Good stuff :-)
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<4FEF3C1D.5030508@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX78fc+rciD4n5rK3vXujYsa-Or8fTvYffJ-OnOxFw-Mxg@mail.gmail.com>
+	<1341009113.1622.89.camel@Brinn>
+	<CAPcxoX5=gi92umg-toSHC78shvWZh8YYRXkDZywSQuotSC2uhQ@mail.gmail.com>
+	<1341010827.1622.105.camel@Brinn>
+	<CAPcxoX6AoR=Azf6zBQt+2JdxHFhYbvb8m1sDnejC5AnFhwnbBg@mail.gmail.com>
+	<1341046402.14752.120.camel@linux-d2lh.site>
+	<CAPcxoX7D3Ntgfnh4RvAZxnHUM4KUi2J5FiqXz8-e5cu0=TCK1Q@mail.gmail.com>
+	<4FEF3C1D.5030508@bielefeldundbuss.de>', in_reply_to='<4FEF3C1D.5030508@bielefeldundbuss.de>')>

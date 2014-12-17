@@ -1,0 +1,17 @@
+<Messages(message_id='<CAMuW_Xw4WoVrT+BRx+6BBtjJxZnPa-nGiebcn7ho0pWWkT=ocw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-07 09:59:58', first_date_tz='-14400', arrival_date='2014-07-07 06:59:58', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 6/07/2014', message_body='Hi,
+Last week there was little coding and only some more insights on which
+parts of the code should be affected:
+- found how Writer deals with tags for chained text boxes;
+- AutoFit code may be a good point of reference for overflow check;
+- the solution may involve marking the part of the text where the break
+should occur in editeng, letting drawinglayer separately render these two
+portions of text in the right places;
+- more knowledge on the role of FormatDoc and CreateLines.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140707/124dae6a/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

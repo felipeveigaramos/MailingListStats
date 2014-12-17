@@ -1,0 +1,65 @@
+<Messages(message_id='<CA+_jvazzKRzT80OontKa7VCTOZEigPU9n_Km=ZveyNjuyyr3yA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-20 23:51:58', first_date_tz='19800', arrival_date='2013-01-20 10:21:58', arrival_date_tz='None', subject='"Need help for "Bug 59397 - UI: Use more precise wording at 'Find
+	& Replace - More Options - Styles' "', message_body='Hi,
+I need help for this bug
+https://bugs.freedesktop.org/show_bug.cgi?id=59397. I am slightly
+confused with my approach in solving this bug, so I need
+help for it.
+
+I am using this approach for solving the bug:
+
+I am planning to create a separate CheckBox(with modified Text) for "calc"
+,similar to which is defined in the* src *file and  then create a function
+similiar to *aLayoutBtn* in this* cxx *file and make necessary changes at
+the *change *line mentioned below.Is this the correct approach or some
+other approach possible?
+
+*src* file -
+http://opengrok.libreoffice.org/xref/core/svx/source/dialog/srchdlg.src#284
+
+*cxx *file -
+http://opengrok.libreoffice.org/xref/core/svx/source/dialog/srchdlg.cxx#282
+
+*change* line-
+http://opengrok.libreoffice.org/xref/core/svx/source/dialog/srchdlg.cxx#728
+
+Hoping for the needed guidance in this matter.
+
+Regards,
+Vishv
+
+On Fri, Jan 18, 2013 at 12:11 AM, Joren <joren.libreoffice at telenet.be>wrote:
+
+>
+>  Op 17-01-13 19:14, Vishv Brahmbhatt schreef:
+>
+> Hi,
+>
+>  I need help for this bug
+> https://bugs.freedesktop.org/show_bug.cgi?id=59397 .
+>
+>  Can someone help me in suggesting the good starting point/code pointer
+> for this hack?
+>
+>  Also where can I find the layout file for *Edit->Find & Replace* in
+> Writer & Calc (i.e in which module is it defined)?
+>
+> I think you can find it here
+> http://opengrok.libreoffice.org/xref/core/svx/source/dialog/srchdlg.src#284
+>
+> Kind regards,
+> Joren
+>
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130120/c17e8ecb/attachment.html>
+
+', is_response_of='', mail_path='None', references='<50F844E1.7090402@telenet.be>
+	<50F845E9.2090509@telenet.be>', in_reply_to='<50F845E9.2090509@telenet.be>')>

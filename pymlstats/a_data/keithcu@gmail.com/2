@@ -1,0 +1,90 @@
+<Messages(message_id='<1394566329421-4101006.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-11 12:32:09', first_date_tz='-25200', arrival_date='2014-03-11 12:32:09', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='Well, the rabbit hole gets deeper. Norbert, it now seems to me that there
+isn't something wrong with your build, but with your OS!?!
+
+Here is a screenshot of the current released build on Retina for comparison: 
+<http://nabble.documentfoundation.org/file/n4101006/Screen_Shot_2014-03-11_at_17.49.30.png> 
+
+It generally looks fine, and doesn't need improvements. In it, you can see
+that the Calc gridlines are two pixels wide as expected because of the app
+scaling. (For comparison, on Linux, they are always one pixel wide which is
+perhaps not ideal but looks okay.) 
+
+However, the gridlines are effectively the same width as yours. But look at
+the close buttons. I've zoomed in both to make it clearer. The one on the
+left is from the screenshot above, and the one on the right is from your
+screenshot last night. 
+
+<http://nabble.documentfoundation.org/file/n4101006/CloseButtons.png> 
+
+It seems as if all of Norbert's pixels are doubled. How does this relate to
+the compatibility mode and DPI scale factor? I don't know WTF is going on
+and it is time-consuming without any hardware to try things. It seems there
+are possibly two problems on Norbert's machine.
+
+If the OS really gives the wrong DPI even in compatibility mode, which
+doesn't seem correct but is of course possible, then the simplest way
+disable these patches on the Mac is to just force mnDPIScaleFactor to 1. In
+that case, these patches would behave as it does on 4.2.1. This can be done
+with 2 #ifndefs in window.cxx and should achieve a similar result as
+disabling the bitmap doubling all over the place. Norbert, can you try that?
+
+Mac doesn't need this code as much as Win / Linux so there needs a simple
+way to decouple them. I was quite certain when Norbert had sent out his
+first mail to this thread saying there were problems with these patches that
+he had forgotten about what happens in compatibility mode is on -- because
+he'd been spending all of his time working with the "off" case. But I never
+imagined it would be this complicated. It would be nice to have these
+patches not held up by the Mac as they are right now.
+
+-Keith
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Hi-DPI-patches-for-4-2-tp4100852p4101006.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<1394479941.1785.58.camel@lump.site>', mail_path='None', references='<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>
+	<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>
+	<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>
+	<CAFWMYEEDsFBzOu6A_qAHz6ag1N-5Wb5dcwkCZKJrmdz43g33Hw@mail.gmail.com>
+	<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>
+	<CAFWMYEG4Da9r171azgR+Sre3H2EHr6QZJifU=GmWjELSBdjY=A@mail.gmail.com>
+	<CAHW+f2Jd2eGh82PCTDgT0ZBvMxoXbHfYDaKFktu_DrYXLZVOeQ@mail.gmail.com>', in_reply_to='<CAHW+f2Jd2eGh82PCTDgT0ZBvMxoXbHfYDaKFktu_DrYXLZVOeQ@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<1394642789.1785.169.camel@lump.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-12 17:46:29', first_date_tz='3600', arrival_date='2014-03-12 09:46:29', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='Hi Norbert,
+
+Norbert Thiebaud p??e v ?t 11. 03. 2014 v 19:29 -0500:
+
+> > then the simplest way
+> > disable these patches on the Mac is to just force mnDPIScaleFactor to 1. In
+> > that case, these patches would behave as it does on 4.2.1.
+> 
+> yep, that does that indeed.
+> pushed
+> http://cgit.freedesktop.org/libreoffice/core/commit/?id=4dbb04e5701efe084fbfd3f06128dd33a7d8965b
+> 
+> which need to be picked-up on 4-2 if your going to backport these
+> HiDPI patches..
+
+Sounds good to me; yes, that should make it safe :-)
+
+All the best,
+Kendy
+
+
+', is_response_of='<1394566329421-4101006.post@n3.nabble.com>', mail_path='None', references='<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>
+	<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>
+	<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>
+	<CAFWMYEEDsFBzOu6A_qAHz6ag1N-5Wb5dcwkCZKJrmdz43g33Hw@mail.gmail.com>
+	<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>
+	<CAFWMYEG4Da9r171azgR+Sre3H2EHr6QZJifU=GmWjELSBdjY=A@mail.gmail.com>
+	<CAHW+f2Jd2eGh82PCTDgT0ZBvMxoXbHfYDaKFktu_DrYXLZVOeQ@mail.gmail.com>
+	<1394566329421-4101006.post@n3.nabble.com>
+	<CAFWMYEF7t3K2nt3hEQJ-9uBgwoHYpadWLAYaQs00byZEBxH=KQ@mail.gmail.com>', in_reply_to='<CAFWMYEF7t3K2nt3hEQJ-9uBgwoHYpadWLAYaQs00byZEBxH=KQ@mail.gmail.com>')>

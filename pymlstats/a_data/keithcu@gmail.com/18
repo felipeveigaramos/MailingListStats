@@ -1,0 +1,19 @@
+<Messages(message_id='<CAHW+f2K9MC-gFmjBJNFeCz+B0UGAOAzCM1azqrY3jYWRXzL06A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-01-03 12:05:54', first_date_tz='-18000', arrival_date='2014-01-03 09:05:54', arrival_date_tz='None', subject='HiDPI OS-specific issues / next steps', message_body='Hi;
+
+I've got another patchset I've submitted to Gerrit. Assuming that goes
+okay, the next steps are:
+
+* test / figure out what the most important issues are
+* whether / how to enable it for the Mac (Currently LibreOffice runs
+in compatibility mode where things are auto-doubled.)
+* testing on various Windows versions
+* what to do for KDE, Xfce, Unity, etc.
+
+I only have Gnome / KDE / Xfce installed so I can only work on those scenarios.
+
+Advice / help appreciated. It seems it could take a minor release to
+work through some of these details.
+
+-Keith
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

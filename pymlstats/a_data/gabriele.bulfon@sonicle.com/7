@@ -1,0 +1,79 @@
+<Messages(message_id='<15683093.380.1372692058640.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-01 17:20:58', first_date_tz='7200', arrival_date='2013-07-01 08:20:58', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='On 01/07/13 16:43, Michael Stahl wrote:
+On 01/07/13 14:58, Gabriele Bulfon wrote:
+[build LNK] Executable/cppumaker
+/usr/gnu/bin/ld: warning: libreg.so, needed by
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libunoidl.so,
+not found (try using -rpath or -rpath-link)
+I tried using the solaris.mk commented options:
+@@ -120,6 +120,7 @@
+-L$(SYSBASE)/lib \
+-L$(SYSBASE)/usr/lib \
+-Wl,-z,combreloc \
++ -Wl,-rpath-link,$(SYSBASE)/lib:$(SYSBASE)/usr/lib \
+$(SOLARLIB) \
+ifeq ($(HAVE_LD_HASH_STYLE),TRUE)
+but no luck, still cannot solve.
+did you try adding it to definition of gb_Library__get_rpath like it's
+done in unxgcc.mk ? (perhaps just copy that)
+ah sorry the relevant one is gb_Executable__get_rpath
+I also tried using Sun ld, but looks like options for ld are always
+gnu-ld ones, so compilation
+stop much earlier.
+...any clue?
+sure, if you want to use Sun ld you need to change quite a few things in
+solaris.mk to use different options.
+Great suggestions! Path to the solution ;) it went through :)
+Following your suggestion I found solaris.mk had many more lines about rpath,
+the ones you pointed, and they were almost all changed from unxgcc.mk into
+something different.
+I guess the one who tried to do solaris.mk was using Sun ld instead of Gnu.
+It's going on building now......... ;)
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130701/8ba8bd9f/attachment.html>
+
+', is_response_of='<29287606.323.1372669396453.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>', in_reply_to='<51D19606.9000202@redhat.com>')>
+****************************************
+<Messages(message_id='<1372936833.13079.17.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-04 12:20:33', first_date_tz='3600', arrival_date='2013-07-04 04:20:33', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi Gabriele,
+
+On Mon, 2013-07-01 at 17:20 +0200, Gabriele Bulfon wrote:
+> Great suggestions! Path to the solution ;) it went through :)
+
+	Hopefully you're working on 4.1 as of now - either way, really excited
+to see your work there :-) If we can get this going once, then we can
+get a tinderbox setup - and with (hopefully) only a small effort keep
+that going indefinitely.
+
+	Nice work !
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<15683093.380.1372692058640.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>', in_reply_to='<15683093.380.1372692058640.JavaMail.sonicle@www>')>

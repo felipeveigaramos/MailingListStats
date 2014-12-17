@@ -1,0 +1,100 @@
+<Messages(message_id='<CAMuW_XwtKhhMLLcyzGx6qUZ8HXeVSJV3tv8u-a5r6r6OrsvKdw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-30 07:44:57', first_date_tz='-14400', arrival_date='2014-06-30 04:44:57', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 29/06/2014', message_body='Hi,
+I'm trying to implement chained text boxes in Draw, i.e. linking boxes
+logically so that text that cannot fit in one can overflow in its successor.
+
+Last week I spent some time to progress on the following subgoals:
+- take inspiration from how Writer does it (such a feature is already
+present for Writer frames);
+- figure out in which part of the code in editeng should be modified to
+achieve the same result in Draw.
+
+In general I'm looking at the code to find answers to the following
+questions:
+(a) how can one observe an overflow of text in a frame/box?
+(b) after the point where overflow occurs is found, how to 'assign' the
+remaining text to the successor?
+(c) what kind of abstractions are used for text (paragraph potions, line
+portions) during layouting and how to use them?
+
+Although I found some important references in the code, my findings are
+still incomplete and my few small experiments so far have failed.
+Below I will try to elaborate more on some related code references I came
+to know about.
+
+
+In Writer
+-----------
+
+First, the way Writer carries around information about
+predecessor/successor in chains is by means of a derived class of
+SfxPoolItem, SwFmtChain
+<http://docs.libreoffice.org/sw/html/classSwFmtChain.html>.
+In formatting phase, however, this information seems to be accessed
+directly from frames themselves ( SwFlyFrm
+<http://docs.libreoffice.org/sw/html/classSwFlyFrm.html> ) by the methods
+GetNextLink/GetPrevLink.
+Then I tried to figure _how_ this information was used from formatting
+routines. Breaking in GetNextLink, however, has a very high rate of hit and
+has not been helpful in any way (I couldn't get any intuition from the
+backtrace). Neither has been reading manually all the code this method is
+referenced by (from Writer docs).
+So far I assuemd this was the only point of access to that information
+(successor), this hypothesis might be false or that code is too complicated
+for my eyes at this stage.
+
+In Draw
+----------
+
+Although knowing "how Writer does it" would probably be useful, what is
+necessary is understanding where to modify formatting code in Draw.
+Two crucial methods seems to be:
+1) ImpEditEngine::FormatDoc
+2) ImpEditEngine::CreateLines (called by FormatDoc for each paragraph)
+
+CreateLines's responsibilities seem to be to restructure the lines in a
+paragraph (if they changed) so that they fit in the X boundaries.
+
+FormatDoc's responsibilities seem to include:
+- calling CreateLines for each paragraph portion,
+- update some view's information if the height of the paragraph changed.
+
+It seems plausible that FormatDoc is the place where an overflow event is
+observed (directly or indirectly, by invoked methods) and text should be
+assigned to its next link in the chain if such an overflow occurs
+
+This week
+-------------
+
+Current goals include understanding FormatDoc's code further trying to
+answer questions (a) and (b) above.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140630/cb5a90fe/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140701225401.GS4008@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-02 00:54:01', first_date_tz='7200', arrival_date='2014-07-01 15:54:01', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 29/06/2014', message_body='Matteo Campanelli wrote:
+> Current goals include understanding FormatDoc's code further trying to
+> answer questions (a) and (b) above.
+> 
+Hi Matteo,
+
+as discussed during the hangout today, let's focus on EditEng &
+drawinglayer for the moment. Live editing also has lower prio than
+having static text flow correctly.
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140702/887fe458/attachment.sig>
+
+', is_response_of='<CAMuW_XwtKhhMLLcyzGx6qUZ8HXeVSJV3tv8u-a5r6r6OrsvKdw@mail.gmail.com>', mail_path='None', references='<CAMuW_XwtKhhMLLcyzGx6qUZ8HXeVSJV3tv8u-a5r6r6OrsvKdw@mail.gmail.com>', in_reply_to='<CAMuW_XwtKhhMLLcyzGx6qUZ8HXeVSJV3tv8u-a5r6r6OrsvKdw@mail.gmail.com>')>

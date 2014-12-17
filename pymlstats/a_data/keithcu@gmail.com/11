@@ -1,0 +1,100 @@
+<Messages(message_id='<CAHW+f2J2=xf-C23LZNOc7wThp268PnOzZ-_bhZsZxxWfmhbxpQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-19 22:39:38', first_date_tz='-18000', arrival_date='2014-02-20 04:39:38', arrival_date_tz='None', subject='Testing/Working on PyUNO?', message_body='Hi Markus,
+
+Thanks for the explanation. I've recently been talking to lots of
+younger programmers and so wanted to write a few words.
+
+It is a conundrum to me why you have a quite large C++ team, but not
+many people supplementing and polishing in Python, especially given
+they should be easier to find. They are out there!
+
+Regards,
+
+-Keith
+
+
+
+
+On Wed, Feb 19, 2014 at 6:50 PM, Markus Mohrhard
+<markus.mohrhard at googlemail.com> wrote:
+> Hey Keith,
+>
+>
+> On Wed, Feb 19, 2014 at 6:47 PM, Keith Curtis <keithcu at gmail.com> wrote:
+>>
+>> Hi;
+>>
+>> The C/C++ groups I worked in had all testers working in a scripting
+>> language. Those who had the skills and interest to write in C/C++ moved to
+>> product code. It was easy for developers to debug problems because the
+>> test
+>> application allowed you to configure which tests to run, the IDE was easy
+>> to
+>> use with single-step debugging, etc. You'd need two debuggers running, but
+>> it worked great and was little slower than working with C++ tests.
+>
+>
+> So we are not really discussing about python tests in general. I'm sorry if
+> that was the impression. For out-of-process tests python tests are arguably
+> the best choice. It is however much more complicated when it comes to
+> in-process tests. We already use out-of-process python tests like the crash
+> testing or convwatch. The whole discussion was mostly where python tests
+> make sense in our build as in-process tests.
+>
+>>
+>>
+>> In the situation here, I agree that unit tests should be in C++, typically
+>> written by the developers when they write their code. However, there can
+>> still be room for further testing in Python. I've seen code that would
+>> call
+>> random APIs with random values and via genetic algorithms would come up
+>> with
+>> good ways to stress and crash the product. It would find plenty of bugs
+>> that
+>> no unit test ever could. The test harness was very good, it only reported
+>> problems that were reproducible, and the app would narrow it down to the
+>> shortest number of steps. So perhaps it is good to figure out whether
+>> something is a unit test, a UNO test, or some other fancier kind of
+>> testing.
+>> If a developer doesn't want to run Python, they can just look at the stack
+>> trace and try to figure it out on their own similar to what happens when
+>> bugs are reported today. Python just makes it more reproducible.
+>
+>
+> So for UNO it makes sense to use python instead of our current java tests (I
+> still would prefer C++ as it is easier to debug but python already allows
+> in-process tests). However calling something through UNO or in the UI often
+> takes different code paths. That means if a test through the API fails you
+> can't just try to reproduce it in the UI and see if you can debug it there.
+> On the other hand looking at the API documentation and writing a test FOR
+> the API can be done perfectly find in python (with the exception that is
+> still a bit more difficult to debug).
+>
+>
+>>
+>> It also seems that people who are interested in Python today could work on
+>> making it easier to contribute to LibreOffice in Python. There is a small
+>> community of Python hackers contributing to today, mostly it seems it is
+>> just Xisco Fauli. You don't need to re-write the whole app in Python to
+>> bring in new people, as there are already plenty of places to contribute,
+>> especially if you consider Base ;-) I find more and more programmers who
+>> don't have C++ experience, meanwhile Python is one of the fastest growing
+>> languages.
+>>
+>
+> I mostly agree. IMO we have many tasks perfectly in the scope of python
+> scripting where python is the best tool for the job. So it is not like the
+> project does not value great python developers and if there are people out
+> there who only know python and want to contribute we are not short of nice
+> and important tasks.
+>
+> Regards,
+> Markus
+
+', is_response_of='<CAEDdEt5s_hNwq4vnn1TAQ6vg8GORCvo2ZGEn78qUQGHABOPoCg@mail.gmail.com>', mail_path='None', references='<53048F4B.2080009@redhat.com> <20140219113201.GD5333@uzi>
+	<1392820176.5010.23.camel@linux-owmh.gateway.2wire.net>
+	<20140219155101.GF5333@uzi>
+	<1392826793.5010.56.camel@linux-owmh.gateway.2wire.net>
+	<20140219162722.GA7992@uzi>
+	<1392827820.5010.64.camel@linux-owmh.gateway.2wire.net>
+	<1392832037441-4097981.post@n3.nabble.com>
+	<CAEDdEt5s_hNwq4vnn1TAQ6vg8GORCvo2ZGEn78qUQGHABOPoCg@mail.gmail.com>', in_reply_to='<CAEDdEt5s_hNwq4vnn1TAQ6vg8GORCvo2ZGEn78qUQGHABOPoCg@mail.gmail.com>')>

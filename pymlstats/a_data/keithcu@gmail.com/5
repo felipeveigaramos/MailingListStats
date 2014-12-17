@@ -1,0 +1,34 @@
+<Messages(message_id='<CAHW+f2+5RbTAFG8MLygQNx2SVi0ReDjFqRv0RO2-NZ+X=UuMRA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-01-28 12:00:22', first_date_tz='-18000', arrival_date='2014-01-28 09:00:22', arrival_date_tz='None', subject='Font size dropdown regression', message_body='Hi;
+
+Sorry for causing bug:
+http://cgit.freedesktop.org/libreoffice/core/commit/?id=8138c07b984ba1654483b4dc3488820ca4deaaca
+https://bugs.freedesktop.org/show_bug.cgi?id=73051
+
+I'm not exactly sure what is going on, but on my HiDPI machine with
+the 30 value I can fit 7 digits! Too many is better than too few but I
+had tried to improve.
+
+I have been worried about that change so now that it is reverted, I
+don't have to anymore:
+http://nabble.documentfoundation.org/Font-style-and-size-dropdown-widths-td4087999.html
+
+-Keith
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1390992895.19580.6.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-01-29 10:54:55', first_date_tz='0', arrival_date='2014-01-29 02:54:55', arrival_date_tz='None', subject='Font size dropdown regression', message_body='On Tue, 2014-01-28 at 16:33 -0500, Keith Curtis wrote:
+> Just a quick follow up. After sending that mail, I noticed Caol?n made
+> a better fix:
+> http://cgit.freedesktop.org/libreoffice/core/commit/?id=780eb9f704e7a61f43624a2c03b4f6a15647a1a1
+> 
+> I've just now finished a build and can confirm it looks great. Thank you...
+
+Yeah, I just wanted to do it in two steps, one to go back to the orig
+width and another to make it the optimal width so if step 2 fails it's
+easier to revert to the orig width
+
+C.
+
+
+', is_response_of='<CAHW+f2+5RbTAFG8MLygQNx2SVi0ReDjFqRv0RO2-NZ+X=UuMRA@mail.gmail.com>', mail_path='None', references='<CAHW+f2+5RbTAFG8MLygQNx2SVi0ReDjFqRv0RO2-NZ+X=UuMRA@mail.gmail.com>
+	<CAHW+f2LmTnZxKr439cdGrPV0yqGNOqVCH4DvdKTQiVYvNXd4Yg@mail.gmail.com>', in_reply_to='<CAHW+f2LmTnZxKr439cdGrPV0yqGNOqVCH4DvdKTQiVYvNXd4Yg@mail.gmail.com>')>

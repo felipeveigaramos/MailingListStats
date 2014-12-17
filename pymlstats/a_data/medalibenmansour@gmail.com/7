@@ -1,0 +1,24 @@
+<Messages(message_id='<CAPLGrgVk-Wk-HTR8vYuXxqDAbkp=ZUNJ9+YZg7oMUaKC0YP0CQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-26 17:43:42', first_date_tz='3600', arrival_date='2013-11-26 08:43:42', arrival_date_tz='None', subject='LibreOffice 4.1: Mozilla build option to ignore', message_body='Ok thank you Guys ;)
+
+
+2013/11/26 Thorsten Behrens <thb at documentfoundation.org>
+
+> Michael Stahl wrote:
+> > that's a good question - Thorsten, why isn't Win-x86 at 42 doing uploads?
+> >
+> Gah. This instdir move is causing all kind of grief for the
+> tinderboxes. It seems the code now handles 4-2 and master, but not 4-1
+> any more. Anyone cycles to poke at tb/tb_internals, otherwise
+> something for my weekend.
+>
+> Cheers,
+>
+> -- Thorsten
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131126/e4fdbe9d/attachment.html>
+
+', is_response_of='<20131126140452.GK22314@thinkpad.thebehrens.net>', mail_path='None', references='<CAPLGrgWgDdPbhYOMeP9aFwkgg+kUe7xTHWO0d5auKUbfj_c4ug@mail.gmail.com>
+	<52947BD5.9010102@redhat.com>
+	<20131126140452.GK22314@thinkpad.thebehrens.net>', in_reply_to='<20131126140452.GK22314@thinkpad.thebehrens.net>')>

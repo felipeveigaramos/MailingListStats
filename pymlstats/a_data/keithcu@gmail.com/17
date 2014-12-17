@@ -1,0 +1,68 @@
+<Messages(message_id='<CAHW+f2K8Q44PeZtezJkP2ru425ibAijntdLa3DTqoeBFQQ4OjQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-10 20:00:41', first_date_tz='-18000', arrival_date='2013-12-10 17:00:41', arrival_date_tz='None', subject='HiDPI Wiki page', message_body='Here is a wiki page to track the feature work:
+https://wiki.documentfoundation.org/Development/HiDpi
+
+In there you can see a screenshot of the toolbar issues:
+https://wiki.documentfoundation.org/File:LibreOffice_HiDPI_toolbar_bugs.pdf
+
+And a list of the other issues, and a todo list of places to keep looking
+;-)
+
+I've mostly fixed the status bar controls on my machine. It was primarily
+changing the code to not assume it knew the bitmap size, and then doing
+bitmap doubling. I will submit it to Gerrit when I can write the if() to
+know when.
+
+I'm stuck trying to find where the font color, etc. dropdown triangle is
+drawn on Linux. I searched for more than an hour, and tried commenting out
+code in DecoView, ImplButton, etc. to find the place, but no luck. Any
+pointers? Is there a reason why it can't use the same dropdown logic that
+the font size uses?
+
+It will take a while to fix every place, but I'll keep working on the most
+annoying ones...
+
+-Keith
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131210/5a484347/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CAHW+f2+ef3SS5uiB7gsAakv=VT69V9c-uRytP3nC+7E9j-nJnA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-11 04:02:36', first_date_tz='-18000', arrival_date='2013-12-11 01:02:36', arrival_date_tz='None', subject='HiDPI Wiki page', message_body='I just found the font color, etc. dropdown triangle. It was in the toolbar
+code and I had been looking in the combo-box, spinfield, ilstbox, etc.,
+etc. I had given up and started looking at the ">>" more toolbar buttons
+indicator, and that triangle drawing routine is right below it ;-)
+
+
+On Tue, Dec 10, 2013 at 8:00 PM, Keith Curtis <keithcu at gmail.com> wrote:
+
+> Here is a wiki page to track the feature work:
+> https://wiki.documentfoundation.org/Development/HiDpi
+>
+> In there you can see a screenshot of the toolbar issues:
+> https://wiki.documentfoundation.org/File:LibreOffice_HiDPI_toolbar_bugs.pdf
+>
+> And a list of the other issues, and a todo list of places to keep looking
+> ;-)
+>
+> I've mostly fixed the status bar controls on my machine. It was primarily
+> changing the code to not assume it knew the bitmap size, and then doing
+> bitmap doubling. I will submit it to Gerrit when I can write the if() to
+> know when.
+>
+> I'm stuck trying to find where the font color, etc. dropdown triangle is
+> drawn on Linux. I searched for more than an hour, and tried commenting out
+> code in DecoView, ImplButton, etc. to find the place, but no luck. Any
+> pointers? Is there a reason why it can't use the same dropdown logic that
+> the font size uses?
+>
+> It will take a while to fix every place, but I'll keep working on the most
+> annoying ones...
+>
+> -Keith
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131211/15b366b3/attachment.html>
+
+', is_response_of='<CAHW+f2K8Q44PeZtezJkP2ru425ibAijntdLa3DTqoeBFQQ4OjQ@mail.gmail.com>', mail_path='None', references='<CAHW+f2K8Q44PeZtezJkP2ru425ibAijntdLa3DTqoeBFQQ4OjQ@mail.gmail.com>', in_reply_to='<CAHW+f2K8Q44PeZtezJkP2ru425ibAijntdLa3DTqoeBFQQ4OjQ@mail.gmail.com>')>

@@ -1,0 +1,24 @@
+<Messages(message_id='<4FD85975.2080507@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-13 11:12:21', first_date_tz='7200', arrival_date='2012-06-13 02:12:21', arrival_date_tz='None', subject='Add comments when adding MAB', message_body='Hi Petr,
+
+thank you for the reminder, I also regret that I often only find "Bug 
+12345 added", and I have to go to the bug and have to check what kind of 
+bug it is and why it might be MAB ...
+
+>
+> please, add comments into the meta bugs when you add new most annoying
+> bugs. One line describing the problem is enough.
+
+Only for additional clarification for users who joined bug triagers team 
+not too long ago, that means: please do not simply add a "Blocks 37361" 
+into the annoying bug's report, but open
+Tracker Bug 37361, add No of your bug to "Depends on" and cite your 
+bug's summary line and add 1-2 lines explaining why it should be "MAB".
+
+Petr explained why that accelerates the workflow.
+
+
+Best rgards
+
+Rainer
+
+', is_response_of='<1339574031.604.12.camel@walk.suse.cz>', mail_path='None', references='<1339574031.604.12.camel@walk.suse.cz>', in_reply_to='<1339574031.604.12.camel@walk.suse.cz>')>

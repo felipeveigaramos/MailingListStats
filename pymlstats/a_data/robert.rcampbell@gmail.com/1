@@ -1,0 +1,64 @@
+<Messages(message_id='<52933CE2.20407@gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-25 19:04:50', first_date_tz='25200', arrival_date='2013-11-25 04:04:50', arrival_date_tz='None', subject='Lao / Thai / Khmer Bundled Fonts', message_body='I was just curious, when does LibreOffice choose to bundle fonts? When
+is there a good reason to bundle them?
+
+I ask this because LibreOffice has a Burmese font, but no Thai, Lao, or
+Khmer fonts that I can tell. Droid Sans includes Thai support. Khmer OS
+provides Khmer support.
+
+And SIL's Mittaphab and Lao Government's Phetsarath OT are possible
+options for Lao, but the most widely used Lao font in Laos is Saysettha
+Lao. The government wants everyone to use Phetsarath OT (which is their
+standard). Windows 8 ships with Dok Champa, which I know little about...
+And SIL is working on a graphite font Mittaphap. I know Mittaphap is
+OFL, Phetsarath OT has no license (public domain?), so those are fair
+open options. Saysettha is not open source, nor is Dok Champa, to my
+understanding.
+
+But the real question is whether or not LibreOffice will want to include
+fonts for language coverage in the first place?
+
+Possible benefits I see:
+
+  * Consistent look and feel for users of those languages across
+    platforms and systems
+  * Provides native access for people without reliable Internet
+    (sometimes a problem in Laos)
+
+Possible problems I see:
+
+  * Makes LibreOffice bigger
+  * Could get out of hand if everyone wants to submit their favorite font
+  * People might complain because it doesn't have their favorite
+    Saysettha font
+
+What do you all think?
+
+-- 
+Respectfully,
+
+*Robert M Campbell*
+IT Specialist for ADRA Laos & Open Source Advocate
+Lao Cell: +856 207 616 7299
+US Phone: +1 270 681 0399
+robert.rcampbell at gmail.com
+rcampbell at adralaos.org
+
+Visit ADRA Lao's Facebook Page at facebook.com/ADRALaos
+<www.facebook.com/ADRALaos>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131125/69259ead/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20131127102547.GA32193@khaled-laptop>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-27 12:25:47', first_date_tz='7200', arrival_date='2013-11-27 02:25:47', arrival_date_tz='None', subject='Lao / Thai / Khmer Bundled Fonts', message_body='On Wed, Nov 27, 2013 at 10:10:26AM +0100, Samuel Mehrbrodt wrote:
+> Hi Robert,
+> 
+> I think there is no formal process when to include a new font. If it makes
+> sense, it's ok. Fonts are not that big.
+
+Fonts CAN be that big :) Look at TeX Live, of its 3.5 GB install, 1.4 GB
+are fonts.
+
+', is_response_of='<52933CE2.20407@gmail.com>', mail_path='None', references='<52933CE2.20407@gmail.com>
+ <5295B702.5020701@gmail.com>', in_reply_to='<5295B702.5020701@gmail.com>')>

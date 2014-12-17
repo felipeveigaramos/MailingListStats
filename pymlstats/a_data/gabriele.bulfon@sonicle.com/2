@@ -1,0 +1,29 @@
+<Messages(message_id='<10783991.422.1373966679482.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-16 11:24:39', first_date_tz='7200', arrival_date='2013-07-16 02:24:39', arrival_date_tz='None', subject='setup_native patch for illumos/solaris', message_body='Here is a patch for the SOLARIS parts in CustomTarget_scripts.mk,
+probably an old way to run install_create.pl, not updated for Solaris.
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/6c504521/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: sonicle-setup_native-illumos.patch
+Type: binary/octet-stream
+Size: 829 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/6c504521/attachment.bin>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<ktarqa$ekn$1@ger.gmane.org>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-31 13:18:41', first_date_tz='7200', arrival_date='2013-07-31 04:18:41', arrival_date_tz='None', subject='[PUSHED] Re: setup_native patch for illumos/solaris', message_body='On 16/07/13 11:24, Gabriele Bulfon wrote:
+> Here is a patch for the SOLARIS parts in CustomTarget_scripts.mk,
+> probably an old way to run install_create.pl, not updated for Solaris.
+> 
+> Gabriele.
+
+pushed this to master, commit e13c27e588545f2cbcf90b94965ef97521969216 .
+
+i've also had a look at the slackware stuff that was causing trouble and
+it turned out it was actually not used at all so i've removed it.
+
+
+', is_response_of='<10783991.422.1373966679482.JavaMail.sonicle@www>', mail_path='None', references='<10783991.422.1373966679482.JavaMail.sonicle@www>', in_reply_to='<10783991.422.1373966679482.JavaMail.sonicle@www>')>

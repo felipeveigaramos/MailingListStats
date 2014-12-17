@@ -1,0 +1,57 @@
+<Messages(message_id='<CAMuW_XxSK2GEizu2AB00K_tQ0Q9F61V2uCqwtJryKf5Eq6z7dQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-13 06:29:47', first_date_tz='-14400', arrival_date='2014-03-13 03:29:47', arrival_date_tz='None', subject='[PATCH]', message_body='Thanks Adam.
+I followed the procedure and now the code is on Gerrit.
+
+
+On Thu, Mar 13, 2014 at 5:18 AM, Adam Fyne <adam.fyne at cloudon.com> wrote:
+
+> Hi Matteo,
+>
+>            Thanks for working on this issue and having a patch
+> ready for review! However, the proper way to submit patches
+> for code-review (and subsequent submission on master) is
+> using the gerrit. You can find details on how to do that here<https://wiki.documentfoundation.org/Development/gerrit>
+> .
+>
+> Best,
+> Adam
+>
+>
+> On Thu, Mar 13, 2014 at 9:52 AM, Matteo Campanelli <
+> matteo.campanelli at gmail.com> wrote:
+>
+>> Hi everybody!
+>> Attached there is a patch for bug 53472.
+>> It allows to use adaptively-sized integral symbols in Starmath by means
+>> of a new command "intd".
+>>
+>> Cheers,
+>> Matteo
+>>
+>> _______________________________________________
+>> LibreOffice mailing list
+>> LibreOffice at lists.freedesktop.org
+>> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>>
+>>
+>
+>
+> --
+>
+> [image: appicon.png]
+>
+>
+> *Adam Fyne*
+>
+> Twitter <http://www.twitter.com/cloudoninc> | LinkedIn<http://www.linkedin.com/company/cloudon>
+>  | Facebook <http://www.facebook.com/cloudoninc> | Blog<http://site.cloudon.com/blog>
+>
+>
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/d33a19d9/attachment.html>
+
+', is_response_of='<CAHnRmWdF6rWPVxO4jZHz6pC98MO9RaQF1x6-vS3uQJfcsxPJ4Q@mail.gmail.com>', mail_path='None', references='<CAMuW_XxKioBu6LokTYBmh8Ck3vYOr12fuU1_ZCXZr3y1VLC4pQ@mail.gmail.com>
+	<CAHnRmWdF6rWPVxO4jZHz6pC98MO9RaQF1x6-vS3uQJfcsxPJ4Q@mail.gmail.com>', in_reply_to='<CAHnRmWdF6rWPVxO4jZHz6pC98MO9RaQF1x6-vS3uQJfcsxPJ4Q@mail.gmail.com>')>

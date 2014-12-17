@@ -170,12 +170,14 @@ class Application(object):
         total_messages = 0
         stored_messages = 0
         non_parsed = 0
+        novatos = []
         for mailing_list in url_list:
-            t, s, np = self.__analyze_mailing_list(mailing_list)
+            t, s, np, n= self.__analyze_mailing_list(mailing_list)
 
             total_messages += t
             stored_messages += s
             non_parsed += np
+            novatos.extend(n)
 
         self.__print_output("%d messages analyzed" % total_messages)
         self.__print_output("%d messages stored in database %s" %
@@ -200,6 +202,10 @@ class Application(object):
             report = Report()
             report.set_session(session)
             report.print_brief_report()
+            for nov in novatos:
+                print nov
+
+
 
         session.close()
 
@@ -225,12 +231,12 @@ class Application(object):
             archives = self.__retrieve_mailing_list_archives(mailing_list)
             archives_to_analyze = self.__set_archives_to_analyze(mailing_list,
                                                                  archives)
-            total, stored, non_parsed = self.__analyze_list_of_files(mailing_list, archives_to_analyze)
+            total, stored, non_parsed, novatos = self.__analyze_list_of_files(mailing_list, archives_to_analyze)
         except IOError:
             self.__print_output("Unknown URL or directory: " +
                                 url_or_dirpath + ". Skipping.")
 
-        return total, stored, non_parsed
+        return total, stored, non_parsed,novatos
 
     def __retrieve_mailing_list_archives(self, mailing_list):
         self.__create_download_dirs(mailing_list)
@@ -389,7 +395,7 @@ class Application(object):
                 continue
 
             total_messages = len(messages)
-            stored_messages = self.db.store_messages(messages,
+            stored_messages, novatos = self.db.store_messages(messages,
                                                      mailing_list.location)
             difference = total_messages-stored_messages
             if difference > 0:
@@ -411,7 +417,7 @@ class Application(object):
             self.db.set_visited_url(archive.url, mailing_list.location, today,
                                     self.db.VISITED)
 
-        return total_messages_url, stored_messages_url, non_parsed_messages_url
+        return total_messages_url, stored_messages_url, non_parsed_messages_url, novatos
 
     def __get_gmane_total_count(self, mailing_list_url, download_url):
         """Return the total count of messages from gmane mailing list"""

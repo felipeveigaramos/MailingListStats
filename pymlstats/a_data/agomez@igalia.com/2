@@ -1,0 +1,110 @@
+<Messages(message_id='<1372065486.12147.3.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-24 12:18:06', first_date_tz='10800', arrival_date='2013-06-24 02:18:06', arrival_date_tz='None', subject='LO /  Firebird DB Integration', message_body='Hi,
+
+On Thu, 2013-06-20 at 20:20 +0200, Michael Stahl wrote:
+...
+> > The firebird specific libraries (fb builds its own versions
+> > libicuuc/libicudata/etc.) are currently in install/program/firebird/lib
+> 
+> really?  it bundles its own ICU?  argh... can you teach it to use the
+> LO's ICU instead?  no reason why we'd need to ship 2 sets of ICU libraries.
+...
+
+As I was writing in the wiki:
+https://wiki.documentfoundation.org/index.php?title=Development/Base/FirebirdSQL#Compilation
+
+We may hit some problems if we use LO's or systems ICU with the table
+indexes.
+
+I think the safest would actually be to use always FB's internal ICU
+copy but other possible approaches are possible in order to face this
+problem.
+
+Br.
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130624/d6477def/attachment.pgp>
+
+', is_response_of='<51B4D337.4030602@ahunt.org>', mail_path='None', references='<51A4FC04.4050807@ahunt.org>
+	<1370616209.32140.4.camel@pomeron.local.igalia.com>
+	<1370617500.1968.191.camel@linux-d2lh.site>
+	<51B4D337.4030602@ahunt.org>
+	<1370854142.17945.29.camel@linux-d2lh.site>
+	<51BB65A8.5020001@ahunt.org>
+	<51BCBA8E.5030006@igalia.com> <51C31455.6020204@ahunt.org>
+	<kpvh4a$m7s$1@ger.gmane.org>', in_reply_to='<kpvh4a$m7s$1@ger.gmane.org>')>
+****************************************
+<Messages(message_id='<1372066282.12147.10.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-24 12:31:22', first_date_tz='10800', arrival_date='2013-06-24 02:31:22', arrival_date_tz='None', subject='LO /  Firebird DB Integration', message_body='On Mon, 2013-06-24 at 11:25 +0200, Rene Engelhard wrote:
+> Hi,
+> 
+> On Mon, Jun 24, 2013 at 12:18:06PM +0300, Andres Gomez wrote:
+> > On Thu, 2013-06-20 at 20:20 +0200, Michael Stahl wrote:
+> > ...
+> > > > The firebird specific libraries (fb builds its own versions
+> > > > libicuuc/libicudata/etc.) are currently in install/program/firebird/lib
+> > > 
+> > > really?  it bundles its own ICU?  argh... can you teach it to use the
+> > > LO's ICU instead?  no reason why we'd need to ship 2 sets of ICU libraries.
+> > ...
+> > 
+> > As I was writing in the wiki:
+> > https://wiki.documentfoundation.org/index.php?title=Development/Base/FirebirdSQL#Compilation
+> > 
+> > We may hit some problems if we use LO's or systems ICU with the table
+> > indexes.
+> > 
+> > I think the safest would actually be to use always FB's internal ICU
+> > copy but other possible approaches are possible in order to face this
+> > problem.
+> 
+> I think you are thinking too short.
+> 
+> Nnote that most distros will simply build with
+> system-firebird. (and whatever THAT one is built against - looks
+> like that it's *external* ICU here:
+> http://packages.debian.org/sid/libfbembed2.5)
+...
+
+That's why in the initial discussions we were already talking about
+removing the possibility of "system-firebird" and always using an
+internal compilation:
+https://wiki.documentfoundation.org/index.php?title=Development/Base/FirebirdSQL#Compilation
+http://firebird.1100200.n4.nabble.com/Firebird-as-backend-in-LibreOffice-td4633330.html
+
+Of course, maybe other options that I've not taken into account are
+better.
+
+Br.
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130624/7dbcb0d1/attachment.pgp>
+
+', is_response_of='<1372065486.12147.3.camel@pomeron.local.igalia.com>', mail_path='None', references='<51A4FC04.4050807@ahunt.org>
+	<1370616209.32140.4.camel@pomeron.local.igalia.com>
+	<1370617500.1968.191.camel@linux-d2lh.site>
+	<51B4D337.4030602@ahunt.org>
+	<1370854142.17945.29.camel@linux-d2lh.site>
+	<51BB65A8.5020001@ahunt.org>
+	<51BCBA8E.5030006@igalia.com> <51C31455.6020204@ahunt.org>
+	<kpvh4a$m7s$1@ger.gmane.org>
+	<1372065486.12147.3.camel@pomeron.local.igalia.com>
+	<20130624092553.GE16171@rene-engelhard.de>', in_reply_to='<20130624092553.GE16171@rene-engelhard.de>')>

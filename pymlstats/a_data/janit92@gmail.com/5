@@ -1,0 +1,32 @@
+<Messages(message_id='<CAFrS=rcqudC0acv8dKsqmgEQOzSPFzH9j64zV7FS-z1fhJAD9A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-01-10 00:26:42', first_date_tz='19800', arrival_date='2014-01-09 10:56:42', arrival_date_tz='None', subject='[HELP] Pop-Up Window to be generated for fdo#55846', message_body='Hey!
+
+If some of you know I had been developing over the LO Codebase but was then
+away due to some reason.As I had not shown activity over fdo#55846 , one
+reason being that the idea about the whole bug to be solved had changed.
+
+As Michael just pointed out that Faisal's link :
+
+http://opengrok.libreoffice.org/xref/core/svx/source/tbxctrls/tbunocontroller.cxx#361
+
+
+The code pointer surely sounds convincing for a pop-up at the click of a
+particular option.
+The main doubt that is up in my mind is :
+
+Can Someone please provide me a codepointer *to the file(.cxx)* where I can
+actually call/add the click() and ItemWindow() functions and make the
+needed changes so as to produce the desired results.
+
+Should I do it in the vcl/source/window/toolbox.cxx or
+vcl/source/window/toolbox2.cxx
+?
+
+Any help and guidance would surely be appreciated.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140110/9389803d/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

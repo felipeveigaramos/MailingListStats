@@ -1,0 +1,169 @@
+<Messages(message_id='<CAFrS=rfJk-k4Ze3wiCtx7O2-njBCNqdqex-76i9tB3X1YhrUqQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-17 00:00:39', first_date_tz='19800', arrival_date='2013-04-16 11:30:39', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+
+I am hereby attaching my patch for fdo #62096 :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=62096
+
+Any suggestions would be great to be implemented.
+
+Regards,
+Janit
+
+On Tue, Apr 16, 2013 at 11:52 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Stephan!
+> I think that was due to hurry(the things for "!=" things)...and yeah i
+> dont know ,i overlooked the build and hence i suppose the thing you just
+> mentioned about child_process.cxx is one of those rotten tests.
+>
+> And yes,ill surely look into the matter with identation(i generally do
+> take care of it,but because of a lil hurry as i am also working on the
+> project -i had mailed on the list simultaneously ...so swamped with too
+> much of code ! :P )
+>
+> Hope this finds you in good health.
+>
+> Regards,
+> Janit
+>
+>
+> On Tue, Apr 16, 2013 at 6:30 PM, Stephan Bergmann <sbergman at redhat.com>wrote:
+>
+>> On 04/15/2013 03:19 PM, Janit Anjaria wrote:
+>>
+>>> I am hereby attaching my patch for fdo #62096 :
+>>>
+>>> https://bugs.freedesktop.org/**show_bug.cgi?id=62096<https://bugs.freedesktop.org/show_bug.cgi?id=62096>
+>>>
+>>> Any suggestions would be great to be implemented.
+>>>
+>>
+>> First, note that
+>>
+>>   s.compareTo(t) != 0
+>>
+>> is /not/ the same as
+>>
+>>   s == t
+>>
+>> Second, did you build and test your change?  It looks like
+>> sal/qa/rtl/process/child_**process.cxx is one of those rotting tests
+>> that is not built nor executed, not even with a top-level "make check".
+>>
+>> Also, please take care not to mess up the indentation of lines, making
+>> the "if" indented only three instead of four spaces.
+>>
+>> Stephan
+>>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130417/e8b1cdf6/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replace-O-U-String-compareTo-with.patch
+Type: application/octet-stream
+Size: 2634 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130417/e8b1cdf6/attachment.obj>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>
+	<516D4B78.3040004@redhat.com>
+	<CAFrS=reG1ARmO0KKvJydWVQsP44-f83Dw_c_-PspAyV9SAdVdg@mail.gmail.com>', in_reply_to='<CAFrS=reG1ARmO0KKvJydWVQsP44-f83Dw_c_-PspAyV9SAdVdg@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<516D9A8B.8070906@telenet.be>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-16 20:38:03', first_date_tz='7200', arrival_date='2013-04-16 11:38:03', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hi Janit,
+
+I see your patches keeps passing by. Sending your patch by email is not 
+wrong, but we have another handy tool to review/comment/... patches -> 
+Gerrit.
+
+Please have a look at 
+https://wiki.documentfoundation.org/Development/gerrit#Setting_Yourself_Up_For_Gerrit 
+so you can send them that way. I think that's a lot easier for 
+developers to review and leave comments.
+
+Just my 0,02EUR (please be aware of the currency exchange ;-) )
+
+Kind regards,
+Joren
+
+Op 16-04-13 20:30, Janit Anjaria schreef:
+> Hey!
+>
+> I am hereby attaching my patch for fdo #62096 :
+>
+> https://bugs.freedesktop.org/show_bug.cgi?id=62096
+>
+> Any suggestions would be great to be implemented.
+>
+> Regards,
+> Janit
+>
+> On Tue, Apr 16, 2013 at 11:52 PM, Janit Anjaria <janit92 at gmail.com 
+> <mailto:janit92 at gmail.com>> wrote:
+>
+>     Hey Stephan!
+>     I think that was due to hurry(the things for "!=" things)...and
+>     yeah i dont know ,i overlooked the build and hence i suppose the
+>     thing you just mentioned about child_process.cxx is one of those
+>     rotten tests.
+>
+>     And yes,ill surely look into the matter with identation(i
+>     generally do take care of it,but because of a lil hurry as i am
+>     also working on the project -i had mailed on the list
+>     simultaneously ...so swamped with too much of code ! :P )
+>
+>     Hope this finds you in good health.
+>
+>     Regards,
+>     Janit
+>
+>
+>     On Tue, Apr 16, 2013 at 6:30 PM, Stephan Bergmann
+>     <sbergman at redhat.com <mailto:sbergman at redhat.com>> wrote:
+>
+>         On 04/15/2013 03:19 PM, Janit Anjaria wrote:
+>
+>             I am hereby attaching my patch for fdo #62096 :
+>
+>             https://bugs.freedesktop.org/show_bug.cgi?id=62096
+>
+>             Any suggestions would be great to be implemented.
+>
+>
+>         First, note that
+>
+>           s.compareTo(t) != 0
+>
+>         is /not/ the same as
+>
+>           s == t
+>
+>         Second, did you build and test your change?  It looks like
+>         sal/qa/rtl/process/child_process.cxx is one of those rotting
+>         tests that is not built nor executed, not even with a
+>         top-level "make check".
+>
+>         Also, please take care not to mess up the indentation of
+>         lines, making the "if" indented only three instead of four spaces.
+>
+>         Stephan
+>
+>
+>
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130416/5e17297f/attachment.html>
+
+', is_response_of='<CAFrS=rfJk-k4Ze3wiCtx7O2-njBCNqdqex-76i9tB3X1YhrUqQ@mail.gmail.com>', mail_path='None', references='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>
+	<516D4B78.3040004@redhat.com>
+	<CAFrS=reG1ARmO0KKvJydWVQsP44-f83Dw_c_-PspAyV9SAdVdg@mail.gmail.com>
+	<CAFrS=rfJk-k4Ze3wiCtx7O2-njBCNqdqex-76i9tB3X1YhrUqQ@mail.gmail.com>', in_reply_to='<CAFrS=rfJk-k4Ze3wiCtx7O2-njBCNqdqex-76i9tB3X1YhrUqQ@mail.gmail.com>')>

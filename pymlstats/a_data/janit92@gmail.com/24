@@ -1,0 +1,59 @@
+<Messages(message_id='<CAFrS=rdyzxCgH_xw5C5fbF=TCAySJz8QkQVLxS4M0h3MTZN40w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 01:07:30', first_date_tz='19800', arrival_date='2013-02-25 11:37:30', arrival_date_tz='None', subject='BUG#55846 The font size and font name list doesnt appear in the
+	vertical toolbar', message_body='I am hereby sending you the patch for review.
+
+Regards,
+Janit Anjaria
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130226/a791de72/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0004-fdo-55846-The-font-size-and-font-name-now-appears-in.patch
+Type: application/octet-stream
+Size: 90019 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130226/a791de72/attachment-0001.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1361875719.24956.24.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 10:48:39', first_date_tz='0', arrival_date='2013-02-26 02:48:39', arrival_date_tz='None', subject='BUG#55846 The font size and font name list doesnt appear in the
+	vertical toolbar', message_body='On Tue, 2013-02-26 at 01:07 +0530, Janit Anjaria wrote:
+> I am hereby sending you the patch for review.
+
+Your original patch is unfortunately quite badly mangled, you've
+included...
+a) a new file called
+vcl/0001-New-table-dialog-from-impress-and-draw-converted-to-patch
+which is surely an accidental pickup
+b) a new file called vcl/source/window/toolbox2.cxx.save
+which might be the desired result of modifying toolbox2.cxx or it might
+be an older abandoned attempt accidentally picked up :-(
+c) and your git name and email aren't set right
+
+So, see http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+to set your username and email correctly
+
+On the basis that vcl/source/window/toolbox2.cxx.save is a modified
+version of vcl/source/window/toolbox2.cxx with your real changes in
+there I've sucked the attached patch out of the car crash which does
+actually enable the comboboxes to appear in vertical toolbar mode which
+is progress.
+
+Catch is though that the font name and font style entries aren't
+suitable for vertical toolbar mode so it would be a step backwards to
+apply the attached patch. But I'm only guessing that this is your real
+patch :-). If the patch you intended to send is different than the
+attached try and re-submit it, but spend a few secs to scan through the
+patch manually to make sure it looks like you expect.
+
+C.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-Resolves-fdo-55846-FontSize-not-displayed-when-the-t.patch
+Type: text/x-patch
+Size: 1711 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130226/0fbbf4cd/attachment.bin>
+
+', is_response_of='<CAFrS=rdyzxCgH_xw5C5fbF=TCAySJz8QkQVLxS4M0h3MTZN40w@mail.gmail.com>', mail_path='None', references='<CAFrS=rdyzxCgH_xw5C5fbF=TCAySJz8QkQVLxS4M0h3MTZN40w@mail.gmail.com>', in_reply_to='<CAFrS=rdyzxCgH_xw5C5fbF=TCAySJz8QkQVLxS4M0h3MTZN40w@mail.gmail.com>')>

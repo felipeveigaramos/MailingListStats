@@ -1,0 +1,139 @@
+<Messages(message_id='<CANaJiRp8PA1-6ZM=UScHtB1vY1phUdpGtwBr-3-v9n__=7Gp0A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-11-01 20:19:31', first_date_tz='3600', arrival_date='2014-11-01 12:19:31', arrival_date_tz='None', subject='Java problem when running CppunitTest_dbaccess_dialog_save on OS
+ X 10.10 with Oracle JDK 1.8', message_body='HSQLDB requires some J2EE libs that aren't bundled within a standard JDK
+(javax.servlet).
+
+source files:
+
+./workdir/UnpackedTarball/hsqldb/src/hsqlServlet.java
+
+./workdir/UnpackedTarball/hsqldb/src/org/hsqldb/Servlet.java
+
+
+build:
+
+./workdir/UnpackedTarball/hsqldb/classes/hsqlServlet.class
+
+./workdir/UnpackedTarball/hsqldb/classes/org/hsqldb/Servlet.class
+
+
+Regards,
+
+Robert
+
+On Tue, Oct 28, 2014 at 11:22 AM, Stephan Bergmann <sbergman at redhat.com>
+wrote:
+
+> On 10/20/2014 01:48 PM, Alexander Thurgood wrote:
+>
+>> I encountrered this very same problem, and solved it by installing the
+>> appropriate  JavaforOSX2014-001.dmg, which allowed my build to complete
+>> the debug tests, but this apparently also has consequences for use of
+>> third party jdbc drivers that rely on JDK 1.8
+>>
+>
+> In how far?
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141101/e1e4e6bb/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CANGFS+8dPgV4c1nKA3ZYVkcWQvcZgf0TXc9dPDHV=VkoAwhvaA@mail.gmail.com>
+ <CANGFS+-MxVUeWaJRpkdAewLLQ06Mz63fAcviwt8-c-H9A6xToQ@mail.gmail.com>
+ <m22sr5$ca2$1@ger.gmane.org> <544F6E4F.6020606@redhat.com>', in_reply_to='<544F6E4F.6020606@redhat.com>')>
+****************************************
+<Messages(message_id='<CANaJiRpyyccAQOAdCO=9iJ0aA1=RumiNP9aCh-1Mjn1fyOyOMg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-11-01 23:32:41', first_date_tz='3600', arrival_date='2014-11-01 15:32:41', arrival_date_tz='None', subject='Java problem when running CppunitTest_dbaccess_dialog_save on OS
+ X 10.10 with Oracle JDK 1.8', message_body='Not yet solved. No Java runtime present, requesting install.
+
+On Sat, Nov 1, 2014 at 8:41 PM, Robert Antoni Buj i Gelonch <
+robert.buj at gmail.com> wrote:
+
+> I think that the following command can solve the issue with Oracle's JDKs.
+>
+> sudo curl -o /Library/Java/Extensions/javaee-api-7.0.jar -O#L
+> http://central.maven.org/maven2/javax/javaee-api/7.0/javaee-api-7.0.jar
+>
+>
+> Regards,
+>
+> Robert
+>
+> On Sat, Nov 1, 2014 at 8:19 PM, Robert Antoni Buj i Gelonch <
+> robert.buj at gmail.com> wrote:
+>
+>> HSQLDB requires some J2EE libs that aren't bundled within a standard JDK
+>> (javax.servlet).
+>>
+>> source files:
+>>
+>> ./workdir/UnpackedTarball/hsqldb/src/hsqlServlet.java
+>>
+>> ./workdir/UnpackedTarball/hsqldb/src/org/hsqldb/Servlet.java
+>>
+>>
+>> build:
+>>
+>> ./workdir/UnpackedTarball/hsqldb/classes/hsqlServlet.class
+>>
+>> ./workdir/UnpackedTarball/hsqldb/classes/org/hsqldb/Servlet.class
+>>
+>>
+>> Regards,
+>>
+>> Robert
+>>
+>> On Tue, Oct 28, 2014 at 11:22 AM, Stephan Bergmann <sbergman at redhat.com>
+>> wrote:
+>>
+>>> On 10/20/2014 01:48 PM, Alexander Thurgood wrote:
+>>>
+>>>> I encountrered this very same problem, and solved it by installing the
+>>>> appropriate  JavaforOSX2014-001.dmg, which allowed my build to complete
+>>>> the debug tests, but this apparently also has consequences for use of
+>>>> third party jdbc drivers that rely on JDK 1.8
+>>>>
+>>>
+>>> In how far?
+>>>
+>>>
+>>> _______________________________________________
+>>> LibreOffice mailing list
+>>> LibreOffice at lists.freedesktop.org
+>>> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>>>
+>>
+>>
+>>
+>> --
+>> http://about.me/rbuj
+>>
+>
+>
+>
+> --
+> http://about.me/rbuj
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141101/3d7f6c71/attachment.html>
+
+', is_response_of='<CANaJiRp8PA1-6ZM=UScHtB1vY1phUdpGtwBr-3-v9n__=7Gp0A@mail.gmail.com>', mail_path='None', references='<CANGFS+8dPgV4c1nKA3ZYVkcWQvcZgf0TXc9dPDHV=VkoAwhvaA@mail.gmail.com>
+ <CANGFS+-MxVUeWaJRpkdAewLLQ06Mz63fAcviwt8-c-H9A6xToQ@mail.gmail.com>
+ <m22sr5$ca2$1@ger.gmane.org> <544F6E4F.6020606@redhat.com>
+ <CANaJiRp8PA1-6ZM=UScHtB1vY1phUdpGtwBr-3-v9n__=7Gp0A@mail.gmail.com>
+ <CANaJiRrtza_XUh3kfWe_uMUQdu5=QkxchmEv04ktjU1SqheP_w@mail.gmail.com>', in_reply_to='<CANaJiRrtza_XUh3kfWe_uMUQdu5=QkxchmEv04ktjU1SqheP_w@mail.gmail.com>')>

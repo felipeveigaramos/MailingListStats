@@ -1,0 +1,53 @@
+<Messages(message_id='<CAMuW_XxBiDVpGm9+d1+wteEyf5X=3Tka+p82So41+1RM5gUS3w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-25 12:05:09', first_date_tz='-14400', arrival_date='2014-05-25 09:05:09', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 24/05/2013', message_body='Hi all,
+during last week I studied how to make arbitrary portions of text  have a
+(possibly transparent) background color.
+So far I have been able  to render a monochromatic non-transparent
+background behind text (see attachment).
+
+Next actions for incoming week:
+- implement transparency;
+- implement actual Font properties.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140525/23734319/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: background_color_text.png
+Type: image/png
+Size: 81099 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140525/23734319/attachment.png>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<5382E6B6.7030507@peralex.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-26 09:01:10', first_date_tz='7200', arrival_date='2014-05-26 00:01:10', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 24/05/2013', message_body='On 2014-05-25 18:05, Matteo Campanelli wrote:
+> during last week I studied how to make arbitrary portions of text  have a (possibly transparent) background color.
+> So far I have been able  to render a monochromatic non-transparent background behind text (see attachment).
+
+Hi
+
+Nice work!
+
+I'm not sure how LO's current glyph bitmap caching works, but you might run into some visual artifacts with anti-aliasing.
+
+Some programs cache the rendering of glyphs, especially when doing anti-aliasing, because it is quite expensive to do 
+the computation.
+
+However, this can lead to some odd pixel effects when you change the background color, because doing anti-aliasing 
+properly is dependent on both the color of the glyph and the color of the background.
+
+Hopefully LO doesn't have this problem, but just in case, I thought you should know.
+
+Regards, Noel Grandin
+
+Disclaimer: http://www.peralex.com/disclaimer.html
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140526/8574d6c0/attachment.html>
+
+', is_response_of='<CAMuW_XxBiDVpGm9+d1+wteEyf5X=3Tka+p82So41+1RM5gUS3w@mail.gmail.com>', mail_path='None', references='<CAMuW_XxBiDVpGm9+d1+wteEyf5X=3Tka+p82So41+1RM5gUS3w@mail.gmail.com>', in_reply_to='<CAMuW_XxBiDVpGm9+d1+wteEyf5X=3Tka+p82So41+1RM5gUS3w@mail.gmail.com>')>

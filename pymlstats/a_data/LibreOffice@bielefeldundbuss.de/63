@@ -1,0 +1,39 @@
+<Messages(message_id='<50D40655.4050502@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-21 07:48:53', first_date_tz='3600', arrival_date='2012-12-20 22:48:53', arrival_date_tz='None', subject='Latest  Hardware and OS', message_body='Hi all,
+
+we have LibO also running on Android OS and Raspberry Pi hardware. What 
+do you think, should we have these environments explicitly in Bugzilla?
+
+Discussion please on <libreoffice-qa at lists.freedesktop.org>!
+
+Best regards
+
+
+Rainer Bielefeld
+(QA Volunteer)
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1356073073.21352.72.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-21 06:57:53', first_date_tz='0', arrival_date='2012-12-20 22:57:53', arrival_date_tz='None', subject='Latest  Hardware and OS', message_body='Hi Rainer,
+
+On Fri, 2012-12-21 at 07:48 +0100, Rainer Bielefeld wrote:
+> we have LibO also running on Android OS and Raspberry Pi hardware. What 
+> do you think, should we have these environments explicitly in Bugzilla?
+
+	Ho hum; the Raspberry Pi version is mostly Rene's work with the Debian
+packages; I'd stick to just having the Linux + ARM architecture for that
+rather than a specific one (unless you really think it helps).
+
+	Android is a different matter of course; unclear what to do there - at
+least, that stuff is quite experimental except for the impress remote
+which should be toughened up enough to ship in 4.0. So whatever you
+think really ...
+
+	Thanks !
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<50D40655.4050502@bielefeldundbuss.de>', mail_path='None', references='<50D40655.4050502@bielefeldundbuss.de>', in_reply_to='<50D40655.4050502@bielefeldundbuss.de>')>

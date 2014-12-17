@@ -1,0 +1,21 @@
+<Messages(message_id='<500D1445.3060305@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-07-23 11:07:17', first_date_tz='7200', arrival_date='2012-07-23 02:07:17', arrival_date_tz='None', subject='No Win builds?', message_body='Norbert Thiebaud schrieb:
+
+> humm, indeed. apparently push_nightly.sh is not finding stuff to push
+
+
+Hi,
+
+today I see some progress,
+/daily/Win-x86 at 6/master/2012-07-22_22.08.18
+contains a build.
+
+Others still empty!
+
+
+Best regards
+
+
+Rainer
+
+', is_response_of='<CAFWMYEGZCY2UWXiUjR73Ncs9Bnx=BtrKdEKsDY=1y650LyCDmg@mail.gmail.com>', mail_path='None', references='<500B9BF3.4040609@bielefeldundbuss.de>
+	<CAFWMYEGZCY2UWXiUjR73Ncs9Bnx=BtrKdEKsDY=1y650LyCDmg@mail.gmail.com>', in_reply_to='<CAFWMYEGZCY2UWXiUjR73Ncs9Bnx=BtrKdEKsDY=1y650LyCDmg@mail.gmail.com>')>

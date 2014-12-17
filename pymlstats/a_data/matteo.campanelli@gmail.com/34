@@ -1,0 +1,25 @@
+<Messages(message_id='<CAMuW_XzpCOvz0ssJ0YnGQxVoh63VtjaqQufK8rmE9BjNGkp2Cw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-22 00:55:12', first_date_tz='10800', arrival_date='2014-07-21 14:55:12', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 21/07/2014', message_body='Hi!
+Last week I managed to have a working skeleton of the model presented in my
+last report
+<http://lists.freedesktop.org/archives/libreoffice/2014-July/062289.html>,
+plus several important thorny subgoals were accomplished, i.e. latest code
+can:
+- identify an overflow of text in a box
+- refer to specific text boxes when a change occurs
+- copy text from one text box to another (this is relevant because chaining
+text requires sending the overflowing text)
+
+Remaining subgoals (in descending order of priority):
+- implement text 2d primitive for chained text
+- propagate the specific position where overflow occurs (rather than a
+generic "HasOverflowOccurred?" boolean)
+- Let only the overflowing text be copied
+- implement a way to access Text Boxes by name (besides indexes)
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140722/9498dbf4/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

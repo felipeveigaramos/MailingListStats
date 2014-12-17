@@ -1,0 +1,195 @@
+<Messages(message_id='<CAO7O0N=6NNApgP2EL1Q+XGt8eVgAvOa9sSHPuDk28nNi7a--VA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-31 18:44:06', first_date_tz='10800', arrival_date='2013-07-31 08:44:06', arrival_date_tz='None', subject='[libreoffice-l10n] Invalid Entry in Po Files', message_body='Dear Yaron,
+
+Well I have gettext and in fact I have tried the command you gave me on all
+offending files. I have also opened 2 of the files in poedit, and found "no
+error". The first file which comes as having invalid entry (during build)
+is [1]. I opened that file and compared it to a Hungarian translation using
+Meld Diff Viewer.  The difference I spotted appeared at the bottom of the
+files with many more comments in my file than the Hungarian one. Can that
+be a cause?
+
+[1]
+https://translations.documentfoundation.org/export/libo_ui/sid/vcl/source/src.po
+
+
+On Wed, Jul 31, 2013 at 5:57 PM, Yaron Shahrabani <sh.yaron at gmail.com>wrote:
+
+> Dear Tadele!
+> Try using Poedit (Any version above 1.5 is fine).
+>
+> This tool shows the misbehaving strings in red on top of the list after
+> you save.
+> This way you can look at the strings that Virtaal will simply ignore upon
+> saving (Sorry Friedel ?).
+>
+> Another great tool I would suggest you to use (mainly in Ubuntu) is
+> "msgfmt".
+> After you edit the file just go to the command line and type "msgfmt -vco
+> /dev/null /path/to/your/file.sid.po" (replace the last part with the actual
+> file location).
+>
+> If you don't have the msgfmt tool you'll have to install gettext using the
+> following command:
+> sudo apt-get install gettext
+> You will be asked for your password and then the tool will be installed so
+> you can use it.
+>
+> Anyways I'm so glad to see this translation completing so fast.
+> Good job!
+>
+> Yaron Shahrabani
+>
+> <Hebrew translator>
+>
+>
+>
+> On Wed, Jul 31, 2013 at 5:43 PM, Tadele Assefa <milkyswd at gmail.com> wrote:
+>
+>> Dear Yaron,
+>>
+>> I am still struggling with the 'invalid entry' message during LO build.
+>> The followings are things I have done since you advised me last time:
+>>
+>> 1) corrected all 'critical errors' suggested
+>> 2) Tried to build and failed
+>> 3) Uploaded all files to Pootle, corrected all errors suggested by pootle
+>> downloaded the translations and tried to build, not OK
+>> 4) Pulled the latest source code from git, switched to master and tried
+>> to build, not OK
+>>
+>> I did this on both Win and Ubuntu with same result. When I open the files
+>> in Virtaal I cannot see any problem. What shall I do?
+>>
+>> Regards,
+>>
+>>
+>> On Sun, Jul 28, 2013 at 11:11 AM, Yaron Shahrabani <sh.yaron at gmail.com>wrote:
+>>
+>>> I attached 2 files.
+>>>
+>>> msgfmtlog.txt - Displays all errors, even the non critical one (these
+>>> can be fixed with recursive regex operation).
+>>>
+>>> msgfmtcrit.txt - Displays only the critical errors (grep -v did the job).
+>>>
+>>> The commands I used:
+>>> # recursively find all po files and send then to msgfmt for inspection
+>>> find . -name *.po -exec msgfmt -vco /dev/null {} \; >& msgfmtlog.txt
+>>> # filter out all the non critical messages (usefull only in this case)
+>>> and put them in a file
+>>> cat msgfmtlog.txt | grep -v 'initial\|translated' > msgfmtcrit.txt
+>>>
+>>>
+>>> Kind regards,
+>>>
+>>> Yaron Shahrabani
+>>>
+>>> <Hebrew translator>
+>>>
+>>>
+>>>
+>>> On Sat, Jul 27, 2013 at 6:10 PM, Zolnai Tam?s <zolnaitamas2000 at gmail.com
+>>> > wrote:
+>>>
+>>>> Yes, gettext may help, to find the problem, but the "contains invalid
+>>>> entry" message come from LO specific po checks. The LO used po has some
+>>>> additional requirements to meet. If you use Pootle, than this problem don't
+>>>> come up, but If you intend to use "Find and Replace" in a text editor than
+>>>> you have to be sure that this replacing touch only the lines started with
+>>>> "msgstr" and not others.
+>>>>
+>>>> Best regards,
+>>>> Tam?s
+>>>>
+>>>> 2013/7/27 Yaron Shahrabani <sh.yaron at gmail.com>
+>>>>
+>>>>> It's fairly simple, assuming you have the gettext tools installed, if
+>>>>> not just send me the file and I'll scan it for you.
+>>>>>
+>>>>> With gettext the command would be: msgfmt -vco /dev/null base.po (in
+>>>>> the same dir of course)
+>>>>>
+>>>>> Yaron Shahrabani
+>>>>>
+>>>>> <Hebrew translator>
+>>>>>
+>>>>>
+>>>>>
+>>>>> On Sat, Jul 27, 2013 at 11:37 AM, Tadele Assefa <milkyswd at gmail.com>wrote:
+>>>>>
+>>>>>> Dear All,
+>>>>>>
+>>>>>> After we did a 100%, we decided to change some of owr strings to a
+>>>>>>  new
+>>>>>> terminology. As a result I did a "Find and Replace in All Files" using
+>>>>>> Sublime Text 2 to change the terms.
+>>>>>>
+>>>>>> After this I started building entire LO,(libreoffice-4-1 branch), but
+>>>>>> it
+>>>>>> failed to include the new terms saying invalid entry like
+>>>>>> "git/libowin/translations/source/sid/scp2/source/base.po contains
+>>>>>> invalid
+>>>>>> entry".
+>>>>>>
+>>>>>>
+>>>>>> What mistake did I do? How may i resolve this?
+>>>>>> --
+>>>>>> Regards,*
+>>>>>> ___________________________
+>>>>>> Tadele Assefa***
+>>>>>>
+>>>>>> --
+>>>>>> To unsubscribe e-mail to: l10n+unsubscribe at global.libreoffice.org
+>>>>>> Problems?
+>>>>>> http://www.libreoffice.org/get-help/mailing-lists/how-to-unsubscribe/
+>>>>>> Posting guidelines + more:
+>>>>>> http://wiki.documentfoundation.org/Netiquette
+>>>>>> List archive: http://listarchives.libreoffice.org/global/l10n/
+>>>>>> All messages sent to this list will be publicly archived and cannot
+>>>>>> be deleted
+>>>>>>
+>>>>>>
+>>>>>
+>>>>> _______________________________________________
+>>>>> LibreOffice mailing list
+>>>>> LibreOffice at lists.freedesktop.org
+>>>>> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>>>>>
+>>>>>
+>>>>
+>>>
+>>
+>>
+>> --
+>> Regards,*
+>> ___________________________
+>> Tadele Assefa
+>> Managing Director*
+>> *
+>>
+>> Cell: +25-911-84-13-84*
+>> *Think Green ? Please do not print this email unless you really need to*
+>>
+>
+>
+
+
+-- 
+Regards,*
+___________________________
+Tadele Assefa
+Managing Director*
+*
+
+Cell: +25-911-84-13-84*
+*Think Green ? Please do not print this email unless you really need to*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130731/f9bda2ed/attachment.html>
+
+', is_response_of='<CAO7O0N=s5_DD3wRNN1OmtHx+-Jav=ngb=jj58hMHRAHwQXtDFA@mail.gmail.com>', mail_path='None', references='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>
+	<CACVjhxXomzEQ8Hw-HMpxs6roVkCdZ4PT1TAZk-RSJh762hQoyg@mail.gmail.com>
+	<CALvyNmkatzZKE5h5hO4sCmSznGF4WByxwOdvka3BqF2sBDm9MQ@mail.gmail.com>
+	<CACVjhxW=hP3b7_h-QbMcV6Na8+9hF1-6oYJ+S0To88C865Q-yg@mail.gmail.com>
+	<CAO7O0N=s5_DD3wRNN1OmtHx+-Jav=ngb=jj58hMHRAHwQXtDFA@mail.gmail.com>
+	<CACVjhxUzL2vCtSB6+_t5xNhxLOzj6ubtYrmdC=fh+NSTKeaY0Q@mail.gmail.com>', in_reply_to='<CACVjhxUzL2vCtSB6+_t5xNhxLOzj6ubtYrmdC=fh+NSTKeaY0Q@mail.gmail.com>')>

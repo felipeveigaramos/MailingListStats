@@ -1,0 +1,108 @@
+<Messages(message_id='<CANaJiRoGcSd3F1VxSeRCfiFFFw=w0CYCqAVRFMPrWfT-PmizuQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-11-02 17:05:03', first_date_tz='3600', arrival_date='2014-11-02 08:05:03', arrival_date_tz='None', subject='10.10 tinderbox builds crashes on opening any file', message_body='I've sent a patch proposal, https://gerrit.libreoffice.org/#/c/12200/
+
+Regards,
+Robert
+
+On Sun, Nov 2, 2014 at 12:32 PM, Robert Antoni Buj i Gelonch <
+robert.buj at gmail.com> wrote:
+
+> The following command also fixes the issue and you don't need to create
+> any link to LibreOfficePython.framework:
+>
+> # find
+> /Applications/LibreOfficeDev.app/Contents/Frameworks/LibreOfficePython.framework/Versions/3.3/lib/python3.3/lib-dynload
+> -name "*.so" -exec install_name_tool -change
+> /Volumes/Master/lo/core/workdir/UnpackedTarball/python3/python-inst/@__________________________________________________OOO/LibreOfficePython.framework/Versions/3.3/LibreOfficePython
+> @loader_path/../../../LibreOfficePython '{}' \;
+>
+>
+> Regards,
+>
+> Robert
+>
+> On Sun, Nov 2, 2014 at 3:19 AM, Robert Antoni Buj i Gelonch <
+> robert.buj at gmail.com> wrote:
+>
+>> It's an issue related with LibreOfficePython.framework and
+>> install_name_tool:
+>>
+>> 1 - create the folder where LibreOfficePython.framework was installed in
+>> the tinderbox:
+>>
+>> $: sudo mkdir -p
+>> /Volumes/Master/lo/core/workdir/UnpackedTarball/python3/python-inst/@__________________________________________________OOO
+>>
+>> 2 - create a symbolic link to LibreOfficePython.framework:
+>>
+>> $: sudo ln -s
+>> /Applications/LibreOfficeDev.app/Contents/Frameworks/LibreOfficePython.framework
+>> /Volumes/Master/lo/core/workdir/UnpackedTarball/python3/python-inst/@__________________________________________________OOO/LibreOfficePython.framework
+>>
+>> 3 - Launch LibreOffice:
+>>
+>> $: /Applications/LibreOfficeDev.app/Contents/MacOS/soffice
+>>
+>>
+>> Regards,
+>>
+>> Robert
+>>
+>> On Sat, Nov 1, 2014 at 10:40 AM, Robert Antoni Buj i Gelonch wrote:
+>>
+>>> Doing a clean build seems that doesn't solve the issue, so I'm going to
+>>> install the development environment from scratch.
+>>>
+>>> On Fri, Oct 31, 2014 at 11:16 AM, Christian Lohmaier wrote:
+>>>
+>>>> Hi Robert,
+>>>>
+>>>> there have been reports on IRC that the daily builds of your tinderbox
+>>>> (@64) crashes when opening any file.
+>>>>
+>>>> Those crashes don't occur with the daily builds from my bot (@49),
+>>>> that also compiles on Mac OSX 10.10 (although with the default
+>>>> min-version.
+>>>>
+>>>> As your bot does incremental builds: could you try a make clean to see
+>>>> whether the problem is caused by some incompatible changes that
+>>>> weren't picked up properly by the incremental build?
+>>>>
+>>>> The user who reported it often hangs out in the #libreoffice-qa
+>>>> channel (nich steve-_-2)
+>>>>
+>>>> Thanks a lot,
+>>>>
+>>>> ciao
+>>>> Christian
+>>>>
+>>>
+>>>
+>>>
+>>> --
+>>> http://about.me/rbuj
+>>>
+>>
+>>
+>>
+>> --
+>> http://about.me/rbuj
+>>
+>
+>
+>
+> --
+> http://about.me/rbuj
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141102/0766d21b/attachment.html>
+
+', is_response_of='<CANaJiRrkjo5MeqzYPpw6jOigo9P_=xWzJo6ue2i29qBD9SYtqg@mail.gmail.com>', mail_path='None', references='<CAOPHaVSoQ6U=5NgguB2NwzM8Od_AG41ojdg2+LHs+-jUa6qgfw@mail.gmail.com>
+ <CANaJiRq6XpbcmKcvOKkrkroy4PzTatf6sfTr722gNy5s91rk0A@mail.gmail.com>
+ <CANaJiRrq2kx3W8gFj+iN8g4Z+rZ-QOrtP7tpUF-U63_ZYpqCPg@mail.gmail.com>
+ <CANaJiRrkjo5MeqzYPpw6jOigo9P_=xWzJo6ue2i29qBD9SYtqg@mail.gmail.com>', in_reply_to='<CANaJiRrkjo5MeqzYPpw6jOigo9P_=xWzJo6ue2i29qBD9SYtqg@mail.gmail.com>')>

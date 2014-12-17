@@ -1,0 +1,62 @@
+<Messages(message_id='<1379939578.31594.1.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-09-23 15:32:58', first_date_tz='10800', arrival_date='2013-09-23 05:32:58', arrival_date_tz='None', subject='Deployment exception and how to solve them.', message_body='Ouch!
+
+So I added the wrong component assuming it would be in the same source
+tree instead of checking that it was actually providing the service.
+
+Thanks guys, it works like a charm!
+
+Br.
+
+On Mon, 2013-09-23 at 13:59 +0200, Markus Mohrhard wrote:
+> Hey,
+> 
+> 
+> 2013/9/23 Andres Gomez <agomez at igalia.com>
+> 
+> > Hi guys,
+> >
+> > Just now I'm working in a unit test for
+> > "sw/CppunitTest_sw_ooxmlimport.mk" in which I'm adding the request for a
+> > "GraphicExportFilter" which results in the "Deployment Exception":
+> >
+> > "component context fails to supply service
+> > com.sun.star.drawing.GraphicExportFilter of type
+> > com.sun.star.drawing.XGraphicExportFilter"
+> >
+> > I've added "graphicfilter" to the "_use_library" section and also the
+> > following component to the "_use_component" section:
+> >
+> > "filter/source/graphic/graphicfilter"
+> >
+> 
+> You should replace this entry in the _use_component section with:
+> 
+> svx/util/ <http://opengrok.libreoffice.org/xref/core/svx/util/>svx \
+> 
+> Finding out which entry to add for the use_components is quite easy. Go to
+> opengrok/git grep and search for the service name and add the *.component
+> file that mentions the service.
+> 
+> Regards,
+> Markus
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130923/ea733153/attachment.pgp>
+
+', is_response_of='<1379933310.30001.6.camel@pomeron.local.igalia.com>', mail_path='None', references='<1379933310.30001.6.camel@pomeron.local.igalia.com>
+	<CAEDdEt7ViLztphYSUni9pHYt1gHM9gJ0tcLqRERj+yejZ3S5xw@mail.gmail.com>', in_reply_to='<CAEDdEt7ViLztphYSUni9pHYt1gHM9gJ0tcLqRERj+yejZ3S5xw@mail.gmail.com>')>

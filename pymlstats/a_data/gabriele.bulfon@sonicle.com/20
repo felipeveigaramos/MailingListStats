@@ -1,0 +1,17 @@
+<Messages(message_id='<23100042.399.1373963202827.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-16 10:26:42', first_date_tz='7200', arrival_date='2013-07-16 01:26:42', arrival_date_tz='None', subject='libxmlsec patch for building on illumos/solaris', message_body='Hi,
+I managed to patch libxmlsec mk files to work on XStreamOS/illumos.
+I had to disable nss/nspr and use installed openssl instead, as for android.
+Here is the patch that built correctly.
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/8acdb446/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: sonicle-libxmlsec-illumos.patch
+Type: binary/octet-stream
+Size: 1773 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/8acdb446/attachment.bin>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

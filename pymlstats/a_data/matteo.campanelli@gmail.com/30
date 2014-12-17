@@ -1,0 +1,94 @@
+<Messages(message_id='<CAMuW_Xz++pA8t-vUfLoX=7pnwWz86Zv3YN8dvy0SzZZp=ZdiRw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-19 01:56:28', first_date_tz='-14400', arrival_date='2014-03-18 22:56:28', arrival_date_tz='None', subject='[GSoc 14] On "Improve Text Boxes in Draw" - towards a more
+ specific description and starting directions', message_body='Hi,
+
+On Tue, Mar 18, 2014 at 7:18 AM, Fridrich Strba <
+fridrich.strba at graduateinstitute.ch> wrote:
+
+> On 18/03/14 06:23, Matteo Campanelli wrote:
+> > - /"text background color":/
+> >
+> >     It seems to me that it is possible to specify a text box background
+> >     in color in Draw. Are we then referring to background color of the
+> >     text only?
+>
+> Yes, it is possible to specify the colour of the text box itself, but it
+> is not possible to specify the background of the text itself. The
+> problem can be seen in import filters, where in the original
+> applications the text, that has non-transparent (i.e. white) background,
+> is describing lines (like in technical drawings). Because the background
+> is transparent, the text is basically unreadable because of the line
+> that is under it.
+>
+
+I see, but thinking again I'm wondering: wouldn't specifying a text box
+with a certain transparency style be enough for that family of issues? Or
+is there something else text background may be required for?
+
+
+> In the ODF file-format, there is a possibility to specify a sequence of
+> frames where text, when arrives at the end of one frame overflows into
+> the next one.
+>
+I made a search in the specification and I believe it is
+draw:chain-next-name<http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part1.html#attribute-draw_chain-next-name>
+you
+are referring to. Is that correct?
+
+So, implementing this feature would require to:
+- allow Draw to parse properly the attribute above (where does parsing of
+attributes and similar happens in the code architecture?);
+- implement the expected overflowing behavior (this should be simple
+enough, but still I am not sure where text boxes are handled in Draw's
+code);
+- allow text boxes to specify a next link from the UI (maybe optional for a
+Summer Project?)
+
+
+> >     Is there already something like this in Draw or LO in general, i..e
+> >     ways. to reference other objects' properties explicitly?
+>
+> Not in Draw yet. We have in LibreOffice already this feature implemented
+> for Writer, where you can do this kind of "linked frames".
+>
+
+I see. Could you please exemplify I could I test this in Writer?
+
+
+> > - /"support of style":/
+> >
+> I would in the first time look what is possible to specify in the Style
+> and Formatting in Draw and what is possible in Writer. The first goal
+> would be to bring them at the same level.
+>
+
+I'm starting to believe that the first three features (text background,
+overflow in frames and hyphenation)
+could be sufficient for a summer project; adding more may make it risky.
+
+>
+> Now, be aware that we might discover that any of this task is more
+> complicated then what we think.
+
+
+> Thanks for your interest. I hope that I answered at least some of your
+> questions.
+>
+You definitely did, thank you.
+Now my goal is to get a better grasp of how to approach these problems in
+the code and also which other subtasks they can be split it.
+
+Cheers,
+Matteo
+
+
+> Cheers
+>
+> Fridrich
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140319/b3471baf/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAMuW_XyaBWn00nS8RhDYS-GFfoF8xdXoxj0QdO3KBzkKVmB5VA@mail.gmail.com>
+ <53282B75.1010702@graduateinstitute.ch>', in_reply_to='<53282B75.1010702@graduateinstitute.ch>')>

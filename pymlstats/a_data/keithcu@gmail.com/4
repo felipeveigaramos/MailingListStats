@@ -1,0 +1,26 @@
+<Messages(message_id='<CAHW+f2+2sogKE3d1tnmLDpYGKxQo=ShP+ELG5Y2FiiOR1h_AOQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-20 02:37:39', first_date_tz='-18000', arrival_date='2014-02-19 23:37:39', arrival_date_tz='None', subject='KDE and HiDPI', message_body='Hi;
+
+I did some research for KDE and DPI. By default all windows are 96 DPI and
+there is no screen auto-detection.
+
+However, it is possible to manually set the DPI for KDE 4.x. In the system
+settings, you can click on Appearance - Fonts and there is an option to
+"force fonts DPI" to 192 or whatever. Fortunately, that setting applies to
+more than fonts. When 192 is set, the HiDPI mode kicks in for LibreOffice
+and it looks great.
+
+I've read about more work happening for HiDPI in QT5 / KDE 5 which should
+be out in the first-half of this year, but fortunately things can be made
+to look fine with current code.
+
+I'll put some updated comments about this in the wiki page also. Between
+all the DEs, and other OSes, the test matrix for LibreOffice is large.
+
+Regards,
+
+-Keith
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140220/c231a113/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

@@ -1,0 +1,190 @@
+<Messages(message_id='<CAFrS=rcnZ=w_+JNJTxm5w=hJzD=U_XEW1xPX_qbDX4JSfObFTw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-14 12:20:25', first_date_tz='19800', arrival_date='2013-05-13 23:50:25', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Hey Tor!
+
+It is good to know that even you have been taking interest in this pretty
+"important" task which i have been working on.
+
+-- Regarding the compiling of the code , i bet i did compile it on my
+machine as well,but as you said you have been getting some errors i would
+be happy to look back into it. :D
+
+--Regarding the use of ULONG , i actually did not  get into "some random
+googling that found old OpenOffice.org code" .But rather i had used it in
+some university project in my freshmen year and hence i thought of just
+experimenting here too(i actually wanted to know the advantages and
+disadvantages of using it here,and that is why i used it) . But yeah i dont
+mind getting it off :)
+
+-- I think picking up was a big task here as i had to dig into quite a lot
+of code and hence figure out what to use and "where" ...because i am still
+figuring out things regarding the UI (as i had mentioned in my last email)
+, and i am sure i will make a better impact on the codebase there :)
+
+-- Yes i think Thorsten would surely be able to feel the code in more
+detail ( thanks again for giving me a "strict" guidance on the same) .
+
+And yes regarding the easy hack thing...I dont think the name of the easy
+hack does make a difference here.I have named it such , just because the
+task revolves around this basic bug . Me and Thorsten have been discussing
+the exact work we are planning to implement with ,also taking help from the
+UI team ( on IRC as well as emails)  and i keep Thorsten informed about the
+proceedings.
+
+---And regarding the submission of the work in small pieces , i had talked
+to Thorsten on IRC and i think as a mentor he wanted me to show him my
+"work in progress" patch , and clear a few doubts in code i had and hence i
+have mentioned that in my comments in the code as well as in my last email.
+( and clearing up the misunderstanding , i am sure i havent been bad at
+language errors except when i was a newbee in the beginning.But i am sure i
+am  working on it , but my experience on the codebase and familiarity is
+pretty important here while working on a bigger project and not on small
+hacks ;-) :D .
+
+Hope this finds you in good health.
+
+Regards,
+Janit
+
+
+On Tue, May 14, 2013 at 10:55 AM, Tor Lillqvist <tml at iki.fi> wrote:
+
+> If you just would have made it so in your patches from the start that your
+> code is at least compiled (and thus by necessity free from syntax and
+> language errors), it would have been easier to understand that it is a work
+> in progress. Sure, of course it should be OK to submit work on a bigger
+> task in pieces. So maybe we are being too harsh...
+>
+> - You still don't do anything to make this code be compiled and linked
+> into some library
+>
+> - Clearly you haven't even compiled it yourself (using some temporary
+> local scaffolding) as there are syntax errors (most obviously, no
+> corresponding #endif to the #ifndef __SD_TOOLS__
+>
+> - Isn't "sdtools" a bit odd name for these headers?
+>
+> - You don't suggest adding anything to any class, just a couple of
+> freestanding functions?
+>
+> - Even if it would be syntactically correct and linked into a library,
+> there is of course nothing added anywhere that would invoke any of this code
+>
+> - Why do you use the type ULONG in a couple of places in the code, how did
+> you even find that type which has been obsolete in most LibreOffice code
+> for a long time?  suspect the ULONG came from some random googling that
+> found old OpenOffice.org code
+>
+> - Much of the code in your C++ file seems to be picked from here and there
+> in the sd tree, with slight spacing changes. Sure, this might be because it
+> actually makes sense (and there is nothing wrong as such with that, copying
+> small code snippets around is what coders do all the time, there are not
+> many ways to write a for loop that iterates over a specific data structure
+> etc).
+>
+> Note that I did not try to figure out what your code actually does, as I
+> am not an Impress expert anyway. Maybe Thorsten could...
+>
+> I wonder if the root of all this horrible misunderstanding of what a
+> proper implementation of that "Easy Hack" should include is the "Making it
+> possible" part of the Easy Hack title, and the "Please make it possible"
+> part of the fdo#41572 title? Maybe that makes it sound as if an actual
+> implementation is not desired for the Easy Hack, just a start?
+>
+> --tml
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130514/7990227c/attachment.html>
+
+', is_response_of='<CAFrS=rebEGay5uZMxNr5Tr31iq728vMTiKK4Z24j_qJ87YqyPQ@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>
+	<20130506055358.GM2152@thinkpad.thebehrens.net>
+	<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>
+	<20130507093150.GA5315@suse.cz>
+	<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>
+	<CAFrS=rebEGay5uZMxNr5Tr31iq728vMTiKK4Z24j_qJ87YqyPQ@mail.gmail.com>
+	<CANGFS+-E+XUy1+Gt41B27myYQMRWy-hWcjoBn3wCNCMjq1mmgw@mail.gmail.com>', in_reply_to='<CANGFS+-E+XUy1+Gt41B27myYQMRWy-hWcjoBn3wCNCMjq1mmgw@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<CAFrS=rcRJ_BK+LzZA57XiGFx=1j3nxA-guiOasDV1SMfM-yXnA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-14 13:16:23', first_date_tz='19800', arrival_date='2013-05-14 00:46:23', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Hey Tor!
+
+Yeah you got that right. It is actually a GSoC Task and i know it is a
+little early but Thorsten thinks starting a little early would surely help
+because this feature is something we dont want to compromise and more the
+time,better it is ( so we can always keep enhancing and that is why the
+speed of progress is a little delayed,as we keep talking to the UI Team as
+well :D ) .
+And regarding my past work,i am sure my mentor is pretty confident on my
+friendliness with the code as i have been reading quite a lot of code since
+a few months and i am also a contributor now (as mentioned in the
+developers list :) ) :
+https://wiki.documentfoundation.org/Development/Developers#Developers_and_Contributors_list
+
+And yeah i hope we stop running around the fact of syntactical errors i
+made in a few bugs ( because i am sure it is always a learning process) and
+i am also gonna talk to Eike soon about the fdo#55846 as that has been a
+long pending bug which hasnt been verified ( i dont know ,it works solved
+and fine on my machine ) And if you consider the other bug : 59397 , i
+thought someone else had taken up as i had my university exams and so i was
+not able to work on it ( I think we had talked about this on IRC ) .
+
+
+On Tue, May 14, 2013 at 1:13 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Tor!
+>
+> Yeah you got that right. It is actually a GSoC Task and i know it is a
+> little early but Thorsten thinks starting a little early would surely help
+> because this feature is something we dont want to compromise and more the
+> time,better it is ( so we can always keep enhancing and that is why the
+> speed of progress is a little delayed,as we keep talking to the UI Team as
+> well :D ) .
+> And regarding my past work,i am sure my mentor is pretty confident on my
+> friendliness with the code as i have been reading quite a lot of code since
+> a few months and i am also a contributor now (as mentioned in the
+> developers list :) ) :
+>
+> https://wiki.documentfoundation.org/Development/Developers#Developers_and_Contributors_list
+>
+> And yeah i hope we stop running around the fact of syntactical errors i
+> made in a few bugs ( because i am sure it is always a learning process) and
+> i am also gonna talk to Eike soon about the fdo#55846 as that has been a
+> long pending bug which hasnt been verified ( i dont know ,it works solved
+> and fine on my machine ) And if you consider the other bug : 59397 , i
+> thought someone else had taken up as i had my university exams and so i was
+> not able to work on it ( I think we had talked about this on IRC ) .
+>
+> Hope this finds you in good health.
+>
+> Regards,
+> Janit
+>
+>
+> On Tue, May 14, 2013 at 12:36 PM, Tor Lillqvist <tml at iki.fi> wrote:
+>
+>> By the way, I now notice that this bug is not listen as an Easy Hack, but
+>> is an actual GSoC task? So no wonder it is a lot of work and you are just
+>> in the very early beginning of it;)
+>>
+>> There seems to be some misunderstanding here... the intent is that GSoC
+>> applicants do a relatively limited (but still not trivial) and easily
+>> verifiable (compilable, buildable) Easy Hack to show their skills. Not
+>> start on a GSoC task already beforehand...
+>>
+>> --tml
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130514/8723b9bf/attachment.html>
+
+', is_response_of='<CAFrS=rcnZ=w_+JNJTxm5w=hJzD=U_XEW1xPX_qbDX4JSfObFTw@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>
+	<20130506055358.GM2152@thinkpad.thebehrens.net>
+	<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>
+	<20130507093150.GA5315@suse.cz>
+	<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>
+	<CAFrS=rebEGay5uZMxNr5Tr31iq728vMTiKK4Z24j_qJ87YqyPQ@mail.gmail.com>
+	<CANGFS+-E+XUy1+Gt41B27myYQMRWy-hWcjoBn3wCNCMjq1mmgw@mail.gmail.com>
+	<CAFrS=rcnZ=w_+JNJTxm5w=hJzD=U_XEW1xPX_qbDX4JSfObFTw@mail.gmail.com>
+	<CANGFS+9_xSjCorLASSse5KEQMnOGX2UTboET2B3DLJOvTw7+2g@mail.gmail.com>
+	<CAFrS=reu=Sks+G_oQOZs3E_6VuxOs7Gv9PvKuRc-ZFuxQrdjQQ@mail.gmail.com>', in_reply_to='<CAFrS=reu=Sks+G_oQOZs3E_6VuxOs7Gv9PvKuRc-ZFuxQrdjQQ@mail.gmail.com>')>

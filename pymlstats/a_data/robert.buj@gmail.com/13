@@ -1,0 +1,110 @@
+<Messages(message_id='<CANaJiRrxL+pA0EKz41mL7xN=FF_4u6ZUBRsLNz8J0-3BkELJzQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-25 10:26:19', first_date_tz='7200', arrival_date='2014-08-25 01:26:19', arrival_date_tz='None', subject='Upload nightly builds for OS X Mavericks', message_body='Hi,
+
+I'm going to try to build with your proposals.
+
+--enable-macosx-retina
+
+--with-macosx-sdk=10.9
+
+--with-macosx-version-min-required=10.9
+
+--enable-opengl
+
+--disable-gtk
+
+--enable-firebird-sdbc
+
+--enable-extension-integration
+
+--enable-ext-languagetool
+
+--with-myspell-dicts
+
+--enable-python=internal
+
+--with-external-tar=/Volumes/Tarballs/lo/external_tar
+
+--srcdir=/Volumes/Tinderbox/lo/core
+
+--enable-verbose
+
+--disable-dependency-tracking (I prefer that it do always a clean build)
+
+--disable-ccache
+
+--with-parallelism=2
+
+--enable-64-bit
+
+--enable-bogus-pkg-config
+
+--disable-cve-tests
+
+--enable-odk
+
+--disable-online-update
+
+Regards,
+Robert
+
+
+On Mon, Aug 25, 2014 at 8:59 AM, Alex Thurgood <alex.thurgood at gmail.com>
+wrote:
+
+> Le 25/08/2014 00:35, Robert Antoni a ?crit :
+>
+> Hi,
+>
+> Just my two cents, but :
+>
+> >
+> > I'm open to any configuration change of my tinderbox.
+> >
+>
+> > --disable-firebird-sdbc
+>
+> Why disable firebird ?
+>
+> It is an integral part of the official releases afaik (enve if still
+> experimental). Or can TB dailies be anything, including either the
+> kitchen sink or some mutilated reduced functionality ?
+>
+> Just trying to understand the general policy.
+>
+>
+> Alex
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140825/77ca5878/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>
+ <ltemt6$2t8$1@ger.gmane.org>', in_reply_to='<ltemt6$2t8$1@ger.gmane.org>')>
+****************************************
+<Messages(message_id='<CAFWMYEHPLExORMT3f79sf-xVjWX2aJ2-0PV92XbL7eEztQUE8Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-25 11:37:23', first_date_tz='7200', arrival_date='2014-08-25 02:37:23', arrival_date_tz='None', subject='Upload nightly builds for OS X Mavericks', message_body='On Mon, Aug 25, 2014 at 10:26 AM, Robert Antoni <robert.buj at gmail.com> wrote:
+> Hi,
+>
+>
+> --disable-dependency-tracking (I prefer that it do always a clean build)
+>
+> --disable-ccache
+
+Then you should really use ccache...
+ccache do not make much sens when doing incremental build.. but it has
+a very big impact when doing clean-build
+
+Norbert
+
+', is_response_of='<CANaJiRrxL+pA0EKz41mL7xN=FF_4u6ZUBRsLNz8J0-3BkELJzQ@mail.gmail.com>', mail_path='None', references='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>
+ <ltemt6$2t8$1@ger.gmane.org>
+ <CANaJiRrxL+pA0EKz41mL7xN=FF_4u6ZUBRsLNz8J0-3BkELJzQ@mail.gmail.com>', in_reply_to='<CANaJiRrxL+pA0EKz41mL7xN=FF_4u6ZUBRsLNz8J0-3BkELJzQ@mail.gmail.com>')>

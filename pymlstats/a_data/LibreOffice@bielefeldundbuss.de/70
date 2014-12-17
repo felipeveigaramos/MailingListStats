@@ -1,0 +1,139 @@
+<Messages(message_id='<50FE2E1C.9020007@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-22 07:13:48', first_date_tz='3600', arrival_date='2013-01-21 22:13:48', arrival_date_tz='None', subject='[Libreoffice-qa] Minutes - QA Call 01/11/2013', message_body='Joel Madero schrieb:
+
+> -Status clarification (New vs. Reopened)
+> **Agreed: *Reopened should only be used if the bug is assigned
+> *Because of this agreement, modifications have to be made to our current
+> workflow
+> -*Agreed: *NEEDINFO: Used only if most the information
+
+Hi all,
+
+just stumbled upon these minutes.
+
+Most of these decisions are changes of proceeding negotiated in the 
+past, and so the Wiki should be amended to these changes.
+
+With some results I agree, may some fine tuning still is possible. So I 
+agree that it's appropriate to mark a report INVALID if nearby no useful 
+info is included (as stated in the minutes). For a NEEDINFO I do not 
+believe that "Most necessary info" has to be included. For me a 
+"promising start" seems enough reason to keep a bug open with NEEDINFO. 
+May be we can find and write down some indications for "promising", but 
+most is a matter or instinct to decide whether there is hope
+
+Concerning the rest, to be honest, with current knowledge I don't 
+understand most of that what I read because I nowhere see a "because 
+...". What were the problems that should be solved with the decisions?
+
+I am afraid that the new definitions will no longer allow reliable queries.
+
+An example:
+In this
+<http://www.bugzilla.org/docs/3.6/en/html/lifecycle.html>
+graph, what was base of former decisions, NEW meant all necessary has 
+been gained, QA work is done, developers can start their work. So no 
+need for me to have a look. I think that was a useful usage of Status NEW.
+
+Due to agreed items now NEW should be selected immediately if someone 
+who is more or less reliable has reported or confirmed a real bug.
+
+I saw Joel changing Status of several bugs I reported from UNCONFIRMED 
+to NEW without any additional contribution of information. Thank you for 
+trusting my  reports, but I have good reasons NOT to use NEW at once: I 
+think that additional information should be added, may be I want to do 
+further research, may be I would like to see whether the problem is 
+limited to my OS ....
+
+The result of the new proceeding is that nobody can know whether more 
+info is necessary or at least might be useful (Other OS? Particular 
+conditions / settings / Desktop integration / ...? Where did that 
+problem start? Are there relations to other bugs what should be 
+checked?). There are good reasons to follow the "2 man rule"
+<http://en.wikipedia.org/wiki/Two-man_rule>, it's not only a matter of 
+confirmation, the reviewer should add information from his point of view.
+
+I'm sorry, to me that looks a little helter skelter. A more promising 
+way to develop the proceedings would be to list existing problems and 
+suggestions for solutions on the wiki discussion pages like 
+<https://wiki.documentfoundation.org/Talk:QA/BugTriage> and then to 
+improve the proceeding rules step by step with parallel discussion on 
+qa-list.
+
+CU
+
+Rainer
+
+
+', is_response_of='', mail_path='None', references='<CAPcxoX5_uQfueVVn=4k3ZjbBRdEPe2FwNL0OKTEkmPxs_CN2MQ@mail.gmail.com>
+	<20121108203440.GJ18786@michaelsen.dyndns.org>
+	<509C49F9.1040400@gemini-isp.com> <509CA6C6.2060408@gmail.com>
+	<1352463656.25007.70.camel@walk.suse.cz>
+	<50A8603D.2000305@gmail.com>
+	<1353316927.26966.196.camel@walk.suse.cz>
+	<50AB9A38.4020506@gmail.com> <50F83845.30507@gmail.com>', in_reply_to='<50F83845.30507@gmail.com>')>
+****************************************
+<Messages(message_id='<1358941578.3130.36.camel@zelva.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-23 12:46:18', first_date_tz='3600', arrival_date='2013-01-23 03:46:18', arrival_date_tz='None', subject='[Libreoffice-qa] Minutes - QA Call 01/11/2013', message_body='On Tue, 2013-01-22 at 07:52 -0800, Joel Madero wrote:
+> There are quite a few issues with these new rules, mostly due to 
+> limitations with FDO but also because of situations we hadn't 
+> considered. All of this will be discussed on Friday and we'll hopefully 
+> have a final procedure down.
+> 
+> One of the main issues is that FDO doesn't allow you to go from RESOLVED 
+> - WORKSFORME back to UNCONFIRMED.
+
+I see.
+
+>  This is quite a large problem as our 
+> QA team is using WFM quite a bit more these days as we work through 
+> UNCONFIRMED bugs but then a user says "no no no it's still a problem! 
+> and then opens it back up as REOPENED", this is incorrect as REOPENED 
+> should only be used when a developer is assigned
+
+We could reconsider this statement. A bug in the state "REOPENED" might
+need triage as well. It is sometimes reopened a year after it is fixed
+because another user sees a similar problem. Sometimes it is better to
+open separate bug to solve the other problem and do not mess the
+original bugreport.
+
+Once the bug is triagged, we could move it to the state NEW as usual.
+
+Of course, the assigned or CCd developers might touch the reopened bug
+even before the QA team. This usually happen when the bug is reopened
+immediately after it is marked as FIXED. It is perfectly fine. Bug
+triagers do great job when preparing bugs for developers but it does not
+mean that developers could fix only triaged bugs ;-)
+
+>  and has said a patch 
+> fixed something and then a user says "no that patch didn't fix my 
+> problem". Any bug that is unassigned but set to REOPENED is incorrectly 
+> marked -- and we're discussing how to handle these.
+> 
+> This being said, there may be two options:
+> 
+> 1) Ask Tollef to enable us to use UNVERIFIED after a bug is set to REOPENED
+
+Heh, I newer knew how to move bug back to UNCONFIRMED :-) IMHO, it
+should be easier. I am not sure what is the idea behind the current
+behavior. Please, add me into CC if you open a bug for this.
+
+> 2) Ask use to change to NEEDINFO and then to UNVERIFIED - hassle
+
+It is not intuitive and confusing, so I would prefer to avoid it.
+
+> 3) Something else that I haven't thought about
+
+A solution would be to reconsider the REOPENED bugs meaning as explained
+above :-)
+
+
+Best Regards,
+Petr
+
+
+', is_response_of='<50FE2E1C.9020007@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX5_uQfueVVn=4k3ZjbBRdEPe2FwNL0OKTEkmPxs_CN2MQ@mail.gmail.com>
+	<20121108203440.GJ18786@michaelsen.dyndns.org>
+	<509C49F9.1040400@gemini-isp.com> <509CA6C6.2060408@gmail.com>
+	<1352463656.25007.70.camel@walk.suse.cz> <50A8603D.2000305@gmail.com>
+	<1353316927.26966.196.camel@walk.suse.cz> <50AB9A38.4020506@gmail.com>
+	<50F83845.30507@gmail.com> <50FE2E1C.9020007@bielefeldundbuss.de>
+	<50FEB5C9.1000507@gmail.com>', in_reply_to='<50FEB5C9.1000507@gmail.com>')>

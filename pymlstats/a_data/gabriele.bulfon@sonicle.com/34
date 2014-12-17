@@ -1,0 +1,45 @@
+<Messages(message_id='<32418047.719.1373284791065.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-08 13:59:51', first_date_tz='7200', arrival_date='2013-07-08 04:59:51', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='hmm... so vcl is supposed to be linked against NSS/NSPR libraries but
+somehow that doesn't work for you...
+what is really weird is that it fails on linking the executable, it
+should really fail when linking vcl library already.
+can you check that the link command lines use -Wl,-z,defs ?
+apparently not, try to copy the relevant lines from
+gbuild/platform/linux.mk to solaris.mk.
+the other problem is most likely that the libraries from the "nss"
+module somehow have hidden visibility (i assume you are not using
+--with-system-nss?)... if things work PR_Now should be exported like this:
+nm --defined-only -D -g solver/*/lib/libnspr4.so | grep PR_Now
+0000000000039123 T PR_Now
+you'll have to dig into the external build system there to figure out
+why it doesn't work, the files are in workdir/*/UnpackedTarball/nss (or
+if your distro has NSS packages try using --with-system-nss).
+Analyzing better, I've seen my userland component Makefile for libreoffice, contains specific env:
+CONFIGURE_ENV += NSS_CFLAGS=-I/usr/include/mps
+CONFIGURE_ENV += NSS_LIBS="-L/usr/lib/mps -R/usr/lib/mps"
+CONFIGURE_ENV += NPAPI_HEADERS_LIBS="-L/usr/lib"
+CONFIGURE_ENV += NPAPI_HEADERS_CFLAGS="-I/usr/include/npapi"
+These are passed on at configure time.
+But I can't see these linking options on the running link:
+S=/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1 & O=$S/solver/unxsogi.pro & W=$S/workdir/unxsogi.pro & mkdir -p $W/LinkTarget/Executable/ & /usr/gcc/4.4/bin/gcc -Wl,-z,origin '-Wl,-rpath,$ORIGIN:$ORIGIN/../ure-link/lib' -Wl,-rpath-link,$O/lib -Wl,-rpath-link,/lib:/usr/lib -Wl,-z,combreloc -L$O/lib -L/usr/gcc/4.4/lib -L/usr/local/bin -L/usr/dt/lib -L/usr/openwin/lib -Wl,-O1 $W/CObject/desktop/source/pkgchk/unopkg/unopkg_main.o -Wl,--start-group -Wl,--end-group -Wl,--no-as-needed -lm -lnsl -lsocket -lcomphelper -luno_sal -ltllo -lunopkgapp -o $W/LinkTarget/Executable/unopkg.bin
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130708/b5f1247e/attachment.html>
+
+', is_response_of='<51D71DA5.3070401@redhat.com>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>', in_reply_to='<51D71DA5.3070401@redhat.com>')>

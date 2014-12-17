@@ -1,0 +1,18 @@
+<Messages(message_id='<CAMuW_XwvJO4zcrqHg8SdtO_9Z_yJafROpoKOe31sFcmk=HWHdQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-21 03:45:32', first_date_tz='-14400', arrival_date='2014-03-21 00:45:32', arrival_date_tz='None', subject='[PATCH] fdo#53472 Created Dynamic Integral Node classes. Integrals
+ size made dependent on body.', message_body='Hi everybody,
+I am posting my first LO patch.
+https://gerrit.libreoffice.org/#/c/8569/
+
+This code adds a new node structure in StarMath to deal with dynamic
+integrals. I introduce a command "intd" in addition to the standard "int",
+"intd" is able to resize according to the size of its argument.
+This is supposed to be a first step in the potential inclusion of other
+dynamically-sized symbols for sums, products...
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140321/c3210f2b/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

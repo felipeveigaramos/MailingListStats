@@ -1,0 +1,58 @@
+<Messages(message_id='<CAMuW_XxShK1WWvbFzTaKvNWVkVEvTOur+cjvYe5EoKPAf+SQaw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-06 17:39:48', first_date_tz='-14400', arrival_date='2014-06-06 14:39:48', arrival_date_tz='None', subject='EditEng - Switch from edit to non-edit mode - Code references?', message_body='Hi all,
+I'm working on drawing arbitrary text fill colors in Draw and currently my
+code
+- draws correctly (or almost correctly) a fill color when in EDIT mode;
+- draws something unexpected in NON-EDIT mode-
+
+I am trying to debug what happens when the switching between EDIT and
+NON-EDIT occurs (e.g. which functions take care of setting the state of
+OutputDevice and so on from EditEng).
+Does anyone know any point I should be looking at?
+Or does anyone have any suggestion on how to proceed for debugging?
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140606/949cd2ea/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1402181014.10106.8.camel@linux-3gxs.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-07 18:43:34', first_date_tz='-14400', arrival_date='2014-06-07 15:43:34', arrival_date_tz='None', subject='EditEng - Switch from edit to non-edit mode - Code references?', message_body='On Fri, 2014-06-06 at 17:39 -0400, Matteo Campanelli wrote:
+
+> 
+> Does anyone know any point I should be looking at?
+
+Based on my experience with the edit engine code and your description,
+the first place I would look at is class EditTextObject, and the
+EditEngine::CreateTextObject() method.
+
+What typically happens with the edit engine is that, during edit mode,
+much of its state is handled by EditEngine and its associated classes
+i.e. ImpEditEngine, EditView, and ImpEditView.  I assume those are where
+you were working on (?)
+
+When the edit mode ends, the edit engine flushes its internal state to a
+persistent object called EditTextObject, which basically replicates much
+of edit engine's internal states.  My guess is that, you've made changes
+in the EditEngine side of things, but have yet to make necessary changes
+to the EditTextObject side of things, or something like that.
+
+And CreateTextObject() is where the edit engine code flushes its
+internal states into EditTextObject, so if you've missed copying some of
+your new properties, this is a good place to start investigating, I
+would think.
+
+Of course, I'm not your mentor and I don't know the full description of
+your project, so I may be off.  But in case you are out of ideas,
+sniffing around those places I mentioned may be a good strategy until
+your mentors get back to you.
+
+Kohei
+
+
+
+
+
+
+', is_response_of='<CAMuW_XxShK1WWvbFzTaKvNWVkVEvTOur+cjvYe5EoKPAf+SQaw@mail.gmail.com>', mail_path='None', references='<CAMuW_XxShK1WWvbFzTaKvNWVkVEvTOur+cjvYe5EoKPAf+SQaw@mail.gmail.com>', in_reply_to='<CAMuW_XxShK1WWvbFzTaKvNWVkVEvTOur+cjvYe5EoKPAf+SQaw@mail.gmail.com>')>

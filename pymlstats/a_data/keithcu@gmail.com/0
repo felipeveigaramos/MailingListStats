@@ -1,0 +1,79 @@
+<Messages(message_id='<1392760699960-4097819.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-18 13:58:19', first_date_tz='-28800', arrival_date='2014-02-18 22:58:19', arrival_date_tz='None', subject='Some information about LibO on actual hardware', message_body='I have the same hardware, but running Linux. There are a number of fixes in
+the master branch, and hope to get them into 4.2.1. It should just work on
+8.1, but I am very curious to find out find out what happens as no one yet
+has tried. You are the first person with a Windows HiDPI machine around, so
+I hope you can try out another pre-release of 4.2.1 and give feedback? I
+checked and Cebit is March 10th so that gives time to have something better
+to show.
+
+As for the hang, I saw it on Linux when trying to widen the sidebar past its
+maximum width when the window had already been set wider than it should by
+another part of the code which didn't respect the max value. I increased the
+maximum width allowed for the Sidebar which should make the problem usually
+go away ;-) You might be seeing another problem of course, your testing
+would be helpful.
+
+-Keith
+
+ 
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Some-information-about-LibO-on-actual-hardware-tp4097784p4097819.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<5303983B.6020005@documentfoundation.org>', mail_path='None', references='<5303983B.6020005@documentfoundation.org>', in_reply_to='<5303983B.6020005@documentfoundation.org>')>
+****************************************
+<Messages(message_id='<53046214.60006@documentfoundation.org>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-19 08:49:40', first_date_tz='3600', arrival_date='2014-02-19 08:49:40', arrival_date_tz='None', subject='Some information about LibO on actual hardware', message_body='Hey Keith,
+
+well, I have loaded the version 4.2.1 ;)
+
+But nevertheless - yes, I will test and give you all the feedback I can
+give :)
+
+I will update the version during the first march week - so before CeBIT.
+
+Best regards
+Thomas
+
+Am 18.02.2014 22:58, schrieb Keith Curtis:
+> I have the same hardware, but running Linux. There are a number of fixes in
+> the master branch, and hope to get them into 4.2.1. It should just work on
+> 8.1, but I am very curious to find out find out what happens as no one yet
+> has tried. You are the first person with a Windows HiDPI machine around, so
+> I hope you can try out another pre-release of 4.2.1 and give feedback? I
+> checked and Cebit is March 10th so that gives time to have something better
+> to show.
+> 
+> As for the hang, I saw it on Linux when trying to widen the sidebar past its
+> maximum width when the window had already been set wider than it should by
+> another part of the code which didn't respect the max value. I increased the
+> maximum width allowed for the Sidebar which should make the problem usually
+> go away ;-) You might be seeing another problem of course, your testing
+> would be helpful.
+> 
+> -Keith
+> 
+>  
+> 
+> 
+> 
+> --
+> View this message in context: http://nabble.documentfoundation.org/Some-information-about-LibO-on-actual-hardware-tp4097784p4097819.html
+> Sent from the Dev mailing list archive at Nabble.com.
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+> 
+
+
+-- 
+## Unterst?tzung der freien Office Suite
+## http://de.libreOffice.org  - www.LibreOffice.org
+## Vorstand Freies Office Deutschland e.V.
+## Mitglieder willkommen: www.FroDeV.org
+
+', is_response_of='<1392760699960-4097819.post@n3.nabble.com>', mail_path='None', references='<5303983B.6020005@documentfoundation.org>
+	<1392760699960-4097819.post@n3.nabble.com>', in_reply_to='<1392760699960-4097819.post@n3.nabble.com>')>

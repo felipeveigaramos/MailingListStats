@@ -1,0 +1,48 @@
+<Messages(message_id='<CAO7O0Nk2F6B3sLzXGcYrnKOb+++-qS062wN-RYDoD=D7t4majQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-03-18 18:36:16', first_date_tz='10800', arrival_date='2013-03-18 08:36:16', arrival_date_tz='None', subject='Can we localize math commands?', message_body='Dear all,
+
+I have two questions:
+
+Can we localize the LO Math commands like, sum, from  %alpha, %theta etc?
+
+Regards,
+
+
+-- 
+Regards,*
+___________________________
+Tadele Assefa
+Managing Director*
+*
+
+Cell: +25-911-84-13-84*
+*Think Green ? Please do not print this email unless you really need to*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130318/807e3efe/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1364319886.19030.70.camel@eve.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-03-26 18:44:46', first_date_tz='3600', arrival_date='2013-03-26 10:44:46', arrival_date_tz='None', subject='Can we localize math commands?', message_body='Ti Tadele,
+
+Tadele Assefa p??e v Po 18. 03. 2013 v 18:36 +0300:
+
+> I have two questions:
+> 
+> Can we localize the LO Math commands like, sum, from  %alpha, %theta
+> etc?
+
+The Math code lives mostly here:
+
+http://cgit.freedesktop.org/libreoffice/core/tree/starmath/source
+
+Can you please be more specific what are you trying to achieve?  That
+will help to point you more directly.
+
+And - what was you 2nd question? :-)
+
+All the best,
+Kendy
+
+
+
+', is_response_of='<CAO7O0Nk2F6B3sLzXGcYrnKOb+++-qS062wN-RYDoD=D7t4majQ@mail.gmail.com>', mail_path='None', references='<CAO7O0Nk2F6B3sLzXGcYrnKOb+++-qS062wN-RYDoD=D7t4majQ@mail.gmail.com>', in_reply_to='<CAO7O0Nk2F6B3sLzXGcYrnKOb+++-qS062wN-RYDoD=D7t4majQ@mail.gmail.com>')>

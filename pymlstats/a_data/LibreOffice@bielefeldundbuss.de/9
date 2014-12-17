@@ -1,0 +1,32 @@
+<Messages(message_id='<4FC5C83D.2070308@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-30 09:11:57', first_date_tz='7200', arrival_date='2012-05-30 00:11:57', arrival_date_tz='None', subject='How to improve our Bug tracking system', message_body='Hi all,
+
+it seems the original mail still is pending for moderation, so I try 
+again with a direct mail to the list.
+
+As a consequence of our QA related discussions at Hackfest April 2012 in 
+Hamburg
+<http://rrbd.wordpress.com/2012/04/14/hackfest-hamburg-2012/>
+I now want to start to collect ideas how we can make a big step 
+improving our (Bugzilla) Bug tracking system. The goal is that after we 
+will have finished work (end 2012?) we will have a system what will work 
+without bigger changes at least for the next 5 years for our growing 
+contributors community.
+
+As a tool for that I created 
+<https://wiki.documentfoundation.org/How_to_Improve_Bugzilla>, I hope 
+that we so can get an overview
+what our needs are and how we can reach the goals.
+
+Your contribution to complete the contents on that page will be appreciated.
+
+Especially for the listed Problems we will need some expert knowledge
+
+I hope that end of July we will have finished research and a clear 
+concept how we can reach most goals with acceptable costs.
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

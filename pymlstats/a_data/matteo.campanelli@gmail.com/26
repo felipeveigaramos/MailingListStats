@@ -1,0 +1,65 @@
+<Messages(message_id='<CAMuW_XySRu0RjDevCfChPJ4YSVLv8vYp+k8J15=Ubn20Tcc_Dw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-11 16:20:26', first_date_tz='7200', arrival_date='2014-07-11 07:20:26', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 22/06/2014', message_body='This patch is for fixing the crash and generate an "inadmissible data type"
+dialog.
+
+Thorsten, I checked again and it seems to me that the code now "follows"
+CharUnderlineColor everywhere.
+But I have no idea about the other name CharUnderlineColor is mapped to.
+
+
+
+On Thu, Jul 10, 2014 at 2:20 PM, Miklos Vajna <vmiklos at collabora.co.uk>
+wrote:
+
+> Hi Matteo,
+>
+> I noticed a crash that's probably related to your (otherwise great :-)
+> ), text background editeng work -- care to take a look?
+>
+> 1) Start Writer, enable form controls toolbar (View -> Toolbars -> Form
+> controls)
+> 2) Click the more controls button, pick the Date Field
+> 3) Draw a rectangle in the body text area to create an instance
+> 4) Try to query its background color via UNO: Tools -> Macros ->
+> Organize macros -> Basic -> Edit, then type:
+>
+> print ThisComponent.DrawPage(0).CharBackColor
+>
+> and Press F5 to run, it crashes with:
+>
+> Program received signal SIGSEGV, Segmentation fault.
+> 0x00007ffff3b4d9fc in SfxItemSet::Get (this=0x1dfaa00, nWhich=0,
+> bSrchInParent=true) at
+> /home/vmiklos/git/libreoffice/master/svl/source/items/itemset.cxx:1002
+> 1002        DBG_ASSERT( !pItem->ISA(SfxSetItem) ||
+> (gdb) bt 10
+> #0  0x00007ffff3b4d9fc in SfxItemSet::Get (this=0x1dfaa00, nWhich=0,
+> bSrchInParent=true) at
+> /home/vmiklos/git/libreoffice/master/svl/source/items/itemset.cxx:1002
+> #1  0x00007fffd2cc9de6 in SdrObject::GetMergedItem (this=0x226b140,
+> nWhich=0) at
+> /home/vmiklos/git/libreoffice/master/svx/source/svdraw/svdobj.cxx:2113
+> #2  0x00007fffd2ea856e in SvxShape::_getPropertyValue (this=0x21c1f38,
+> PropertyName="CharBackColor") at
+> /home/vmiklos/git/libreoffice/master/svx/source/unodraw/unoshape.cxx:1797
+>
+> nWhich = 0 sounds buggy, maybe you advertise your new UNO property in a
+> generic property map, but in case of form controls, the underlying
+> implementation doesn't handle that?
+>
+> Thanks,
+>
+> Miklos
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140711/ab8de7cb/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-CharBackColor-advertised-in-unoshap2.cxx.patch
+Type: text/x-patch
+Size: 1432 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140711/ab8de7cb/attachment.bin>
+
+', is_response_of='', mail_path='None', references='<CAMuW_XzA2nsUeU_aNPeUooBGLYsd5eDH8WOfdaD29N3EXb87dQ@mail.gmail.com>
+ <20140710122040.GE27187@collabora.co.uk>', in_reply_to='<20140710122040.GE27187@collabora.co.uk>')>

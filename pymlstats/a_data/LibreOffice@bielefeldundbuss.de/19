@@ -1,0 +1,67 @@
+<Messages(message_id='<4FD1927F.1010106@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-08 07:49:51', first_date_tz='7200', arrival_date='2012-06-07 22:49:51', arrival_date_tz='None', subject='Cleaning bug list', message_body='Joel Madero schrieb:
+> Just a heads up to everyone. I'm doing a serious cleaning of bug
+> reports. Changing a lot to NEEDINFO, RESOLVED, etc...We have way too
+> many bugs listed as unknown that haven't been touched in months and have
+> been confirmed to not be an issue or needs updated without updates from
+> original authors of the bugs. Hope no one minds.
+
+Hi Joel,
+
+thank you for your initiative. Can you please present your ideas with 
+some more details on <libreoffice-qa at lists.freedesktop.org>?
+
+Best regards
+
+Rainer Bielefeld
+
+
+', is_response_of='', mail_path='None', references='<CAPcxoX40LsAcPXr21cPH24w4Q=Hnm8CFwFvPFpR1Ok32GgfmmQ@mail.gmail.com>', in_reply_to='<CAPcxoX40LsAcPXr21cPH24w4Q=Hnm8CFwFvPFpR1Ok32GgfmmQ@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<1339147331.25167.19.camel@linux-yjtf.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-08 10:22:11', first_date_tz='3600', arrival_date='2012-06-08 02:22:11', arrival_date_tz='None', subject='Cleaning bug list', message_body='Hi Joel,
+
+On Thu, 2012-06-07 at 23:49 -0700, Joel Madero wrote:
+> Sure thing, I'll include it here and add a link as soon as I post over
+> at freedesktop bugs
+
+	This is prolly best on the libreoffice-qa list (I just CC'd it) - but
+it's interesting on the hackers list too. Your cleanup sounds most
+welcome [ to a non QA expert such as myself at least ] :-)
+
+> With thousands of unknown bugs I think that this will help us divvy up
+> the work and prioritize a bit. After I do this phase I'll try to get
+> consensus on how to prioritize. Obviously security bugs and resource
+> leaks get highest, next I'm not sure but we can discuss this after.
+
+	Wonderful :-) 
+
+> I hope I'm not overstepping, just trying to help as much as possible
+> as it seems like there is a bit of a back log. If this isn't wanted
+> just let me know and I'll cease immediately.
+
+	It's good to have more people getting stuck into the bug cleanup - of
+course, worth getting advice / input from Rainer & the -qa list, but it
+sounds like you're on a good track to me :-)
+
+> Thanks to everyone contributing to this great project. 
+
+	And thank-you ! it's really helpful to have more QA people scanning the
+bug lists, confirming bugs & closing old duplicates.
+
+	Having said that, there are thousands of open bugs - my report shows:
+2.5k in the 'NEW' state, and 1.5k in the UNCONFIRMED state. 
+
+	Fixing 6bugs per day on average, that's a good pipeline of a couple of
+years work of fixing ;-) so the prioritisation work is really very
+greatly appreciated to ensure we fix the right bugs.
+
+	Thanks !
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<4FD1927F.1010106@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX40LsAcPXr21cPH24w4Q=Hnm8CFwFvPFpR1Ok32GgfmmQ@mail.gmail.com>
+	<4FD1927F.1010106@bielefeldundbuss.de>
+	<CAPcxoX4BP1BXfKPDcaouvCHi7pzsBKh1Ef41dtHN33M5roj25A@mail.gmail.com>', in_reply_to='<CAPcxoX4BP1BXfKPDcaouvCHi7pzsBKh1Ef41dtHN33M5roj25A@mail.gmail.com>')>

@@ -1,0 +1,71 @@
+<Messages(message_id='<CAFrS=rf7qt8kC6e1Y4Wq_ma5aGDrRiCeZ0KR_CZ392eO6WuumQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-19 01:04:49', first_date_tz='19800', arrival_date='2013-02-18 11:34:49', arrival_date_tz='None', subject='BUG#41572', message_body='Hey Thorsten!
+
+I hope this idea is not modified and is a must need for libreoffice and so
+i can work on it with full dedication so as to make it a task.
+
+Hence i am noting down certain code pointers which i figure out are
+important and changes can be one of the ways to bring about the intended
+change:
+
+1> We need to include a PresObjKind which mentions something for the custom
+animation : *"PRESOBJ_CSTMANIM"
+*
+* *so you may view it here :
+http://opengrok.libreoffice.org/xref/core/sd/inc/pres.hxx#28
+
+2>As mentioned in point 1 , parallely i think we also need to put the case
+of the PresObj for Custom Animation in GetPresObj and CreatePresObj  :
+http://opengrok.libreoffice.org/xref/core/sd/source/core/sdpage.cxx#pSdrObj
+
+If you think there is some change in the thought process/approach needed in
+the same please do let me know and i would also like to know if we need to
+make any kind of change in the CustomAnimationPane.cxx :
+http://opengrok.libreoffice.org/xref/core/sd/source/ui/animations/CustomAnimationPane.cxx
+
+
+Hope to receive a quick reply.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130219/b3971fee/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130218230751.GL1831@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-19 00:07:51', first_date_tz='3600', arrival_date='2013-02-18 15:07:51', arrival_date_tz='None', subject='BUG#41572', message_body='Janit Anjaria wrote:
+> If you think there is some change in the thought process/approach
+> needed in the same please do let me know and i would also like to
+> know if we need to make any kind of change in the
+> CustomAnimationPane.cxx :
+>
+Hi Janit,
+
+good to see you're jumping right in! First off, I suggest you grab
+
+ https://bugs.freedesktop.org/show_bug.cgi?id=43039
+
+(assign it to yourself), thus signalling to other hackers that you're
+working on a fix. And then some outline of what you plan would be good
+to know (for me at least) - i.e. just a sentence or two, can be in the
+bug report, a simple use case.
+
+I think there is quite a bit of overlap here with
+
+ https://wiki.documentfoundation.org/Development/Gsoc/Ideas#Attach_animations_to_styles
+
+, which is good - having this (partly) address is quite high on my
+list. :)
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130219/4d583835/attachment-0001.pgp>
+
+', is_response_of='<CAFrS=rf7qt8kC6e1Y4Wq_ma5aGDrRiCeZ0KR_CZ392eO6WuumQ@mail.gmail.com>', mail_path='None', references='<CAFrS=rf7qt8kC6e1Y4Wq_ma5aGDrRiCeZ0KR_CZ392eO6WuumQ@mail.gmail.com>', in_reply_to='<CAFrS=rf7qt8kC6e1Y4Wq_ma5aGDrRiCeZ0KR_CZ392eO6WuumQ@mail.gmail.com>')>

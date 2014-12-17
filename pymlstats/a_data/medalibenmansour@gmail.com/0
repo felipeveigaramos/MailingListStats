@@ -1,0 +1,52 @@
+<Messages(message_id='<1385031647941-4084287.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-21 03:00:47', first_date_tz='-28800', arrival_date='2013-11-21 03:00:47', arrival_date_tz='None', subject='LO-4.0.6 with Visual Studio 2012: Windows XP Compatibiliy problem', message_body='Hi everyone,
+
+I had a successful build of LibreOffice-4.0.6. Here is my conf:
+- Build Environment: Windows 7 (64 bits)
+- Microsoft Visual Studio version: 2012 update 4
+-Autogen.lastrun:
+
+--with-nss-build-tools=/cygdrive/c/mozilla-build/
+--with-junit=/cygdrive/c/sources/junit-4.10.jar
+--with-ant-home=/cygdrive/c/sources/apache-ant-1.9.2
+--with-external-tar=/cygdrive/d/project/LIBREOFFICE/External-tar_4_0_6
+--with-directx-home=/cygdrive/c/Program Files (x86)/Microsoft DirectX SDK
+(June 2010)
+--disable-activex
+--disable-atl
+--with-vendor='OSS_SOS'
+--with-build-version='M4'
+--with-distro=LibreOfficeWin32
+--enable-release-build
+--with-lang=en-US en-GB fr de es it
+--without-help
+--with-windows-sdk-home=C:\Program Files\Microsoft SDKs\Windows\v7.1
+
+I can install the msi result on Windows 7 and it works fine. I can also
+install it successfully on *Windows XP* but i have this message when i try
+to run LibreOffice:
+-"..*soffice.exe is not a valid Win32 program*" => It doesn't work 
+
+I really need and appreciate your help to fix this problem on Windows XP
+!!!!
+
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/LO-4-0-6-with-Visual-Studio-2012-Windows-XP-Compatibiliy-problem-tp4084287.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1385040224896-4084297.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-21 05:23:44', first_date_tz='-28800', arrival_date='2013-11-21 05:23:44', arrival_date_tz='None', subject='LO-4.0.6 with Visual Studio 2012: Windows XP Compatibiliy problem', message_body='Thank you Guys for your explanations !!! That really help me to switch to an
+older version of MSVC  !!
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/LO-4-0-6-with-Visual-Studio-2012-Windows-XP-Compatibiliy-problem-tp4084287p4084297.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<1385031647941-4084287.post@n3.nabble.com>', mail_path='None', references='<1385031647941-4084287.post@n3.nabble.com>
+	<528DED98.1040102@redhat.com>
+	<CAASt6Sz7D_Tgfx8AzaT928xDWB3X-fPanzoxYE56ikVre=9E4A@mail.gmail.com>', in_reply_to='<CAASt6Sz7D_Tgfx8AzaT928xDWB3X-fPanzoxYE56ikVre=9E4A@mail.gmail.com>')>

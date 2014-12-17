@@ -1,0 +1,62 @@
+<Messages(message_id='<CA+_jvaxANB9mOi9nUN8nn4ND9D58x9YGA2eMF0OD5yuC8UeHww@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-09 18:55:22', first_date_tz='19800', arrival_date='2012-12-09 05:25:22', arrival_date_tz='None', subject='Email-Introduction', message_body='Hello,
+
+I am Vishv Brahmbhatt. I am a student of Dhirubhai Ambani Institute of
+Information and Communication Technology(DA-IICT),India.
+
+I am new to the open source community and LibreOffice community. I am very
+much interested in contributing to the community and also work for the
+LibreOffice in  GSOC.
+
+I have a keen interest in the UI development,so please guide me how can I
+start contributing to LibreOffice.
+
+Thanks.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20121209/d6c9cca9/attachment-0001.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1355135649.17216.6.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-10 10:34:09', first_date_tz='0', arrival_date='2012-12-10 02:34:09', arrival_date_tz='None', subject='Email-Introduction', message_body='Hi Vishv,
+
+On Sun, 2012-12-09 at 18:55 +0530, Vishv Brahmbhatt wrote:
+> I am Vishv Brahmbhatt. I am a student of Dhirubhai Ambani Institute of
+> Information and Communication Technology(DA-IICT),India.
+
+	Welcome ! :-)
+
+> I am new to the open source community and LibreOffice community. I am
+> very much interested in contributing to the community and also work
+> for the LibreOffice in  GSOC.
+
+	Sounds great.
+
+> I have a keen interest in the UI development,so please guide me how
+> can I start contributing to LibreOffice.
+
+	This is a great question. Prolly the best thing to get stuck into just
+now is the effort to re-draw all of our dialogs to improve the
+underlying technology used; you can read about it here:
+
+	http://wiki.documentfoundation.org/Development/WidgetLayout
+	
+	You'll initially need to install a Linux system, and get glade working
+in order to re-draw the relevant dialogs: do you have that ? after that
+getting a build is rather useful - can you poke at:
+
+	http://www.libreoffice.org/developers-2/
+
+	For instructions there ? again Linux is the easiest environment to get
+setup and building.
+
+	Looking forward to your contributions !
+
+	All the best,
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<CA+_jvaxANB9mOi9nUN8nn4ND9D58x9YGA2eMF0OD5yuC8UeHww@mail.gmail.com>', mail_path='None', references='<CA+_jvaxANB9mOi9nUN8nn4ND9D58x9YGA2eMF0OD5yuC8UeHww@mail.gmail.com>', in_reply_to='<CA+_jvaxANB9mOi9nUN8nn4ND9D58x9YGA2eMF0OD5yuC8UeHww@mail.gmail.com>')>

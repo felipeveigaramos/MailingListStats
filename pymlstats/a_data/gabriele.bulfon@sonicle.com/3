@@ -1,0 +1,129 @@
+<Messages(message_id='<11144749.716.1373284472418.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-08 13:54:32', first_date_tz='7200', arrival_date='2013-07-08 04:54:32', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='hmm... so vcl is supposed to be linked against NSS/NSPR libraries but
+somehow that doesn't work for you...
+what is really weird is that it fails on linking the executable, it
+should really fail when linking vcl library already.
+can you check that the link command lines use -Wl,-z,defs ?
+apparently not, try to copy the relevant lines from
+gbuild/platform/linux.mk to solaris.mk.
+the other problem is most likely that the libraries from the "nss"
+module somehow have hidden visibility (i assume you are not using
+--with-system-nss?)... if things work PR_Now should be exported like this:
+nm --defined-only -D -g solver/*/lib/libnspr4.so | grep PR_Now
+0000000000039123 T PR_Now
+you'll have to dig into the external build system there to figure out
+why it doesn't work, the files are in workdir/*/UnpackedTarball/nss (or
+if your distro has NSS packages try using --with-system-nss).
+Several things appear strange to me, so here are some considerations:
+1 - Yes, I use system libs for nspr/nss, built by my distro userland
+2 - Doing ldd on libvcllo.so shows a lot of lib dependencies, but no mention about nspr nor nss libs
+3 - Doing your nm on my system libnspr4.so correctly reveals the output you said
+4 - The nspr/nss libs are not under /usr/lib nor /lib in my system, they're all under /usr/lib/mps
+I tried running gmake under desktop as you requested (had to add the LD_ALTEXEC to force sun ld to run gnu ld instead):
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/build/i86/desktop$ gmake LD_ALTEXEC=/usr/gnu/bin/ld
+[build LNK] Executable/unopkg.bin
+S=/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1 & O=$S/solver/unxsogi.pro & W=$S/workdir/unxsogi.pro &  mkdir -p $W/LinkTarget/Executable/ & /usr/gcc/4.4/bin/gcc     -Wl,-z,origin '-Wl,-rpath,$ORIGIN:$ORIGIN/../ure-link/lib' -Wl,-rpath-link,$O/lib -Wl,-rpath-link,/lib:/usr/lib -Wl,-z,combreloc -L$O/lib -L/usr/gcc/4.4/lib -L/usr/local/bin -L/usr/dt/lib -L/usr/openwin/lib  -Wl,-O1  $W/CObject/desktop/source/pkgchk/unopkg/unopkg_main.o      -Wl,--start-group  -Wl,--end-group -Wl,--no-as-needed  -lm -lnsl -lsocket  -lcomphelper -luno_sal -ltllo -lunopkgapp -o $W/LinkTarget/Executable/unopkg.bin
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `PR_Now'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `CERT_DecodeCertFromPackage'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_AddCertificate'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_IncludeCerts'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSEncoder_Finish'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_Destroy'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_AddSignerInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_AddSigningTime'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSEncoder_Start'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_NoDB_Init'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Begin'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_End'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSMessage_GetContentInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_GetContentInfo'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignerInfo_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSContentInfo_SetContent_SignedData'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Update'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSSignedData_SetDigestValue'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Create'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `NSS_CMSContentInfo_SetContent_Data'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `PORT_NewArena'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libvcllo.so: undefined reference to `HASH_Destroy'
+collect2: ld returned 1 exit status
+gmake: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/Executable/unopkg.bin] Error 1
+I can't see any linking of nspr nor nss. Maybe I should add some flags to configure / gmake to let it link under /usr/lib/mps?
+Why ldd doesn't reveal this lib as missing, nor shows it as referenced?
+Thanx so much for all your help!
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130708/7fbc0cb5/attachment.html>
+
+', is_response_of='<1372936833.13079.17.camel@linux-d2lh.site>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>', in_reply_to='<51D71DA5.3070401@redhat.com>')>
+****************************************
+<Messages(message_id='<1373876118.25792.273.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 09:15:18', first_date_tz='3600', arrival_date='2013-07-15 01:15:18', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='
+On Mon, 2013-07-15 at 09:44 +0200, Gabriele Bulfon wrote:
+> I was wandering why Motif libraries are needed by these extension. Is
+> it absolutely necessary?
+
+	I'm amazed to hear that we link to motif in the modern world; it seems
+to be only this extension:
+
+>          $W/CxxObject/extensions/source/plugin/unx/npwrap.o
+>         $W/CxxObject/extensions/source/plugin/unx/npnapi.o
+
+	I'd disable this I guess in configure.ac we have:
+
+dnl Check for NPAPI interface to plug browser plugins into LibreOffice
+documents
+
+	I imagine we should just disable that for Solaris [ for now ].
+
+	Quite why we think Mozilla requires motif still I'm not sure I'd be
+amazed if they still had a hard dep on that.
+
+	HTH,
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<11144749.716.1373284472418.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>', in_reply_to='<27315122.287.1373874263958.JavaMail.sonicle@www>')>

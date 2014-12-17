@@ -1,0 +1,22 @@
+<Messages(message_id='<26363666.308.1372667767718.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-01 10:36:07', first_date_tz='7200', arrival_date='2013-07-01 01:36:07', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='On Sat, Jun 29, 2013 at 16:24:42 CEST, Norbert Thiebaud wrote
+take a look at Library_cpp_uno.mk
+and in particular how bridges_SELECTED_BRIDGE is set...
+from what I read the else ifeq($(CPU),I) line 56 pre-empt the section
+you want which is lower.. line 143
+some re-order of the different if/else section seems in order (to
+works we need to test from the most particular to the most generic)
+Norbert
+Great! I moved the SOLARISI code from line 143 up just before line 56 and
+it worked ;)
+Thanx!
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130701/4837af61/attachment.html>
+
+', is_response_of='<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>', in_reply_to='<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>')>

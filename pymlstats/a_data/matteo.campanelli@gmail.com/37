@@ -1,0 +1,45 @@
+<Messages(message_id='<CAMuW_XzxpLoEnGLiY53dmrak4xnPrgkHuL_GBWM9ZONLmR+40g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-03 00:49:39', first_date_tz='-14400', arrival_date='2014-06-02 21:49:39', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 02/06/2014', message_body='Hi all,
+an update on last week's work:
+1) I wrote part of the basic code for Background Color attributes in
+editeng;
+2) I moved part of the rendering code from vcl to editeng;
+3) I made some experiments with transparency.
+
+Points (2) and (3) are still incomplete in this stage.
+I am still trying to debug some misbehavior in (2)  and i had no successful
+experiment in with transparency so far.
+Fixing these two issues and writing more layout attribute-related code are
+my core goals of the current week.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140603/31d9b25f/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140603094247.GW3249@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-03 11:42:47', first_date_tz='7200', arrival_date='2014-06-03 02:42:47', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 02/06/2014', message_body='Matteo Campanelli wrote:
+> I am still trying to debug some misbehavior in (2)  and i had no successful
+> experiment in with transparency so far.
+> Fixing these two issues and writing more layout attribute-related code are
+> my core goals of the current week.
+> 
+Hi Matteo,
+
+sounds excellent - and don't be put off by the initial bumps, editeng
+& vcl is rather old code, with lots of bugfix and feature
+sedimentations.
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140603/ba797c87/attachment.sig>
+
+', is_response_of='<CAMuW_XzxpLoEnGLiY53dmrak4xnPrgkHuL_GBWM9ZONLmR+40g@mail.gmail.com>', mail_path='None', references='<CAMuW_XzxpLoEnGLiY53dmrak4xnPrgkHuL_GBWM9ZONLmR+40g@mail.gmail.com>', in_reply_to='<CAMuW_XzxpLoEnGLiY53dmrak4xnPrgkHuL_GBWM9ZONLmR+40g@mail.gmail.com>')>

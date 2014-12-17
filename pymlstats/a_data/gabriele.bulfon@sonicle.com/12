@@ -1,0 +1,186 @@
+<Messages(message_id='<19839347.522.1374157429985.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-18 16:23:49', first_date_tz='7200', arrival_date='2013-07-18 07:23:49', arrival_date_tz='None', subject='Error building sc on XStreamOS/illumos', message_body='Great! Worked, and I had also to patch this:
+--- libreoffice-4.1.0.1/sc/source/core/tool/scmatrix.cxx        Thu Jul 18 16:19:54 2013
++++ libreoffice-4.1.0.1/sc/source/core/tool/scmatrix.cxx        Thu Jul 18 16:19:47 2013
+@@ -89,7 +89,7 @@
+}
+}
+-        static void delete_block(mdds::mtv::base_element_block* p)
++        static void delete_block(const mdds::mtv::base_element_block* p)
+{
+if (!p)
+return;
+----------------------------------------------------------------------------------
+Da: Kohei Yoshida
+A: Gabriele Bulfon
+Cc: libreoffice-dev
+Data: 18 luglio 2013 14.11.02 CEST
+Oggetto: Re: Error building sc on XStreamOS/illumos
+On 07/18/2013 03:12 AM, Gabriele Bulfon wrote:
+Hi,
+building went on after setup_native, and I got an error while building sc:
+In file included from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/column.hxx:28,
+from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/table.hxx:28,
+from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/source/core/data/bcaslot.cxx:30:
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66:
+error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error:
+provided for 'template
+struct mdds::mtv::custom_block_func1'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66:
+error: invalid type in declaration before ';' token
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:70:
+error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error:
+provided for 'template
+struct mdds::mtv::custom_block_func1'
+what's wrong?
+You are probably using mdds 0.9.0 to build the 4.1 branch.  You need to
+either downgrade it to 0.8.1 (which you can easily by specifying
+--without-system-mdds), or patch mtvelements.hxx to get it to build with
+mdds 0.9.0.  Patching should be easy; all you have to do is to remove
+the block type ID's from the template arguments i.e. making the
+following change
+diff --git a/sc/inc/mtvelements.hxx b/sc/inc/mtvelements.hxx
+index 1628381..037ec6b 100644
+--- a/sc/inc/mtvelements.hxx
++++ b/sc/inc/mtvelements.hxx
+@@ -63,11 +63,11 @@ MDDS_MTV_DEFINE_ELEMENT_CALLBACKS_PTR(SvtBroadcaster, sc::element_type_broadcast
+namespace sc {
+// Broadcaster storage container
+-typedef mdds::mtv::custom_block_func1
+BCBlkFunc;
++typedef mdds::mtv::custom_block_func1
+BCBlkFunc;
+typedef mdds::multi_type_vector
+BroadcasterStoreType;
+// Cell text attribute container.
+-typedef mdds::mtv::custom_block_func1
+CTAttrFunc;
++typedef mdds::mtv::custom_block_func1
+CTAttrFunc;
+typedef mdds::multi_type_vector
+CellTextAttrStoreType;
+/**
+should make the 4.1 branch build with 0.9.0.
+HTH,
+Kohei
+--
+Kohei Yoshida, LibreOffice Calc hacker, SUSE.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130718/2494f7cd/attachment.html>
+
+', is_response_of='<51E7DB56.1000000@suse.de>', mail_path='None', references='<6602396.491.1374131522243.JavaMail.sonicle@www>
+	<51E7DB56.1000000@suse.de>', in_reply_to='<51E7DB56.1000000@suse.de>')>
+****************************************
+<Messages(message_id='<15062589.550.1374215625569.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-19 08:33:45', first_date_tz='7200', arrival_date='2013-07-18 23:33:45', arrival_date_tz='None', subject='Error building sc on XStreamOS/illumos', message_body='Later on build, error for missing file losessioninstall.component.
+I had to patch Module_shell by duplicating Linux part for Solaris.
+Is this correct?
+--- libreoffice-4.1.0.1/shell/Module_shell.mk   Fri Jul 19 08:27:41 2013
++++ libreoffice-4.1.0.1/shell/Module_shell.mk   Fri Jul 19 08:27:28 2013
+@@ -22,6 +22,14 @@
+endif
+endif
++ifeq ($(OS),SOLARIS)
++ifeq ($(ENABLE_GIO),TRUE)
++$(eval $(call gb_Module_add_targets,shell,\
++       Library_losessioninstall \
++))
++endif
++endif
++
+ifeq ($(ENABLE_GCONF),TRUE)
+$(eval $(call gb_Module_add_targets,shell,\
+Library_gconfbe \
+Da:
+Gabriele Bulfon
+A:
+Kohei Yoshida
+Cc:
+libreoffice-dev
+Data:
+18 luglio 2013 16.23.49 CEST
+Oggetto:
+Re: Error building sc on XStreamOS/illumos
+Great! Worked, and I had also to patch this:
+--- libreoffice-4.1.0.1/sc/source/core/tool/scmatrix.cxx        Thu Jul 18 16:19:54 2013
++++ libreoffice-4.1.0.1/sc/source/core/tool/scmatrix.cxx        Thu Jul 18 16:19:47 2013
+@@ -89,7 +89,7 @@
+}
+}
+-        static void delete_block(mdds::mtv::base_element_block* p)
++        static void delete_block(const mdds::mtv::base_element_block* p)
+{
+if (!p)
+return;
+----------------------------------------------------------------------------------
+Da: Kohei Yoshida
+A: Gabriele Bulfon
+Cc: libreoffice-dev
+Data: 18 luglio 2013 14.11.02 CEST
+Oggetto: Re: Error building sc on XStreamOS/illumos
+On 07/18/2013 03:12 AM, Gabriele Bulfon wrote:
+Hi,
+building went on after setup_native, and I got an error while building sc:
+In file included from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/column.hxx:28,
+from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/table.hxx:28,
+from
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/source/core/data/bcaslot.cxx:30:
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66:
+error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error:
+provided for 'template
+struct mdds::mtv::custom_block_func1'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:66:
+error: invalid type in declaration before ';' token
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/sc/inc/mtvelements.hxx:70:
+error: wrong number of template arguments (2, should be 1)
+/usr/include/mdds/multi_type_vector_custom_func1.hpp:40: error:
+provided for 'template
+struct mdds::mtv::custom_block_func1'
+what's wrong?
+You are probably using mdds 0.9.0 to build the 4.1 branch.  You need to
+either downgrade it to 0.8.1 (which you can easily by specifying
+--without-system-mdds), or patch mtvelements.hxx to get it to build with
+mdds 0.9.0.  Patching should be easy; all you have to do is to remove
+the block type ID's from the template arguments i.e. making the
+following change
+diff --git a/sc/inc/mtvelements.hxx b/sc/inc/mtvelements.hxx
+index 1628381..037ec6b 100644
+--- a/sc/inc/mtvelements.hxx
++++ b/sc/inc/mtvelements.hxx
+@@ -63,11 +63,11 @@ MDDS_MTV_DEFINE_ELEMENT_CALLBACKS_PTR(SvtBroadcaster, sc::element_type_broadcast
+namespace sc {
+// Broadcaster storage container
+-typedef mdds::mtv::custom_block_func1
+BCBlkFunc;
++typedef mdds::mtv::custom_block_func1
+BCBlkFunc;
+typedef mdds::multi_type_vector
+BroadcasterStoreType;
+// Cell text attribute container.
+-typedef mdds::mtv::custom_block_func1
+CTAttrFunc;
++typedef mdds::mtv::custom_block_func1
+CTAttrFunc;
+typedef mdds::multi_type_vector
+CellTextAttrStoreType;
+/**
+should make the 4.1 branch build with 0.9.0.
+HTH,
+Kohei
+--
+Kohei Yoshida, LibreOffice Calc hacker, SUSE.
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130719/75d1dae1/attachment.html>
+
+', is_response_of='<19839347.522.1374157429985.JavaMail.sonicle@www>', mail_path='None', references='<6602396.491.1374131522243.JavaMail.sonicle@www>
+	<51E7DB56.1000000@suse.de>
+	<19839347.522.1374157429985.JavaMail.sonicle@www>', in_reply_to='<19839347.522.1374157429985.JavaMail.sonicle@www>')>

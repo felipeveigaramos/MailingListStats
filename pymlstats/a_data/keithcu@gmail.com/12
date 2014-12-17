@@ -1,0 +1,44 @@
+<Messages(message_id='<CAHW+f2Jd2eGh82PCTDgT0ZBvMxoXbHfYDaKFktu_DrYXLZVOeQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-11 05:29:56', first_date_tz='-18000', arrival_date='2014-03-11 03:29:56', arrival_date_tz='None', subject='Hi-DPI patches for 4.2', message_body='On Tue, Mar 11, 2014 at 4:57 AM, Norbert Thiebaud <nthiebaud at gmail.com> wrote:
+>
+>
+> On Tue, Mar 11, 2014 at 3:53 AM, Keith Curtis <keithcu at gmail.com> wrote:
+>>
+>> That picture is bizarre in that the gridlines drawn by Calc are not being
+>> doubled. Have you fiddled with the OS DPI stuff?
+>
+>
+> The grid lines are not bitmap, they are vector drawing...
+>  but more importantly... _WITH_ the #ifdef to prevent the meddling with
+> bitmap everything looks 'fine'.
+>
+>
+
+Yes, but according to the docs, in compatibility mode, "Any
+vector-based drawing performed by an app is scaled for high
+resolution"
+
+https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Explained/Explained.html#//apple_ref/doc/uid/TP40012302-CH4-SW5
+
+The Mac LibreOffice screenshots in bug reports I have seen have
+doubled vector drawing. I think there is something wrong with your
+build. In any case, if you feel something should be done for the Mac,
+the simplest thing is to add two #ifdefs to force the DPIScaleFactor
+to 1 for the Mac:
+
+https://gerrit.libreoffice.org/#/c/8516/1/vcl/source/window/window.cxx,cm
+
+That would turn off all bitmap doubling in a very localized place.
+What do you think about that?
+
+-Keith
+
+', is_response_of='<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>', mail_path='None', references='<1394475851.1785.33.camel@lump.site>
+	<CAFWMYEHiG8VNJcZxYvVbQLAaEjcEpnxoFUCRD_X_yDsj=tEQ+A@mail.gmail.com>
+	<1394479941.1785.58.camel@lump.site>
+	<CAFWMYEE35p15MBpTbgP0kO_fv8wLim015rAf3b45XtyJt9is=A@mail.gmail.com>
+	<CAHW+f2Lyq1Hz9eS-Z92gVvpT5e_0=tvDMayheE2KJ=br=t=xdw@mail.gmail.com>
+	<CAFWMYEEdFiU6hYTzapZuN_E2h0TrszNOMXnisjkO+8u+RhSKLw@mail.gmail.com>
+	<CAHW+f2+cgXPeNC_x8J_nCyfo7t8w-Z8UFdAD8LR0hhp0BsnPPA@mail.gmail.com>
+	<CAFWMYEEDsFBzOu6A_qAHz6ag1N-5Wb5dcwkCZKJrmdz43g33Hw@mail.gmail.com>
+	<CAHW+f2+RWFpZxvqx1sgNfKnCdubjy-Bn1-XPjzB0hsaEN=7xGA@mail.gmail.com>
+	<CAFWMYEG4Da9r171azgR+Sre3H2EHr6QZJifU=GmWjELSBdjY=A@mail.gmail.com>', in_reply_to='<CAFWMYEG4Da9r171azgR+Sre3H2EHr6QZJifU=GmWjELSBdjY=A@mail.gmail.com>')>

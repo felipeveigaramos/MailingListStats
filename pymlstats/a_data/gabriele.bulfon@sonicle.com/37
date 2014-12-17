@@ -1,0 +1,109 @@
+<Messages(message_id='<4003364.293.1373877772337.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 10:42:52', first_date_tz='7200', arrival_date='2013-07-15 01:42:52', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='I momentarily disabled with this patch (treated SunOS as for iOS and Android).
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Meeks
+A: Gabriele Bulfon
+Cc: Michael Stahl
+libreoffice-dev
+Data: 15 luglio 2013 10.15.18 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, 2013-07-15 at 09:44 +0200, Gabriele Bulfon wrote:
+I was wandering why Motif libraries are needed by these extension. Is
+it absolutely necessary?
+I'm amazed to hear that we link to motif in the modern world; it seems
+to be only this extension:
+$W/CxxObject/extensions/source/plugin/unx/npwrap.o
+$W/CxxObject/extensions/source/plugin/unx/npnapi.o
+I'd disable this I guess in configure.ac we have:
+dnl Check for NPAPI interface to plug browser plugins into LibreOffice
+documents
+I imagine we should just disable that for Solaris [ for now ].
+Quite why we think Mozilla requires motif still I'm not sure I'd be
+amazed if they still had a hard dep on that.
+HTH,
+Michael.
+--
+michael.meeks at suse.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/d3a37cf9/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: sonicle-configure.patch
+Type: binary/octet-stream
+Size: 665 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/d3a37cf9/attachment.bin>
+
+', is_response_of='<27315122.287.1373874263958.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>', in_reply_to='<1373876118.25792.273.camel@linux-d2lh.site>')>
+****************************************
+<Messages(message_id='<51E3F7D1.9040409@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 15:23:29', first_date_tz='7200', arrival_date='2013-07-15 06:23:29', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='On 15/07/13 15:07, Gabriele Bulfon wrote:
+> Ok, I could go over extension by disabling that motif dependent plugin.
+> Now, later, it's trying to build xmlsec1, and looks like it can't find
+> libs I actually have!
+> 
+> checking for pkg-config... yes
+> checking for libxslt libraries >= 1.0.20... no [I have it, it's 1.1.26]
+> checking for openssl libraries >= 0.9.6... no [I have both 0.9.6 and 1.0.0j]
+> checking for NSS... no
+> checking for NSS... no
+> checking for NSS... no
+> checking for NSS.... no
+> checking for NSS... no
+> checking for nspr libraries >= 4.0... no [I have nspr 4]
+> checking for nss libraries >= 3.2... no [I have nss 3.13.5]
+> checking for gnutls libraries >= 0.8.1... no [I have 3.1.9]
+> checking for mscrypto libraries... none
+> checking for crypto library... configure: error: At least one crypto
+> library should exist for xmlsec1
+> 
+> I can't find the config.log of this component, this may hold the info I
+> need to solve it.
+> Can you help?
+
+it's in workdir/*/UnpackedTarball/xmlsec/config.log
+
+
+', is_response_of='<4003364.293.1373877772337.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>', in_reply_to='<10210174.330.1373893660985.JavaMail.sonicle@www>')>

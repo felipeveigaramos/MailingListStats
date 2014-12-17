@@ -1,0 +1,18 @@
+<Messages(message_id='<4FE2ACAF.8090802@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-21 07:10:07', first_date_tz='7200', arrival_date='2012-06-20 22:10:07', arrival_date_tz='None', subject='New Bugzilla Version Picker Contents - Atom Feeds.', message_body='Hi,
+
+with the new Version picker items your Atom feeds containing Version 
+picker contents will not work any longer, because the picker contents 
+references now will be invalid. You will have to renew the feeds.
+
+This also might affect feeds used in the Wiki.
+
+Questions, remarks and discussion please at
+  <libreoffice-qa at lists.freedesktop.org>!
+
+Best regards
+
+
+Rainer
+
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

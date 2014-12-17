@@ -1,0 +1,36 @@
+<Messages(message_id='<512CB022.6030100@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 13:52:50', first_date_tz='3600', arrival_date='2013-02-26 04:52:50', arrival_date_tz='None', subject='WIN Tinderboxes are limping', message_body='Hi,
+
+I'm urgently waiting for latest Master builds, but unfortunately 
+Tinderboxes do not deliver.
+
+@6 shows a lot of red.
+@7 is green, but builds do not reach the server?
+[Bug 61482] New: MinGW: "Index of /daily/master/Win-x86 at 7-MinGW" shows 
+several empty folders before  "current"
+  <https://bugs.freedesktop.org/show_bug.cgi?id=61482>
+
+It would be great if someone could check and repair.
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1361884182588-4040191.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 05:09:42', first_date_tz='-28800', arrival_date='2013-02-26 05:09:42', arrival_date_tz='None', subject='WIN Tinderboxes are limping', message_body='Hello Rainer,
+
+About @6, "Win-x86_6" might be ok once current building done thanks to
+Andras' commit
+(https://gerrit.libreoffice.org/gitweb?p=core.git;a=commitdiff;h=b4e8f99a253ee20cba0718d042ca17cca2e8dcb5)
+
+About @7, I don't know.
+
+Julien
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/WIN-Tinderboxes-are-limping-tp4040189p4040191.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<512CB022.6030100@bielefeldundbuss.de>', mail_path='None', references='<512CB022.6030100@bielefeldundbuss.de>', in_reply_to='<512CB022.6030100@bielefeldundbuss.de>')>

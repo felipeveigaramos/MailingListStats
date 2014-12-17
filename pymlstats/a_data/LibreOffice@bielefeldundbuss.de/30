@@ -1,0 +1,16 @@
+<Messages(message_id='<4FEAB916.4020307@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-27 09:41:10', first_date_tz='7200', arrival_date='2012-06-27 00:41:10', arrival_date_tz='None', subject='Build Available Feed', message_body='Hi all,
+
+is there any possibility to get a reliable info that a new build is 
+available from a particular WIN Tinderbox? I always have some 
+test-to-dos in the line, not every test can be done with every build, 
+and especially when (like now) new complete builds come very seldom 
+those unsuccessful checks of the download server are really annoying.
+
+Is there a solution for my problem?
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

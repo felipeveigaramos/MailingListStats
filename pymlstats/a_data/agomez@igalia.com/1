@@ -1,0 +1,101 @@
+<Messages(message_id='<1370616209.32140.4.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-07 17:43:29', first_date_tz='10800', arrival_date='2013-06-07 07:43:29', arrival_date_tz='None', subject='LO /  Firebird DB Integration', message_body='Hi,
+
+sorry for the delayed answer on this.
+
+On Tue, 2013-05-28 at 19:48 +0100, Andrzej J. R. Hunt wrote:
+...
+> I'd be interested to know what your views are on this / which version
+> you've been using so far? I guess the LO developers in general might
+> also have some input on which is preferable?
+...
+
+With the constraints we saw to start using FB3 and its native C++ API
+straight away, we chose to go for FB2.5 and the native plain C API.
+
+I think this is a safer path and migrating to native C++ and FB3 once it
+is stable shouldn't be hard in the future.
+
+...
+> Also have any of you looked at integrating Firebird into the LO build
+> system yet, as this was one of the first things I was planning on doing
+> (although that is dependent on the choice of FB 2.5 vs 3). I think
+> Andres mentioned he was concentrating on developing on Linux at first --
+> I could look into the Windows specifics for Firebird to ensure things
+> are as cross-platform as possible from the start (although I should
+> probably mention I don't have too much Windows experience yet, and my
+> system isn't the fastest for building stuff there).
+...
+
+I started doing it for Linux as an external dependency. I also started
+walking the path to add FB as a bundled library inside LibO, but this is
+far from being completed.
+
+In any case, any help on Windows is welcome :)
+
+Javier is the one leading the development effort of the SDBC driver. I
+think he was saying that he could now split tasks to be done regarding
+this.
+
+...
+> I've create a wiki page where I'm putting down some notes on whats
+> happening here -- I've also extracted the technical discussion and the
+> estimated timeplan from my GSOC application in case that's useful to
+> anyone else:
+> https://wiki.documentfoundation.org/Development/Base/FirebirdSQL . Feel
+> free to add to/edit that if you wish.
+...
+
+I've updated it with the latest information I had.
+
+Br.
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130607/319a4548/attachment.pgp>
+
+', is_response_of='<51A4FC04.4050807@ahunt.org>', mail_path='None', references='<51A4FC04.4050807@ahunt.org>', in_reply_to='<51A4FC04.4050807@ahunt.org>')>
+****************************************
+<Messages(message_id='<1370617500.1968.191.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-07 16:05:00', first_date_tz='3600', arrival_date='2013-06-07 08:05:00', arrival_date_tz='None', subject='LO /  Firebird DB Integration', message_body='
+On Fri, 2013-06-07 at 17:43 +0300, Andres Gomez wrote:
+> I think this is a safer path and migrating to native C++ and FB3 once it
+> is stable shouldn't be hard in the future.
+
+	Right - ultimately the SDBC API is a C++ wrapper API, and piling up a
+number of these around each other is something we can avoid if we got
+this way (I hope) - particularly if a chunk of the work is already
+done :-)
+
+> I started doing it for Linux as an external dependency. I also started
+> walking the path to add FB as a bundled library inside LibO, but this is
+> far from being completed.
+
+	Right; I wonder if we can make it compile with 2.5 and 3.0, IIRC the
+embedding behaviour of 3.0 is significantly better.
+
+> Javier is the one leading the development effort of the SDBC driver. I
+> think he was saying that he could now split tasks to be done regarding
+> this.
+
+	Great; when you do plan to start work Andrzej ? there is no doubt
+plenty of fun to be had, and that's before the HSQLDB migration piece
+gets underway. [ oh, and the unit test creation ;-) ]
+
+	ATB !
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<1370616209.32140.4.camel@pomeron.local.igalia.com>', mail_path='None', references='<51A4FC04.4050807@ahunt.org>
+	<1370616209.32140.4.camel@pomeron.local.igalia.com>', in_reply_to='<1370616209.32140.4.camel@pomeron.local.igalia.com>')>

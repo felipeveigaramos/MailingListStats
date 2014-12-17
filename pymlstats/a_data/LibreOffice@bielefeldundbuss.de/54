@@ -1,0 +1,26 @@
+<Messages(message_id='<50967FE8.50701@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-11-04 15:47:04', first_date_tz='3600', arrival_date='2012-11-04 06:47:04', arrival_date_tz='None', subject='[PATCH] Bug 55430 - EDITING: Single mouse click selection of element
+	completely drawn in front of selected filled area impossible', message_body='Hi,
+
+can someone please help to get a volunteer's patch for this DRAW bug
+<https://bugs.freedesktop.org/show_bug.cgi?id=55430#c10>
+to Master?
+
+Thank you
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1352210867.19666.51.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-11-06 14:07:47', first_date_tz='0', arrival_date='2012-11-06 06:07:47', arrival_date_tz='None', subject='[PATCH][PUSHED] Bug 55430 - EDITING: Single mouse click
+	selection of element completely drawn in front of selected filled area
+	impossible', message_body='On Sun, 2012-11-04 at 15:47 +0100, Rainer Bielefeld wrote:
+> Hi,
+> 
+> can someone please help to get a volunteer's patch for this DRAW bug
+
+Pushed to master now by Thorsten.
+
+C.
+
+
+', is_response_of='<50967FE8.50701@bielefeldundbuss.de>', mail_path='None', references='<50967FE8.50701@bielefeldundbuss.de>', in_reply_to='<50967FE8.50701@bielefeldundbuss.de>')>

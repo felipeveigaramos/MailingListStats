@@ -1,0 +1,46 @@
+<Messages(message_id='<500D6315.8030909@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-07-23 16:43:33', first_date_tz='7200', arrival_date='2012-07-23 07:43:33', arrival_date_tz='None', subject='[Libreoffice-qa] Tinderbox nightlies broken (was Re: No Win
+	builds?)', message_body='Jan Holesovsky schrieb:
+
+> Adding the QA guys - from my point of view, the nightly should be as
+> close to our 'normal' installation as possible (ie. .msi), so that the
+> QA guys can see installation problems early too.  But up to them do
+> decide, I guess.
+
+Hi,
+
+that all is a little true for particular tester's preferences. I usually 
+do server installations (msiexec /a) and modify bootstrap.ini to an 
+existing LibOdev profile, what has been copied from my normal 
+installation profile. So I have a realistic test environment. I think 
+that would also be possible with  zip, and I already did so with MinGW 
+builds sometimes. I saw few installer problems, so I believe .ZIPs as 
+daily builds would not have bigger disadvantages.
+
+For occasional testers the simple "installation" of zips (using their 
+individual own profile) even might be favorable, so someone has the 
+possibility to test a fix for a particular problem with a master build 
+without need to learn anything about parallel installation or similar. 
+Most times that worked well for me with MinGW builds, what came very 
+reliable every day, but currently source has run dry? We will discuss 
+those needs additionally during German QA-Weekend.
+
+An Additional advantage of master.zip builds might be that we could 
+invite interested WIN users to see and test new features very early.
+
+For me that "quick and easy" is less important because I have to do some 
+"administration overhead" to keep overview for the lots of versions.
+
+Very interesting for me (and may be 5 ... 10 other "power testers" would 
+be some kind of feed / newsletter or whatever with "New build from 
+Tinderbx @xx available"
+
+Best regards
+
+
+Rainer
+
+
+
+', is_response_of='<1343049349.15464.25.camel@steve.suse.cz>', mail_path='None', references='<500B9BF3.4040609@bielefeldundbuss.de>
+	<201207221636.08736.l.lunak@suse.cz> <juj9jk$tot$1@dough.gmane.org>
+	<1343049349.15464.25.camel@steve.suse.cz>', in_reply_to='<1343049349.15464.25.camel@steve.suse.cz>')>

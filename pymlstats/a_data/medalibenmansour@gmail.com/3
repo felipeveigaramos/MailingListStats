@@ -1,0 +1,27 @@
+<Messages(message_id='<1397141410317-4104801.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-04-10 07:50:10', first_date_tz='-25200', arrival_date='2014-04-10 07:50:10', arrival_date_tz='None', subject='Patch for the bug 69195: Crash when delete a style in use', message_body='Hi,
+I submitted a patch to fix the issue in 4.1.4.2 version:
+https://gerrit.libreoffice.org/#/c/8917/
+
+Thank you for reviewing it.
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Patch-for-the-bug-69195-Crash-when-delete-a-style-in-use-tp4104801.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1397215081.5900.19.camel@vain.rhgalway>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-04-11 12:18:01', first_date_tz='3600', arrival_date='2014-04-11 04:18:01', arrival_date_tz='None', subject='Patch for the bug 69195: Crash when delete a style in use', message_body='On Thu, 2014-04-10 at 07:50 -0700, Dali wrote:
+> Hi,
+> I submitted a patch to fix the issue in 4.1.4.2 version:
+> https://gerrit.libreoffice.org/#/c/8917/
+> 
+> Thank you for reviewing it.
+
+I don't see this in gerrit anywhere.
+
+C.
+
+
+', is_response_of='<1397141410317-4104801.post@n3.nabble.com>', mail_path='None', references='<1397141410317-4104801.post@n3.nabble.com>', in_reply_to='<1397141410317-4104801.post@n3.nabble.com>')>

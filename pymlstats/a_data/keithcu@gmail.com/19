@@ -1,0 +1,25 @@
+<Messages(message_id='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-16 00:56:59', first_date_tz='-18000', arrival_date='2013-12-15 21:56:59', arrival_date_tz='None', subject='Disabling unit tests, redux', message_body='It appears when making changes to individual C++ files that my computer
+spends about 90% of the build time running unit tests.
+
+I tried make -sr all to disable them, but it still ran lots:
+http://lists.freedesktop.org/archives/libreoffice/2011-March/009422.html
+
+I tried hacking on the makefile but got lost. Can this shortcut be
+re-enabled or is there a new way now? Sometimes, you just want to add a
+printf. The build process works great otherwise.
+
+-Keith
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131216/ad83a525/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20131216063342.GC21555@khaled-laptop>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-16 08:33:42', first_date_tz='7200', arrival_date='2013-12-15 22:33:42', arrival_date_tz='None', subject='Disabling unit tests, redux', message_body='On Mon, Dec 16, 2013 at 12:56:59AM -0500, Keith Curtis wrote:
+> It appears when making changes to individual C++ files that my computer
+> spends about 90% of the build time running unit tests.
+
+It seems that ?make foo.build? will not run the tests, at least this is
+what I ?discovered? few days ago.
+
+', is_response_of='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>', mail_path='None', references='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>', in_reply_to='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>')>

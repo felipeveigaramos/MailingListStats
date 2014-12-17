@@ -1,0 +1,34 @@
+<Messages(message_id='<CAFrS=rcbHXXK4ADyQv0jqrenaWJ-RBVm67AQ5Qy8yymReHM-Gw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-14 19:04:06', first_date_tz='19800', arrival_date='2013-02-14 05:34:06', arrival_date_tz='None', subject='Need help for BUg 42893- Improve 'Capitalize first letter of sentence'', message_body='Hey!
+i have been working on this bug since  few days,got a logic but the problem
+is that it doesnt fit in right as for that to work i had to invoke
+acorrect.hxx which isnt possible as it is private.
+
+So can someone help me out with the concept on working this bug out so that
+i can contribute asap.
+
+Eagerly waiting for a prompt reply.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130214/f79c3bd9/attachment-0001.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1360852093.16017.8.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-14 14:28:13', first_date_tz='0', arrival_date='2013-02-14 06:28:13', arrival_date_tz='None', subject='Need help for BUg 42893- Improve 'Capitalize first letter of
+	sentence'', message_body='On Thu, 2013-02-14 at 19:04 +0530, Janit Anjaria wrote:
+> Hey!
+> 
+> i have been working on this bug since  few days,got a logic but the
+> problem is that it doesnt fit in right as for that to work i had to
+> invoke acorrect.hxx which isnt possible as it is private.
+
+Can you attach your code-in-progress so we have an idea of what you're
+trying to do and where you're stuck
+
+C.
+
+
+
+', is_response_of='<CAFrS=rcbHXXK4ADyQv0jqrenaWJ-RBVm67AQ5Qy8yymReHM-Gw@mail.gmail.com>', mail_path='None', references='<CAFrS=rcbHXXK4ADyQv0jqrenaWJ-RBVm67AQ5Qy8yymReHM-Gw@mail.gmail.com>', in_reply_to='<CAFrS=rcbHXXK4ADyQv0jqrenaWJ-RBVm67AQ5Qy8yymReHM-Gw@mail.gmail.com>')>

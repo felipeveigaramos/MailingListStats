@@ -1,0 +1,29 @@
+<Messages(message_id='<CAMuW_Xwo4vxUPjNi7L97H_1Y+4XQDOfdkWFwMFCphoeH+3we-g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-24 15:24:27', first_date_tz='-14400', arrival_date='2014-05-24 12:24:27', arrival_date_tz='None', subject='[GSoC] SetTextFillColor(COL_BLUE) makes blu too dark in Draw', message_body='Fixed.
+Sorry everybody, I was using a wrong assumption:
+COL_BLUE (#000080) is _not_ the same as the "Blue" one selects from the
+Draw standard palette (#6666FF).
+
+
+
+On Sat, May 24, 2014 at 3:12 PM, Matteo Campanelli <
+matteo.campanelli at gmail.com> wrote:
+
+> Hi,
+> I was experimenting with text background colors in Draw (see attachment).
+> I used OutputDevice::SetTextFillColor to set the color of underlined text
+> to COL_BLUE.
+> The background color of the text area is also set to blue but the one for
+> the underlined text (i.e. the one I'm setting) is darkened for some reason.
+> Anyone has an idea of what this may be related to?
+> Are there situations (selection?) where Vcl just makes this kind of
+> changes to colors?
+>
+> Cheers,
+> Matteo
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140524/e8781ff1/attachment.html>
+
+', is_response_of='<CAMuW_Xw2BKhMvk8oHBcGbP7rLfZRS_YZ4BGVWgXSF_rmnYkBfg@mail.gmail.com>', mail_path='None', references='<CAMuW_Xw2BKhMvk8oHBcGbP7rLfZRS_YZ4BGVWgXSF_rmnYkBfg@mail.gmail.com>', in_reply_to='<CAMuW_Xw2BKhMvk8oHBcGbP7rLfZRS_YZ4BGVWgXSF_rmnYkBfg@mail.gmail.com>')>

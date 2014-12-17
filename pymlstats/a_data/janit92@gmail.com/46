@@ -1,0 +1,45 @@
+<Messages(message_id='<CAFrS=rfuS_Du6mpJMRPku0Dy8rnJ=bqxBSM0mqSxmG27mcaZzA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-08 21:47:17', first_date_tz='19800', arrival_date='2013-04-08 09:17:17', arrival_date_tz='None', subject='[PATCH]BUG#55846 Comboboxes arent displayed when the toolbar is vertical', message_body='Hey!
+I am hereby submitting my patch for review on the bug/feature which i had
+worked long back which solves the problem where the comboboxes now do
+appear when the toolbar is vertical.
+
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130408/54635f1b/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-55846-Comboboxes-weren-t-displayed-when-the-tool.patch
+Type: application/octet-stream
+Size: 7807 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130408/54635f1b/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1365448714.12293.42.camel@Jocelyn.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-08 21:18:34', first_date_tz='7200', arrival_date='2013-04-08 12:18:34', arrival_date_tz='None', subject='[PATCH]BUG#55846 Comboboxes arent 	displayed when the toolbar is vertical', message_body='Hi Janit,
+
+first: I am not a developer, so don't expect code pointers here, but I
+tried your patch out of interest.
+
+While it does build, your patch doesn't seem to work well:
+
+  * my LibreOffice window now shows no toolbar icons whatsoever
+
+  * I get lots of messages ? la
+      debug: max width 388
+      debug: max width 78
+      debug: max width 55
+      [...]
+
+  * Ideally, the comboboxes should probably be rotated, so the toolbar
+    layout isn't completely destroyed.
+
+Anyway, thanks for working on this.
+
+Astron.
+
+
+', is_response_of='<CAFrS=rfuS_Du6mpJMRPku0Dy8rnJ=bqxBSM0mqSxmG27mcaZzA@mail.gmail.com>', mail_path='None', references='<CAFrS=rfuS_Du6mpJMRPku0Dy8rnJ=bqxBSM0mqSxmG27mcaZzA@mail.gmail.com>', in_reply_to='<CAFrS=rfuS_Du6mpJMRPku0Dy8rnJ=bqxBSM0mqSxmG27mcaZzA@mail.gmail.com>')>

@@ -1,0 +1,106 @@
+<Messages(message_id='<1380668354.3765.24.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-10-02 01:59:14', first_date_tz='10800', arrival_date='2013-10-01 15:59:14', arrival_date_tz='None', subject='[Libreoffice-ux-advise] Advice on adding Smart-Art related
+	settings', message_body='Hi,
+
+On Tue, 2013-10-01 at 17:49 +0200, Jacobo Aragunde P?rez wrote:
+...
+> That takes us to the next step: we want to make imported SmartArt
+> immutable, so users are aware that they can change the document but not
+> the shapes. We would like to add a configuration setting to enable or
+> disable this behaviour, and we have thought of doing it at Options ->
+> Load/Save -> MS Office. We have some doubts on how to call this
+> parameter and what should be the default behaviour.
+...
+
+Actually, I've been reading in LibO's Help which is the purpose of the
+options under "Options -> Load/Save -> MS Office" and they seem to be
+really attached to OLE importing/exporting.
+
+Therefore, maybe this is not the best place in which to implement this
+option.
+
+The best and most obvious option seems to be "Options -> [Text Document|
+Spreadsheet|Presentation] Options -> Compatibility". However, proper UI
+with check boxes seems to be only "Text Document". "Spreadsheet"
+"Compatibility" subcategory is quite different and it doesn't really
+seem to face the task of selecting compatibility options among document
+formats. "Presentation" doesn't even have a "Compatibility" subcategory.
+
+In any case, my best guess is that we should go with these
+subcategories. As we are facing now just Writer I suppose we can just
+add another checkable option and, once we start implement similar
+compatibility for "Calc" and "Impress" we can also add the needed items
+and subcategories.
+
+What do you think?
+
+Br.
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131002/0f8a45be/attachment.pgp>
+
+', is_response_of='<524AEF06.2070609@igalia.com>', mail_path='None', references='<524AEF06.2070609@igalia.com>', in_reply_to='<524AEF06.2070609@igalia.com>')>
+****************************************
+<Messages(message_id='<1380725133.13279.30.camel@ferb.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-10-02 16:45:33', first_date_tz='7200', arrival_date='2013-10-02 07:45:33', arrival_date_tz='None', subject='[Libreoffice-ux-advise] Advice on adding Smart-Art related
+	settings', message_body='Hi Jacobo, Miklos,
+
+Miklos Vajna p??e v St 02. 10. 2013 v 14:44 +0200:
+
+> > With the current one, a user can change the shapes
+> > but those changes won't be exported back to docx and that's confusing.
+> 
+> Indeed. Read the original rationale here:
+> 
+> http://lists.freedesktop.org/archives/libreoffice/2013-July/054428.html
+> 
+> There we agreed that if the objects are modified (search for "mutate"),
+> then these invisible properties should be dropped. (That's not the case
+> ATM, but it should be this way in the long run.) That way if the user
+> edits the shape, it'll be exported as a normal group shape, so the edit
+> of the user is not lost.
+
+I support this approach :-)
+
+> > Finally, maybe we should call this option "SmartArt to LibreOffice
+> > shapes or reverse", since we are not involving Draw in this process.
+> > Besides, Draw exporting is already different: embedded Draw in a
+> > document is exported as a .emf file inside the .docx.
+> 
+> Indeed, "shapes" or "group shape" (actually a SmartArt is imported as a
+> group shape) would be a better description than "Draw", you're right.
+
+Just so that this does not lead to confusion - SmartArt being a real
+group shape is a relatively recent fix:
+
+http://cgit.freedesktop.org/libreoffice/core/commit/?id=59373b753902f69cd44d183568b084429322e7ab
+
+In the previous versions it has been broken into individual shapes which
+is the worst of all options from my point of view - but having a group
+shape that the user has to explicitly ungroup to do his/her
+modifications + drop the smartart metadata with this ungroup operation
+seems reasonably valid to me (if we have undo for that, that is).
+
+If we want to warn the users, we can use the the InfoBar (search for
+AppendInfoBar) so that it is relatively unobtrusive for them...
+
+With this - undoable operation, and the user notified, I don't think we
+really need a setting what to do - or do you see any problems with the
+above?
+
+All the best,
+Kendy
+
+
+', is_response_of='<1380668354.3765.24.camel@pomeron.local.igalia.com>', mail_path='None', references='<524AEF06.2070609@igalia.com>
+	<1380668354.3765.24.camel@pomeron.local.igalia.com>
+	<20131002075850.GA5979@collabora.co.uk> <524BE7B7.6010102@igalia.com>
+	<20131002124448.GD5979@collabora.co.uk>', in_reply_to='<20131002124448.GD5979@collabora.co.uk>')>

@@ -1,0 +1,37 @@
+<Messages(message_id='<1379932605.26714.1.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-09-23 13:36:45', first_date_tz='10800', arrival_date='2013-09-23 03:36:45', arrival_date_tz='None', subject='sobre libreOffice', message_body='Hi,
+
+On Thu, 2013-09-19 at 18:30 +0200, Juan Carlos wrote:
+...
+> Hi, I need to know if there is a system that lets the LibreOffice 
+> packaging, automatically and is not by console commands, something like 
+> a tool that will provide all those commands that have to pull off the 
+> console for packaging LibreOffice.
+> 
+> GreetingsJuan Carlos.
+...
+
+better in English :)
+
+Do you mean a packaging system like OBS[1] or Launchpad[2]?
+
+I'm certainly not totally understanding your question.
+
+Br.
+
+[1] https://build.opensuse.org/
+[2] https://launchpad.net/
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130923/c2de3142/attachment.pgp>
+
+', is_response_of='<523B269B.2000602@estudiantes.uci.cu>', mail_path='None', references='<523B269B.2000602@estudiantes.uci.cu>', in_reply_to='<523B269B.2000602@estudiantes.uci.cu>')>

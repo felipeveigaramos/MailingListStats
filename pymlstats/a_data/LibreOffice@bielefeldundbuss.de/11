@@ -1,0 +1,37 @@
+<Messages(message_id='<4FC5EEF2.6060404@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-30 11:57:06', first_date_tz='7200', arrival_date='2012-05-30 02:57:06', arrival_date_tz='None', subject='REMINDER: Release 3.6.0-alpha1 from master', message_body='Petr Mladek schrieb:
+
+> Note that alpha1 is there to find exactly this kind of problems. Of
+> course, it does not make sense to produce it if is would be completely
+> unusable. On the other hand, we do not want to push it on mirrors.
+
+Hi
+
+I see the problem that the alpha will not be tested enough, I (for 
+example) do not plan to use it for normal work (more or less), and so 
+the chance to find bugs decreases dramatically, because other (WIN?) 
+users also can't use the alpha.
+
+
+
+>>    I still see the problem with a MinGW build
+>>    pull time 2012-05-28 04:23:12
+>> "Bug 50344 - Basic Macro will not run because of missing Java
+>>    <https://bugs.freedesktop.org/show_bug.cgi?id=50344>
+>
+> Ah, it is not that critical if it works
+
+Ah, some Misunderstanding. Java does not work anywhere. If that bug 
+would be "MinGW only" I would have added that key work in the summary 
+line. I only used MinGW for a quick test yesterday because that was the 
+most current Master available (we still do not have a MVSC Master after 
+2012-05-26_02.43.54.)
+
+Best regards
+
+Rainer
+
+
+', is_response_of='', mail_path='None', references='<1338195633.21487.277.camel@walk.suse.cz>
+	<1338302433.21487.363.camel@walk.suse.cz>
+	<4FC50B53.1060506@bielefeldundbuss.de>
+	<1338371198.21487.390.camel@walk.suse.cz>', in_reply_to='<1338371198.21487.390.camel@walk.suse.cz>')>

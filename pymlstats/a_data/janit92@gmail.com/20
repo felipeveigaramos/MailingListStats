@@ -1,0 +1,23 @@
+<Messages(message_id='<CAFrS=rdMy7q1cAZKtdFmGhZQmLS1UhhpRNs18uHAJ3FrvKQJ9w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-22 01:42:56', first_date_tz='19800', arrival_date='2013-04-21 13:12:56', arrival_date_tz='None', subject='[PATCH]fdo#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+
+I am hereby attaching my patch for fdo#62096 where we replace .compareTo()
+calls with '==' operator.
+
+Any suggestions would be helpful and appreciated.Hope this finds you in
+good health.
+
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130422/dbaae16f/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replace-O-U-String-compareTo-with-operator.patch
+Type: application/octet-stream
+Size: 5431 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130422/dbaae16f/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

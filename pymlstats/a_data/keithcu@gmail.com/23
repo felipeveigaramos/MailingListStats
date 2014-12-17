@@ -1,0 +1,175 @@
+<Messages(message_id='<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-13 15:58:36', first_date_tz='-18000', arrival_date='2013-12-13 12:58:36', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='Hi Kendy,
+
+Good to hear from you. I've got a number of things in progress on my
+computer beyond the underlines (
+https://wiki.documentfoundation.org/Development/HiDpi) but I wait to get an
+API first as I'm just writing "if (1) //hidpi".
+
+I personally don't think a floating point value is a good idea. At the
+lowest level, pixel line widths go to 2 or 3 and in the square case go to 4
+or 9. I believe anything who wants more resolution should probably be
+working based on the system font size. The changes I'm making don't seem to
+need more than 3 and even 2 is plenty for all laptops today and into the
+distant future. Floating point arithmetic used to be a lot slower than
+integer as well but I don't know if that is still true ;-)
+
+I hope it is okay if I can write code that handles the 2x case but has no
+guarantees about any other value. I can't test what I can't see and there
+is a fair amount of work to get LibreOffice looking good and supporting
+variable-sized bitmaps at all. So if it were up to me, I'd just make it a
+boolean for a while, and focus / force that part to look great everywhere.
+Then when you were ready to further generalize it, the compiler would make
+you to validate all the areas. I even have been taking advantage of the
+simplicity. I found some arrow drawing logic that wanted an odd-sized
+height for best results. And so I just doubled it and subtracted one ;-)
+
+My biggest concern wrt the API is that it has the right value out of the
+box. For example, what do normal Macs return for the system font size
+versus Retinas? What about on Windows? There is plenty of intelligence that
+can go into a bit.
+
+Putting the change in ImplDrawWaveLine is possible. My change is safer in
+that it mostly only touches the spelling / grammar which is the most
+noticeable issue. With ImplDrawWaveLine you have to worry about more
+callers, printers, etc. and possibilities for dirt on screen. I wouldn't
+necessarily recommend shifting down 2 pixels for the low-level drawing
+code, so maybe you'd still have to have changes in both places.
+ImplDrawWaveLine is a routine takes a pixel line width as input, so perhaps
+the policy decision should be above it. It seems sort of like putting the
+bitmap doubling logic into the BitBlt routine versus in the toolbar which
+loads the bitmaps. I could look at the wavy underline character property
+logic, but I think it is low priority and still might not change the
+ImplDrawWaveLine. I haven't looked into it. I'm happy to fix any bugs in my
+simple code, but get concerned about suggestions that complicate it ;-)
+
+Working on this early next week would be great. I've got about 600 more
+lines in 14 files to review that make a difference. There is a fair amount
+of low-hanging fruit. I am possibly stuck on two issues, but I plug away on
+it as I have free time. The hardest part is finding the actual line of code
+that have the bug. With my work, they are being marked which makes future
+work easier. I did see code that is possibly problematic in places like
+DecoView but I'm just focusing on the visible ones. Toolbar bitmaps are the
+most important. The Sidebar is the most broken. Do you think they will fix
+it?
+
+Anyway, I look forward to working through the issues soon because I have
+some time now and hopefully getting this into 4.2.
+
+-Keith
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131213/208cb810/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>
+	<1386946478.4321.52.camel@lump.site>', in_reply_to='<1386946478.4321.52.camel@lump.site>')>
+****************************************
+<Messages(message_id='<1387463174.1793.237.camel@lump.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-19 15:26:14', first_date_tz='3600', arrival_date='2013-12-19 06:26:14', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='Hi Keith,
+
+Keith Curtis p??e v P? 13. 12. 2013 v 15:58 -0500:
+
+> Good to hear from you. I've got a number of things in progress on my
+> computer beyond the underlines
+> (https://wiki.documentfoundation.org/Development/HiDpi) but I wait to
+> get an API first as I'm just writing "if (1) //hidpi".
+
+So now it's in :-) - as:
+
+http://cgit.freedesktop.org/libreoffice/core/commit/?id=6b5cac1ca06a052061d2fe6acff1bc1e3cb45d57
+
+I believe it is what we want here, as that should allow us to do the
+changes to the painting methods as low as possible [but not lower, as
+you pointed out below].  As an example, I have updated the drawing of
+the wave line; but probably needs testing on an actual hi-dpi display if
+it works as expected in all situations.
+
+I think you similarly want to update the toolbars code; see
+vcl/source/window/toolbox2.cxx - I believe you want to scale images by
+mnDPIScaleFactor when setting them up (in InsertItem()'s or elsewhere).
+
+> I personally don't think a floating point value is a good idea. At the
+> lowest level, pixel line widths go to 2 or 3 and in the square case go
+> to 4 or 9. I believe anything who wants more resolution should
+> probably be working based on the system font size. The changes I'm
+> making don't seem to need more than 3 and even 2 is plenty for all
+> laptops today and into the distant future. Floating point arithmetic
+> used to be a lot slower than integer as well but I don't know if that
+> is still true ;-)
+
+I don't think it is critical here, things like scaling the images will
+take orders of magnitude more time than one single multiplication; then
+again, really no need for floats as you say, so implemented the factor
+as an integer, we can change it should the need be.
+
+> I hope it is okay if I can write code that handles the 2x case but has
+> no guarantees about any other value. I can't test what I can't see and
+> there is a fair amount of work to get LibreOffice looking good and
+> supporting variable-sized bitmaps at all. So if it were up to me, I'd
+> just make it a boolean for a while, and focus / force that part to
+> look great everywhere.
+
+I'd say - go ahead, and just multiply by the mnDPIScaleFactor where you
+see fit; ideally as close to vcl as possible - but of course for things
+like the ruler or other custom controls, you have to do it where that
+one is being drawn.
+
+> My biggest concern wrt the API is that it has the right value out of
+> the box. For example, what do normal Macs return for the system font
+> size versus Retinas? What about on Windows? There is plenty of
+> intelligence that can go into a bit.
+
+No idea; at the moment I do just a simple:
+
+std::max(1, (mpWindowImpl->mpFrameData->mnDPIY + 48) / 96);
+
+but if the system provided a setting for that, it would be ideal I
+guess.
+
+> Putting the change in ImplDrawWaveLine is possible. My change is safer
+> in that it mostly only touches the spelling / grammar which is the
+> most noticeable issue. With ImplDrawWaveLine you have to worry about
+> more callers, printers, etc. and possibilities for dirt on screen. I
+> wouldn't necessarily recommend shifting down 2 pixels for the
+> low-level drawing code, so maybe you'd still have to have changes in
+> both places. ImplDrawWaveLine is a routine takes a pixel line width as
+> input, so perhaps the policy decision should be above it. It seems
+> sort of like putting the bitmap doubling logic into the BitBlt routine
+> versus in the toolbar which loads the bitmaps.
+
+Yeah, correct - ImplDrawWaveLine() was indeed too low :-)
+
+> Working on this early next week would be great. I've got about 600
+> more lines in 14 files to review that make a difference. There is a
+> fair amount of low-hanging fruit. I am possibly stuck on two issues,
+> but I plug away on it as I have free time.
+
+Sure - much appreciated, thanks for that!  Would be great to see you on
+#libreoffice-dev channel on irc.freenode.net in case you are stuck or
+anything, that's the fastest way to resolve that [I am 'kendy' there].
+
+> The hardest part is finding the actual line of code that have the bug.
+> With my work, they are being marked which makes future work easier. I
+> did see code that is possibly problematic in places like DecoView but
+> I'm just focusing on the visible ones. Toolbar bitmaps are the most
+> important. The Sidebar is the most broken. Do you think they will fix
+> it?
+
+Please see my toolbars related suggestion above; hopefully it'll work
+for you.
+
+> Anyway, I look forward to working through the issues soon because I
+> have some time now and hopefully getting this into 4.2.
+
+I am afraid we won't be able to make it to 4.2; it's too late after the
+feature freeze :-(  Unless we'd find people to approve it as an
+Experimental feature for 4.2?
+
+Thank you again for your work on this!
+
+All the best,
+Kendy
+
+
+
+', is_response_of='<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>
+	<1386946478.4321.52.camel@lump.site>
+	<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>', in_reply_to='<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>')>

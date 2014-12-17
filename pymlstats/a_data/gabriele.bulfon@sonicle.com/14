@@ -1,0 +1,25 @@
+<Messages(message_id='<20796306.350.1372680947035.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-01 14:15:47', first_date_tz='7200', arrival_date='2013-07-01 05:15:47', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='On Mon, Jul 1, 2013 at 6:39 AM, Gabriele Bulfon
+gabriele.bulfon at sonicle.com
+wrote:
+Hi, because I need to work on a consolidated tar.gz source version, I'm not
+using master, so
+I cannot pull changes at the moment.
+Can you suggest me what modifications I need?
+http://cgit.freedesktop.org/libreoffice/core/commit/?
+id=99a4baf89c470d1e73b4e87fe9adf37a09230a2c
+Thanks Norbert :) it worked great ;)
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130701/cd5267e4/attachment.html>
+
+', is_response_of='<4589410.338.1372678766594.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>', in_reply_to='<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>')>

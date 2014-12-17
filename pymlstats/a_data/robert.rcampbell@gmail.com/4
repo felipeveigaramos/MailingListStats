@@ -1,0 +1,48 @@
+<Messages(message_id='<CA+gfk2Dc7WUd6C4OTje5pDpqnvGv-cBt=vpP_UaMRJ_Fh0pTrQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-28 00:51:54', first_date_tz='25200', arrival_date='2013-11-27 09:51:54', arrival_date_tz='None', subject='Lao / Thai / Khmer Bundled Fonts', message_body='On Wed, Nov 27, 2013 at 6:48 PM, Khaled Hosny <khaledhosny at eglug.org> wrote:
+
+> On Wed, Nov 27, 2013 at 06:34:59PM +0700, Robert M Campbell wrote:
+> > On Wed, Nov 27, 2013 at 5:25 PM, Khaled Hosny <khaledhosny at eglug.org>
+> wrote:
+> >
+> > My hope is to not add more than a few KB per font, if at all possible.
+> Font
+> > language support shouldn't be 'include 9 million glyphs of various
+> artistic
+> > types and what-not'. We just need basic support for Thai, Khmer, and Lao,
+> > so the simpler / smaller, the better. If they want some other font, they
+> > should install it IMHO. Hopefully, someday, there'll be a nice all
+> language
+> > font that isn't too big. Until then...
+> >
+> > Another Q - where exactly am I patching? When I helped with the ICU
+> update,
+> > a archive was added to the web server and the download.list was used. In
+> > that case, the only patch would be for the download.list. Or, should we
+> > have a font contribution subfolder/submodule that contains each font in
+> the
+> > master that contains all of the embedded fonts? That way in review
+> process,
+> > people can look at the font and determine if it's a good idea to add and
+> is
+> > open and etc...
+>
+> Check external/more_fonts/*
+>
+> Regards,
+> Khaled
+>
+
+I created these files, but still will need someone to upload the files to
+the web folder... Check out
+https://bugs.freedesktop.org/show_bug.cgi?id=72079
+
+I'll commit to gerrit once they are online (so I point to the right url in
+the download.lst)...
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131128/d37ee666/attachment.html>
+
+', is_response_of='<CA+gfk2BgD6DO0svriZZ+mYNoiEJaqiJeafwXzVObbydyQnhUOw@mail.gmail.com>', mail_path='None', references='<52933CE2.20407@gmail.com> <5295B702.5020701@gmail.com>
+	<20131127102547.GA32193@khaled-laptop>
+	<CA+gfk2BgD6DO0svriZZ+mYNoiEJaqiJeafwXzVObbydyQnhUOw@mail.gmail.com>
+	<20131127114841.GA26585@khaled-laptop>', in_reply_to='<20131127114841.GA26585@khaled-laptop>')>

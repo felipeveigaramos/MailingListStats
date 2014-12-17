@@ -1,0 +1,96 @@
+<Messages(message_id='<CAMuW_XxKioBu6LokTYBmh8Ck3vYOr12fuU1_ZCXZr3y1VLC4pQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-13 03:52:30', first_date_tz='-14400', arrival_date='2014-03-13 00:52:30', arrival_date_tz='None', subject='[PATCH]', message_body='Hi everybody!
+Attached there is a patch for bug 53472.
+It allows to use adaptively-sized integral symbols in Starmath by means of
+a new command "intd".
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-Created-Dynamic-Integral-Symbols-class.patch
+Type: text/x-patch
+Size: 3658 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0002-Added-files.patch
+Type: text/x-patch
+Size: 2655 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment-0001.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0003-Created-behavior-for-SmDynIntegralNode.patch
+Type: text/x-patch
+Size: 17631 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment-0002.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0004-Added-code-for-keeping-ratio-and-having-right-positi.patch
+Type: text/x-patch
+Size: 3059 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment-0003.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0005-Cleaned-code-and-comments.patch
+Type: text/x-patch
+Size: 4610 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/7e0f9fc2/attachment-0004.bin>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CAHnRmWdF6rWPVxO4jZHz6pC98MO9RaQF1x6-vS3uQJfcsxPJ4Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-13 11:18:10', first_date_tz='7200', arrival_date='2014-03-13 02:18:10', arrival_date_tz='None', subject='[PATCH]', message_body='Hi Matteo,
+
+           Thanks for working on this issue and having a patch
+ready for review! However, the proper way to submit patches
+for code-review (and subsequent submission on master) is
+using the gerrit. You can find details on how to do that
+here<https://wiki.documentfoundation.org/Development/gerrit>
+.
+
+Best,
+Adam
+
+
+On Thu, Mar 13, 2014 at 9:52 AM, Matteo Campanelli <
+matteo.campanelli at gmail.com> wrote:
+
+> Hi everybody!
+> Attached there is a patch for bug 53472.
+> It allows to use adaptively-sized integral symbols in Starmath by means of
+> a new command "intd".
+>
+> Cheers,
+> Matteo
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+>
+
+
+-- 
+
+[image: appicon.png]
+
+
+*Adam Fyne*
+
+Twitter <http://www.twitter.com/cloudoninc> |
+LinkedIn<http://www.linkedin.com/company/cloudon>
+ | Facebook <http://www.facebook.com/cloudoninc> |
+Blog<http://site.cloudon.com/blog>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140313/9747f327/attachment.html>
+
+', is_response_of='<CAMuW_XxKioBu6LokTYBmh8Ck3vYOr12fuU1_ZCXZr3y1VLC4pQ@mail.gmail.com>', mail_path='None', references='<CAMuW_XxKioBu6LokTYBmh8Ck3vYOr12fuU1_ZCXZr3y1VLC4pQ@mail.gmail.com>', in_reply_to='<CAMuW_XxKioBu6LokTYBmh8Ck3vYOr12fuU1_ZCXZr3y1VLC4pQ@mail.gmail.com>')>

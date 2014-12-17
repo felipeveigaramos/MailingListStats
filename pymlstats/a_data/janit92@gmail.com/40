@@ -1,0 +1,22 @@
+<Messages(message_id='<CAFrS=rfFUti0-QiUjzKPydkwnSdcQ_niq4P27E2PCT4JvRarig@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-07 23:22:26', first_date_tz='19800', arrival_date='2013-04-07 10:52:26', arrival_date_tz='None', subject='Help regarding presentation objects', message_body='Hey!
+I was just wishing to have a look at all the places where the presentation
+objects are present.
+
+I figured out that changing/adding a few presentation object at :
+http://opengrok.libreoffice.org/xref/core/sd/inc/pres.hxx#28
+
+can bring about the changes in presentation objects used everywhere.
+
+It would be great if someone can let me know if adding a new object here
+would lead to troubles in the other files where the header is used or other
+objects are used.
+
+Hope to receive a positive response from your end.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130407/db1f3f10/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

@@ -1,0 +1,55 @@
+<Messages(message_id='<CAMuW_XzA2nsUeU_aNPeUooBGLYsd5eDH8WOfdaD29N3EXb87dQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-24 01:34:55', first_date_tz='7200', arrival_date='2014-06-23 16:34:55', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 22/06/2014', message_body='Hi all,
+last week I have obtained a working solid text background color; old issues
+has been fixed and it is now possible to use an arbitrary background color.
+Moreover, the code now uses a proper Edit Engine attribute and the latter
+is connected to the UNO API.
+
+I am currently writing a few blog posts to document what I learnt so far.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140624/c1b00578/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140710122040.GE27187@collabora.co.uk>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-10 14:20:42', first_date_tz='7200', arrival_date='2014-07-10 05:20:42', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 22/06/2014', message_body='Hi Matteo,
+
+I noticed a crash that's probably related to your (otherwise great :-)
+), text background editeng work -- care to take a look?
+
+1) Start Writer, enable form controls toolbar (View -> Toolbars -> Form controls)
+2) Click the more controls button, pick the Date Field
+3) Draw a rectangle in the body text area to create an instance
+4) Try to query its background color via UNO: Tools -> Macros ->
+Organize macros -> Basic -> Edit, then type:
+
+print ThisComponent.DrawPage(0).CharBackColor
+
+and Press F5 to run, it crashes with:
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00007ffff3b4d9fc in SfxItemSet::Get (this=0x1dfaa00, nWhich=0, bSrchInParent=true) at /home/vmiklos/git/libreoffice/master/svl/source/items/itemset.cxx:1002
+1002        DBG_ASSERT( !pItem->ISA(SfxSetItem) ||
+(gdb) bt 10
+#0  0x00007ffff3b4d9fc in SfxItemSet::Get (this=0x1dfaa00, nWhich=0, bSrchInParent=true) at /home/vmiklos/git/libreoffice/master/svl/source/items/itemset.cxx:1002
+#1  0x00007fffd2cc9de6 in SdrObject::GetMergedItem (this=0x226b140, nWhich=0) at /home/vmiklos/git/libreoffice/master/svx/source/svdraw/svdobj.cxx:2113
+#2  0x00007fffd2ea856e in SvxShape::_getPropertyValue (this=0x21c1f38, PropertyName="CharBackColor") at /home/vmiklos/git/libreoffice/master/svx/source/unodraw/unoshape.cxx:1797
+
+nWhich = 0 sounds buggy, maybe you advertise your new UNO property in a
+generic property map, but in case of form controls, the underlying
+implementation doesn't handle that?
+
+Thanks,
+
+Miklos
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140710/f76ba3bb/attachment.sig>
+
+', is_response_of='<CAMuW_XzA2nsUeU_aNPeUooBGLYsd5eDH8WOfdaD29N3EXb87dQ@mail.gmail.com>', mail_path='None', references='<CAMuW_XzA2nsUeU_aNPeUooBGLYsd5eDH8WOfdaD29N3EXb87dQ@mail.gmail.com>', in_reply_to='<CAMuW_XzA2nsUeU_aNPeUooBGLYsd5eDH8WOfdaD29N3EXb87dQ@mail.gmail.com>')>

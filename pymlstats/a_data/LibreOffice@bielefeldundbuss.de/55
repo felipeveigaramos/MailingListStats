@@ -1,0 +1,45 @@
+<Messages(message_id='<509F97C9.8030501@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-11-11 13:19:21', first_date_tz='3600', arrival_date='2012-11-11 04:19:21', arrival_date_tz='None', subject='ToDos rename 3.7 to 4.0', message_body='Hi all,
+
+I started <http://wiki.documentfoundation.org/QA/Todo_rename_3.7_to_4.0> 
+for collection and discussion of all activities related to that decision.
+
+Please feel free to add more action items and / or comments.
+
+Discussion if necessary please here in this thread on 
+<libreoffice-qa at lists.freedesktop.org> or on Wiki Discussion page.
+
+When will we get the first 4.0 Master builds?
+
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1352710516.25007.96.camel@walk.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-11-12 09:55:16', first_date_tz='3600', arrival_date='2012-11-12 00:55:16', arrival_date_tz='None', subject='ToDos rename 3.7 to 4.0', message_body='Rainer Bielefeld p??e v Ne 11. 11. 2012 v 13:19 +0100:
+> Hi all,
+> 
+> I started <http://wiki.documentfoundation.org/QA/Todo_rename_3.7_to_4.0> 
+> for collection and discussion of all activities related to that decision.
+>
+> Please feel free to add more action items and / or comments.
+> 
+> Discussion if necessary please here in this thread on 
+> <libreoffice-qa at lists.freedesktop.org> or on Wiki Discussion page.
+> 
+> When will we get the first 4.0 Master builds?
+
+I am going to look at it. I hope that the first daily build will have
+4.0 on Wednesday.
+
+Anyway, I think that we do not need any complex planing and
+synchronization. My approach would be to rename 3.7 to 4.0 anywhere you
+see it in the sources, wiki, bugzilla, website...
+
+
+Best Regards,
+Petr
+
+
+', is_response_of='<509F97C9.8030501@bielefeldundbuss.de>', mail_path='None', references='<509F97C9.8030501@bielefeldundbuss.de>', in_reply_to='<509F97C9.8030501@bielefeldundbuss.de>')>

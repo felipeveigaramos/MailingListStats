@@ -1,0 +1,49 @@
+<Messages(message_id='<50439E16.1090302@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-09-02 19:57:42', first_date_tz='7200', arrival_date='2012-09-02 10:57:42', arrival_date_tz='None', subject='CTL Default', message_body='Nathan Wells schrieb:
+> Yes, some locales have CTL enabled as the default.
+
+
+Hi,
+
+yes, of course. The question is whether e-mail writer has had activated 
+a Locale where that's not required. Where not, CTL (Complex Text Layout) 
+should be disabled. It offers an additional Dialog for CTL fonts and 
+lot's of other frills users really only need for CTL, so I think it 
+should be disabled for languages where it is not required.
+
+Best regards
+
+
+Rainer
+
+', is_response_of='<CAFSe7HTOqPeWQfS6i9kKkCMVzp+vYxGzw9q5o1Nrrom2wP9HsA@mail.gmail.com>', mail_path='None', references='<CAPcxoX5x882HcE-o7eic7g9SkEHK3pXFFzArup1=waMP4D-sbQ@mail.gmail.com>
+	<CAFSe7HTOqPeWQfS6i9kKkCMVzp+vYxGzw9q5o1Nrrom2wP9HsA@mail.gmail.com>', in_reply_to='<CAFSe7HTOqPeWQfS6i9kKkCMVzp+vYxGzw9q5o1Nrrom2wP9HsA@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<1346759853.2694.556.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-09-04 12:57:33', first_date_tz='3600', arrival_date='2012-09-04 04:57:33', arrival_date_tz='None', subject='CTL Default.', message_body='On Sun, 2012-09-02 at 20:25 -0700, Joel Madero wrote:
+> Right now is it associated with locale or with language selection (or 
+> are these the same, I honestly don't use these features at all)? If it's 
+> not associated with language selection maybe we should make it so. 
+
+It's associated with the default system language, with an additional
+look into some rather extra random windows locale setting on windows.
+(opengrok for GetWin16SystemLanguage to find where the defaults get set
+and used)
+
+My proposal is that on windows we additionally default enable the CTL
+(or CJK) features if a windows keyboard layout for a language is
+installed (even if not in active use) which we would categorize as CTL
+(or CJK)
+
+Filed an easy hack at https://bugs.freedesktop.org/show_bug.cgi?id=54493
+with some details seeing as it seems that GetKeyboardLayoutList gives "a
+set of locale identifiers corresponding to the current set of input
+locales in the system" so it should be fairly straightforward to see if
+any of them are CTL and enable CTL features in that case and it all
+"just works" out of the box so Shahar's mom gets the features she needs
+and my mom doesn't get scary hangul<->hanga transliteration menus etc.
+
+C.
+
+
+', is_response_of='<50439E16.1090302@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX5x882HcE-o7eic7g9SkEHK3pXFFzArup1=waMP4D-sbQ@mail.gmail.com>
+	<CAFSe7HTOqPeWQfS6i9kKkCMVzp+vYxGzw9q5o1Nrrom2wP9HsA@mail.gmail.com>
+	<50439E16.1090302@bielefeldundbuss.de> <50442310.1030403@gmail.com>', in_reply_to='<50442310.1030403@gmail.com>')>

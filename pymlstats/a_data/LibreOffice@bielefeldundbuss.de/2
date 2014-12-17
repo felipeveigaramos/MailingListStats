@@ -1,0 +1,29 @@
+<Messages(message_id='<4FAFB1AA.2010605@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-13 15:05:46', first_date_tz='7200', arrival_date='2012-05-13 06:05:46', arrival_date_tz='None', subject='[PATCH] fdo#44404 - BUGZILLAASSISTANT: Odd-sounding language used
+	in the Bug Submission Assistant', message_body='Hi,
+
+patch looks plausible to me, can someone else please have a look and may 
+be do the commit?
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1336990956.5500.154.camel@walk.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-14 12:22:36', first_date_tz='7200', arrival_date='2012-05-14 03:22:36', arrival_date_tz='None', subject='[PUSHED] fdo#44404 - BUGZILLAASSISTANT: Odd-sounding language
+	used in the Bug Submission Assistant', message_body='Rainer Bielefeld p??e v Ne 13. 05. 2012 v 15:05 +0200:
+> Hi,
+> 
+> patch looks plausible to me, can someone else please have a look and may 
+> be do the commit?
+
+Yup, it is safe and nice improvement => pushed.
+
+Thorsten, could you please update the server side?
+
+
+Best Regards,
+Petr
+
+
+', is_response_of='<4FAFB1AA.2010605@bielefeldundbuss.de>', mail_path='None', references='<4FAFB1AA.2010605@bielefeldundbuss.de>', in_reply_to='<4FAFB1AA.2010605@bielefeldundbuss.de>')>

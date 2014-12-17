@@ -1,0 +1,195 @@
+<Messages(message_id='<14406637.155.1372323121903.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-27 10:52:01', first_date_tz='7200', arrival_date='2013-06-27 01:52:01', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi,
+I'm working on our Sonicle XStreamOS distro based on illumos kernel.
+I encountered some problems building LO 4.0.4.2.
+First, I decided to use system libs as much as possible, so I'm building with this configure options:
+--enable-gtk3 --disable-python --with-system-libs --with-system-altlinuxhyph=no --with-system-lpsolve=no --without-java --with-x
+I had to disable python because of some problem during build, at the moment.
+I will see if I can provide a system python 3.3 later.
+After building and packaging all the required system libs, I decided to keep altlinuxhyph and lpsolve as internal ones. All the other ones go fine from system.
+Then I found that LO needs gnu ld, used ld options don't work with sun ld, so I could use the sun ld env
+LD_ALTEXEC to force it to run gnu ld once invoked, and build went on almost fine.
+I stumbled on on error about "madvise" missing, but I could find a working patch:
+--- libreoffice-4.0.4.2/sal/osl/unx/file.cxx    Thu Jun 27 09:22:25 2013
++++ libreoffice-4.0.4.2/sal/osl/unx/file.cxx    Thu Jun 27 09:22:54 2013
+@@ -1260,7 +1260,7 @@
+OSL_TRACE(
+"posix_madvise(..., POSIX_MADV_WILLNEED) failed with %d", e);
+}
+-#elif defined SOLARIS
++#elif defined NOTSOLARIS
+if (madvise(static_cast
+(p), nLength, MADV_WILLNEED) != 0)
+{
+OSL_TRACE("madvise(..., MADV_WILLNEED) failed with %d", errno);
+basically it disables the call to madvise on my env, then build went on very long over the tail_build.
+Here, I finally got this strange error:
+[build CXX] store/source/object.cxx
+[build CXX] store/source/lockbyte.cxx
+[build CXX] store/source/storbase.cxx
+[build CXX] store/source/storbios.cxx
+[build CXX] store/source/storcach.cxx
+[build CXX] store/source/stordata.cxx
+[build CXX] store/source/stordir.cxx
+[build CXX] store/source/storlckb.cxx
+[build CXX] store/source/stortree.cxx
+[build CXX] store/source/storpage.cxx
+[build CXX] store/source/store.cxx
+[build LNK] Library/libstore.so
+[build CXX] registry/source/keyimpl.cxx
+[build CXX] registry/source/reflread.cxx
+[build CXX] registry/source/reflwrit.cxx
+[build CXX] registry/source/regimpl.cxx
+[build CXX] registry/source/registry.cxx
+[build CXX] registry/source/regkey.cxx
+[build LNK] Library/libreg.so
+[build CXX] salhelper/source/condition.cxx
+[build CXX] salhelper/source/dynload.cxx
+[build CXX] salhelper/source/simplereferenceobject.cxx
+[build CXX] salhelper/source/thread.cxx
+[build CXX] salhelper/source/timer.cxx
+[build LNK] Library/libuno_salhelpergcc3.so
+[build CXX] codemaker/source/commoncpp/commoncpp.cxx
+[build LNK] StaticLibrary/libcodemaker_cpp.a
+[build CXX] codemaker/source/codemaker/dependencies.cxx
+[build CXX] codemaker/source/codemaker/exceptiontree.cxx
+[build CXX] codemaker/source/codemaker/global.cxx
+[build CXX] codemaker/source/codemaker/options.cxx
+[build CXX] codemaker/source/codemaker/typemanager.cxx
+[build CXX] codemaker/source/codemaker/unotype.cxx
+[build CXX] codemaker/source/codemaker/codemaker.cxx
+[build LNK] StaticLibrary/libcodemaker.a
+[build CXX] codemaker/source/cppumaker/cppumaker.cxx
+[build CXX] codemaker/source/cppumaker/cppuoptions.cxx
+[build CXX] codemaker/source/cppumaker/cpputype.cxx
+[build CXX] codemaker/source/cppumaker/dumputils.cxx
+[build CXX] codemaker/source/cppumaker/includes.cxx
+[build LNK] Executable/cppumaker
+/usr/gnu/bin/ld: warning: libstore.so, needed by /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so, not found (try using -rpath or -rpath-link)
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_openStream'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_createMemoryFile'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_closeFile'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_findFirst'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_findNext'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_openFile'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_openDirectory'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_readStream'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_writeStream'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_flushFile'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_acquireHandle'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_releaseHandle'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so: undefined reference to `store_remove'
+collect2: ld returned 1 exit status
+make[3]: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/workdir/unxsogi.pro/LinkTarget/Executable/cppumaker] Error 1
+I can't see why libreg.so can't resolve libstore.so, as they both live in solver/unxsogi.pro/lib :
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib$ ls
+libcodemaker_cpp.a
+libreg.so
+libstore.so
+libsvllo.so-gdb.py
+libtllo.so-gdb.py
+libuno_sal.so
+libuno_sal.so.3-gdb.py
+libuno_salhelpergcc3.so.3
+libcodemaker.a
+libreg.so.3
+libstore.so.3
+libswlo.so-gdb.py
+libuno_cppu.so.3-gdb.py
+libuno_sal.so.3
+libuno_salhelpergcc3.so
+and ldd shows correct resolutions:
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib$ ldd libreg.so
+libnsl.so.1 =/lib/libnsl.so.1
+libsocket.so.1 =/lib/libsocket.so.1
+libuno_sal.so =/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libuno_sal.so
+libstore.so =/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libstore.so
+libstdc++.so.6 =/usr/gcc/4.4/lib/libstdc++.so.6
+libm.so.2 =/lib/libm.so.2
+libgcc_s.so.1 =/usr/gcc/4.4/lib/libgcc_s.so.1
+libmp.so.2 =/lib/libmp.so.2
+libmd.so.1 =/lib/libmd.so.1
+libc.so.1 =/lib/libc.so.1
+libpthread.so.1 =/lib/libpthread.so.1
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib$ ldd libstore.so
+libnsl.so.1 =/lib/libnsl.so.1
+libsocket.so.1 =/lib/libsocket.so.1
+libuno_sal.so =/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libuno_sal.so
+libstdc++.so.6 =/usr/gcc/4.4/lib/libstdc++.so.6
+libm.so.2 =/lib/libm.so.2
+libgcc_s.so.1 =/usr/gcc/4.4/lib/libgcc_s.so.1
+libmp.so.2 =/lib/libmp.so.2
+libmd.so.1 =/lib/libmd.so.1
+libc.so.1 =/lib/libc.so.1
+libpthread.so.1 =/lib/libpthread.so.1
+Any clue?!
+Thanx!
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130627/9daf4d53/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<10471768.209.1372397978141.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-28 07:39:38', first_date_tz='7200', arrival_date='2013-06-27 22:39:38', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi, I moved to 4.1 build from scratch.
+Build required me a couple of new system libs (libodfgen and libmwaw) that I could package easily.
+Then, it stops just after the succesful configure:
+make[1]: Entering directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+/usr/gnu/bin/make -j 1 -rsw -f /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/Makefile.gbuild
+make[2]: Entering directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1//bridges/Module_bridges.mk:28: *** no bridge selected for build: bailing out.  Stop.
+make[2]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+make[1]: *** [build] Error 2
+make[1]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+gmake: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/build/i86/.built] Error 2
+What does it mean? What bridge?
+Thanks,
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Stahl
+A: Gabriele Bulfon
+Cc: libreoffice at lists.freedesktop.org Raffaele Fullone
+Jonathan Adams
+Pierre-Eric Pelloux-Prayer
+Data: 27 giugno 2013 14.04.21 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On 27/06/13 10:52, Gabriele Bulfon wrote:
+Hi,
+I'm working on our Sonicle XStreamOS distro based on illumos kernel.
+I encountered some problems building LO 4.0..4.2.
+i'd suggest to try building libreoffice-4-1 branch or master instead,
+because it should be easier: in the libreoffice-4-0 branch the migration
+to the new GNU make based build system was still in progress, so you
+have to get both the new and the old build system to work for you,
+whereas in libreoffice-4-1 and master there is only one build system.
+[build LNK] Executable/cppumaker
+/usr/gnu/bin/ld: warning: libstore.so, needed by
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so,
+not found (try using -rpath or -rpath-link)
+I can't see why libreg.so can't resolve libstore.so, as they both live
+in solver/unxsogi.pro/lib :
+the GNU linker apparently does not automatically use RPATH stored in the
+.so for finding dependent libraries, and neither uses the -L passed to
+it for finding dependent libraries.
+it uses the -L parameters only to find libraries that are explicitly
+listed on the command line (-lfoo); apparently you have -lreg but not
+-lstore on the command line.
+the solution is to use -rpath-link, which is used to find dependent
+libraries that are not explicitly listed on the command line.
+git grep finds this, which is commented out for reasons unknown to me:
+solenv/gbuild/platform/solaris.mk:#JAD#'-Wl,-rpath-link,$(gb_Library_OUTDIRLOCATION)'
+(iirc Sun ld would search -L directories in this case too so doesn't
+need -rpath-link.)
+and ldd shows correct resolutions:
+ldd uses the RPATH $ORIGIN in the .so hence it has no problems.
+i am not sure if it would be better to use Sun ld or GNU ld on
+OpenSolaris; i guess GNU ld has the advantage that it's the same as on
+GNU/Linux so should make porting easier.
+by the way here's some links to threads from previous porting efforts
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/22798
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/39846
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130628/3b6fd089/attachment.html>
+
+', is_response_of='<14406637.155.1372323121903.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>', in_reply_to='<51CC2A45.3050805@redhat.com>')>

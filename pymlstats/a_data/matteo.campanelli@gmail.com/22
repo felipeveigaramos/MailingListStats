@@ -1,0 +1,16 @@
+<Messages(message_id='<CAMuW_XxR3WtRC8vqPxeszN6Qz-eeb3GaUqARKPTx9KVJ2SCQ-w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-16 12:49:04', first_date_tz='7200', arrival_date='2014-06-16 03:49:04', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 14/06/2014', message_body='Hi all,
+last week focused on exploring the problems related with finding the source
+of the issue for the text background color not working in non-edit mode.
+Currently the problem has been identified in the drawinglayer module (for a
+more detailed discussion see
+http://lists.freedesktop.org/archives/libreoffice/2014-June/061806.html ).
+
+The main task of this week is closing the subgoals in the thread cited
+above, thus getting solid text background working also in non-edit mode.
+
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140616/b2257b90/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

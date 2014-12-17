@@ -1,0 +1,35 @@
+<Messages(message_id='<1376557445625-4070134.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-08-15 02:04:05', first_date_tz='-25200', arrival_date='2013-08-15 02:04:05', arrival_date_tz='None', subject='crash on master', message_body='Hi everyone .
+I am trying to solve a bug in writer but I facing crash when I writing any
+character in RTL followed by 2 or more number 
+also with CTL on or off.
+can any one help.
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/crash-on-master-tp4070134.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1376575243912-4070172.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-08-15 07:00:43', first_date_tz='-25200', arrival_date='2013-08-15 07:00:43', arrival_date_tz='None', subject='crash in master', message_body='Hi,
+
+We need more details here:
+- on which env and version are you? (Linux, Macos, Windows)
+- which bug are you trying to solve (is it a freedesktop bugzilla one)?
+- you said you used master, do you build from sources or do you use a daily
+build?
+- do you use a brand new LO profile? (see
+https://wiki.documentfoundation.org/UserProfile)
+- did you try to get a backtrace (see
+https://wiki.documentfoundation.org/QA/BugReport/Debug_Information#GNU.2FLinux:_How_to_get_a_backtrace)?
+
+Julien
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/crash-in-master-tp4070134p4070172.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<1376557445625-4070134.post@n3.nabble.com>', mail_path='None', references='<1376557445625-4070134.post@n3.nabble.com>', in_reply_to='<1376557445625-4070134.post@n3.nabble.com>')>

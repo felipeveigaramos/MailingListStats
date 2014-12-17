@@ -1,0 +1,39 @@
+<Messages(message_id='<CAMuW_XxCgquwxO8+rYiYtA330h2weuLDGUqd4ePbP_0xbkPO1g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-04 07:47:43', first_date_tz='7200', arrival_date='2014-08-03 22:47:43', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 03/08/2014', message_body='Hi all,
+last week's work saw progress quite close to the final goal:
+I was able to deal with overflowing texts in boxes by actually sending
+only the overflowing paragraph in the next links.
+There seems to be some misbehavior at the moment though (e.g.
+sometimes some paragraphs disappear not showing neither the source box
+nor in the recipient one).
+
+Cheers,
+Matteo
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140804083835.GB4071@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-04 10:38:35', first_date_tz='7200', arrival_date='2014-08-04 01:38:35', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 03/08/2014', message_body='Matteo Campanelli wrote:
+> last week's work saw progress quite close to the final goal:
+> I was able to deal with overflowing texts in boxes by actually sending
+> only the overflowing paragraph in the next links.
+>
+Nice progress, very pleased to hear! :)
+
+> There seems to be some misbehavior at the moment though (e.g.
+> sometimes some paragraphs disappear not showing neither the source
+> box nor in the recipient one).
+> 
+That might actually be there alright, but just the redraw happening at
+an unfortunate time. Let's sit down on irc if the problem persists.
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140804/d544b652/attachment.sig>
+
+', is_response_of='<CAMuW_XxCgquwxO8+rYiYtA330h2weuLDGUqd4ePbP_0xbkPO1g@mail.gmail.com>', mail_path='None', references='<CAMuW_XxCgquwxO8+rYiYtA330h2weuLDGUqd4ePbP_0xbkPO1g@mail.gmail.com>', in_reply_to='<CAMuW_XxCgquwxO8+rYiYtA330h2weuLDGUqd4ePbP_0xbkPO1g@mail.gmail.com>')>

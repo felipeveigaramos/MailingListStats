@@ -1,0 +1,19 @@
+<Messages(message_id='<4F96709E.20900@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-04-24 11:21:34', first_date_tz='7200', arrival_date='2012-04-24 02:21:34', arrival_date_tz='None', subject='[Libreoffice-qa] [ANN] LibreOffice 3.5.3 RC1 test builds available', message_body='Petr Mladek schrieb:
+
+> It is by purpose. We should probably update the subject to make it more
+> clear. What about the following?
+>
+>      [ANN] LibreOffice 3.5.3 RC1 builds available for pre-testing
+
+Hi,
+
+I believe that's a good Idea, subject for these first announcements 
+should be amended as suggested.
+
+Best regards
+
+Rainer
+
+', is_response_of='<1335257176.13738.1629.camel@walk.suse.cz>', mail_path='None', references='<4F913E27.8000509@graduateinstitute.ch>
+	<4F927491.4000803@sophia-louise.de>
+	<1335257176.13738.1629.camel@walk.suse.cz>', in_reply_to='<1335257176.13738.1629.camel@walk.suse.cz>')>

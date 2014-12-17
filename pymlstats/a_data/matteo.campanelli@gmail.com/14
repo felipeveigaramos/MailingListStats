@@ -1,0 +1,48 @@
+<Messages(message_id='<CAMuW_XxAgfdOe3Qx-FQCha84=2AtkE7cDw3Pfj+S-F0EZPCyVQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-14 02:31:37', first_date_tz='7200', arrival_date='2014-06-13 17:31:37', arrival_date_tz='None', subject='EditEng - Switch from edit to non-edit mode - Code references?', message_body='Hi all, just a follow up on some findings on this issue that I wanted to
+share.
+
+On Sun, Jun 8, 2014 at 12:43 AM, Kohei Yoshida <kohei.yoshida at collabora.com>
+wrote:
+>
+>  > Does anyone know any point I should be looking at?
+>
+> Based on my experience with the edit engine code and your description,
+> the first place I would look at is class EditTextObject, and the
+> EditEngine::CreateTextObject() method.
+>
+Kohei, thanks for the tip - the issue seemed to be somewhere else however.
+
+Summarizing once again, the problem was that I did get a text background
+color in edit-mode but not in non-edit mode.
+The problem seems to lie in the drawinglayer module, which takes care of
+static rendering of text (thanks, Thorsten :-) ). In fact, currently, this
+module knows nothing about text-portion-specific text color.
+
+Rendering of text in this module seems to work (_roughly_) in this way:
+(1) information on font (text color, underlining, italic...) are passed
+from an external module [this is still subject of exploration],
+(2) these font features are encapsulated in object of classes
+TextFooPortionPrimitive2D,
+(3) finally, the class VclProcessor2D makes the actual rendering out of
+these primitives (by calling the ordinary text drawing methods from
+OutputDevice).
+
+Getting back to text fill color, the issue must be fixed at all three
+levels:
+(1') the fill color information should be passed by other modules,
+(2') TextFooPortionPrimitive2D (probably TextSimplePortionPrimitive2D)
+should be able to carry information on text fill color
+(3') VclProcessor2D should pass this information to OutputDevice
+appropriately.
+
+I'm currently working on (1') and (2') but today I made an experiment and
+the problem at level (3) is basically been figured out.
+
+Best,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140614/067a4dda/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAMuW_XxShK1WWvbFzTaKvNWVkVEvTOur+cjvYe5EoKPAf+SQaw@mail.gmail.com>
+ <1402181014.10106.8.camel@linux-3gxs.site>', in_reply_to='<1402181014.10106.8.camel@linux-3gxs.site>')>

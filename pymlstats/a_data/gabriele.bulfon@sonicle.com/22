@@ -1,0 +1,10 @@
+<Messages(message_id='<23267889.85.1373374012494.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-09 14:46:52', first_date_tz='7200', arrival_date='2013-07-09 05:46:52', arrival_date_tz='None', subject='solaris brands processors in configure', message_body='Hi, I just noticed Solaris can't check how many processors to use during configure,
+the case switch just resolves to "*" doing /proc/cupinfo, not working on Solaris.
+This may be the Solaris switch:
+psrinfo -v | grep on-line | wc -l
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130709/5c7ac470/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

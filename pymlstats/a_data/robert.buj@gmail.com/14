@@ -1,0 +1,30 @@
+<Messages(message_id='<CANaJiRrxUygZUgx8sM4Djt7XKrhL6m2hkdhprBroG8bmSLCofg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-25 21:52:04', first_date_tz='7200', arrival_date='2014-07-25 12:52:04', arrival_date_tz='None', subject='Some dialogs don't work in OS X (master branch)', message_body='The about dialog doesn't show all info. it shows only version and build
+info.
+
+In select database step, the new database wizard dialog appears as blank
+dialog, and it only shows the welcome text.
+
+Does anybody have had  the same problem for last days?
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140725/862263ef/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1406383528656-4116811.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-26 07:05:28', first_date_tz='-25200', arrival_date='2014-07-26 07:05:28', arrival_date_tz='None', subject='Some dialogs don't work in OS X (master branch)', message_body='I could reproduce this with master sources updated today and MacOs 10.9.4.
+Would it be possible you submit a new bugtracker by using this link:
+https://www.libreoffice.org/get-help/bug/
+?
+
+Julien
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Some-dialogs-don-t-work-in-OS-X-master-branch-tp4116738p4116811.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<CANaJiRrxUygZUgx8sM4Djt7XKrhL6m2hkdhprBroG8bmSLCofg@mail.gmail.com>', mail_path='None', references='<CANaJiRrxUygZUgx8sM4Djt7XKrhL6m2hkdhprBroG8bmSLCofg@mail.gmail.com>', in_reply_to='<CANaJiRrxUygZUgx8sM4Djt7XKrhL6m2hkdhprBroG8bmSLCofg@mail.gmail.com>')>

@@ -1,0 +1,28 @@
+<Messages(message_id='<CANaJiRpSkO352diOU01cvLREnV0Z9sFYFWqDaVziE1vsE7cqSQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-29 14:30:04', first_date_tz='7200', arrival_date='2014-08-29 05:30:04', arrival_date_tz='None', subject='WIP: some improvements in javadoc', message_body='Hi,
+
+I'm going to replace the javadoc tags <code>..</code> and <tt>..</tt> with
+{@code ...}.
+Next, I will replace package.html with package-info.java.
+
+Regards,
+Robert
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140829/59898723/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<54008403.4080509@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-29 15:45:39', first_date_tz='7200', arrival_date='2014-08-29 06:45:39', arrival_date_tz='None', subject='WIP: some improvements in javadoc', message_body='On 08/29/2014 02:30 PM, Robert Antoni wrote:
+> I'm going to replace the javadoc tags <code>..</code> and <tt>..</tt>
+> with {@code ...}.
+> Next, I will replace package.html with package-info.java.
+
+...just make sure that what gets installed to 
+instdir/sdk/docs/java/ref/index.html keeps looking good
+
+Stephan
+
+', is_response_of='<CANaJiRpSkO352diOU01cvLREnV0Z9sFYFWqDaVziE1vsE7cqSQ@mail.gmail.com>', mail_path='None', references='<CANaJiRpSkO352diOU01cvLREnV0Z9sFYFWqDaVziE1vsE7cqSQ@mail.gmail.com>', in_reply_to='<CANaJiRpSkO352diOU01cvLREnV0Z9sFYFWqDaVziE1vsE7cqSQ@mail.gmail.com>')>

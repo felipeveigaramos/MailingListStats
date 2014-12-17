@@ -1,0 +1,59 @@
+<Messages(message_id='<1380668754.3765.27.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-10-02 02:05:54', first_date_tz='10800', arrival_date='2013-10-01 16:05:54', arrival_date_tz='None', subject='Advice on adding Smart-Art related settings', message_body='Forwarding as it seems it didn't arrive ...
+
+-------- Forwarded Message --------
+From: Jacobo Aragunde P?rez <jaragunde at igalia.com>
+Subject: Advice on adding Smart-Art related settings
+Date: Tue, 01 Oct 2013 17:49:26 +0200
+
+Hi :)
+
+Lately we have been working on SmartArt support on Writer. As you know,
+in 4.1 and prior the SmartArt figures were imported to LO shapes but
+they weren't exported back when saving to docx, causing data loss.
+
+Our first approach, which is already pushed to master, was saving the
+full SmartArt information in the InteropGrabBag of the shapes and save
+it back when exporting to docx. In this situation, users are allowed to
+do changes to the shapes but these changes are not saved back.
+
+That takes us to the next step: we want to make imported SmartArt
+immutable, so users are aware that they can change the document but not
+the shapes. We would like to add a configuration setting to enable or
+disable this behaviour, and we have thought of doing it at Options ->
+Load/Save -> MS Office. We have some doubts on how to call this
+parameter and what should be the default behaviour.
+
+Following the existing conventions in that dialog, we could call the
+option "OOXML Smart-Art to LibreOfficeDev".
+
+Right now we think that the proper way would be to mark the load option
+always, making the option read only, so the user would not be able to
+modify it and will be aware that OOXML SmartArt would always be loaded
+and converted.
+
+The second option, saving, would be the selectable one. If we would mark
+the option, the Smart-Art will be converted into basic shapes and saved
+as such. If it would not be marked, the Smart-Art will be saved as such
+in the OOXML documents and, to avoid user modifications, it will be
+converted to a bitmap in the UI and saved as such if saved as an
+OpenDocument format.
+
+Another topic is whether it would be desirable to let the user select
+this option per application. This way, we would have 3 options:
+ * "WinWord OOXML Smart-Art to LibreOfficeDev Writer".
+ * "Excel OOXML Smart-Art to LibreOfficeDev Calc".
+ * "PowerPoint OOXML Smart-Art to LibreOfficeDev Impress".
+
+In the future, if we would have a decent implementation of a similar
+functionality of Smart-Art for the OpenDocuments, we would have both
+options selectable and the options would say:
+ * "WinWord OOXML Smart-Art to LibreOfficeDev Writer or reverse".
+
+Comments? Suggestions?
+
+-- 
+Jacobo Aragunde
+Software Engineer at Igalia
+
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

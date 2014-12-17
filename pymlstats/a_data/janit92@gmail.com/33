@@ -1,0 +1,227 @@
+<Messages(message_id='<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-08 18:55:26', first_date_tz='19800', arrival_date='2013-05-08 06:25:26', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Hey Miklos!
+
+I suppose i have used the correct header now ,and regarding the identation
+i dont think there is any need of it here as the header file just declares
+the functions used.I have made all the changes to the way the comments have
+to be used and i am sure this learning process is going to help me on the
+time to come working on this cool project.
+
+And i am sure any kind of further suggestion will surely polish my skills
+even on the formal part of the code.
+( and yeah i have also started to work on the .cxx file that will
+complement this header , and i will email it sometime over this week  :D )
+
+
+Hope this finds you in good health.
+Regards,
+Janit
+
+
+On Tue, May 7, 2013 at 3:01 PM, Miklos Vajna <vmiklos at suse.cz> wrote:
+
+> Hi Janit,
+>
+> On Tue, May 07, 2013 at 10:55:53AM +0530, Janit Anjaria <janit92 at gmail.com>
+> wrote:
+> > +/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset:
+> 4 -*- */
+> > +/*
+> > + * This file is part of the LibreOffice project.
+> > + *
+> > + * This Source Code Form is subject to the terms of the Mozilla Public
+> > + * License, v. 2.0. If a copy of the MPL was not distributed with this
+> > + * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+> > + *
+> > + * This file incorporates work covered by the following license notice:
+> > + *
+> > + *   Licensed to the Apache Software Foundation (ASF) under one or more
+> > + *   contributor license agreements. See the NOTICE file distributed
+> > + *   with this work for additional information regarding copyright
+> > + *   ownership. The ASF licenses this file to you under the Apache
+> > + *   License, Version 2.0 (the "License"); you may not use this file
+> > + *   except in compliance with the License. You may obtain a copy of
+> > + *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+> > + */
+>
+> Wrong header, for new code, the MPL2 header should be used, see
+> TEMPLATE.SOURCECODE.HEADER (the license part of that header is only 4
+> lines).
+>
+> > +//This header basically will be complemented by a .cxx file which will
+> be dealing with usage of the declared functions which can be extended so as
+> to use the defined animation object(which we have declared).
+> > +namespace sd
+> > +{
+> > +class View;
+>
+> See https://wiki.documentfoundation.org/Development/Doxygen, you should
+> use /// to make doxygen pick up documentation. Also: no indentation?
+>
+> > +namespace tools
+> > +{
+> > +//adding a value to the STLPropertySet.
+> > +void addValue(STL Property Ser *pSet,Int32 nHandle,const Any& rValue);
+>
+> Did you compile-test this "STL Property Ser"?
+>
+> Miklos
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130508/1e58371a/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-41572-Making-it-possible-to-add-Custom-Animation.patch
+Type: application/octet-stream
+Size: 2853 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130508/1e58371a/attachment.obj>
+
+', is_response_of='<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>
+	<20130506055358.GM2152@thinkpad.thebehrens.net>
+	<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>
+	<20130507093150.GA5315@suse.cz>', in_reply_to='<20130507093150.GA5315@suse.cz>')>
+****************************************
+<Messages(message_id='<CAFrS=rebEGay5uZMxNr5Tr31iq728vMTiKK4Z24j_qJ87YqyPQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-12 17:06:04', first_date_tz='19800', arrival_date='2013-05-12 04:36:04', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Hey!
+I am hereby attaching my patch which is a work in progress.
+
+Thorsten : Check out *Line number 148* in sd/source/core/sdtool.cxx where i
+have mentioned(i.e. in the form of comment) the query i have in mind ,and
+the question i had asked you on IRC. I hope the surrounding code would make
+things understandable.
+
+Miklos : I have worked on proper identation as well as licence headers(But
+still if you think there is a scope of improvement,do let me know , There
+is always a scope of improvement.).
+
+Its a great time working on such an interesting project,but i have some
+doubts which i would like to clear :
+
+1) I am able to code things regarding the STLPropertySet,SfxItemSet,etc.
+but i am still not able to feel these concepts and specifically the indepth
+meaning of the Preset! :o ( and yes that is why i have not been able to
+explain certain functions in the comments properly, I am sure i will do
+that once i am clear with it .)
+So if someone can help me out understand this i am sure i would be able to
+contribute in a much better and efficient manner as well.
+
+2) I wanted to know the exact workflow of the other things that work from
+the MasterSlide eg:Themes,Backgrounds,etc.I think if i can get the code
+pointer for it, I would be easily able to know and figure out the loop-hole
+and get nearer to solving this problem and hence bridge the Custom
+Animations from The Master Slides.
+(i am parallely working on the UI Part as well with the UI Team so it would
+be great if things fall in place simultaneously :) )
+And yes.. My work does not end here,i am continuing to work on the same and
+will surely make the changes suggested  and add the new files i think i
+would be building in some time. :)
+
+Any inputs on code would surely be appreciated.
+
+Hope this finds in good health.
+
+Regards,
+Janit
+
+
+On Wed, May 8, 2013 at 6:55 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Miklos!
+>
+> I suppose i have used the correct header now ,and regarding the identation
+> i dont think there is any need of it here as the header file just declares
+> the functions used.I have made all the changes to the way the comments have
+> to be used and i am sure this learning process is going to help me on the
+> time to come working on this cool project.
+>
+> And i am sure any kind of further suggestion will surely polish my skills
+> even on the formal part of the code.
+> ( and yeah i have also started to work on the .cxx file that will
+> complement this header , and i will email it sometime over this week  :D )
+>
+>
+> Hope this finds you in good health.
+> Regards,
+> Janit
+>
+>
+> On Tue, May 7, 2013 at 3:01 PM, Miklos Vajna <vmiklos at suse.cz> wrote:
+>
+>> Hi Janit,
+>>
+>> On Tue, May 07, 2013 at 10:55:53AM +0530, Janit Anjaria <
+>> janit92 at gmail.com> wrote:
+>> > +/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset:
+>> 4 -*- */
+>> > +/*
+>> > + * This file is part of the LibreOffice project.
+>> > + *
+>> > + * This Source Code Form is subject to the terms of the Mozilla Public
+>> > + * License, v. 2.0. If a copy of the MPL was not distributed with this
+>> > + * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+>> > + *
+>> > + * This file incorporates work covered by the following license notice:
+>> > + *
+>> > + *   Licensed to the Apache Software Foundation (ASF) under one or more
+>> > + *   contributor license agreements. See the NOTICE file distributed
+>> > + *   with this work for additional information regarding copyright
+>> > + *   ownership. The ASF licenses this file to you under the Apache
+>> > + *   License, Version 2.0 (the "License"); you may not use this file
+>> > + *   except in compliance with the License. You may obtain a copy of
+>> > + *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+>> > + */
+>>
+>> Wrong header, for new code, the MPL2 header should be used, see
+>> TEMPLATE.SOURCECODE.HEADER (the license part of that header is only 4
+>> lines).
+>>
+>> > +//This header basically will be complemented by a .cxx file which will
+>> be dealing with usage of the declared functions which can be extended so as
+>> to use the defined animation object(which we have declared).
+>> > +namespace sd
+>> > +{
+>> > +class View;
+>>
+>> See https://wiki.documentfoundation.org/Development/Doxygen, you should
+>> use /// to make doxygen pick up documentation. Also: no indentation?
+>>
+>> > +namespace tools
+>> > +{
+>> > +//adding a value to the STLPropertySet.
+>> > +void addValue(STL Property Ser *pSet,Int32 nHandle,const Any& rValue);
+>>
+>> Did you compile-test this "STL Property Ser"?
+>>
+>> Miklos
+>>
+>> _______________________________________________
+>> LibreOffice mailing list
+>> LibreOffice at lists.freedesktop.org
+>> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130512/247ae907/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-41572-Making-it-possible-to-add-Custom-Animation.patch
+Type: application/octet-stream
+Size: 18970 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130512/247ae907/attachment-0001.obj>
+
+', is_response_of='<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>
+	<20130506055358.GM2152@thinkpad.thebehrens.net>
+	<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>
+	<20130507093150.GA5315@suse.cz>
+	<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>', in_reply_to='<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>')>

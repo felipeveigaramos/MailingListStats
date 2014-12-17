@@ -1,0 +1,149 @@
+<Messages(message_id='<10471768.209.1372397978141.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-28 07:39:38', first_date_tz='7200', arrival_date='2013-06-27 22:39:38', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Hi, I moved to 4.1 build from scratch.
+Build required me a couple of new system libs (libodfgen and libmwaw) that I could package easily.
+Then, it stops just after the succesful configure:
+make[1]: Entering directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+/usr/gnu/bin/make -j 1 -rsw -f /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/Makefile.gbuild
+make[2]: Entering directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1//bridges/Module_bridges.mk:28: *** no bridge selected for build: bailing out.  Stop.
+make[2]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+make[1]: *** [build] Error 2
+make[1]: Leaving directory `/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1'
+gmake: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/build/i86/.built] Error 2
+What does it mean? What bridge?
+Thanks,
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Stahl
+A: Gabriele Bulfon
+Cc: libreoffice at lists.freedesktop.org Raffaele Fullone
+Jonathan Adams
+Pierre-Eric Pelloux-Prayer
+Data: 27 giugno 2013 14.04.21 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On 27/06/13 10:52, Gabriele Bulfon wrote:
+Hi,
+I'm working on our Sonicle XStreamOS distro based on illumos kernel.
+I encountered some problems building LO 4.0..4.2.
+i'd suggest to try building libreoffice-4-1 branch or master instead,
+because it should be easier: in the libreoffice-4-0 branch the migration
+to the new GNU make based build system was still in progress, so you
+have to get both the new and the old build system to work for you,
+whereas in libreoffice-4-1 and master there is only one build system.
+[build LNK] Executable/cppumaker
+/usr/gnu/bin/ld: warning: libstore.so, needed by
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so,
+not found (try using -rpath or -rpath-link)
+I can't see why libreg.so can't resolve libstore.so, as they both live
+in solver/unxsogi.pro/lib :
+the GNU linker apparently does not automatically use RPATH stored in the
+.so for finding dependent libraries, and neither uses the -L passed to
+it for finding dependent libraries.
+it uses the -L parameters only to find libraries that are explicitly
+listed on the command line (-lfoo); apparently you have -lreg but not
+-lstore on the command line.
+the solution is to use -rpath-link, which is used to find dependent
+libraries that are not explicitly listed on the command line.
+git grep finds this, which is commented out for reasons unknown to me:
+solenv/gbuild/platform/solaris.mk:#JAD#'-Wl,-rpath-link,$(gb_Library_OUTDIRLOCATION)'
+(iirc Sun ld would search -L directories in this case too so doesn't
+need -rpath-link.)
+and ldd shows correct resolutions:
+ldd uses the RPATH $ORIGIN in the .so hence it has no problems.
+i am not sure if it would be better to use Sun ld or GNU ld on
+OpenSolaris; i guess GNU ld has the advantage that it's the same as on
+GNU/Linux so should make porting easier.
+by the way here's some links to threads from previous porting efforts
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/22798
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/39846
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130628/3b6fd089/attachment.html>
+
+', is_response_of='<14406637.155.1372323121903.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>', in_reply_to='<51CC2A45.3050805@redhat.com>')>
+****************************************
+<Messages(message_id='<10210174.330.1373893660985.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 15:07:40', first_date_tz='7200', arrival_date='2013-07-15 06:07:40', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Ok, I could go over extension by disabling that motif dependent plugin.
+Now, later, it's trying to build xmlsec1, and looks like it can't find libs I actually have!
+checking for pkg-config... yes
+checking for libxslt libraries= 1.0.20... no     [I have it, it's 1.1.26]
+checking for openssl libraries= 0.9.6... no    [I have both 0.9.6 and 1.0.0j]
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for nspr libraries= 4.0... no          [I have nspr 4]
+checking for nss libraries= 3.2... no           [I have nss 3.13.5]
+checking for gnutls libraries= 0.8.1... no    [I have 3.1.9]
+checking for mscrypto libraries... none
+checking for crypto library... configure: error: At least one crypto library should exist for xmlsec1
+I can't find the config.log of this component, this may hold the info I need to solve it.
+Can you help?
+gabriele.
+Da:
+Gabriele Bulfon
+A:
+michael.meeks at suse.com
+Cc:
+Michael Stahl
+libreoffice-dev
+Data:
+15 luglio 2013 10.42.52 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+I momentarily disabled with this patch (treated SunOS as for iOS and Android).
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Meeks
+A: Gabriele Bulfon
+Cc: Michael Stahl
+libreoffice-dev
+Data: 15 luglio 2013 10.15.18 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, 2013-07-15 at 09:44 +0200, Gabriele Bulfon wrote:
+I was wandering why Motif libraries are needed by these extension. Is
+it absolutely necessary?
+I'm amazed to hear that we link to motif in the modern world; it seems
+to be only this extension:
+$W/CxxObject/extensions/source/plugin/unx/npwrap.o
+$W/CxxObject/extensions/source/plugin/unx/npnapi.o
+I'd disable this I guess in configure.ac we have:
+dnl Check for NPAPI interface to plug browser plugins into LibreOffice
+documents
+I imagine we should just disable that for Solaris [ for now ].
+Quite why we think Mozilla requires motif still I'm not sure I'd be
+amazed if they still had a hard dep on that.
+HTH,
+Michael.
+--
+michael.meeks at suse.com
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/326e1785/attachment.html>
+
+', is_response_of='<10471768.209.1372397978141.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>', in_reply_to='<4003364.293.1373877772337.JavaMail.sonicle@www>')>

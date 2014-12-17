@@ -1,0 +1,94 @@
+<Messages(message_id='<CA+_jvaxQYZmoTCwyJ1CJM4ftWNoTG7wPivroOeAhHk9Zqwy44g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-14 20:31:00', first_date_tz='19800', arrival_date='2013-07-14 08:01:00', arrival_date_tz='None', subject='[GSOC]Slide Layout Extendibility :Weekly Report #4', message_body='Hello Everyone,
+
+Here is the Link<http://vishvbrahmbhatt.wordpress.com/2013/07/14/slide-layout-extendibility-weekly-report-4/>
+to
+my blog for the weekly report update.
+
+Thanks & Regards,
+Vishv Brahmbhatt
+
+On Mon, Jul 8, 2013 at 9:10 PM, Vishv Brahmbhatt <
+vishvbrahmbhatt19 at gmail.com> wrote:
+
+> Hello Everyone,
+> In the beginning of the week,I was able to complete the required changes
+> in XML parser function(for extracting slide layout information).
+>
+> But,after that I was caught up with the unit-test error(related to
+> configuration XML file) for rest of the 4 days.It seemed to me as a bug in
+> the unit-test process,because in-spite of having made proper entry in the
+> "Package_unittest.mk" and  "layoutlist.xml"  being  added at "unit-test"
+> file-path,the error came up(with wrongly generated path). I have already
+> posted my question to mailing-list Link<http://nabble.documentfoundation.org/Unit-Test-Fail-Error-GSOC-Slide-Layout-Extendibility-td4064300.html> and
+> I am thankful for the reply from Markus.
+> And I will soon resolve this error with appropriate guidance and
+> discussion on mailing-list/ IRC.
+>
+> As of now ,I have moved ahead with addition of some new layouts to
+> "layoutlist.xml". I will peak up more speed from now on-wards.
+>
+> Also for the current status:
+> + I pushed one commit with required changes(last week).
+> + XML parser works in-spite of unit-test errors.
+> + So information from configuration XML file "layoutlist.xml" is
+> extracted perfectly.
+>
+> Thanks & Regards,
+> Vishv Brahmbhatt
+>
+> On Mon, Jul 1, 2013 at 8:30 PM, Vishv Brahmbhatt <
+> vishvbrahmbhatt19 at gmail.com> wrote:
+>
+>> Hello Everyone,
+>>
+>> Here is the  Link<http://vishvbrahmbhatt.wordpress.com/2013/07/01/slide-layout-extendibility-weekly-report-2/>
+>> to my blog for the weekly report update.
+>>
+>> Thanks & Regards,
+>> Vishv Brahmbhatt
+>>
+>>
+>> On Fri, Jun 21, 2013 at 6:34 PM, Vishv Brahmbhatt <
+>> vishvbrahmbhatt19 at gmail.com> wrote:
+>>
+>>> Hello Everyone,
+>>>
+>>> Before the beginning of  this week ,I was debugging on impress slide
+>>> layouts.Basically,I got to understand the mechanism of creation of slide
+>>> layouts in the "normal" page,in the master pages like "notes" and "handout"
+>>> and much more.
+>>>
+>>> Currently in the slide layouts, Placeholder object's
+>>> height,width,position are hard-coded. So,I did following things during this
+>>> week:
+>>>
+>>> +So at first ,I started with creation of XML file  which stores
+>>> following information:
+>>> (1) Layout Type
+>>> (2) "PresObj" Kind
+>>> (3) Position co-ordinates of "PresObj"
+>>> (4) Size of "PreObj"(Width and Height)
+>>>
+>>> + I have started coding XML parser, which will read this information
+>>> from XML file and set the appropriate parameters in the function
+>>> "CalcAutoLayoutRectangles" (This function  calculates/sets  the Top
+>>> Position,Height and Width of Rectangle "PresObj" used.) And this will
+>>> parser will help in bringing configurability with Slide Layouts.
+>>>
+>>> + So XML parser should be fully completed, probably by "Monday" or
+>>> "Tuesday"(mostly it should get completed by this weekend).
+>>>
+>>> + Next week,I will work on  understanding "Slide Mater View" and  on
+>>> using "Slide Mater View" to edit the current built-in layouts.
+>>>
+>>> Regards,
+>>> Vishv Brahmbhatt
+>>>
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130714/4f695162/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

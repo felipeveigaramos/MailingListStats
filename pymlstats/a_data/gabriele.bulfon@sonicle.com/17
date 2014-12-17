@@ -1,0 +1,44 @@
+<Messages(message_id='<22211235.176.1372330573979.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-27 12:56:13', first_date_tz='7200', arrival_date='2013-06-27 03:56:13', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Yes, madvise is available in illumos, but probably some build flag is excluding its definition
+from the sys/mman.h, that is full of ifdef about __EXTENSIONS__, __XOPEN_OR_POSIX, and so on.
+I found someone from OpenIndiana solving it by excluding like I did.
+Anyway, now I'm stuck with the last problem.... :(
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Riccardo Magliocchetti
+A: libreoffice at lists.freedesktop.org
+Data: 27 giugno 2013 12.49.12 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+Hi Gabriele,
+Il 27/06/2013 10:52, Gabriele Bulfon ha scritto:
+Hi,
+I'm working on our Sonicle XStreamOS distro based on illumos kernel.
+[snip]
+I stumbled on on error about "madvise" missing, but I could find a working patch:
+--- libreoffice-4.0.4.2/sal/osl/unx/file.cxx    Thu Jun 27 09:22:25 2013
++++ libreoffice-4.0.4.2/sal/osl/unx/file.cxx    Thu Jun 27 09:22:54 2013
+@@ -1260,7 +1260,7 @@
+OSL_TRACE(
+"posix_madvise(..., POSIX_MADV_WILLNEED) failed with %d", e);
+}
+-#elif defined SOLARIS
++#elif defined NOTSOLARIS
+if (madvise(static_cast
+(p), nLength, MADV_WILLNEED) != 0)
+{
+OSL_TRACE("madvise(..., MADV_WILLNEED) failed with %d", errno);
+basically it disables the call to madvise on my env, then build went on very long over the tail_build.
+That's strange, you should have madvise on illumos per
+http://illumos.org/man/3C/madvise . May this be an issue with the libc
+in Sonicle XStreamOS?
+cheers,
+riccardo
+_______________________________________________
+LibreOffice mailing list
+LibreOffice at lists.freedesktop.org
+http://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130627/4442155c/attachment.html>
+
+', is_response_of='<51CC18A8.2020803@gmail.com>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC18A8.2020803@gmail.com>', in_reply_to='<51CC18A8.2020803@gmail.com>')>

@@ -1,0 +1,71 @@
+<Messages(message_id='<CAFrS=redXCgeUANFUATDE9F_FBdnPixeZsJsAULgrAhRkQLxgw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-10 00:44:46', first_date_tz='19800', arrival_date='2013-04-09 12:14:46', arrival_date_tz='None', subject='Regarding the Help for the bug', message_body='Hey i am submitting a patch here for the bug#42893 :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=42893
+
+what i have done is made code changes at the place where the attachment on
+Bugzilla states,and according to me i suppose my logic is right but i am
+not sure where is the error occuring as it is not giving the desired output.
+
+Regards,
+Janit
+
+
+On Mon, Apr 8, 2013 at 10:31 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey i am submitting a patch here for the bug#42893 :
+>
+> https://bugs.freedesktop.org/show_bug.cgi?id=42893
+>
+> what i have done is made code changes at the place where the attachment on
+> Bugzilla states,and according to me i suppose my logic is right but i am
+> not sure where is the error occuring as it is not giving the desired output.
+>
+> Regards,
+> Janit
+>
+>
+> On Mon, Mar 4, 2013 at 9:12 PM, Caol?n McNamara <caolanm at redhat.com>wrote:
+>
+>> On Mon, 2013-03-04 at 18:40 +0530, Janit Anjaria wrote:
+>> > Hey Caolan,
+>> >
+>> > I had emailed u a week back regarding the bug i have been working on
+>> > and i had also sent u the code snippet mentioning the error i
+>> > received.
+>> >
+>> > I hope to receive a prompt response so that i can complete it asap.
+>>
+>> a) Please cc the libreoffice list on all your emails (reply-all in your
+>> email client). That way other people can comment, questions don't have
+>> to be answered twice, and you don't get delayed if a particular
+>> developer is unavailable.
+>>
+>> b) You appear to be working on about three different bugs, I don't know
+>> which one you are referring to here. Whether its
+>> fdo#57950 Replace chained O(U)StringBuffer::append() with operator+
+>> fdo#55846 The font size and font name list doesnt appear in the vertical
+>> toolbar
+>> fdo#42893 Improve 'Capitalize first letter of sentence'
+>>
+>> but in any event, you must send an actual patch that compiles when
+>> applied, not inline code snippets. And send to the list.
+>>
+>> C.
+>>
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/87042488/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-42893-Improve-Capitalize-first-letter-of-sentenc.patch
+Type: application/octet-stream
+Size: 1297 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/87042488/attachment.obj>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rcFGxsEg4qMB1RahzoktctPE9h3uWuYdSRkiXOd0hiRPA@mail.gmail.com>
+	<1362411779.2034.25.camel@Brinn>
+	<CAFrS=rfWzgjuzWwGB3NN6Ax6dvUFZf3VM5NOXCiNGp-SB0FTbQ@mail.gmail.com>', in_reply_to='<CAFrS=rfWzgjuzWwGB3NN6Ax6dvUFZf3VM5NOXCiNGp-SB0FTbQ@mail.gmail.com>')>

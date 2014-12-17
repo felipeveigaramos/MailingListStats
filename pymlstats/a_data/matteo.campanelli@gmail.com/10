@@ -1,0 +1,41 @@
+<Messages(message_id='<CAMuW_XwTJ7Cq_5HZO9u6C4FMukGeXF+OxB7khuC0xmsTGK0etw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-27 18:15:39', first_date_tz='-14400', arrival_date='2014-05-27 15:15:39', arrival_date_tz='None', subject='EE_EDIT_CHAR_BKGCOLOR breaks unit test?', message_body='Hi,
+In my last commit I added a new entry to core/include/editeng/eeitem.cxx:
+EE_CHAR_BKGCOLOR.
+I put it at the end of the char attributes updating all subsequent values
+consistently (all incremented by one).
+Still, it broke unit test for editeng_core.
+Is there some check I'm missing?
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140527/9e1f7f2a/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140528001318.GD15288@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-28 02:13:18', first_date_tz='7200', arrival_date='2014-05-27 17:13:18', arrival_date_tz='None', subject='EE_EDIT_CHAR_BKGCOLOR breaks unit test?', message_body='Matteo Campanelli wrote:
+> I put it at the end of the char attributes updating all subsequent values
+> consistently (all incremented by one).
+> Still, it broke unit test for editeng_core.
+> Is there some check I'm missing?
+> 
+warn:legacy.tools:12168:1:editeng/source/editeng/eerdll.cxx:165: ITEMCOUNT geaendert, DefItems nicht angepasst!
+
+In English: someone changed ITEMCOUNT, but failed to adjust
+DefItems. Did not check though if that happens also w/o your
+change. Beyond that, after Error: a unit test failed, please do one
+of..., there's some helpful blurb on what to do next. ;)
+
+HTH,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140528/d084d3fd/attachment.sig>
+
+', is_response_of='<CAMuW_XwTJ7Cq_5HZO9u6C4FMukGeXF+OxB7khuC0xmsTGK0etw@mail.gmail.com>', mail_path='None', references='<CAMuW_XwTJ7Cq_5HZO9u6C4FMukGeXF+OxB7khuC0xmsTGK0etw@mail.gmail.com>', in_reply_to='<CAMuW_XwTJ7Cq_5HZO9u6C4FMukGeXF+OxB7khuC0xmsTGK0etw@mail.gmail.com>')>

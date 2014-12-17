@@ -1,0 +1,49 @@
+<Messages(message_id='<CAMuW_XztwQO7JcDRboPq30a9M9mhc1KfoJQOnXSo3-8nMCB4Tw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-11 21:20:21', first_date_tz='7200', arrival_date='2014-08-11 12:20:21', arrival_date_tz='None', subject='[GSoC] Chaining overflowing text between boxes does not work when
+ all text overflows', message_body='On Fri, Aug 8, 2014 at 6:18 PM, Matteo Campanelli <
+matteo.campanelli at gmail.com> wrote:
+
+>
+> [Code]
+>
+The code above truncates the text in the first box.
+> The text in the second paragraph is restored by creating an appropriate
+> SdrChainedTextPrimitive object and its create2DDecomposition method.
+> It seems that such a method is never called when all text is overflowing,
+> i.e. when newText above is NULL.
+> The two are plausibly one consequence of the other.
+>
+Elaborating on the last two sentences:
+I verified that when OutlinerParaObject is NULL, SdrChainedTextPrimitive is
+not created (and thus text cannot be moved to the second text box).
+
+I traced the problem back to SdrTextAttribute objects in
+createTextPrimitive not having a property isToBeChained set to true.
+Apparently, this happens because createSdrFooAttribute functions
+(sdrattributecreator.cxx) ignores chaining property. I fixed the issue for
+createSdrTextAttribute but it seems not to be that simple for the sibling
+methods.
+Working on that...
+
+
+> An ideal solution would be to replace that NULL pointer with a dummy
+> OutlinerParaObject or something like that.
+> Any hint on how to do this?
+>
+This may still be necessary to bypass the problem.
+
+
+> In case anyone wanted to have a look:
+>
+> http://cgit.freedesktop.org/libreoffice/core/tree/svx/source/svdraw/svdotxed.cxx?h=feature/gsoc14-draw-chained-text-boxes#n252
+>
+>
+> http://cgit.freedesktop.org/libreoffice/core/tree/svx/source/sdr/primitive2d/sdrtextprimitive2d.cxx?h=feature/gsoc14-draw-chained-text-boxes#n488
+>
+> Cheers,
+> Matteo
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140811/0c9249ff/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAMuW_Xys_S6i-H7tOPZaaoHX8gpm2h3ktmLNGdbgSujG=BnUOA@mail.gmail.com>', in_reply_to='<CAMuW_Xys_S6i-H7tOPZaaoHX8gpm2h3ktmLNGdbgSujG=BnUOA@mail.gmail.com>')>

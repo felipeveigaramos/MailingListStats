@@ -1,0 +1,60 @@
+<Messages(message_id='<4FAF93AF.7010405@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-13 12:57:51', first_date_tz='7200', arrival_date='2012-05-13 03:57:51', arrival_date_tz='None', subject='minutes of ESC call ...', message_body='
+> * bugs with patches in bugzilla (Michael)
+> 	+ unwound half a dozen or more
+> 	+ please encourage people to send patches to the mailing list
+
+
+Hi,
+
+I did a quick query concerning LibO Bugs with "somehow patch" 
+attachments [1] and still UNFIXED, hat might show that these patches 
+still wait for review or something else went wrong
+
+What shell we do with these 60 bugs?
+
+
+Best regards
+
+
+Rainer
+
+
+Hyperlinks
+
+[1] 
+<https://bugs.freedesktop.org/buglist.cgi?list_id=75818&field0-0-0=attachments.ispatch&type0-0-1=allwords&field0-0-1=attachments.filename&resolution=---&resolution=INVALID&resolution=WONTFIX&resolution=WORKSFORME&resolution=MOVED&resolution=NOTABUG&resolution=NOTOURBUG&value0-0-2=patch&query_format=advanced&field0-0-2=attachments.description&value0-0-1=patch&product=LibreOffice&type0-0-2=allwords>
+
+', is_response_of='', mail_path='None', references='<1336668461.4785.226.camel@linux-yjtf.site>', in_reply_to='<1336668461.4785.226.camel@linux-yjtf.site>')>
+****************************************
+<Messages(message_id='<1336984064.27822.4.camel@linux-yjtf.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-14 09:27:44', first_date_tz='3600', arrival_date='2012-05-14 01:27:44', arrival_date_tz='None', subject='[Libreoffice-qa] minutes of ESC call ...', message_body='
+On Sun, 2012-05-13 at 12:57 +0200, Rainer Bielefeld wrote:
+> I did a quick query concerning LibO Bugs with "somehow patch" 
+> attachments [1] and still UNFIXED, hat might show that these patches 
+> still wait for review or something else went wrong
+>
+> What shell we do with these 60 bugs?
+
+	Yep - so; I reviewed all the outstanding bugs with a 'patch' boolean
+set to true/1 - and the majority are patches that were abhortive /
+proof-of-concept / and shouldn't be merged. I guess I should prolly have
+flagged them with some 'notpatch' keyword ;-) or adjusted them in some
+way. I pushed the real ones to the mailing list and/or merged / closed
+them.
+
+	The real trick is to push new patch bugs to the dev. list I think
+and/or thoughts on how to annotate / improve the query appreciated.
+
+	I also didn't quest for patches that were not marked as such but files
+ending '.diff' or '.patch' - perhaps there are some there (if there is
+an easy-to-use query for me to review those that'd be great ;-).
+
+	Thanks,
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<4FAF93AF.7010405@bielefeldundbuss.de>', mail_path='None', references='<1336668461.4785.226.camel@linux-yjtf.site>
+	<4FAF93AF.7010405@bielefeldundbuss.de>', in_reply_to='<4FAF93AF.7010405@bielefeldundbuss.de>')>

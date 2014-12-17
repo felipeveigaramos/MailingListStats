@@ -1,0 +1,16 @@
+<Messages(message_id='<50F304DD.9070308@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-13 20:02:53', first_date_tz='3600', arrival_date='2013-01-13 11:02:53', arrival_date_tz='None', subject='[ANN] LibreOffice 4.0.0.1 RC1 available', message_body='Hi all,
+
+I hoped to be able to do lots of tests with 4.0.0.1, but I see a 
+horrible number of crashes under WIN without any common characteristic, 
+I can't use this version furthermore for anything similar to normal work.
+
+Any chance that someone suffering from similar problems can contribute 
+Crash Reports?
+
+Best Regards
+
+
+Rainer
+
+
+', is_response_of='<20130112000053.GI13459@thinkpad.thebehrens.net>', mail_path='None', references='<20130112000053.GI13459@thinkpad.thebehrens.net>', in_reply_to='<20130112000053.GI13459@thinkpad.thebehrens.net>')>

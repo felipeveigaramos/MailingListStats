@@ -1,0 +1,46 @@
+<Messages(message_id='<CAMuW_XwaSHaEuKnS_Br6k98OHAoy4-BRukHHBwXp0RfdQ+dO7A@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-31 05:16:24', first_date_tz='-14400', arrival_date='2014-05-31 02:16:24', arrival_date_tz='None', subject='[GSoC] Calling Font::SetFillColor(Color &) affects
+ OutputDevice::IsTextFillColor() but doesn't use the right color (just prints
+ white)', message_body='Hi,
+I'm trying to move to draw text background colors directly from editeng
+(feature/gsoc14-draw-text-background-color).
+
+I currently try to draw backgrounds for underlined text. For this
+I modified EditCharAttribUnderline::SetFont so that the fill-color of the
+font is set to a specific blue (by calling Font::SetFillColor).
+As the attached picture shows, however, the background of the underlined
+"U" is printed white rather than blue.
+
+The only fact I could collect by debugging is that when
+OutputDevice::DrawTextArray is called to draw U or N (see attached
+picture), the font's fill-color of the OutputDevice is actually white for
+U, instead of blue.
+The important point is that, for some reason, when drawing U the method
+OutputDevice::IsTextFillColor() returns true, whereas it returns false for
+N; this might be determinant for the actual drawing of the custom
+background later in the code.
+Thus, the call to SetFillColor in EditCharAttribUnderline::SetFont seems to
+have effects, but the information on fill-color is lost at some point
+(despite the call to SetFillColor modifies it successful).
+
+Does this ring a bell to anyone?
+
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140531/0513d155/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: white_bkg.png
+Type: image/png
+Size: 119337 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140531/0513d155/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: UN.fodg
+Type: application/vnd.oasis.opendocument.graphics-flat-xml
+Size: 27855 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140531/0513d155/attachment.bin>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

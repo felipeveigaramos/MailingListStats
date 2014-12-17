@@ -1,0 +1,104 @@
+<Messages(message_id='<CAMuW_Xx2zVpscCuauzmRErpYp-bm8vodhs3RzZ=nQ3w0MBWCYw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-15 03:28:28', first_date_tz='7200', arrival_date='2014-07-14 18:28:28', arrival_date_tz='None', subject='[GSoC] Copying content from one text box to another in svx/ - A
+ failed attempt', message_body='On Mon, Jul 14, 2014 at 5:56 PM, Terrence Enger <tenger at iseries-guru.com>
+wrote:
+>
+>
+> The long string of nines looks like the result of reading freed memory
+> in a debug build.  valgrind may be able to tell you where the memory
+> was freed, if you have the patience to wait for it.
+>
+
+Valgrind definitely found something kinda directly related to my new code;
+still have to understand what goes wrong at the lowermost call though. Some
+relevant output:
+
+*==19443== Invalid read of size 8*
+==19443==    at 0xF4339F6: *SdrTextObj::ImpGetDrawOutliner()* const
+(svdotext.cxx:1233)
+==19443==    by 0xF43988B: SdrTextObj::impCopyTextInTextObj(SdrTextObj*)
+const (svdotextdecomposition.cxx:813)
+==19443==    by 0xF4389BF: (anonymous
+namespace)::impTextBreakupHandler::impHandleTruncatedPortion(DrawPortionInfo
+const&) (svdotextdecomposition.cxx:587)
+==19443==    by 0xF4387EE: (anonymous
+namespace)::impTextBreakupHandler::impHandleDrawPortionInfo(DrawPortionInfo
+const&) (svdotextdecomposition.cxx:529)
+[more backtrace...]
+*==19443==  Address 0xd8 is not stack'd, malloc'd or (recently) free'd*
+==19443==
+==19443==
+*==19443== Process terminating with default action of signal 11 (SIGSEGV)*
+==19443==  Access not within mapped region at address 0xD8
+==19443==    at 0xF4339F6: SdrTextObj::ImpGetDrawOutliner() const
+(svdotext.cxx:1233)
+==19443==    by 0xF43988B: SdrTextObj::impCopyTextInTextObj(SdrTextObj*)
+const (svdotextdecomposition.cxx:813)
+[more backtrace...]
+
+Is 0xd8 the address returned by the lowermost call by any chance
+(i.e. SdrTextObj::ImpGetDrawOutliner())?
+
+Matteo
+
+
+> HTH,
+> Terry.
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140715/2a1c8c56/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>
+ <1405353399.3947.0.camel@debian-wheezy.iseries-guru.com>', in_reply_to='<1405353399.3947.0.camel@debian-wheezy.iseries-guru.com>')>
+****************************************
+<Messages(message_id='<lq2n85$8f8$1@ger.gmane.org>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-15 10:03:17', first_date_tz='7200', arrival_date='2014-07-15 01:03:17', arrival_date_tz='None', subject='[GSoC] Copying content from one text box to another in svx/ -
+ A failed attempt', message_body='On 15/07/14 03:28, Matteo Campanelli wrote:
+> 
+> On Mon, Jul 14, 2014 at 5:56 PM, Terrence Enger <tenger at iseries-guru.com
+> <mailto:tenger at iseries-guru.com>> wrote:
+> 
+> 
+>     The long string of nines looks like the result of reading freed memory
+>     in a debug build.  valgrind may be able to tell you where the memory
+>     was freed, if you have the patience to wait for it.
+
+yep, something tends to overwrites freed memory with 0x99, at least in
+--enable-dbgutil builds.
+
+> Valgrind definitely found something kinda directly related to my new
+> code; still have to understand what goes wrong at the lowermost call
+> though. Some relevant output:
+> 
+> *==19443== Invalid read of size 8*
+> ==19443==    at 0xF4339F6: *SdrTextObj::ImpGetDrawOutliner()* const
+> (svdotext.cxx:1233)
+> ==19443==    by 0xF43988B: SdrTextObj::impCopyTextInTextObj(SdrTextObj*)
+> const (svdotextdecomposition.cxx:813)
+> ==19443==    by 0xF4389BF: (anonymous
+> namespace)::impTextBreakupHandler::impHandleTruncatedPortion(DrawPortionInfo
+> const&) (svdotextdecomposition.cxx:587)
+> ==19443==    by 0xF4387EE: (anonymous
+> namespace)::impTextBreakupHandler::impHandleDrawPortionInfo(DrawPortionInfo
+> const&) (svdotextdecomposition.cxx:529)
+> [more backtrace...]
+> *==19443==  Address 0xd8 is not stack'd, malloc'd or (recently) free'd*
+
+> 
+> Is 0xd8 the address returned by the lowermost call by any chance
+> (i.e. SdrTextObj::ImpGetDrawOutliner())?
+
+it is what is accessed at the position that valgrind reports. i.e.
+svdotext.cxx:1233.   0xd8 is usually a null pointer being dereferenced.
+
+also, if you're new to valgrind, you should start your investigation
+with the first reported invalid access, usually the later ones are a
+consequence of the first (but it may happen that there are some in your
+OS libraries, if "suppressions" for those are missing; those can usually
+be ignored...).
+
+
+', is_response_of='<CAMuW_Xx2zVpscCuauzmRErpYp-bm8vodhs3RzZ=nQ3w0MBWCYw@mail.gmail.com>', mail_path='None', references='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>
+ <1405353399.3947.0.camel@debian-wheezy.iseries-guru.com>
+ <CAMuW_Xx2zVpscCuauzmRErpYp-bm8vodhs3RzZ=nQ3w0MBWCYw@mail.gmail.com>', in_reply_to='<CAMuW_Xx2zVpscCuauzmRErpYp-bm8vodhs3RzZ=nQ3w0MBWCYw@mail.gmail.com>')>

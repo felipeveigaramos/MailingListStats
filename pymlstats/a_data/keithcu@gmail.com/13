@@ -1,0 +1,37 @@
+<Messages(message_id='<CAHW+f2JD7XKQQjM+SF-wWvCJUV-R0CpH0so=Q_wtu9D2r5Paqg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-17 20:32:56', first_date_tz='-18000', arrival_date='2013-12-17 17:32:56', arrival_date_tz='None', subject='Disabling unit tests, redux', message_body='I don't even know the names of the various modules I'm working in and
+prefer to let the smart system figure it out ;-) make build-nocheck works
+great and things run so much faster on my little laptop. Thank you. I put
+this info in the wiki to save questions in the future.
+
+-Keith
+
+On Mon, Dec 16, 2013 at 1:33 AM, Khaled Hosny <khaledhosny at eglug.org> wrote:
+
+> On Mon, Dec 16, 2013 at 12:56:59AM -0500, Keith Curtis wrote:
+> > It appears when making changes to individual C++ files that my computer
+> > spends about 90% of the build time running unit tests.
+>
+> It seems that ?make foo.build? will not run the tests, at least this is
+> what I ?discovered? few days ago.
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131217/cc573ba6/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>
+	<20131216063342.GC21555@khaled-laptop>', in_reply_to='<20131216063342.GC21555@khaled-laptop>')>
+****************************************
+<Messages(message_id='<52B162CC.1010708@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-18 09:54:36', first_date_tz='3600', arrival_date='2013-12-18 00:54:36', arrival_date_tz='None', subject='Disabling unit tests, redux', message_body='On 12/18/2013 02:32 AM, Keith Curtis wrote:
+> I don't even know the names of the various modules I'm working in and
+> prefer to let the smart system figure it out ;-)
+
+The module names match the top-level directory names, in case that 
+wasn't obvious.  So if you do a change to e.g. 
+desktop/source/app/app.cxx it suffices to "make desktop" to get instdir/ 
+updated.
+
+Stephan
+
+
+', is_response_of='<CAHW+f2JD7XKQQjM+SF-wWvCJUV-R0CpH0so=Q_wtu9D2r5Paqg@mail.gmail.com>', mail_path='None', references='<CAHW+f2Kjmt5CTCZ9mstoWD5q3F2zfa8hjWtDTWu4qs74w0mZ1A@mail.gmail.com>	<20131216063342.GC21555@khaled-laptop>
+	<CAHW+f2JD7XKQQjM+SF-wWvCJUV-R0CpH0so=Q_wtu9D2r5Paqg@mail.gmail.com>', in_reply_to='<CAHW+f2JD7XKQQjM+SF-wWvCJUV-R0CpH0so=Q_wtu9D2r5Paqg@mail.gmail.com>')>

@@ -1,0 +1,57 @@
+<Messages(message_id='<50BCF93D.4090009@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-03 20:10:53', first_date_tz='3600', arrival_date='2012-12-03 11:10:53', arrival_date_tz='None', subject='Dailies by banch?', message_body='Florian Effenberger schrieb:
+> No vetoe from my side :)
+>
+> Petr Mladek wrote on 2012-12-03 13:21:
+>> Norbert, others, what do you think about it?
+>
+
+Hi all,
+
+Currently I disagree with that idea, but I still have to think about 
+that for a while. May be I do not see a problem because I have the 
+experience to know what tinderbox delivers what Versions from what 
+branch, so I will have to try to get some empathy concerning other 
+users' needs.
+
+We have to be sure that we do not get other disadvantage when we follow 
+that suggestion.
+
+CU
+
+Rainer
+
+BTW, can we get any standard to prevent from these discussions over all MLs?
+
+we should please send such mails TO the (global) mailing list where 
+discussion is to be done, and all CC only are for info to attract 
+attention to the discussion.
+
+', is_response_of='', mail_path='None', references='<50B99E7E.6000802@iki.fi> <50B9F831.5010800@documentfoundation.org>
+	<1354537267.8197.76.camel@walk.suse.cz>
+	<50BC9A21.8070004@documentfoundation.org>', in_reply_to='<50BC9A21.8070004@documentfoundation.org>')>
+****************************************
+<Messages(message_id='<50BD9C80.3030901@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-12-04 07:47:28', first_date_tz='3600', arrival_date='2012-12-03 22:47:28', arrival_date_tz='None', subject='Dailies by banch?', message_body='Bjoern Michaelsen schrieb:
+
+> Hmm, why do you disagree? If done with symlinks, it would keep
+
+Hi,
+
+because I don't know symlinks ...
+
+My concern is that if we arrange the "real"  path structure of in a new 
+way someone else will come with some plausible reasons to rearrange it 
+in a new third way and so on.
+But If we could get some kind of "Table of Contents" what contains al 
+necessary info (Tinderbox, Pull time, OS, Branch, ...), can be sorted, 
+searched and may be even configured for personal needs that would be a 
+good solution.
+
+Best regards
+
+Rainer
+
+', is_response_of='<50BCF93D.4090009@bielefeldundbuss.de>', mail_path='None', references='<50B99E7E.6000802@iki.fi> <50B9F831.5010800@documentfoundation.org>
+	<1354537267.8197.76.camel@walk.suse.cz>
+	<50BC9A21.8070004@documentfoundation.org>
+	<50BCF93D.4090009@bielefeldundbuss.de>
+	<20121203195202.GA3804@michaelsen.dyndns.org>', in_reply_to='<20121203195202.GA3804@michaelsen.dyndns.org>')>

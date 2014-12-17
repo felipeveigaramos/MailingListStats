@@ -1,0 +1,166 @@
+<Messages(message_id='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-25 00:35:43', first_date_tz='7200', arrival_date='2014-08-24 15:35:43', arrival_date_tz='None', subject='Upload nightly builds for OS X Mavericks', message_body='I'm the owner of the MacOSX-10.9-x86-65 at 53 Tinderbox and I would like to
+upload x86-64 install images for OS X in
+http://dev-builds.libreoffice.org/daily/master/.
+
+Can anyone tell me how can I do it?
+
+I'm open to any configuration change of my tinderbox.
+
+
+ --disable-macosx-retina
+
+--with-macosx-sdk=10.9
+
+--with-macosx-version-min-required=10.9
+
+--enable-opengl
+
+--disable-gtk
+
+--disable-gconf
+
+--disable-gstreamer-0-10
+
+--disable-tdeab
+
+--disable-kdeab
+
+--disable-firebird-sdbc
+
+--enable-extension-integration
+
+--enable-ext-languagetool
+
+--with-myspell-dicts
+
+--enable-python=internal
+
+--with-java
+
+--with-external-tar=/Volumes/Tarballs/lo/external_tar
+
+--srcdir=/Volumes/Tinderbox/lo/core
+
+--enable-verbose
+
+--disable-dependency-tracking
+
+--disable-ccache
+
+--with-parallelism=2
+
+--enable-64-bit
+
+--enable-bogus-pkg-config
+
+--disable-cve-tests
+
+--disable-odk
+
+--disable-online-update
+
+--srcdir=/Volumes/Tinderbox/lo/core
+
+--enable-option-checking=fatal
+
+
+Regards,
+
+Robert
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140825/2821dd71/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CAFWMYEECfbXd8gasmVPR7DuDdg0QciwsOB+uM6tivVY=Q=M4VA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-25 05:57:31', first_date_tz='7200', arrival_date='2014-08-24 20:57:31', arrival_date_tz='None', subject='Upload nightly builds for OS X Mavericks', message_body='On Mon, Aug 25, 2014 at 12:35 AM, Robert Antoni <robert.buj at gmail.com> wrote:
+> I'm the owner of the MacOSX-10.9-x86-65 at 53 Tinderbox and I would like to
+> upload x86-64 install images for OS X in
+> http://dev-builds.libreoffice.org/daily/master/.
+>
+> Can anyone tell me how can I do it?
+>
+> I'm open to any configuration change of my tinderbox.
+
+>
+>
+> --disable-macosx-retina
+
+Why? this just allow for high res if high res is present.
+
+>
+> --with-macosx-sdk=10.9
+>
+> --with-macosx-version-min-required=10.9
+>
+> --enable-opengl
+>
+> --disable-gtk
+>
+
+> --disable-gconf
+>
+> --disable-gstreamer-0-10
+>
+> --disable-tdeab
+>
+> --disable-kdeab
+>
+are you sure any of these are needed ?
+
+
+
+> --disable-firebird-sdbc
+>
+> --enable-extension-integration
+>
+> --enable-ext-languagetool
+>
+> --with-myspell-dicts
+>
+> --enable-python=internal
+>
+
+> --with-java
+that is the default
+
+>
+> --with-external-tar=/Volumes/Tarballs/lo/external_tar
+>
+> --srcdir=/Volumes/Tinderbox/lo/core
+>
+> --enable-verbose
+>
+
+> --disable-dependency-tracking
+do you plan to always do full clean build ?
+why ?
+
+>
+> --disable-ccache
+>
+> --with-parallelism=2
+>
+> --enable-64-bit
+>
+> --enable-bogus-pkg-config
+>
+> --disable-cve-tests
+>
+> --disable-odk
+>
+> --disable-online-update
+>
+
+> --srcdir=/Volumes/Tinderbox/lo/core
+
+how many time do you need that :-)
+
+anyhow.. send me a ssh key, I'll try to set you up to upload daylies
+
+Norbert
+
+', is_response_of='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>', mail_path='None', references='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>', in_reply_to='<CANaJiRooX_Z6V1WNsJhmbY7Awqin0CT99F9DCkOWj-_tyU09Cw@mail.gmail.com>')>

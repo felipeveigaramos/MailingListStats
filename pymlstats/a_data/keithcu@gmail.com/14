@@ -1,0 +1,35 @@
+<Messages(message_id='<CAHW+f2JKoWiMtDeAkLZfNwGsm+Mmzz42G4Zdx2ga4RJ=gUyT4w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-19 23:01:51', first_date_tz='-18000', arrival_date='2014-02-20 05:01:51', arrival_date_tz='None', subject='Unity for HiDPI', message_body='Hi Bj?rn,
+
+I have done some reading that the next version of Unity is going to
+have HiDPI support.
+
+Do you know if they will return 192 DPI when on these screens like
+what Gnome 3.10 does? I could find some Unity alias and ask, but you
+might know or be able to encourage them ;-) Unfortunately, I can't
+easily install Unity to test because I'd have to replace a lot of my
+other core packages.
+
+-Keith
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140220101420.GC24327@uzi>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-20 11:14:20', first_date_tz='3600', arrival_date='2014-02-20 02:14:20', arrival_date_tz='None', subject='Unity for HiDPI', message_body='Hi Keith,
+
+On Wed, Feb 19, 2014 at 11:01:51PM -0500, Keith Curtis wrote:
+> Do you know if they will return 192 DPI when on these screens like
+> what Gnome 3.10 does? I could find some Unity alias and ask, but you
+> might know or be able to encourage them ;-) 
+
+To be honest, I havent tracked HiDPI at all as I already have to watch out for
+too many lose ends. I asked on #ubuntu-desktop and this is what I got:
+
+11:08 < Sweetshark> I got an email request about HiDPI asking: "Do you know if they will return 192 DPI when on these screens like what Gnome 3.10 does? I could find some Unity alias and ask, but you might know or be able to encourage 
+                    them ;-)" -- anyone having a quick answer to that?
+11:09 < darkxst> Sweetshark, if they are asking for HiDPI on Full HD panels, it wont happen, atleast not from the GNOME side
+
+
+HTH,
+
+Bjoern
+
+', is_response_of='<CAHW+f2JKoWiMtDeAkLZfNwGsm+Mmzz42G4Zdx2ga4RJ=gUyT4w@mail.gmail.com>', mail_path='None', references='<CAHW+f2JKoWiMtDeAkLZfNwGsm+Mmzz42G4Zdx2ga4RJ=gUyT4w@mail.gmail.com>', in_reply_to='<CAHW+f2JKoWiMtDeAkLZfNwGsm+Mmzz42G4Zdx2ga4RJ=gUyT4w@mail.gmail.com>')>

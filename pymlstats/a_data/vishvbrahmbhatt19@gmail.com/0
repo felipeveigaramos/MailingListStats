@@ -1,0 +1,27 @@
+<Messages(message_id='<CA+_jvaw0fU_O+U+=c2hqww4VPqpBuYB_6=UcxrFrE6K4Axa5jw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-08-30 01:08:39', first_date_tz='19800', arrival_date='2013-08-29 12:38:39', arrival_date_tz='None', subject='Unit-Test Query [GSOC: Slide Layout Extendibility]', message_body='Hi,
+
+-> In the current build system,we have some config XML files at "*sd/xml*"
+and their corresponding test-profile copies are at "*
+test/usertemplate/user/config/soffice.cfg/simpress*".
+
+-> And using test-profile at "test/user-template",'Package_unittest.mk'
+creates a new copy at
+"unittest/install/share/config/soffice.cfg/simpress/".
+
+->  *Unit-test* refers to the files at "unittest/install" for further
+checking/testing during build.
+
+->So can unit-test directly use "sd/xml" as a test-profile and then create
+a new copy at "unittest/install/share/config/soffice.cfg/simpress/" ? And
+so that we can probably avoid duplicate config files at
+"test/user-template"?
+
+It would be great,if someone can guide me in this matter.
+
+Thanks & Regards,
+Vishv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130830/a7f2b43b/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

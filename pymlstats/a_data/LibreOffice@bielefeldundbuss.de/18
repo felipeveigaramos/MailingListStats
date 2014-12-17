@@ -1,0 +1,157 @@
+<Messages(message_id='<4FCEE14B.7010109@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-06 06:49:15', first_date_tz='7200', arrival_date='2012-06-05 21:49:15', arrival_date_tz='None', subject='New Bugzilla Version Picker items  2', message_body='June 6, 2012
+
+Hello,
+
+We branched 3.6 and have a new Master, I have to hurry up a little with 
+my action to revise the Bugzilla version picker contents due to 
+<https://wiki.documentfoundation.org/Talk:BugReport_Details>. Please 
+excuse me for being late with this.
+
+First Steps
+
+I just created a new Version 3.7.0alpha0+ Master, and since the fix for 
+"Bug 49622 ? Increase column width for Version in query results "The 
+version now will be shown correctly in queries.
+
+I created Bug 50755, please add comments there quickly if you see that 
+new Versions in Picker cause trouble
+
+Further Proceeding
+
+I will prepare a mass change of all Versions today, don?t worry, there 
+will be no mass e-mails for the bugs.
+
+When I will start with the modifications, Function of the "Bug 
+submission Assistant" will be partially broken for a while. I will 
+contact Thorsten Behrens to find a solution to modify Assistant ASAP.
+
+I am planning to do most modifications today (2012-06-06) in the afternoon.
+
+Possible Problems
+
+There might (will!) be some Problems:
+
+  1.   Bug Submission Assistant will be broken temporarily
+  2.   External queries with Version relation will not work any longer
+       and will have to be modified. Most saved queries should be
+       adapted automatically, but I did not test that. Version entries
+       in field "Custom search" will have to be adapted manually."
+  3.   We will see what happens when someone reports a bug just when I
+       am modifying a Version
+
+Comments, hints, discussion please in
+<libreoffice-qa at lists.freedesktop.org>
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1339163111.907.336.camel@walk.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-08 15:45:11', first_date_tz='7200', arrival_date='2012-06-08 06:45:11', arrival_date_tz='None', subject='[Libreoffice-qa] New Bugzilla Version Picker items  2', message_body='On Thu, 2012-06-07 at 17:25 +0200, Bjoern Michaelsen wrote:
+> Just as an hint. Ubuntu/Debian would use something like:
+> 
+>  3.6.0~alpha1
+>  3.6.0~alpha1+daily20120606 
+>  3.6.0~beta1
+>  3.6.0.1
+
+I really like it. I would like to use it in the future for git tags and
+source tarballs.
+
+The problem might be the tilda '~'. It is substituted to $HOME in linux
+shell. I am not sure about other special meaning in some programing
+languages or so.
+
+Before we change it, we need to make sure that we do not break other
+distributors. So, I have added the developer mailing list and several
+distro packagers into CC.
+
+IMPORTANT: Please, replay if you do not like the above scheme or if you
+have even better solution.
+
+
+
+
+
+Background:
+===========
+
+We currently use two version schemes in LibreOffice:
+
+1. About dialog:
+----------------
+
+It has to be user friendly. Last release candidate is the final build,
+so we must not mention "RC" in the version. The current scheme is:
+
+	+ 3.X.Y alphaZ   - for alpha release
+	+ 3.X.Y betaZ    - for beta releases
+        + 3.X.Y.Z        - for release candidates; the last one is final
+
+, where Y is the number of the bugfix release
+
+
+2. git tags and source packages
+-------------------------------
+
+It needs to have correct alpha-numeric sorting. Otherwise, new versions
+are not correctly handled by package managers, e.g. rpm, dpkg, zypper,
+apt. The current scheme is:
+
+       + 3.X-1.98.Z        - for 3.X.0 alpha releases, e.g. 3.5.98.1
+       + 3.X-1.99.Z        - for 3.X.0 beta releases, e.g. 3.5.99.1
+       + 3.X.Y.Z           - for 3.release candidates, e.g. 3.6.0.1
+
+, where Y is the number of the bugfix release.
+
+
+PROBLEM: The two version schemes are schizophrenic and could cause
+confusion. In addition, bugzilla needs both alpha-numeric sorting and
+user friendly meaning.
+
+We either need to mention both versions in the about dialog and bugzilla
+or come up with a better scheme that would be good for both purposes.
+
+There are two more proposals:
+
+
+3. Rainers:
+-----------
+
+	+ 3.X.Y.00Z   - for alpha releases
+	+ 3.X.Y.0Z0   - for beta releases
+	+ 3.X.Y.Z00   - for release candidates
+
+The alpha-numeric sorting is correct. It is clearly associated with the
+3.X release because there is no "X-1" number.
+
+The problem is that it is not evident that .00Z is alpha, and .0Z0 is
+beta. They are limited to 9 alpha and 9 beta builds. Also, I have newer
+seen it anywhere else, so people are not familiar with it.
+
+
+4. Ubuntu/Debian:
+-----------------
+
+	+ 3.X.Y~alphaZ   - for alpha releases
+	+ 3.X.Y~betaZ    - for beta releases
+	+ 3.X.Y.Z        - for release candidates
+
+I really like this solution. It seems to have everything. We just need
+to make sure that the tilda '~' is handled correctly and does not break
+some tools.
+
+It seems that RPM handles it correctly. I am going to check Build
+service, and zypper.
+
+Best Regards,
+Petr
+
+
+', is_response_of='<4FCEE14B.7010109@bielefeldundbuss.de>', mail_path='None', references='<4FCEE14B.7010109@bielefeldundbuss.de>
+	<4FCF7EC3.3000508@bielefeldundbuss.de>
+	<1339062124.907.141.camel@walk.suse.cz>
+	<4FD07E4C.10403@bielefeldundbuss.de>
+	<1339080448.907.249.camel@walk.suse.cz>
+	<20120607152500.GH6493@michaelsen.dyndns.org>', in_reply_to='<20120607152500.GH6493@michaelsen.dyndns.org>')>

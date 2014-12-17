@@ -1,0 +1,142 @@
+<Messages(message_id='<CAO7O0Nneu6nuqtz2n-tXuAoCSb2aOnMbVpPNX_m9AqD208zJiQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-09 12:22:19', first_date_tz='10800', arrival_date='2013-07-09 02:22:19', arrival_date_tz='None', subject='Fwd: Windows Build faild me', message_body='Dear All,
+
+I am writing this a note for documentation and people having similar issues.
+
+Previously, I was unable to build LO4.1 on Winx64 due to "missing
+WiLangId.vbs". The full build log is http://pastebin.ca/2416045. The
+specific failing point is "Input Error: Can not find script file
+"C:\PROGRA~2\MIA713~1\Windows\v7.0A\Samples\SysMgmt\Msi\scripts\WiLangId.vbs.
+Based on advice from Fridrich below, I checked for the file in Windows SDK
+and found the file at C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\msi\scripts\WiLangId.vbs. The realproblem
+was that the short path C:\PROGRA~2\MIA713~1\ refers to C:\Program Files
+(x86)\Microsoft SDKs\ NOT C:\Program Files\Microsoft SDKs\. I resolved the
+problem by copying the entire Samples folder to C:\Program Files
+(x86)\Microsoft SDKs\Windows\v7.0A.
+
+
+Additionally, can the build script look for such cases, esp on x64 Win?
+
+Regards,
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hello,
+
+Your packaging is failing to run the Visual Basic script that we use
+for windows language manipulation, WiLangId.vbs.
+
+Normally, it comes with the Windows installer SDK, but I found that it
+is also committed to git in this repository
+https://github.com/ynkdir/vim-installer/blob/master/msiscripts/WiLangId.vbs
+
+Just put it somewhere in the path of your SDK and it should be ok.
+
+Cheers
+
+Fridrich
+
+On 04/07/13 08:25, Michael Meeks wrote:
+> Hi Tadele,
+>
+> On Wed, 2013-07-03 at 22:07 +0300, Tadele Assefa wrote:
+>> I have successfully built LO4.1 on Ubuntu and happy with it.
+>
+> Great :-)
+>
+>> When i tried it on windows, i failed to get it done
+>
+> That's a pain.
+>
+>> My system Win7 x64 (dual boot Ubuntu 12.10). I tried various
+>> wiki guides and everything i can find  in nabble. The entire
+>> build message is at http://pastebin.ca/2416045
+>
+> Sadly I'm not on-line.
+>
+>> The  last part says: Setting Root Module: gid_Module_Root : Using
+>> spellchecker file:
+>> D:/lo/build/win/git/libowin/solver/
+wntmsci13.pro/bin/spellchecker_selection.txt
+>>
+>>
+: Collected spellchecker languages for spellchecker: en,es,fr
+>> : :
+>> *****************************************************************
+>>
+>>
+: ERROR: ERROR: Found an error in the logfile. Packaging failed. at
+>> D:/lo/build/win/git/libowin/solenv/bin/modules/installer/worker.pm
+>>
+>>
+line 164
+>> :
+>> *****************************************************************
+>
+>>
+> Usually there is an ERROR: much earlier in this sequence - a load
+> of SUCCESS: followed by one.
+>
+> You'd prolly do best to dig back in the log to find that - and then
+> try to unwind what is going on there.
+>
+> It's hard to be more specific than that - also; it's really best to
+> CC the developers list on this sort of thing: that will get you the
+> best response, and no need to subscribe:
+> libreoffice at lists.freedesktop.org
+>
+> HTH,
+>
+> Michael.
+>
+
+- --
+Please avoid sending me Word, Excel or PowerPoint attachments.
+See http://www.gnu.org/philosophy/no-word-attachments.html
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.19 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://www.enigmail.net/
+
+iEYEARECAAYFAlHVexMACgkQu9a1imXPdA+k5ACfaPMtDKOu7Qe8ZjERlGzHYx4b
+gpsAn1fxg5+gcFT5ZpfQTF+t6IfovlBU
+=prt1
+-----END PGP SIGNATURE-----
+
+
+
+-- 
+Regards,*
+___________________________
+Tadele Assefa
+Managing Director*
+*
+
+Cell: +25-911-84-13-84*
+*Think Green ? Please do not print this email unless you really need to*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130709/9c52c3c6/attachment.html>
+
+', is_response_of='', mail_path='None', references='<CAO7O0NmWgGBCn7ZPQ=-fSp5xokfj3UX_X+8_pwGamm6gDcESYA@mail.gmail.com>
+	<1372919107.20050.69.camel@linux-d2lh.site>
+	<51D57B13.2000907@bluewin.ch>', in_reply_to='<51D57B13.2000907@bluewin.ch>')>
+****************************************
+<Messages(message_id='<51DD61DE.5060405@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-10 15:30:06', first_date_tz='7200', arrival_date='2013-07-10 06:30:06', arrival_date_tz='None', subject='Fwd: Windows Build faild me', message_body='On 07/09/2013 11:22 AM, Tadele Assefa wrote:
+> SDKs\. I resolved the problem by copying the entire Samples folder to
+> C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A.
+
+Since 
+<http://cgit.freedesktop.org/libreoffice/core/commit/?id=08337321e655a3b4991c895de98d96858e60d863> 
+"Let WINDOWS_SDK_WILANGID override the location of WiLangId.vbs," 
+another option is to specify in your autogen.input the full path to 
+wherever it happens to be available on your machine, like
+
+> WINDOWS_SDK_WILANGID=C:/Program Files/Microsoft SDKs/Windows/v7.1/Samples/sysmgmt/msi/scripts/WiLangId.vbs
+
+Stephan
+
+', is_response_of='<CAO7O0Nneu6nuqtz2n-tXuAoCSb2aOnMbVpPNX_m9AqD208zJiQ@mail.gmail.com>', mail_path='None', references='<CAO7O0NmWgGBCn7ZPQ=-fSp5xokfj3UX_X+8_pwGamm6gDcESYA@mail.gmail.com>
+	<1372919107.20050.69.camel@linux-d2lh.site>
+	<51D57B13.2000907@bluewin.ch>
+	<CAO7O0Nneu6nuqtz2n-tXuAoCSb2aOnMbVpPNX_m9AqD208zJiQ@mail.gmail.com>', in_reply_to='<CAO7O0Nneu6nuqtz2n-tXuAoCSb2aOnMbVpPNX_m9AqD208zJiQ@mail.gmail.com>')>

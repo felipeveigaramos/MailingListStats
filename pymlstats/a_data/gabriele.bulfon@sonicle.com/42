@@ -1,0 +1,13 @@
+<Messages(message_id='<9961567.589.1372923160591.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-04 09:32:40', first_date_tz='7200', arrival_date='2013-07-04 00:32:40', arrival_date_tz='None', subject='final link failed: Bad value', message_body='Hi,
+after long building LO 4.1.0.1 on illumos based OS, I reached this error:
+[build LNK] Executable/unopkg.bin
+/usr/gnu/bin/ld: /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/Executable/unopkg.bin: hidden symbol `main' in /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/CObject/desktop/source/pkgchk/unopkg/unopkg_main.o is referenced by DSO
+/usr/gnu/bin/ld: final link failed: Bad value
+collect2: ld returned 1 exit status
+Any idea?
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130704/f5124f4d/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

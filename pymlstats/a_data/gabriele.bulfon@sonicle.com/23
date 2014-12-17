@@ -1,0 +1,103 @@
+<Messages(message_id='<2365186.137.1373385679267.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-09 18:01:19', first_date_tz='7200', arrival_date='2013-07-09 09:01:19', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='usually libs should contain not just search paths but also the libraries
+to be linked, e.g. in config_host.mk with a system nss i get:
+export NSS_LIBS=$(gb_SPACE)-lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4
+-lplc4 -lnspr4 -lpthread -ldl
+also i guess only Sun ld knows -R, the GNU ld equivalent is -Wl,-rpath,
+Well done!
+With this env the build went on the unopkg.bin!
+CONFIGURE_ENV += NSS_CFLAGS=-I/usr/include/mps
+CONFIGURE_ENV += NSS_LIBS="-Wl,-rpath,/usr/lib/mps -L/usr/lib/mps -lssl3 -lsmime3 -lnss3 -
+lnssutil3 -lplds4 -lplc4 -lnspr4 -lpthread -ldl"
+I prefer to use my userland Makefile options instead of modifying the solaris.mk
+Now the build is going on.....let's wait and see... ;)
+Gabriele.
+Ok, it stopped later with this:
+[build LNK] Executable/pluginapp.bin
+S=/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1 & O=$S/solver/unxsogi.pro & W=$S/workdir/unxsogi.pro &  mkdir -p $W/LinkTarget/Executable/ & /usr/gcc/4.4/bin/g++     -Wl,-z,origin '-Wl,-rpath,$ORIGIN:$ORIGIN/../ure-link/lib' -Wl,-rpath-link,$O/lib -z nodefs   $W/CxxObject/extensions/source/plugin/unx/npwrap.o $W/CxxObject/extensions/source/plugin/unx/npnapi.o     -Wl,--start-group $O/lib/libplugcon.a -Wl,--end-group -Wl,--no-as-needed  -lm -lnsl -lsocket  -lXm -lXt -lXext -lX11 -ldl  -lgthread-2.0 -lpthread -lglib-2.0   -R/usr/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgdk_pixbuf_xlib-2.0 -lgmodule-2.0 -lpthread -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0   -R/usr/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   -luno_sal -o $W/LinkTarget/Executable/pluginapp.bin
+/usr/gnu/bin/ld: cannot find -luno_sal
+collect2: ld returned 1 exit status
+I guess I'm missing a library....not built?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130709/a70fed43/attachment.html>
+
+', is_response_of='<2595970.131.1373385268190.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>', in_reply_to='<2595970.131.1373385268190.JavaMail.sonicle@www>')>
+****************************************
+<Messages(message_id='<2105696.290.1373877166112.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 10:32:46', first_date_tz='7200', arrival_date='2013-07-15 01:32:46', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Thanks! I'll check and try to disable this on my build.
+Also, it's not about a Solaris general problem, usually Solaris 10/11 have X11 and motif libs correctly
+configured.
+It's my own XStreamOS/illumos dev machine that has new X11 and old Motif libs not happy each other.
+For this, I will build and switch to open-motif shortly.
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Meeks
+A: Gabriele Bulfon
+Cc: Michael Stahl
+libreoffice-dev
+Data: 15 luglio 2013 10.15.18 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, 2013-07-15 at 09:44 +0200, Gabriele Bulfon wrote:
+I was wandering why Motif libraries are needed by these extension. Is
+it absolutely necessary?
+I'm amazed to hear that we link to motif in the modern world; it seems
+to be only this extension:
+$W/CxxObject/extensions/source/plugin/unx/npwrap.o
+$W/CxxObject/extensions/source/plugin/unx/npnapi.o
+I'd disable this I guess in configure.ac we have:
+dnl Check for NPAPI interface to plug browser plugins into LibreOffice
+documents
+I imagine we should just disable that for Solaris [ for now ].
+Quite why we think Mozilla requires motif still I'm not sure I'd be
+amazed if they still had a hard dep on that.
+HTH,
+Michael.
+--
+michael.meeks at suse.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/3d4c9537/attachment.html>
+
+', is_response_of='<2365186.137.1373385679267.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>', in_reply_to='<1373876118.25792.273.camel@linux-d2lh.site>')>

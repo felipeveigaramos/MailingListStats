@@ -1,0 +1,148 @@
+<Messages(message_id='<4FDF0F27.1010702@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-18 13:21:11', first_date_tz='7200', arrival_date='2012-06-18 04:21:11', arrival_date_tz='None', subject='Cleaning bug list', message_body='Joel Madero schrieb:
+> I brainstormed a bit today and I came up with this flowchart.
+
+
+Hi Joel,
+
+great to see that all in a chart, your conclusions and definitions seem 
+plausible.
+
+But the chart also shows the limitations of that concept: It's really 
+sophisticated, and no developer will sit at his's desk to decide whether 
+he should fix a Bug with Severity=major and Priority=normal before or 
+after a bug with  Severity=normal and Priority=high  ;-)
+
+But as you stated, such a chart can give some orientation, and so I 
+think it should be shown in the Wiki. Not on one of the current existing 
+Pages like BugTriage or similar, but on a page where should gather 
+detailed background information what would blow up those pages too much, 
+but nevertheless are interesting or important to know for all who want 
+to gain more knowledge concerning th bugfixing, QA or whatever else process.
+
+The question is whether the Priority entry is evaluated by anyone, IMHO 
+most here see that as a personal statement (of reporter?) concerning 
+importance of the bug - and ignore it.
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<CAPcxoX40LsAcPXr21cPH24w4Q=Hnm8CFwFvPFpR1Ok32GgfmmQ@mail.gmail.com>
+	<4FD1927F.1010106@bielefeldundbuss.de>
+	<CAPcxoX4BP1BXfKPDcaouvCHi7pzsBKh1Ef41dtHN33M5roj25A@mail.gmail.com>
+	<1339602147.604.32.camel@walk.suse.cz>
+	<CAPcxoX7e8ytA2NXVBa4YBNxBH2Y+kF6Bc903WL9tMtUNZMoN1w@mail.gmail.com>
+	<CAPcxoX6LggSM-gw3i8pPEGCN27xKJhaPkJfCbM+oJ2Rc7m4F=g@mail.gmail.com>', in_reply_to='<CAPcxoX6LggSM-gw3i8pPEGCN27xKJhaPkJfCbM+oJ2Rc7m4F=g@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<1340032267.6136.154.camel@walk.suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-18 17:11:07', first_date_tz='7200', arrival_date='2012-06-18 08:11:07', arrival_date_tz='None', subject='Cleaning bug list', message_body='Rainer Bielefeld p??e v Po 18. 06. 2012 v 13:21 +0200:
+> Joel Madero schrieb:
+> > I brainstormed a bit today and I came up with this flowchart.
+> 
+> 
+> Hi Joel,
+> 
+> great to see that all in a chart, your conclusions and definitions seem 
+> plausible.
+> 
+> But the chart also shows the limitations of that concept: It's really 
+> sophisticated, and no developer will sit at his's desk to decide whether 
+> he should fix a Bug with Severity=major and Priority=normal before or 
+> after a bug with  Severity=normal and Priority=high  ;-)
+
+You are right, developers will not strictly follow the severity and
+priority. On the other hand, they care of the usability of the
+application. They are actively working on the most annoying bugs. They
+prioritize bugs themselves, so why not help them.
+
+Note that MAB is only a workaround because all the other bugs are not
+prioritized.
+
+I think that it is hard job to prioritize all bugs. It will cause some
+troubles because different people might have different opinions. Though,
+I think that we should try it.
+
+
+> But as you stated, such a chart can give some orientation, and so I 
+> think it should be shown in the Wiki. Not on one of the current existing 
+> Pages like BugTriage or similar, but on a page where should gather 
+> detailed background information what would blow up those pages too much, 
+> but nevertheless are interesting or important to know for all who want 
+> to gain more knowledge concerning th bugfixing, QA or whatever else process.
+
+You are right that we need to keep the bugtriage page easy to do not
+scare people. It would make sense to describe the prioritization on
+extra page and just link it from the BugTriage page.
+
+BTW: Recently someone said that the Bugtriage page was not easy to
+understand (state CONFIRMED). I think that some people might prefer the
+graphics flow chart over the text. It would be nice to have similar flow
+chart also for the overall bugtriage process :-)
+
+
+> The question is whether the Priority entry is evaluated by anyone, IMHO 
+> most here see that as a personal statement (of reporter?) concerning 
+> importance of the bug - and ignore it.
+
+Good question. My opinion is:
+
+	+ severity defines how much a bug affect the functionality
+	+ priority defines order in which it should be fixed
+
+It means that, some feature might have higher priority because of
+marketing reasons. Also some less severe bug might have higher priority
+because it affects many users.
+
+Hmm, when I think about it, I would propose another prioritization:
+
+1. Define severity by symptoms.
+
+	+ this is well handled in the flow chart.
+
+	+ alternative proposal is at at
+          http://wiki.documentfoundation.org/BugReport_Details#Severity
+          is reasonable. 
+  
+        + I think that they both describe the same things different way.
+          I do not have any strong opinion what formulation is easier to
+          understand. We would need feedback from more people ;-)
+
+
+2. Define priority more clever way:
+
+	+ the default priority should basically follow the severity; it
+          means that critical bugs should have high priority, ...
+
+	+ the number of affected users and visibility should shift it
+          higher or lower, though
+
+	+ it is already somehow handled in the flowchart. Well, I would,
+          allow to skip even more levels. For example, typo
+          in the main menu is minor bug but it might have even
+          highest priority. Such bug in final release would look
+          amateurish and would bring bad feeling from users.
+          
+          Hmm, I am not sure how to effectively describe it in the
+          flowchart.
+
+      	+ with this logic, the bugs with the high and highest priority
+          should be mentioned in MAB.
+
+	+ anyway, developers should have the final word about
+          priorities (for assigned bugs); they might want to organize
+          their daily work by it 
+
+Best Regards,
+Petr
+
+
+
+
+
+', is_response_of='<4FDF0F27.1010702@bielefeldundbuss.de>', mail_path='None', references='<CAPcxoX40LsAcPXr21cPH24w4Q=Hnm8CFwFvPFpR1Ok32GgfmmQ@mail.gmail.com>
+	<4FD1927F.1010106@bielefeldundbuss.de>
+	<CAPcxoX4BP1BXfKPDcaouvCHi7pzsBKh1Ef41dtHN33M5roj25A@mail.gmail.com>
+	<1339602147.604.32.camel@walk.suse.cz>
+	<CAPcxoX7e8ytA2NXVBa4YBNxBH2Y+kF6Bc903WL9tMtUNZMoN1w@mail.gmail.com>
+	<CAPcxoX6LggSM-gw3i8pPEGCN27xKJhaPkJfCbM+oJ2Rc7m4F=g@mail.gmail.com>
+	<4FDF0F27.1010702@bielefeldundbuss.de>', in_reply_to='<4FDF0F27.1010702@bielefeldundbuss.de>')>

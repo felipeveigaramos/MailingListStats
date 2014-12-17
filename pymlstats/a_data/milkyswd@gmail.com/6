@@ -1,0 +1,96 @@
+<Messages(message_id='<CAO7O0Nnr6_EToohkebz-m8sd1dR7XfY-2ooF9OafNLS5T-Q1WA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-08-02 14:20:52', first_date_tz='10800', arrival_date='2013-08-02 04:20:52', arrival_date_tz='None', subject='[libreoffice-l10n] Invalid Entry in Po Files', message_body='Thanks everybody for your help now that I have corrected all problems and
+once again had nice build on both Ubuntu and Windows.
+
+Now additional array of help requests:
+1) I want to build the LO with Spellchecker and Help Pack included in the
+installer. Providing a separate installation of Help and Spellchecker
+extension is not good way as many of our user have little experience with
+software installation.
+2) Can I change the installer language to be mine, it is now in English.
+3) The MSI installer I built is shows a 'Beta' Splash Screen and is
+installed as "LibreOfficeDev4.1.1.0.0", how can I produce LibreOffice
+4.x.x.x like the official installer.
+
+Regards,
+
+
+
+
+On Wed, Jul 31, 2013 at 8:07 PM, Zolnai Tam?s <zolnaitamas2000 at gmail.com>wrote:
+
+> 2013/7/31 Andras Timar <timar74 at gmail.com>
+>
+>> Hi Tadele,
+>>
+>> On Wed, Jul 31, 2013 at 5:44 PM, Tadele Assefa <milkyswd at gmail.com>
+>> wrote:
+>> > Meld Diff Viewer.  The difference I spotted appeared at the bottom of
+>> the
+>> > files with many more comments in my file than the Hungarian one. Can
+>> that
+>> > be a cause?
+>> >
+>>
+>> Yes, it is the cause. Remove those obsolete entries from the end of
+>> the file. As far as I remember, Tamas Zolnai fixed this misbehaviour
+>> in po parser in master and libreoffice-4-1. I guess you are compiling
+>> LibreOffice 4.0.x
+>
+>
+> Yes, I did and so comments at the end of the files doesn't make the parser
+> to skip strings, but warnings are still alive. It can be helpful to avoid
+> useless lines from git repository. So these warnings can appear in 4.1 too,
+> but strings are merged, as long as there are no other problem.
+> However as I see this is not true.
+>
+> For example:
+> msgid "There are no pages to be printed. Please check your document for
+> ranges relevant to printing."
+> msgstr ""
+> "Attamantanno qoolla dino. Eeggatena bortajekki attamote hakkigeeshsha
+> buuxi."
+>
+> If the translation doesn't include end line than it have to stand directly
+> behind msgstr, like this:
+> msgstr "Attamantanno qoolla dino. Eeggatena bortajekki attamote
+> hakkigeeshsha buuxi."
+>
+> Other example (with the same problem):
+> "msgid "Click '%OK' to start %PRODUCTNAME %PRODUCTVERSION without
+> accessibility support, or click '%CANCEL' to exit %PRODUCTNAME
+> %PRODUCTVERSION."
+> msgstr ""
+> "Click '%OK' to start %PRODUCTNAME %PRODUCTVERSION without accessibility "
+> "support, or click '%CANCEL' to exit %PRODUCTNAME %PRODUCTVERSION.""
+>
+> Andras, as I remember you said, you use msgcat to get this kind of result.
+> That's why LO po parser works this kind of po files.
+>
+> Best regards,
+> Tam?s
+>
+>
+
+
+-- 
+Regards,*
+___________________________
+Tadele Assefa
+Managing Director*
+*
+
+Cell: +25-911-84-13-84*
+*Think Green ? Please do not print this email unless you really need to*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130802/b7a1bd1c/attachment.html>
+
+', is_response_of='<CALvyNm=tTi-iQ2QSB3ewrz5KvC4zT2J1P1+j1oOOCovcNgGkig@mail.gmail.com>', mail_path='None', references='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>
+	<CACVjhxXomzEQ8Hw-HMpxs6roVkCdZ4PT1TAZk-RSJh762hQoyg@mail.gmail.com>
+	<CALvyNmkatzZKE5h5hO4sCmSznGF4WByxwOdvka3BqF2sBDm9MQ@mail.gmail.com>
+	<CACVjhxW=hP3b7_h-QbMcV6Na8+9hF1-6oYJ+S0To88C865Q-yg@mail.gmail.com>
+	<CAO7O0N=s5_DD3wRNN1OmtHx+-Jav=ngb=jj58hMHRAHwQXtDFA@mail.gmail.com>
+	<CACVjhxUzL2vCtSB6+_t5xNhxLOzj6ubtYrmdC=fh+NSTKeaY0Q@mail.gmail.com>
+	<CAO7O0N=6NNApgP2EL1Q+XGt8eVgAvOa9sSHPuDk28nNi7a--VA@mail.gmail.com>
+	<CAKqTfXbO0tg5RvQ8yc6uq8c06+PuZm4vSkmVCL8_tz=+bcBJbQ@mail.gmail.com>
+	<CALvyNm=tTi-iQ2QSB3ewrz5KvC4zT2J1P1+j1oOOCovcNgGkig@mail.gmail.com>', in_reply_to='<CALvyNm=tTi-iQ2QSB3ewrz5KvC4zT2J1P1+j1oOOCovcNgGkig@mail.gmail.com>')>

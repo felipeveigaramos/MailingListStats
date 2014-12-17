@@ -1,0 +1,90 @@
+<Messages(message_id='<CAFrS=rcTndbU2CEhxp7qMdJAqT23G+2eUPUgOTENAVhuOwEtrg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-22 10:42:52', first_date_tz='19800', arrival_date='2013-04-21 22:12:52', arrival_date_tz='None', subject='Fwd: Help to make it possible to add custom animation to Master
+	Slides.', message_body='---------- Forwarded message ----------
+From: Janit Anjaria <janit92 at gmail.com>
+Date: Tue, Apr 16, 2013 at 2:55 PM
+Subject: Help to make it possible to add custom animation to Master Slides.
+To: libreoffice-dev <libreoffice at lists.freedesktop.org>
+
+
+Hey!
+
+I have been looking into this bug/feature( and others too ;) ) since quite
+a time and have figured out ways to overcome and solve this bug which LO
+has.
+
+-->Yes, i am talking about bug#41572 :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=41572
+
+-->I have seen and dig into the bug quite a lot and also into the
+matter.And got a patch that has dealt with the same but it hasnt been
+complete(that is what i suppose,or it has not solved the full purpose.) :
+
+http://cgit.freedesktop.org/libreoffice/build/tree/
+patches/dev300/sd_effects_styles.diff?h=master-backup
+
+I have understood and have tried to digest the code in this patch and have
+almost understood the workflow(flow of logic/concept).
+
+But there have been certain places where i think i am not yet cent percent
+clear and would like to get some guidance from your end.
+
+--> Line#2995 :
+
+
+
+BOOL AnimationTabPage::FillItemSet( SfxItemSet& rItemSet )
+
+The function defined here is something that is not digestable and is
+creating ambiguity for me.
+
+
+
+--> Line#3022 :
+
+void AnimationTabPage::Reset( const SfxItemSet& rSet )
+
+
+
+-->I think after going through about 3800 lines of code there,i am in a
+dilemma about the actual concept of Presets and SfxItemSets.
+
+ It would be great if someone could provide me an indepth conceptual
+clarity on that so i can move ahead and plan to add something other than
+something that has already been worked on.
+
+ And i think once i am more-n-more clear with it i can redo the reading and
+grasping of the already existing patch so as to guide me on the path to
+move ahead.
+
+-->Apart from making it possible to add all the animation(esp. custom
+animation effects) to the master slide..i would also like to suggest
+something extra which can improve the utility of the feature.
+
+ -->We can provide something like a popup/box,etc. that can provide a user
+to select the slide no. as well as the textbox no. upon which he/she wants
+to apply the corresponding CustomAnimation Effect.
+
+ -->This is something that is not a part of the code in the patch(according
+to what i have interpreted,because it deals with various other animation
+effects as well),and this can surely act like a cherry on the cake and
+solve the purpose of this feature in the most efficient manner.(because
+that is something the indepth meaning of the bug#41572).
+
+ -->It would be great if someone can also help me out on this(in terms of
+code pointers for the UI,as well for the concept part) so i can start
+digging the code more-n-more and contribute to this project in the most
+efficient manner.
+
+ -->Any other suggestions are welcome,and i am sure it would be a boon as
+it would help me to enhance this crusial feature in the best possible
+manner.
+
+Regards,
+
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130422/c50b02c3/attachment.html>
+
+', is_response_of='<CAFrS=reiQQ+0SdH2k=jNSG1WX2GccBPcvMBTmXMwx2ywHaFUSQ@mail.gmail.com>', mail_path='None', references='<CAFrS=reiQQ+0SdH2k=jNSG1WX2GccBPcvMBTmXMwx2ywHaFUSQ@mail.gmail.com>', in_reply_to='<CAFrS=reiQQ+0SdH2k=jNSG1WX2GccBPcvMBTmXMwx2ywHaFUSQ@mail.gmail.com>')>

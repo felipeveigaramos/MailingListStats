@@ -1,0 +1,62 @@
+<Messages(message_id='<1372065834.12147.7.camel@pomeron.local.igalia.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-24 12:23:54', first_date_tz='10800', arrival_date='2013-06-24 02:23:54', arrival_date_tz='None', subject='LO /  Firebird DB Integration', message_body='Hi,
+
+On Thu, 2013-06-20 at 21:10 +0200, Javier Fernandez wrote:
+...
+> > I've finally managed to figure out how to get the install working -- the
+> > driver now loads fine. For the moment however the following is needed
+> > for things to work:
+> > 
+> > FIREBIRD=./install/program/firebird
+> > LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):./install/program/firebird/lib
+> > ./install/program/soffice.bin --base
+> > 
+> > I'm not entirely sure how to provide these paths within LO to avoid
+> > having to prepend them yet.
+...
+
+Is this one of the reasons why the "firebird.conf" file is needed? Not
+sure though, we may need that env variables, but also the config file.
+
+Please, check:
+http://firebird.1100200.n4.nabble.com/Firebird-as-backend-in-LibreOffice-td4633330.html
+
+...
+> > I'm also not entirely certain everything will work as expected yet
+> > either -- I haven't found a definitive list of files which Firebird 2.5
+> > requires in embedded mode -- if anything is missing it can be however
+> > easily be added to the bottom of firebird/ExternalPackage_firebird.mk.
+> 
+> Firebird embedded only requires the libfbembed.so library, just that.
+...
+
+That's not correct. The driver may work just with that file but others
+are needed in order to have, for example, support for international
+charsets.
+
+Please, check:
+http://firebird.1100200.n4.nabble.com/Firebird-as-backend-in-LibreOffice-td4633330.html
+
+
+Br.
+-- 
+Andres Gomez
+Computer Science Engineer
+mailto:agomez at igalia.com
+http://blogs.igalia.com/agomez/category/igaliacom/
+IGALIA, S.L. http://www.igalia.com
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130624/93e172be/attachment.pgp>
+
+', is_response_of='<51BB65A8.5020001@ahunt.org>', mail_path='None', references='<51A4FC04.4050807@ahunt.org>
+	<1370616209.32140.4.camel@pomeron.local.igalia.com>
+	<1370617500.1968.191.camel@linux-d2lh.site>
+	<51B4D337.4030602@ahunt.org>
+	<1370854142.17945.29.camel@linux-d2lh.site>
+	<51BB65A8.5020001@ahunt.org>
+	<51BCBA8E.5030006@igalia.com> <51C31455.6020204@ahunt.org>
+	<51C353AF.8000407@igalia.com>', in_reply_to='<51C353AF.8000407@igalia.com>')>

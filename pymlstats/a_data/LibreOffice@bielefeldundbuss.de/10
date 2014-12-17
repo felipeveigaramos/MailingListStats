@@ -1,0 +1,19 @@
+<Messages(message_id='<4FC5D4AD.8060706@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-30 10:05:01', first_date_tz='7200', arrival_date='2012-05-30 01:05:01', arrival_date_tz='None', subject='Help', message_body='Dietmar Voigt schrieb:
+> What is to do, to end this message?
+
+Hi,
+
+this is the developers' mailing list and not appropriate for such questions.
+
+The message means that you might suffer from "Bug 46155 - Errors using 
+templates with an vanilla 3.4 profile in 3.5"
+<https://bugs.freedesktop.org/show_bug.cgi?id=46155>.
+
+If you have questions how to find a workaround or similar please ask on 
+<http://ask.libreoffice.org/questions/>
+
+Best regards
+
+Rainer Bielefeld
+
+', is_response_of='', mail_path='None', references='<4FC5CE22.3090401@gmx.de>', in_reply_to='<4FC5CE22.3090401@gmx.de>')>

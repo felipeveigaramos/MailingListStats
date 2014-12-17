@@ -1,0 +1,56 @@
+<Messages(message_id='<27170024.182.1372335387275.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-27 14:16:27', first_date_tz='7200', arrival_date='2013-06-27 05:16:27', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Great answers! Thanx ;)
+I'm already moving to 4.1, and see if it still have the libstore issue, in that case I'll look for the
+commented line and re-enable it.
+BTW, I don't know why, but I was forced to use gnu ld (via the sun ld env LD_ALTEXEC), or
+LO ld options would not work.
+Maybe there is something I should say during configure to let it understand I'm in a Solaris-type OS?
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Stahl
+A: Gabriele Bulfon
+Cc: libreoffice at lists.freedesktop.org Raffaele Fullone
+Jonathan Adams
+Pierre-Eric Pelloux-Prayer
+Data: 27 giugno 2013 14.04.21 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On 27/06/13 10:52, Gabriele Bulfon wrote:
+Hi,
+I'm working on our Sonicle XStreamOS distro based on illumos kernel.
+I encountered some problems building LO 4.0..4.2.
+i'd suggest to try building libreoffice-4-1 branch or master instead,
+because it should be easier: in the libreoffice-4-0 branch the migration
+to the new GNU make based build system was still in progress, so you
+have to get both the new and the old build system to work for you,
+whereas in libreoffice-4-1 and master there is only one build system.
+[build LNK] Executable/cppumaker
+/usr/gnu/bin/ld: warning: libstore.so, needed by
+/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.0.4.2/solver/unxsogi.pro/lib/libreg.so,
+not found (try using -rpath or -rpath-link)
+I can't see why libreg.so can't resolve libstore.so, as they both live
+in solver/unxsogi.pro/lib :
+the GNU linker apparently does not automatically use RPATH stored in the
+.so for finding dependent libraries, and neither uses the -L passed to
+it for finding dependent libraries.
+it uses the -L parameters only to find libraries that are explicitly
+listed on the command line (-lfoo); apparently you have -lreg but not
+-lstore on the command line.
+the solution is to use -rpath-link, which is used to find dependent
+libraries that are not explicitly listed on the command line.
+git grep finds this, which is commented out for reasons unknown to me:
+solenv/gbuild/platform/solaris.mk:#JAD#'-Wl,-rpath-link,$(gb_Library_OUTDIRLOCATION)'
+(iirc Sun ld would search -L directories in this case too so doesn't
+need -rpath-link.)
+and ldd shows correct resolutions:
+ldd uses the RPATH $ORIGIN in the .so hence it has no problems.
+i am not sure if it would be better to use Sun ld or GNU ld on
+OpenSolaris; i guess GNU ld has the advantage that it's the same as on
+GNU/Linux so should make porting easier.
+by the way here's some links to threads from previous porting efforts
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/22798
+http://permalink.gmane.org/gmane.comp.documentfoundation.libreoffice.devel/39846
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130627/5be865d3/attachment.html>
+
+', is_response_of='', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>', in_reply_to='<51CC2A45.3050805@redhat.com>')>

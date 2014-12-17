@@ -1,0 +1,16 @@
+<Messages(message_id='<CAMuW_XzQn5BWGj5kyDe=PVj9tYYpxMobVTY1YVsAZ+z-4HjRdw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-09 02:25:49', first_date_tz='-14400', arrival_date='2014-06-08 23:25:49', arrival_date_tz='None', subject='[GSoC] Text Background Color in Draw - Report 08/06/2014', message_body='Hi all,
+last week was admittedly very little coding and mostly
+debugging/(un)understanding/struggling:
+- Text Fill color now works from editeng, but currently only under
+edit-mode;
+- I started identifying parts of code to make the background color a
+stand-alone attribute (currently its inner workings are coupled with the
+Underline attribute).
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140609/5804613a/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

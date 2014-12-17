@@ -1,0 +1,44 @@
+<Messages(message_id='<CA+_jvay337OqxRWD1EV3M2tbP9CDMi-JoNro_m4o9waPoGCnQA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-29 18:14:59', first_date_tz='19800', arrival_date='2013-05-29 05:44:59', arrival_date_tz='None', subject='[GSOC Introduction]Slide Layout Extendibility', message_body='Hi Thorsten,
+Thanks for the code pointers.Currently,I am getting my LO build to the
+latest version.I will stay connected on IRC for further queries.
+
+Regards,
+Vishv
+
+On Tue, May 28, 2013 at 4:15 PM, Thorsten Behrens <
+thb at documentfoundation.org> wrote:
+
+> Vishv Brahmbhatt wrote:
+> > I am very much exited to hear that I have been selected as one of
+> > the student to work on LibreOffice for GSOC-2013 summer!
+> >
+> Hi Vishv,
+>
+> a very warm welcome also from our side - truly happy to have you
+> hacking on Impress over the summer! :)
+>
+> > I have gone through the guidelines of "LibreOffice Community" for
+> > GSOC. I am eager to dive into the code early.I am not habituate in
+> > writing Blogs,but I'll soon start blogging about my progress on the
+> > project and update the mailing-list with my weekly-report.
+> >
+> Right, getting into the habit of regular public updates early would be
+> good, and with a blog, you can build a readership at the same time. :)
+>
+> So the next steps are, making yourself comfortable with a recent
+> master build, get sd with debug symbols, and start wrapping your head
+> around how this is currently implemented. Code to read / place to
+> stick a breakpoint into and single-stepping is:
+>
+>  sd/source/core/sdpage.cxx:AsCalcAutoLayoutRectangles()
+>
+> Happy hacking,
+>
+> -- Thorsten
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130529/5b5818f8/attachment.html>
+
+', is_response_of='<20130528104500.GL2102@thinkpad.thebehrens.net>', mail_path='None', references='<CA+_jvazwJGSyD=uQWD7utLBCBFBM_rzsNCGEKF-b11jK4n94PA@mail.gmail.com>
+	<20130528104500.GL2102@thinkpad.thebehrens.net>', in_reply_to='<20130528104500.GL2102@thinkpad.thebehrens.net>')>

@@ -1,0 +1,55 @@
+<Messages(message_id='<50388B0B.806@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-08-25 10:21:31', first_date_tz='7200', arrival_date='2012-08-25 01:21:31', arrival_date_tz='None', subject='[Libreoffice-qa] "LibreOffice 3.7 most annoying bugs" necessary?', message_body='Roman Eisele schrieb:
+
+> IMHO my little error indicates that, sooner or later, we need to open a
+> new "LibreOffice 3.7 most annoying bugs" bug list ;-).
+
+Hi,
+
+this MAB proceeding is approved, and I believe we should no longer 
+hesitate to create a a Task Bug for this. The only thing I would do 
+different to the former task bugs: Main part of the explications "why 
+and how" in the report should be done as a link to an Internationsl wiki 
+page, so we can amend hints easily if necessary and other languages can 
+be created easily.
+
+Please create the task bug tomorrow if no serious objection will come.
+
+discussion (if necessary) please on <libreoffice-qa at lists.freedesktop.org>
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<503882F1.9030803@eikota.de>', in_reply_to='<503882F1.9030803@eikota.de>')>
+****************************************
+<Messages(message_id='<5039F657.1030402@roman-eisele.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-08-26 12:11:35', first_date_tz='7200', arrival_date='2012-08-26 03:11:35', arrival_date_tz='None', subject='[Libreoffice-qa] "LibreOffice 3.7 most annoying bugs" necessary?', message_body='Am 25.08.12 10:21, schrieb Rainer Bielefeld:
+>> IMHO my little error indicates that, sooner or later, we need to open a
+>> new "LibreOffice 3.7 most annoying bugs" bug list ;-).
+>
+> Hi,
+>
+> this MAB proceeding is approved, and I believe we should no longer
+> hesitate to create a a Task Bug for this. The only thing I would do
+> different to the former task bugs: Main part of the explications "why
+> and how" in the report should be done as a link to an Internationsl wiki
+> page, so we can amend hints easily if necessary and other languages can
+> be created easily.
+>
+> Please create the task bug tomorrow if no serious objection will come.
+
+Hi all,
+
+I will create a new "LibreOffice 3.7 most annoying bugs" taks bug 
+tomorrow (i.e., on monday; no time today, sorry!) if no objection will 
+come (any objections and hints please to 
+libreoffice-qa at lists.freedesktop.org).
+
+I will include a wiki link in the bug description, as suggested by 
+Rainer; this is a very good idea.
+
+Best regards,
+
+	Roman
+
+
+', is_response_of='<50388B0B.806@bielefeldundbuss.de>', mail_path='None', references='<503882F1.9030803@eikota.de> <50388B0B.806@bielefeldundbuss.de>', in_reply_to='<50388B0B.806@bielefeldundbuss.de>')>

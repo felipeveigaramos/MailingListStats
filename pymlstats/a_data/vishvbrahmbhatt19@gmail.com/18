@@ -1,0 +1,77 @@
+<Messages(message_id='<CA+_jvazwJGSyD=uQWD7utLBCBFBM_rzsNCGEKF-b11jK4n94PA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-28 14:21:42', first_date_tz='19800', arrival_date='2013-05-28 01:51:42', arrival_date_tz='None', subject='[GSOC Introduction]Slide Layout Extendibility', message_body='Hello Everyone,
+I am very much exited to hear that I have been selected as one of the
+student to work on LibreOffice for GSOC-2013 summer!
+
+I am greatly thankful to all the community members for their support and
+faith in me.
+
+I will be hacking on LibreOffice to improve the  "Slide Layouts" in the
+LibreOffice Impress. Preciously to make Slide Layouts configurable and
+user-extendible, with the valuable support of my mentor Thorsten Behrens.
+Here is the Link of my
+Proposal<https://google-melange.appspot.com/gsoc/proposal/review/google/gsoc2013/vishv/1>
+which
+describes the broad aspects of my idea.I will be devising an accurate plan
+with finest of details and will do my work in accordance to guidelines and
+assistance of my mentor and community.
+
+I have gone through the guidelines of "LibreOffice Community" for GSOC. I
+am eager to dive into the code early.I am not habituate in writing
+Blogs,but I'll soon start blogging about my progress on the project and
+update the mailing-list with my weekly-report.
+
+As described in the proposal,my contact number is +91-9428808343 and I will
+be working from Ahmedabad,India(UTC+0530) throughout the summer.Also,I am
+"vis19" on IRC.
+
+It would be great to hear back from you for this project.Please feel free
+to provide me your valuable feedback.
+
+Thanks a lot again for providing me this opportunity.
+
+Regards,
+Vishv Brahmbhatt
+IRC-vis19
+Mobile:+91-9428808343
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130528/762fc385/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130528104500.GL2102@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-28 12:45:00', first_date_tz='7200', arrival_date='2013-05-28 03:45:00', arrival_date_tz='None', subject='[GSOC Introduction]Slide Layout Extendibility', message_body='Vishv Brahmbhatt wrote:
+> I am very much exited to hear that I have been selected as one of
+> the student to work on LibreOffice for GSOC-2013 summer!
+> 
+Hi Vishv,
+
+a very warm welcome also from our side - truly happy to have you
+hacking on Impress over the summer! :)
+
+> I have gone through the guidelines of "LibreOffice Community" for
+> GSOC. I am eager to dive into the code early.I am not habituate in
+> writing Blogs,but I'll soon start blogging about my progress on the
+> project and update the mailing-list with my weekly-report.
+> 
+Right, getting into the habit of regular public updates early would be
+good, and with a blog, you can build a readership at the same time. :)
+
+So the next steps are, making yourself comfortable with a recent
+master build, get sd with debug symbols, and start wrapping your head
+around how this is currently implemented. Code to read / place to
+stick a breakpoint into and single-stepping is:
+
+ sd/source/core/sdpage.cxx:AsCalcAutoLayoutRectangles()
+
+Happy hacking,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130528/37a4f7ed/attachment.pgp>
+
+', is_response_of='<CA+_jvazwJGSyD=uQWD7utLBCBFBM_rzsNCGEKF-b11jK4n94PA@mail.gmail.com>', mail_path='None', references='<CA+_jvazwJGSyD=uQWD7utLBCBFBM_rzsNCGEKF-b11jK4n94PA@mail.gmail.com>', in_reply_to='<CA+_jvazwJGSyD=uQWD7utLBCBFBM_rzsNCGEKF-b11jK4n94PA@mail.gmail.com>')>

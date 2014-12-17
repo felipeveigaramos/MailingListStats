@@ -1,0 +1,68 @@
+<Messages(message_id='<500B9BF3.4040609@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-07-22 08:21:39', first_date_tz='7200', arrival_date='2012-07-21 23:21:39', arrival_date_tz='None', subject='No Win builds?', message_body='Hi all,
+
+currently we again have the problem that we get no current WIN Master 
+builds on the Tinderbox Server.
+
+I see some successful builds (?) on 
+<http://tinderbox.libreoffice.org/MASTER/status.html>, especially 
+Win-x86_6, but there is no build for download on 
+<http://dev-builds.libreoffice.org/daily/Win-x86 at 6-fast/master/>
+
+On <http://dev-builds.libreoffice.org/A> I see:
+- @16-minimal_build: only has textfiles
+   latest build:  2012-07-11_08.24.19
+- @20-With-Symbol:
+   latest build:  2012-07-15_01.33.34
+- @6-fast:  only has textfiles
+   latest build:  before 2012-07-16_15.35.37
+- @6: only has textfiles
+   latest build: before 2012-07-19_13.12.38
+   On <https://wiki.documentfoundation.org/Development/Tinderbox>
+   I only see 1 Tinderbx @6?
+- @7-MinGW/master: empty
+   latest build: ?
+- @15-Prague_Win32: empty
+   latest build: ?
+- _9-Voreppe /libreoffice-3-6: contributes 3.6 builds
+   Filename 3.6.1.0 is difficult to classify
+   What is the difference to @9?
+
+It would be very useful for me to have a feed or similar with 
+information concerning latest available WIN builds. Is there any 
+possibility?
+
+
+Best Regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<201207221636.08736.l.lunak@suse.cz>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-07-22 16:36:08', first_date_tz='7200', arrival_date='2012-07-22 07:36:08', arrival_date_tz='None', subject='Tinderbox nightlies broken (was Re: No Win builds?)', message_body='On Sunday 22 of July 2012, Rainer Bielefeld wrote:
+> Hi all,
+>
+> currently we again have the problem that we get no current WIN Master
+> builds on the Tinderbox Server.
+>
+> I see some successful builds (?) on
+> <http://tinderbox.libreoffice.org/MASTER/status.html>, especially
+> Win-x86_6, but there is no build for download on
+> <http://dev-builds.libreoffice.org/daily/Win-x86 at 6-fast/master/>
+
+ Nightlies have been broken since *Env*.sh removal, the nightlies code has not 
+been updated for config_host.mk . I've fixed that, whoever has a tinderbox 
+uploading nightlies, please update.
+
+ There was one more thing broken. The recent changes to get dev-install 
+working changed the package format built in the 'build' target to .zip, so 
+there was no .msi package to upload. I've reverted that change and moved the 
+FORCE2ARCHIVE part to dev-install, but this whole 'build' target looks broken 
+to me. What's the point of building a .msi archive there? Especially now with 
+dev-install that looks completely pointless and it should have its own 
+target. Does somebody understand this perl install cruft?
+
+-- 
+ Lubos Lunak
+ l.lunak at suse.cz
+
+', is_response_of='<500B9BF3.4040609@bielefeldundbuss.de>', mail_path='None', references='<500B9BF3.4040609@bielefeldundbuss.de>', in_reply_to='<500B9BF3.4040609@bielefeldundbuss.de>')>

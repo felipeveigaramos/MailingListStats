@@ -1,0 +1,125 @@
+<Messages(message_id='<CAHW+f2+dOFF_fseySdRWHY4LyQUKkeT32qMfW7SWD-8cjd5rZw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-03-05 08:28:32', first_date_tz='-28800', arrival_date='2013-03-05 08:28:32', arrival_date_tz='None', subject='[tdf-discuss] macro compatibility between LO and AOO?', message_body='On Mon, Mar 4, 2013 at 1:46 AM, Fernand Vanrie <sos at pmgroup.be> wrote:
+> On 4/03/2013 8:27, M. Fioretti wrote:
+>>
+>> On Mon, Mar 04, 2013 08:16:25 AM +0100, Fernand Vanrie wrote:
+>>
+>>> 99% percent , changes comes and will come from incompatiliteis in de API.
+>>> for now this is OK, small changes from version to version, but
+>>> nothing who not can been repaired or handled with the code( basic)
+>>> itself
+>>
+>> I knew that. The sense of my question is, is there is a list of things
+>> to avoid beforehand, rather than wait that they break and fix the
+>> code?
+>
+> thats more a question for the developers list .
+> LibreOffice at lists.freedesktop.org  and fore the aOO counterpart
+> ooo-dev at incubator.apache.org
+>
+>>
+>> Thanks,
+>> Marco
+
+The reason why nobody responded is no one knows, and it will generally
+get worse over time as the codebases diverge. It is sort of like the
+Java: "write once, test everywhere" situation.
+
+One of the unintended consequences of the fork is the various ways it
+makes things more difficult for third-parties. Users will generally
+pick one product, but extension developers have a more complicated set
+of choices because they may want to support multiple brands. Here is
+an article I recently wrote about the power of brands that may be
+helpful: http://keithcu.com/wordpress/?p=3163
+
+The good news is that in the free software world, code flows with less
+friction. Any typical (non-enterprise) who really wants an extension
+will likely be able to install a specific version of the product if it
+is required. It is just a download.
+
+Good luck!
+
+Regards,
+
+-Keith
+
+', is_response_of='', mail_path='None', references='<20130304065328.GE8411@nexaima.net> <51344A49.7000301@pmgroup.be>
+	<20130304072714.GH8411@nexaima.net> <51346D67.1040307@pmgroup.be>', in_reply_to='<51346D67.1040307@pmgroup.be>')>
+****************************************
+<Messages(message_id='<5136A9F1.6040908@pitonyak.org>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-03-05 21:29:05', first_date_tz='-18000', arrival_date='2013-03-05 18:29:05', arrival_date_tz='None', subject='[tdf-discuss] macro compatibility between LO and AOO?', message_body='They work independently. The best you can likely do is to check the code 
+or dev documentation to see if it is in both places and if it is marked 
+deprecated or not.
+
+I do not know how to check the IDL, but, if you figure that out, I 
+expect that it would not be too difficult to check that for 
+compatibility (but I have never looked at it).
+
+
+On 03/05/2013 12:19 PM, Fred Ollinger wrote:
+> I know that there were reasons for the fork and I respect that. I was
+> wondering if libreoffice and aooo can't agree to some basic level api
+> for 3rd party developers?
+>
+> Probably not, but I think it's worth asking.
+>
+> Fred
+>
+> On Tue, Mar 5, 2013 at 8:28 AM, Keith Curtis <keithcu at gmail.com> wrote:
+>> On Mon, Mar 4, 2013 at 1:46 AM, Fernand Vanrie <sos at pmgroup.be> wrote:
+>>> On 4/03/2013 8:27, M. Fioretti wrote:
+>>>> On Mon, Mar 04, 2013 08:16:25 AM +0100, Fernand Vanrie wrote:
+>>>>
+>>>>> 99% percent , changes comes and will come from incompatiliteis in de API.
+>>>>> for now this is OK, small changes from version to version, but
+>>>>> nothing who not can been repaired or handled with the code( basic)
+>>>>> itself
+>>>> I knew that. The sense of my question is, is there is a list of things
+>>>> to avoid beforehand, rather than wait that they break and fix the
+>>>> code?
+>>> thats more a question for the developers list .
+>>> LibreOffice at lists.freedesktop.org  and fore the aOO counterpart
+>>> ooo-dev at incubator.apache.org
+>>>
+>>>> Thanks,
+>>>> Marco
+>> The reason why nobody responded is no one knows, and it will generally
+>> get worse over time as the codebases diverge. It is sort of like the
+>> Java: "write once, test everywhere" situation.
+>>
+>> One of the unintended consequences of the fork is the various ways it
+>> makes things more difficult for third-parties. Users will generally
+>> pick one product, but extension developers have a more complicated set
+>> of choices because they may want to support multiple brands. Here is
+>> an article I recently wrote about the power of brands that may be
+>> helpful: http://keithcu.com/wordpress/?p=3163
+>>
+>> The good news is that in the free software world, code flows with less
+>> friction. Any typical (non-enterprise) who really wants an extension
+>> will likely be able to install a specific version of the product if it
+>> is required. It is just a download.
+>>
+>> Good luck!
+>>
+>> Regards,
+>>
+>> -Keith
+>>
+>> ---------------------------------------------------------------------
+>> To unsubscribe, e-mail: dev-unsubscribe at openoffice.apache.org
+>> For additional commands, e-mail: dev-help at openoffice.apache.org
+>>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+-- 
+Andrew Pitonyak
+My Macro Document: http://www.pitonyak.org/AndrewMacro.odt
+Info:  http://www.pitonyak.org/oo.php
+
+
+', is_response_of='<CAHW+f2+dOFF_fseySdRWHY4LyQUKkeT32qMfW7SWD-8cjd5rZw@mail.gmail.com>', mail_path='None', references='<20130304065328.GE8411@nexaima.net> <51344A49.7000301@pmgroup.be>
+	<20130304072714.GH8411@nexaima.net> <51346D67.1040307@pmgroup.be>
+	<CAHW+f2+dOFF_fseySdRWHY4LyQUKkeT32qMfW7SWD-8cjd5rZw@mail.gmail.com>
+	<CAOY2osKK1zw5B-dROLm=aUOaaE5SDNeg-582_vQk0VVueUnpAA@mail.gmail.com>', in_reply_to='<CAOY2osKK1zw5B-dROLm=aUOaaE5SDNeg-582_vQk0VVueUnpAA@mail.gmail.com>')>

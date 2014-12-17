@@ -1,0 +1,26 @@
+<Messages(message_id='<4FE7EEA9.1070607@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-25 06:52:57', first_date_tz='7200', arrival_date='2012-06-24 21:52:57', arrival_date_tz='None', subject='minutes of ESC call ...', message_body='Cor Nouws schrieb:
+
+> Just taking a quick look at issues from the query below, I would suggest
+>   to skip mentioning numbers. There is pollution with old issues,
+
+Hi,
+
+may be!
+
+> The query is very useful to track and look at the reports. But the
+> number gives a wrong idea of quality.
+
+But consider that there still are lots of unreviewed bugs what might get 
+a "regression" keyword in future.
+
+> It only shows there's a lot QA
+> /triage work pending.
+
+That's true!
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<1340294111.8651.88.camel@linux-yjtf.site>
+	<4FE78541.1040108@nouenoff.nl>', in_reply_to='<4FE78541.1040108@nouenoff.nl>')>

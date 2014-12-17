@@ -1,0 +1,62 @@
+<Messages(message_id='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-14 16:51:07', first_date_tz='7200', arrival_date='2014-07-14 07:51:07', arrival_date_tz='None', subject='[GSoC] Copying content from one text box to another in svx/ - A
+ failed attempt', message_body='Today I tried to embed some code to link the content of one text box to
+another in Draw. I took heavy inspiration from some existing code in
+SdrTextObj::FitFrameToTextSize()
+<http://docs.libreoffice.org/svx/html/svdotext_8cxx_source.html#l00205>.
+However I get a SIGSEGV in some other part of the code shortly afterwards.
+
+What I tried to do was the following:
+- Having two text boxes in the document,
+- I tried to copy (a part of) the content from SdrPage::GetObj(0) into
+SdrPage::GetObj(1). This occurs in svx's drawinglayer and in particular
+in impTextBreakupHandler.
+- The text is copied into the outliner of the second text box to be
+layouted again (simulating what FitFrameToTextSize above does. An important
+difference with that code is that now two different boxes are used).
+
+This is the link to the main commit:
+http://cgit.freedesktop.org/libreoffice/core/commit/?h=feature/gsoc14-draw-chained-text-boxes&id=643d9cf5e73e523c88d1b545dd27d98feb1bf088
+
+
+Here is the seg. fault message:
+Program received signal SIGSEGV, Segmentation fault.
+0x00007f5cb26d9b5c in ContentAttribs::GetItem (this=0x99999999999999a1,
+nWhich=4006)
+    at
+/home/seriouspillow/Proiects/libreoffice/gsoc/core/editeng/source/editeng/editdoc.cxx:1804
+1804    if ( pStyle && ( aAttribSet.GetItemState( nWhich, false ) !=
+SFX_ITEM_ON  ) )
+
+
+Thorsten, any opinions?
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140714/845532c2/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1405353399.3947.0.camel@debian-wheezy.iseries-guru.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-14 11:56:39', first_date_tz='-14400', arrival_date='2014-07-14 08:56:39', arrival_date_tz='None', subject='[GSoC] Copying content from one text box to another in svx/ - A
+ failed attempt', message_body='On Mon, 2014-07-14 at 16:51 +0200, Matteo Campanelli wrote:
+> 
+> Here is the seg. fault message:
+> Program received signal SIGSEGV, Segmentation fault.
+> 0x00007f5cb26d9b5c in ContentAttribs::GetItem (this=0x99999999999999a1,
+> nWhich=4006)
+>     at
+> /home/seriouspillow/Proiects/libreoffice/gsoc/core/editeng/source/editeng/editdoc.cxx:1804
+> 1804    if ( pStyle && ( aAttribSet.GetItemState( nWhich, false ) !=
+> SFX_ITEM_ON  ) )
+
+The long string of nines looks like the result of reading freed memory
+in a debug build.  valgrind may be able to tell you where the memory
+was freed, if you have the patience to wait for it.
+
+HTH,
+Terry.
+
+
+
+', is_response_of='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>', mail_path='None', references='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>', in_reply_to='<CAMuW_Xw-WE9Lpn-ewOgjeOBYuYH4NKOUDuOAO79MBGn-twOTZA@mail.gmail.com>')>

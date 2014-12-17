@@ -70,4 +70,5 @@ def eh_pai(mensagem1, mensagem2):
         return True
     return False
 
-procura_respostas()
+if __name__ == '__main__':
+    procura_respostas()

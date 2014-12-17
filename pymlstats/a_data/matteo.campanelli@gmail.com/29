@@ -1,0 +1,177 @@
+<Messages(message_id='<CAMuW_XyZnhFQ2G6yLE+dCnvCC-27X6VZOi8cSjP07wbUP6wOSA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-09 01:21:37', first_date_tz='-18000', arrival_date='2014-03-08 22:21:37', arrival_date_tz='None', subject='[GSoC] On "ODF Formulas in Writer"', message_body='Hi all,
+I'm Matteo, a PhD student in Computer Science at City University of New
+York.
+I am planning to apply to GSoC '14 and a few weeks ago I started hacking
+LibreOffice (I've been working on this Easy
+Hack<https://bugs.freedesktop.org/show_bug.cgi?id=53472>
+).
+
+I'm writing to start a discussion and ask some questions on the idea
+project in the subject of this email
+([1<https://wiki.documentfoundation.org/Development/GSoC/Ideas#ODF_Formulas_in_Writer>
+]).
+
+Could you please give me some feedback on my understanding of the
+definition of the problem and current related work in LO (see bullets
+below)?
+Also - most important question (!!) - would there be anyone interested in
+mentoring this project?
+
+My understanding of the issue:
+- Currently Writer uses its own, non-standard syntax for formulas. At the
+moment this syntax is both what is used/typed by the user and the one used
+for internal computations. (At a first glance, the class
+SwCalc<http://opengrok.libreoffice.org/search?q=&project=core&defs=SwCalc&refs=&path=&hist=>seems
+to be responsible for both parsing and interpreting these formulas,
+is that right?)
+- The goal of the project would be to enable users to write formulas in the
+ODF Format [2]<http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part2.html>
+and use this same format for the internal computations.
+- As far as I have understood, we may use the ixion library
+[3]<https://gitorious.org/ixion> to
+interpret ODF-style formulas. This library is already used by Writer for
+interpreting formulas in doc/docx files (which, I suppose, are first
+converted to the actual ODF format). [is this point of my interpretation
+correct? Could anyone provide code pointers for the computation of formula
+for .doc files?]
+- Part of the project will have to deal with import/export filters and
+backward compatibility: first, files with formulas in the old-syntax should
+still be parsed correctly; second, users should have the option of saving
+in the old syntax or in the default new ODF syntax.
+
+Also, I have two additional questions:
+- the project idea page mentions changes in the code for the formula input
+bar. What should these changes to the UI consist of specifically? Are they
+mostly related to the strings produced by using the "Formula" dropdown menu
+in the bar?
+- Can anyone who is into the code roughly assess the relative hardness of
+the three subparts of this project (i.e. refactoring to use ODF and
+delegation to ixion, changes in the UI, adapting import/export filters)? In
+other words, which of these parts (if any) is likely to take longer
+compared to the others?
+
+References:
+[1] ODF Formulas in writer - Original GSoC Project Idea Page
+(link<https://wiki.documentfoundation.org/Development/GSoC/Ideas#ODF_Formulas_in_Writer>
+)
+[2] Open Formula - Official specification
+(link<http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part2.html>
+)
+[3] Ixion Library (link <https://gitorious.org/ixion>)
+
+Comments of any kind are appreciated.
+Thanks in advance for your feedback!
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140309/9a22bb44/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140311112950.GB13222@collabora.co.uk>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-03-11 12:29:50', first_date_tz='3600', arrival_date='2014-03-11 04:29:50', arrival_date_tz='None', subject='[GSoC] On "ODF Formulas in Writer"', message_body='Hi Matteo,
+
+On Sun, Mar 09, 2014 at 01:21:37AM -0500, Matteo Campanelli <matteo.campanelli at gmail.com> wrote:
+> I am planning to apply to GSoC '14 and a few weeks ago I started hacking
+> LibreOffice (I've been working on this Easy
+> Hack<https://bugs.freedesktop.org/show_bug.cgi?id=53472>
+> ).
+
+Great! :-) Please don't forget to push your patch for review once you're
+happy with it.
+
+> I'm writing to start a discussion and ask some questions on the idea
+> project in the subject of this email
+> ([1<https://wiki.documentfoundation.org/Development/GSoC/Ideas#ODF_Formulas_in_Writer>
+> ]).
+> 
+> Also - most important question (!!) - would there be anyone interested in
+> mentoring this project?
+
+AFAIK the project idea is from C?dric, but he's not mentoring Writer
+projects this year. This doesn't mean you can't propose to work on this
+project, but it's not the best Writer project you could pick up. ;-)
+
+> My understanding of the issue:
+> - Currently Writer uses its own, non-standard syntax for formulas. At the
+> moment this syntax is both what is used/typed by the user and the one used
+> for internal computations. (At a first glance, the class
+> SwCalc<http://opengrok.libreoffice.org/search?q=&project=core&defs=SwCalc&refs=&path=&hist=>seems
+> to be responsible for both parsing and interpreting these formulas,
+> is that right?)
+
+Yes, that sounds correct.
+
+> - The goal of the project would be to enable users to write formulas in the
+> ODF Format [2]<http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part2.html>
+> and use this same format for the internal computations.
+
+Correct, what's currently written is like this:
+
+<table:table-cell table:style-name="Table1.B1" table:formula="ooow:&lt;A1&gt;+&lt;A2&gt;" office:value-type="float" office:value="3">
+
+The "ooow" part clearly indicates that it's something LO inherited from
+OOo.
+
+> - As far as I have understood, we may use the ixion library
+> [3]<https://gitorious.org/ixion> to
+> interpret ODF-style formulas. This library is already used by Writer for
+> interpreting formulas in doc/docx files (which, I suppose, are first
+> converted to the actual ODF format). [is this point of my interpretation
+> correct? Could anyone provide code pointers for the computation of formula
+> for .doc files?]
+
+The ixion library is currently not part of LibreOffice in any way.
+Regarding, .doc files, this is not handled in the filter (AFACS), just
+the result of the formula is written to the file as a plain string.
+
+> - Part of the project will have to deal with import/export filters and
+> backward compatibility: first, files with formulas in the old-syntax should
+> still be parsed correctly; second, users should have the option of saving
+> in the old syntax or in the default new ODF syntax.
+
+We have a general mechanism for that, in ODF 1.2 extended, probably you
+could just write the new syntax, and you only need to make sure that the
+old syntax can be read.
+
+> Also, I have two additional questions:
+> - the project idea page mentions changes in the code for the formula input
+> bar. What should these changes to the UI consist of specifically? Are they
+> mostly related to the strings produced by using the "Formula" dropdown menu
+> in the bar?
+> - Can anyone who is into the code roughly assess the relative hardness of
+> the three subparts of this project (i.e. refactoring to use ODF and
+> delegation to ixion, changes in the UI, adapting import/export filters)? In
+> other words, which of these parts (if any) is likely to take longer
+> compared to the others?
+
+Probably the largest part is to make Writer core use the ODF formulas
+(with the help of ixion), after that the ODF import/export is just
+filter work, much easier. Regarding UI, it's about to change it, so that
+it generates the ODF-syntax formulas, that's probably something you can
+do incrementally once core support is there.
+
+Additionally here, is a starter patch:
+
+http://cgit.freedesktop.org/libreoffice/build/tree/patches/dev300/fields-table-formula.diff?h=master-backup
+
+If you're interested in this project, you probably want to start with
+porting that to current master. :-)
+
+However, for now, I would suggest focusing getting your easy hack ready
+& accepted; that's required even in case at the end you're interested in
+some other LibreOffice idea.
+
+Best,
+
+Miklos
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140311/0ae54b71/attachment.pgp>
+
+', is_response_of='<CAMuW_XyZnhFQ2G6yLE+dCnvCC-27X6VZOi8cSjP07wbUP6wOSA@mail.gmail.com>', mail_path='None', references='<CAMuW_XyZnhFQ2G6yLE+dCnvCC-27X6VZOi8cSjP07wbUP6wOSA@mail.gmail.com>', in_reply_to='<CAMuW_XyZnhFQ2G6yLE+dCnvCC-27X6VZOi8cSjP07wbUP6wOSA@mail.gmail.com>')>

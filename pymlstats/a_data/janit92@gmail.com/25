@@ -1,0 +1,48 @@
+<Messages(message_id='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-15 18:49:53', first_date_tz='19800', arrival_date='2013-04-15 06:19:53', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+
+I am hereby attaching my patch for fdo #62096 :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=62096
+
+Any suggestions would be great to be implemented.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130415/d5537822/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replace-O-U-String-compareTo-with.patch
+Type: application/octet-stream
+Size: 1104 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130415/d5537822/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<516D4B78.3040004@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-16 15:00:40', first_date_tz='7200', arrival_date='2013-04-16 06:00:40', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='On 04/15/2013 03:19 PM, Janit Anjaria wrote:
+> I am hereby attaching my patch for fdo #62096 :
+>
+> https://bugs.freedesktop.org/show_bug.cgi?id=62096
+>
+> Any suggestions would be great to be implemented.
+
+First, note that
+
+   s.compareTo(t) != 0
+
+is /not/ the same as
+
+   s == t
+
+Second, did you build and test your change?  It looks like 
+sal/qa/rtl/process/child_process.cxx is one of those rotting tests that 
+is not built nor executed, not even with a top-level "make check".
+
+Also, please take care not to mess up the indentation of lines, making 
+the "if" indented only three instead of four spaces.
+
+Stephan
+
+', is_response_of='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>', mail_path='None', references='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>', in_reply_to='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>')>

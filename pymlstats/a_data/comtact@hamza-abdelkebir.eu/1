@@ -1,0 +1,61 @@
+<Messages(message_id='<90bcc95a-9a21-4359-85fe-6876d25521f9@email.android.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 12:32:40', first_date_tz='3600', arrival_date='2013-02-26 03:32:40', arrival_date_tz='None', subject='general question: code analysis', message_body='-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+hi,
+Does LibreOffice use any code analysis tool like sonar?
+do you think it's worth using for the project?
+
+regards,
+hamza
+- --
+Sent from my Android phone with K-9 Mail. Please excuse my brevity.
+-----BEGIN PGP SIGNATURE-----
+Version: APG v1.0.8
+
+iQJMBAEBCAA2BQJRLJ1XLxxoenggKHRhYmxldCBrZXkpIDxjb250YWN0QGhhbXph
+LWFiZGVsa2ViaXIuZXU+AAoJEC0hel41F+Qx6FwP/A33G3zLEwMVvGGNxey+jLqW
+xGP3pPCVYGkXAu6U+NY92/y/RD8T2ZThbSeYoOYIj0880Q+5FnCAA7LSqx4azTWa
+H6IiV0+qCIliKIzdT4PihFWvtE2X/vI+z3h8kVregJX0ypPlsLCu/1CejALqVfuQ
+DzU5652p0w1N8J7LRiddSlDSRv41pPAwKT+NoOYak850bX9q+9jrrXqDnA6oEvVZ
+wPUJ/9vnFW0bKz7HpuaVI3ivgsDtxVMwYVD2B/xUihWMhf5h6CdAioQ+GU8/o+Fa
+p13zyuGDImVrIKFodYmzAFjXqOGuydmtVxM0ju9HrrWFksL8ky4LnoveoKS3ERw1
+fQrKpnlN20hVXfzqAVIk9zlTwvnTv6HYE9ZFmBLFuwu6KNHHA0dkCYQFnVaaEFvf
+D6u9T3GTvrOzt/83H+VwafbI1YfmdXvKgh4K9dwcPECeENhVq2x9MwMFPh4b+aZO
+2GIgkAfjRCts0YVbGBDXQowc76CELDte903A0ucYqDGBMUH4k9UcF6TD7mbqQ6LD
+Awvq0/dEvFNo2k4+XMitl9kADRsZNjedjDvoYGhvXJtbZAJ3Nq8+MAmABfgyzstU
+LJBrPcXHjETqVtUAEU5R8dtSqXzNkkdT9mTG8w0diFUSxd6kcySk/w82Wm2UQQ4M
+tz0w67MWOLVZ2RSDJa+S
+=JJgB
+-----END PGP SIGNATURE-----
+
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1361880283.20169.124.camel@linux-d2lh.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-26 12:04:43', first_date_tz='0', arrival_date='2013-02-26 04:04:43', arrival_date_tz='None', subject='general question: code analysis', message_body='Hi Hamza,
+
+On Tue, 2013-02-26 at 12:32 +0100, hamza abdelkebir wrote:
+> Does LibreOffice use any code analysis tool like sonar?
+
+	Not quite like sonar no. Various heroic contributors run various lint
+tools: cppcheck, lyda, coverity, and others and improve the code based
+on their results :-)
+
+> do you think it's worth using for the project?
+
+	In general we have quite a long list of such lint problems to tackle (I
+think), which brings an immediate, incremental benefit to the code. If
+you think setting the tool up is the first step to doing something about
+the results ;-) then I'd say go for it ... the more linting / analysis
+we have the better.
+
+	I don't expect terribly high scores though ;-)
+
+	ATB,
+
+		Michael.
+
+-- 
+michael.meeks at suse.com  <><, Pseudo Engineer, itinerant idiot
+
+
+', is_response_of='<90bcc95a-9a21-4359-85fe-6876d25521f9@email.android.com>', mail_path='None', references='<90bcc95a-9a21-4359-85fe-6876d25521f9@email.android.com>', in_reply_to='<90bcc95a-9a21-4359-85fe-6876d25521f9@email.android.com>')>

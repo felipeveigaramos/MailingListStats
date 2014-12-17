@@ -1,0 +1,23 @@
+<Messages(message_id='<CAMuW_XxHZAcsSA2FVXrmkoyNTgCQ5UBhUeS21OWxHYh9g_Wp-Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-31 01:15:03', first_date_tz='-14400', arrival_date='2014-05-30 22:15:03', arrival_date_tz='None', subject='EE_EDIT_CHAR_BKGCOLOR breaks unit test?', message_body='On Tue, May 27, 2014 at 8:13 PM, Thorsten Behrens <
+thb at documentfoundation.org> wrote:
+
+>
+> warn:legacy.tools:12168:1:editeng/source/editeng/eerdll.cxx:165: ITEMCOUNT
+> geaendert, DefItems nicht angepasst!
+>
+> In English: someone changed ITEMCOUNT, but failed to adjust
+> DefItems. Did not check though if that happens also w/o your
+> change. Beyond that, after Error: a unit test failed, please do one
+> of..., there's some helpful blurb on what to do next. ;)
+>
+
+Fixed.
+That actually helped a lot! :-)
+
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140531/0e8d8881/attachment.html>
+
+', is_response_of='<20140528001318.GD15288@thinkpad.thebehrens.net>', mail_path='None', references='<CAMuW_XwTJ7Cq_5HZO9u6C4FMukGeXF+OxB7khuC0xmsTGK0etw@mail.gmail.com>
+ <20140528001318.GD15288@thinkpad.thebehrens.net>', in_reply_to='<20140528001318.GD15288@thinkpad.thebehrens.net>')>

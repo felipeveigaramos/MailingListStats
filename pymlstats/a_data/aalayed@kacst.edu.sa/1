@@ -1,0 +1,14 @@
+<Messages(message_id='<1376807220371-4070463.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-08-17 23:27:00', first_date_tz='-25200', arrival_date='2013-08-17 23:27:00', arrival_date_tz='None', subject='crash in master', message_body='-I am working under linux Ubuntu.
+-yes its freedsesktop bug (fdo#35907).
+-I builded from source and the last git pull in 13 Aug.
+-with new LO profile.
+
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/crash-in-master-tp4070134p4070463.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<1376575243912-4070172.post@n3.nabble.com>', mail_path='None', references='<1376557445625-4070134.post@n3.nabble.com>
+	<1376575243912-4070172.post@n3.nabble.com>', in_reply_to='<1376575243912-4070172.post@n3.nabble.com>')>

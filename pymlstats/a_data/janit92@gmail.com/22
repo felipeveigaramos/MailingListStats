@@ -1,0 +1,546 @@
+<Messages(message_id='<CAFrS=rdR-KMtg4n2xKDT7xzoqv=neCnY_OCDvMyZLnnArXQNbA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-19 09:44:41', first_date_tz='19800', arrival_date='2013-05-18 21:14:41', arrival_date_tz='None', subject='[PATCH]fdo#55846 Comboboxes werent displayed in vertical toolbars', message_body='Hey!
+I have taken a look into all the mentioned effects , but i still have a
+doubt regarding the constant value i have subtracted/added for the UI
+matter.
+As Eike mentiones i have removed the direct use of the value , rather
+replaced it with a variable holding that value .
+
+--> The question that arises is that the UI will surely depend on the
+screen size and also on the Operating System and hence the screen
+resolution.So how to overcome this issue of UI such that i can write some
+generalised code for the same.
+
+Any help would be appreciated.
+
+Regards,
+Janit
+
+
+On Sat, May 18, 2013 at 2:03 AM, Eike Rathke <erack at redhat.com> wrote:
+
+> Hi Janit,
+>
+> On Wednesday, 2013-04-24 00:51:59 +0530, Janit Anjaria wrote:
+>
+> > I am hereby submitting my patch.
+>
+> Sorry, that was lingering on the list too long. I'd also suggest that
+> you don't explicitly Cc a developer when submitting a patch on the
+> mailing list if s/he didn't ask for it. It leaves the impression to
+> others reading the list that the dev on Cc would be responsible. Which
+> I am not ;-)
+>
+>
+> > diff --git a/vcl/source/window/toolbox.cxx
+> b/vcl/source/window/toolbox.cxx
+> > @@ -239,16 +239,16 @@ void ToolBox::ImplCalcBorder( WindowAlign eAlign,
+> long& rLeft, long& rTop,
+> >
+> >      if ( eAlign == WINDOWALIGN_TOP )
+> >      {
+> > -        rLeft   = borderwidth+dragwidth;
+> > +        rLeft   = borderwidth+dragwidth-150;
+>
+> How did you derive the hardcoded value 150, where does it originate? To
+> me it seems to be a value that by chance matches your screen,
+> resolution, window size, current width of pane, and maybe more. It does
+> not seem to be a generally applicable value. On the other hand, if it
+> really was, a named constant value would be much better suited than
+> repeating the hard coded value in several places throughout the code.
+>
+> >      else if ( eAlign == WINDOWALIGN_LEFT )
+> >      {
+> > -        rLeft   = borderwidth;
+> > +        rLeft   = borderwidth-120;
+>
+> Same here, 120 what and why?
+>
+> > -        rRight  = 0;
+> > +        rRight  = 15;
+>
+> And this 15?
+>
+>
+> > @@ -730,7 +730,7 @@ Size ToolBox::ImplCalcSize( const ToolBox* pThis,
+> sal_uInt16 nCalcLines, sal_uIn
+> >          else if ( nCalcMode == TB_CALCMODE_VERT )
+> >          {
+> >              pThis->mpData->mbAssumeDocked = sal_True;   // force
+> non-floating mode during calculation
+> > -            ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+> nBottom, pThis );
+> > +         ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+> nBottom, pThis );
+>
+> Please don't screw up existing indentation if it is reasonable.
+>
+> > -            aSize.Width() = nCalcLines * pThis->mnMaxItemWidth;
+> > +            aSize.Width() = ((nCalcLines) * ((pThis->mnMaxItemWidth)));
+>
+> The extra parentheses here only make the code harder to read and are not
+> needed.
+>
+>
+> > @@ -1919,7 +1919,8 @@ sal_Bool ToolBox::ImplCalcItem()
+> >                  if( it->mbVisibleText && !mbHorz )
+> >                  {
+> >                      long tmp = it->maItemSize.Width();
+> > -                    it->maItemSize.Width() = it->maItemSize.Height();
+> > +             //fdo#55846 The UI for the same is managed by changing the
+> snippet here.
+> > +                    it->maItemSize.Width() = it->maItemSize.Height() +
+> 150;
+>
+> The 150 again.
+> And please align comments with the code.
+> The wording of the comment is not really helpful. It only states that
+> something is done but does not explain. "the UI is managed by changing
+> the snippet" doesn't mean anything to me. Comments, if necessary, should
+> explain why something is done in the code, or clarify the non-obvious.
+>
+>
+> > @@ -1967,13 +1968,15 @@ sal_Bool ToolBox::ImplCalcItem()
+> >          // it is only required for docked toolbars
+> >
+> >          long nFixedWidth = nDefWidth+nDropDownArrowWidth;
+> > -        long nFixedHeight = nDefHeight;
+> > +
+> > +     long nFixedHeight = nDefHeight;
+>
+> Again, please don't screw up existing indentation if it is reasonable.
+>
+> >          else
+> > -            nMaxWidth = nFixedWidth;
+> > +     //fdo#55846(for maintaining and checking the UI the constant is
+> added)
+> > +            nMaxWidth = nFixedWidth + 250;
+>
+> Why is it the value 250?
+> And please align comments with the code.
+> Again, "for maintaining and checking the UI the constant is added" is
+> not meaningful. Maintain and check? What? Where? How?
+>
+>
+> > @@ -2355,7 +2358,7 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+> >          if ( mnWinStyle & WB_BORDER )
+> >          {
+> >              nTop        = TB_BORDER_OFFSET1 + mnTopBorder;
+> > -            nLeft       = TB_BORDER_OFFSET2 + mnLeftBorder;
+> > +            nLeft       = TB_BORDER_OFFSET1 + mnLeftBorder;
+>
+> Why change to TB_BORDER_OFFSET1 instead of TB_BORDER_OFFSET2 ?
+>
+>
+> > @@ -2372,7 +2375,7 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+> >          {
+> >              long  nWinWidth = mnDX - nLeft - nRight;
+> >              if( nWinWidth > nLineSize )
+> > -                nLineSize = nWinWidth;
+> > +             nLineSize =  nWinWidth;
+>
+> Again, please don't screw up existing indentation if it is reasonable.
+>
+>
+> > @@ -2580,9 +2583,9 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+> >                      }
+> >                      else
+> >                      {
+> > -                        it->maCalcRect.Left()     =
+> nX+(nLineSize-aCurrentItemSize.Width())/2;
+> > +                        it->maCalcRect.Left()     =
+> nX+(nLineSize-aCurrentItemSize.Width());
+>
+> I have doubts about this. According to the comment in the source the
+> intention is to center the rectangle, whereas now it is right aligned.
+>
+> >                          it->maCalcRect.Top()      = nY;
+> > -                        it->maCalcRect.Right()    =
+> it->maCalcRect.Left()+aCurrentItemSize.Width()-1;
+> > +                        it->maCalcRect.Right()    =
+> it->maCalcRect.Left()+aCurrentItemSize.Width();
+>
+> Not subtracting 1 anymore probably means that the right side of the
+> rectangle now may be drawn over or under some other element or border,
+> which does not look correct to me.
+>
+>
+> > diff --git a/vcl/source/window/toolbox2.cxx
+> b/vcl/source/window/toolbox2.cxx
+> > @@ -256,21 +256,20 @@ Size ImplToolItem::GetSize( sal_Bool bHorz,
+> sal_Bool bCheckMaxWidth, long maxWid
+> >  {
+> >      Size aSize( rDefaultSize ); // the size of 'standard' toolbox items
+> >                                  // non-standard items are eg windows or
+> buttons with text
+> > -
+> > +    mbShowWindow=sal_True;
+>
+> Unconditionaly setting mbShowWindow to true for ALL cases does not seem
+> to be correct.
+>
+> >      if ( (meType == TOOLBOXITEM_BUTTON) || (meType ==
+> TOOLBOXITEM_SPACE) )
+> >      {
+> >          aSize = maItemSize;
+> >
+> > -        if ( mpWindow && bHorz )
+> > +        if (mpWindow)
+>
+> Removing the check for bHorz here ...
+>
+> >          {
+> >              // get size of item window and check if it fits
+> >              // no windows in vertical toolbars (the default is
+> mbShowWindow=sal_False)
+>
+> Note that it says "no windows in vertical toolbars (the default is
+> mbShowWindow=sal_False)" which you just changed above.
+>
+> >              Size aWinSize = mpWindow->GetSizePixel();
+> > -            if ( !bCheckMaxWidth || (aWinSize.Width() <= maxWidth) )
+> > +            if ( !bCheckMaxWidth || (aWinSize.Width() <= maxWidth))
+>
+> ... and only checking for width here and not checking for height in the
+> bHorz case looks wrong.
+>
+> >              {
+> >                  aSize.Width()   = aWinSize.Width();
+> >                  aSize.Height()  = aWinSize.Height();
+> > -                mbShowWindow = sal_True;
+>
+> Considering the new default (true) this would be correct, but ...
+>
+> >              }
+> >              else
+> >              {
+> > @@ -278,7 +277,7 @@ Size ImplToolItem::GetSize( sal_Bool bHorz, sal_Bool
+> bCheckMaxWidth, long maxWid
+> >                  {
+> >                      aSize.Width()   = 0;
+> >                      aSize.Height()  = 0;
+>
+> ... this would need to set mbShowWindow=false then.
+>
+> However, I think the default should not be changed but instead the
+> necessary checks introduced to handle the !bHorz case properly.
+>
+> > -                }
+> > +             }
+>
+> Again, please don't screw up existing indentation if it is reasonable.
+>
+>
+> > @@ -286,7 +285,7 @@ Size ImplToolItem::GetSize( sal_Bool bHorz, sal_Bool
+> bCheckMaxWidth, long maxWid
+> >      {
+> >          if ( bHorz )
+> >          {
+> > -            aSize.Width()   = mnSepSize;
+> > +            aSize.Width()   = mnSepSize+150;
+>
+> The 150 again.
+>
+>
+> I think this patch should not go in.
+>
+>   Eike
+>
+> --
+> LibreOffice Calc developer. Number formatter stricken i18n
+> transpositionizer.
+> GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563 2D3A
+> For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+> Support the FSFE, care about Free Software!
+> https://fsfe.org/support/?erack
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130519/7b43400d/attachment.html>
+
+', is_response_of='<20130517203308.GE26301@isigqoko.erack.de>', mail_path='None', references='<CAFrS=re+7SM=JgqWtwg3k_Ae4ijR3m3fw7oXptFeUZq_JuzzyA@mail.gmail.com>
+	<20130517203308.GE26301@isigqoko.erack.de>', in_reply_to='<20130517203308.GE26301@isigqoko.erack.de>')>
+****************************************
+<Messages(message_id='<CAFrS=reh3Kr6XtmVq7PtALgKf1fd5UxywviA87cxMTiKotrCkg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-24 21:54:54', first_date_tz='19800', arrival_date='2013-06-24 09:24:54', arrival_date_tz='None', subject='[PATCH]fdo#55846 Comboboxes werent displayed in vertical toolbars', message_body='Hey !
+
+Its been a little while i havent been on code due to bad health :( .
+I just talked to Eike regarding this bug which i  have been working on
+since late. i think it is a long time this bug has been pending. I am
+done with the code , but yeah definitely i agree to the fact that
+there might be UI problems ( though it works on my machine) i think
+there can be made some change other than the hard coded values i have
+used.
+
+It would be great if someone can guide me on this so that i dont use
+the hard coded values and have some other way to solve this bug.
+
+Regards,
+Janit
+
+On 5/19/13, Janit Anjaria <janit92 at gmail.com> wrote:
+> Hey!
+> I have taken a look into all the mentioned effects , but i still have a
+> doubt regarding the constant value i have subtracted/added for the UI
+> matter.
+> As Eike mentiones i have removed the direct use of the value , rather
+> replaced it with a variable holding that value .
+>
+> --> The question that arises is that the UI will surely depend on the
+> screen size and also on the Operating System and hence the screen
+> resolution.So how to overcome this issue of UI such that i can write some
+> generalised code for the same.
+>
+> Any help would be appreciated.
+>
+> Regards,
+> Janit
+>
+>
+> On Sat, May 18, 2013 at 2:03 AM, Eike Rathke <erack at redhat.com> wrote:
+>
+>> Hi Janit,
+>>
+>> On Wednesday, 2013-04-24 00:51:59 +0530, Janit Anjaria wrote:
+>>
+>> > I am hereby submitting my patch.
+>>
+>> Sorry, that was lingering on the list too long. I'd also suggest that
+>> you don't explicitly Cc a developer when submitting a patch on the
+>> mailing list if s/he didn't ask for it. It leaves the impression to
+>> others reading the list that the dev on Cc would be responsible. Which
+>> I am not ;-)
+>>
+>>
+>> > diff --git a/vcl/source/window/toolbox.cxx
+>> b/vcl/source/window/toolbox.cxx
+>> > @@ -239,16 +239,16 @@ void ToolBox::ImplCalcBorder( WindowAlign eAlign,
+>> long& rLeft, long& rTop,
+>> >
+>> >      if ( eAlign == WINDOWALIGN_TOP )
+>> >      {
+>> > -        rLeft   = borderwidth+dragwidth;
+>> > +        rLeft   = borderwidth+dragwidth-150;
+>>
+>> How did you derive the hardcoded value 150, where does it originate? To
+>> me it seems to be a value that by chance matches your screen,
+>> resolution, window size, current width of pane, and maybe more. It does
+>> not seem to be a generally applicable value. On the other hand, if it
+>> really was, a named constant value would be much better suited than
+>> repeating the hard coded value in several places throughout the code.
+>>
+>> >      else if ( eAlign == WINDOWALIGN_LEFT )
+>> >      {
+>> > -        rLeft   = borderwidth;
+>> > +        rLeft   = borderwidth-120;
+>>
+>> Same here, 120 what and why?
+>>
+>> > -        rRight  = 0;
+>> > +        rRight  = 15;
+>>
+>> And this 15?
+>>
+>>
+>> > @@ -730,7 +730,7 @@ Size ToolBox::ImplCalcSize( const ToolBox* pThis,
+>> sal_uInt16 nCalcLines, sal_uIn
+>> >          else if ( nCalcMode == TB_CALCMODE_VERT )
+>> >          {
+>> >              pThis->mpData->mbAssumeDocked = sal_True;   // force
+>> non-floating mode during calculation
+>> > -            ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+>> nBottom, pThis );
+>> > +         ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+>> nBottom, pThis );
+>>
+>> Please don't screw up existing indentation if it is reasonable.
+>>
+>> > -            aSize.Width() = nCalcLines * pThis->mnMaxItemWidth;
+>> > +            aSize.Width() = ((nCalcLines) *
+>> > ((pThis->mnMaxItemWidth)));
+>>
+>> The extra parentheses here only make the code harder to read and are not
+>> needed.
+>>
+>>
+>> > @@ -1919,7 +1919,8 @@ sal_Bool ToolBox::ImplCalcItem()
+>> >                  if( it->mbVisibleText && !mbHorz )
+>> >                  {
+>> >                      long tmp = it->maItemSize.Width();
+>> > -                    it->maItemSize.Width() = it->maItemSize.Height();
+>> > +             //fdo#55846 The UI for the same is managed by changing
+>> > the
+>> snippet here.
+>> > +                    it->maItemSize.Width() = it->maItemSize.Height() +
+>> 150;
+>>
+>> The 150 again.
+>> And please align comments with the code.
+>> The wording of the comment is not really helpful. It only states that
+>> something is done but does not explain. "the UI is managed by changing
+>> the snippet" doesn't mean anything to me. Comments, if necessary, should
+>> explain why something is done in the code, or clarify the non-obvious.
+>>
+>>
+>> > @@ -1967,13 +1968,15 @@ sal_Bool ToolBox::ImplCalcItem()
+>> >          // it is only required for docked toolbars
+>> >
+>> >          long nFixedWidth = nDefWidth+nDropDownArrowWidth;
+>> > -        long nFixedHeight = nDefHeight;
+>> > +
+>> > +     long nFixedHeight = nDefHeight;
+>>
+>> Again, please don't screw up existing indentation if it is reasonable.
+>>
+>> >          else
+>> > -            nMaxWidth = nFixedWidth;
+>> > +     //fdo#55846(for maintaining and checking the UI the constant is
+>> added)
+>> > +            nMaxWidth = nFixedWidth + 250;
+>>
+>> Why is it the value 250?
+>> And please align comments with the code.
+>> Again, "for maintaining and checking the UI the constant is added" is
+>> not meaningful. Maintain and check? What? Where? How?
+>>
+>>
+>> > @@ -2355,7 +2358,7 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+>> >          if ( mnWinStyle & WB_BORDER )
+>> >          {
+>> >              nTop        = TB_BORDER_OFFSET1 + mnTopBorder;
+>> > -            nLeft       = TB_BORDER_OFFSET2 + mnLeftBorder;
+>> > +            nLeft       = TB_BORDER_OFFSET1 + mnLeftBorder;
+>>
+>> Why change to TB_BORDER_OFFSET1 instead of TB_BORDER_OFFSET2 ?
+>>
+>>
+>> > @@ -2372,7 +2375,7 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+>> >          {
+>> >              long  nWinWidth = mnDX - nLeft - nRight;
+>> >              if( nWinWidth > nLineSize )
+>> > -                nLineSize = nWinWidth;
+>> > +             nLineSize =  nWinWidth;
+>>
+>> Again, please don't screw up existing indentation if it is reasonable.
+>>
+>>
+>> > @@ -2580,9 +2583,9 @@ void ToolBox::ImplFormat( sal_Bool bResize )
+>> >                      }
+>> >                      else
+>> >                      {
+>> > -                        it->maCalcRect.Left()     =
+>> nX+(nLineSize-aCurrentItemSize.Width())/2;
+>> > +                        it->maCalcRect.Left()     =
+>> nX+(nLineSize-aCurrentItemSize.Width());
+>>
+>> I have doubts about this. According to the comment in the source the
+>> intention is to center the rectangle, whereas now it is right aligned.
+>>
+>> >                          it->maCalcRect.Top()      = nY;
+>> > -                        it->maCalcRect.Right()    =
+>> it->maCalcRect.Left()+aCurrentItemSize.Width()-1;
+>> > +                        it->maCalcRect.Right()    =
+>> it->maCalcRect.Left()+aCurrentItemSize.Width();
+>>
+>> Not subtracting 1 anymore probably means that the right side of the
+>> rectangle now may be drawn over or under some other element or border,
+>> which does not look correct to me.
+>>
+>>
+>> > diff --git a/vcl/source/window/toolbox2.cxx
+>> b/vcl/source/window/toolbox2.cxx
+>> > @@ -256,21 +256,20 @@ Size ImplToolItem::GetSize( sal_Bool bHorz,
+>> sal_Bool bCheckMaxWidth, long maxWid
+>> >  {
+>> >      Size aSize( rDefaultSize ); // the size of 'standard' toolbox
+>> > items
+>> >                                  // non-standard items are eg windows
+>> > or
+>> buttons with text
+>> > -
+>> > +    mbShowWindow=sal_True;
+>>
+>> Unconditionaly setting mbShowWindow to true for ALL cases does not seem
+>> to be correct.
+>>
+>> >      if ( (meType == TOOLBOXITEM_BUTTON) || (meType ==
+>> TOOLBOXITEM_SPACE) )
+>> >      {
+>> >          aSize = maItemSize;
+>> >
+>> > -        if ( mpWindow && bHorz )
+>> > +        if (mpWindow)
+>>
+>> Removing the check for bHorz here ...
+>>
+>> >          {
+>> >              // get size of item window and check if it fits
+>> >              // no windows in vertical toolbars (the default is
+>> mbShowWindow=sal_False)
+>>
+>> Note that it says "no windows in vertical toolbars (the default is
+>> mbShowWindow=sal_False)" which you just changed above.
+>>
+>> >              Size aWinSize = mpWindow->GetSizePixel();
+>> > -            if ( !bCheckMaxWidth || (aWinSize.Width() <= maxWidth) )
+>> > +            if ( !bCheckMaxWidth || (aWinSize.Width() <= maxWidth))
+>>
+>> ... and only checking for width here and not checking for height in the
+>> bHorz case looks wrong.
+>>
+>> >              {
+>> >                  aSize.Width()   = aWinSize.Width();
+>> >                  aSize.Height()  = aWinSize.Height();
+>> > -                mbShowWindow = sal_True;
+>>
+>> Considering the new default (true) this would be correct, but ...
+>>
+>> >              }
+>> >              else
+>> >              {
+>> > @@ -278,7 +277,7 @@ Size ImplToolItem::GetSize( sal_Bool bHorz,
+>> > sal_Bool
+>> bCheckMaxWidth, long maxWid
+>> >                  {
+>> >                      aSize.Width()   = 0;
+>> >                      aSize.Height()  = 0;
+>>
+>> ... this would need to set mbShowWindow=false then.
+>>
+>> However, I think the default should not be changed but instead the
+>> necessary checks introduced to handle the !bHorz case properly.
+>>
+>> > -                }
+>> > +             }
+>>
+>> Again, please don't screw up existing indentation if it is reasonable.
+>>
+>>
+>> > @@ -286,7 +285,7 @@ Size ImplToolItem::GetSize( sal_Bool bHorz,
+>> > sal_Bool
+>> bCheckMaxWidth, long maxWid
+>> >      {
+>> >          if ( bHorz )
+>> >          {
+>> > -            aSize.Width()   = mnSepSize;
+>> > +            aSize.Width()   = mnSepSize+150;
+>>
+>> The 150 again.
+>>
+>>
+>> I think this patch should not go in.
+>>
+>>   Eike
+>>
+>> --
+>> LibreOffice Calc developer. Number formatter stricken i18n
+>> transpositionizer.
+>> GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563
+>> 2D3A
+>> For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+>> Support the FSFE, care about Free Software!
+>> https://fsfe.org/support/?erack
+>>
+>
+
+', is_response_of='<CAFrS=rdR-KMtg4n2xKDT7xzoqv=neCnY_OCDvMyZLnnArXQNbA@mail.gmail.com>', mail_path='None', references='<CAFrS=re+7SM=JgqWtwg3k_Ae4ijR3m3fw7oXptFeUZq_JuzzyA@mail.gmail.com>
+	<20130517203308.GE26301@isigqoko.erack.de>
+	<CAFrS=rdR-KMtg4n2xKDT7xzoqv=neCnY_OCDvMyZLnnArXQNbA@mail.gmail.com>', in_reply_to='<CAFrS=rdR-KMtg4n2xKDT7xzoqv=neCnY_OCDvMyZLnnArXQNbA@mail.gmail.com>')>

@@ -1,0 +1,41 @@
+<Messages(message_id='<4FD45619.2070700@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-10 10:08:57', first_date_tz='7200', arrival_date='2012-06-10 01:08:57', arrival_date_tz='None', subject='Using same User Profile with various users and / or LibO Versions', message_body='Hi,
+
+it would be great if an expert could add some brief notes on 
+<https://wiki.documentfoundation.org/UserProfile> concerning following 
+questions:
+
+- Is it allowed/possible/useful to use the same User Profile with
+   more than 1 User?
+- Is it allowed/useful/ to use the same User Profile with
+   different LibO Versions?
+   If Yes:
+   -- What are the risks?
+   -- what factors have to be considered
+
+Reason for my demand is
+[Bug 43491] CONFIGURATION: Using existing User Profile existing WRITER 
+documents open "semi read only
+  <https://bugs.freedesktop.org/show_bug.cgi?id=43491>
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<4FD5D7D4.2050908@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-11 13:34:44', first_date_tz='7200', arrival_date='2012-06-11 04:34:44', arrival_date_tz='None', subject='Using same User Profile with various users and / or LibO Versions', message_body='On 06/10/2012 10:08 AM, Rainer Bielefeld wrote:
+> it would be great if an expert could add some brief notes on
+> <https://wiki.documentfoundation.org/UserProfile> concerning following
+> questions:
+>
+> - Is it allowed/possible/useful to use the same User Profile with
+> more than 1 User?
+> - Is it allowed/useful/ to use the same User Profile with
+> different LibO Versions?
+
+see 
+<https://wiki.documentfoundation.org/index.php?title=UserProfile&oldid=51149>
+
+Stephan
+
+', is_response_of='<4FD45619.2070700@bielefeldundbuss.de>', mail_path='None', references='<4FD45619.2070700@bielefeldundbuss.de>', in_reply_to='<4FD45619.2070700@bielefeldundbuss.de>')>

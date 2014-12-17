@@ -1,0 +1,36 @@
+<Messages(message_id='<CA+_jvayL1X=kS0t8QVc1RC973GJH56qMBRUPDF0aLcaErNurzQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-06-21 18:34:48', first_date_tz='19800', arrival_date='2013-06-21 06:04:48', arrival_date_tz='None', subject='[GSOC]Slide Layout Extendibility :Weekly Report #1', message_body='Hello Everyone,
+
+Before the beginning of  this week ,I was debugging on impress slide
+layouts.Basically,I got to understand the mechanism of creation of slide
+layouts in the "normal" page,in the master pages like "notes" and "handout"
+and much more.
+
+Currently in the slide layouts, Placeholder object's height,width,position
+are hard-coded. So,I did following things during this week:
+
++So at first ,I started with creation of XML file  which stores following
+information:
+(1) Layout Type
+(2) "PresObj" Kind
+(3) Position co-ordinates of "PresObj"
+(4) Size of "PreObj"(Width and Height)
+
++ I have started coding XML parser, which will read this information from
+XML file and set the appropriate parameters in the function
+"CalcAutoLayoutRectangles" (This function  calculates/sets  the Top
+Position,Height and Width of Rectangle "PresObj" used.) And this will
+parser will help in bringing configurability with Slide Layouts.
+
++ So XML parser should be fully completed, probably by "Monday" or
+"Tuesday"(mostly it should get completed by this weekend).
+
++ Next week,I will work on  understanding "Slide Mater View" and  on using
+"Slide Mater View" to edit the current built-in layouts.
+
+Regards,
+Vishv Brahmbhatt
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130621/d4204151/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

@@ -1,0 +1,21 @@
+<Messages(message_id='<CA+_jvayE-u=8rpdVJOzey5uCc+kfxFmFHQuMYU7Sk7Pp_hATuQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-01-17 23:44:36', first_date_tz='19800', arrival_date='2013-01-17 10:14:36', arrival_date_tz='None', subject='"Need help for "Bug 59397 - UI: Use more precise wording at 'Find &
+	Replace - More Options - Styles' "', message_body='Hi,
+
+I need help for this bug https://bugs.freedesktop.org/show_bug.cgi?id=59397
+ .
+
+Can someone help me in suggesting the good starting point/code pointer for
+this hack?
+
+Also where can I find the layout file for *Edit->Find & Replace* in Writer
+& Calc (i.e in which module is it defined)?
+
+Eagerly waiting to get some answers in this query.
+
+Regards,
+Vishv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130117/cff9b818/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

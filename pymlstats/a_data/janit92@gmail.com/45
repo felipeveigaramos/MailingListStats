@@ -1,0 +1,48 @@
+<Messages(message_id='<CAFrS=rfu5=sgJfJhT+GVeMXNtSAaB1g-fjFsSYG2eCQtySWJCA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-19 02:09:55', first_date_tz='19800', arrival_date='2013-04-18 13:39:55', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+
+I am hereby attaching my patch for fdo#62096 :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=62096
+
+Any suggestions would be great to be implemented.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130419/b9b51724/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replaced-some-OUString-compareTo-with.patch
+Type: application/octet-stream
+Size: 9613 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130419/b9b51724/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130419192322.GD29425@isigqoko.erack.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-19 21:23:23', first_date_tz='7200', arrival_date='2013-04-19 12:23:23', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hi Janit,
+
+On Friday, 2013-04-19 02:09:55 +0530, Janit Anjaria wrote:
+
+> -    if ( 0 == PropertyName.compareTo( FM_PROP_TEXTLINECOLOR ) )
+> +    if ( PropertyName == ( FM_PROP_TEXTLINECOLOR ) )
+
+Same nitpick as in my previous mail, please remove the now extraneous ()
+
+  Eike
+
+-- 
+LibreOffice Calc developer. Number formatter stricken i18n transpositionizer.
+GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563 2D3A
+For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+Support the FSFE, care about Free Software! https://fsfe.org/support/?erack
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130419/da7c5259/attachment.pgp>
+
+', is_response_of='<CAFrS=rfu5=sgJfJhT+GVeMXNtSAaB1g-fjFsSYG2eCQtySWJCA@mail.gmail.com>', mail_path='None', references='<CAFrS=rfu5=sgJfJhT+GVeMXNtSAaB1g-fjFsSYG2eCQtySWJCA@mail.gmail.com>', in_reply_to='<CAFrS=rfu5=sgJfJhT+GVeMXNtSAaB1g-fjFsSYG2eCQtySWJCA@mail.gmail.com>')>

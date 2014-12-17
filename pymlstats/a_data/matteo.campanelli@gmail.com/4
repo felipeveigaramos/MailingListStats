@@ -1,0 +1,18 @@
+<Messages(message_id='<CAMuW_Xw=7YwGo_5mZT4LDvN6zKsfbuNQ7jgaVVdO-4F7=GE5pA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-29 04:02:42', first_date_tz='10800', arrival_date='2014-07-28 18:02:42', arrival_date_tz='None', subject='[GSoC] Chained Text Boxes in Draw - Report 28/08/2014', message_body='Hi all,
+from last week there is some encouraging progress:
+- I implemented a suitable primitive2d class in svx/ for text needing to be
+chained;
+- when a page overflow occurs, the status "need to be chained" is set and
+text from one box is copied in another by creating the appropriate text
+primitive (text is still not truncated though).
+
+An immediate next action is to  make the possibility of dealing with chains
+that have more than two text boxes.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140729/1b3896b3/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

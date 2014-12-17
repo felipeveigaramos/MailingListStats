@@ -1,0 +1,113 @@
+<Messages(message_id='<22531545.348.1373897296621.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 16:08:16', first_date_tz='7200', arrival_date='2013-07-15 07:08:16', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Ok. I see.
+Problem is, I could easily build, package and install my xmlsec1 component in few minutes,
+and it did see all the required libs (openssl, and so on).
+How can I debug why the LO internal configure cannot see the deps?
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Rene Engelhard
+A: Gabriele Bulfon
+Cc: Michael Stahl
+michael.meeks at suse.com libreoffice-dev
+Data: 15 luglio 2013 16.05.26 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, Jul 15, 2013 at 03:48:15PM +0200, Gabriele Bulfon wrote:
+I see no switch in global configure to force it to use system xmlsec.
+Yes, there is none...
+How does it decide to install its own?
+By just doing it unconditionally and everywhere.
+One possibility is that I make and install my own component of xmlsec.
+Will the build system see it and decide not to build its own?
+Nope. It's so heavily patched that it *might* build but not work afaicr.
+system-xmlsec was once tried by abandonded for that reason. :/
+(It's - besides rhino - the only library which is needed internally...)
+Regards,
+Rene
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/b401c983/attachment.html>
+
+', is_response_of='<20130715140526.GC2015@rene-engelhard.de>', mail_path='None', references='<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>
+	<6473580.339.1373896095032.JavaMail.sonicle@www>
+	<20130715140526.GC2015@rene-engelhard.de>', in_reply_to='<20130715140526.GC2015@rene-engelhard.de>')>
+****************************************
+<Messages(message_id='<29636361.357.1373899645539.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 16:47:25', first_date_tz='7200', arrival_date='2013-07-15 07:47:25', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='A deeper check of the xmlsec1 config.log, shows there are many vars that are empty, not passed
+by main configure, such as NSS_LIBS and NSS_CFLAGS.
+These are set up during configure, and I used them to build against system nspr that is in a different
+location, but are empty in this internal xmlsec1 config.log.
+Probably I could pass also other libs like OPENSSL_CFLAGS and OPENSSL_LIBS, but I should
+understand how to pass them.
+Da:
+Gabriele Bulfon
+A:
+Rene Engelhard
+Cc:
+michael.meeks at suse.com libreoffice-dev
+Michael Stahl
+Data:
+15 luglio 2013 16.34.41 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+Or maybe I could build the patched xmlsec1 component out of the LO fetched tarball, as a system
+library (naming it as LO version), then force the LO build not to build that component?
+Da:
+Gabriele Bulfon
+A:
+Rene Engelhard
+Cc:
+michael.meeks at suse.com Michael Stahl
+libreoffice-dev
+Data:
+15 luglio 2013 16.08.16 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+Ok. I see.
+Problem is, I could easily build, package and install my xmlsec1 component in few minutes,
+and it did see all the required libs (openssl, and so on).
+How can I debug why the LO internal configure cannot see the deps?
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Rene Engelhard
+A: Gabriele Bulfon
+Cc: Michael Stahl
+michael.meeks at suse.com libreoffice-dev
+Data: 15 luglio 2013 16.05.26 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, Jul 15, 2013 at 03:48:15PM +0200, Gabriele Bulfon wrote:
+I see no switch in global configure to force it to use system xmlsec.
+Yes, there is none...
+How does it decide to install its own?
+By just doing it unconditionally and everywhere.
+One possibility is that I make and install my own component of xmlsec.
+Will the build system see it and decide not to build its own?
+Nope. It's so heavily patched that it *might* build but not work afaicr.
+system-xmlsec was once tried by abandonded for that reason. :/
+(It's - besides rhino - the only library which is needed internally...)
+Regards,
+Rene
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/1c72051c/attachment.html>
+
+', is_response_of='<22531545.348.1373897296621.JavaMail.sonicle@www>', mail_path='None', references='<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>
+	<6473580.339.1373896095032.JavaMail.sonicle@www>
+	<20130715140526.GC2015@rene-engelhard.de>
+	<22531545.348.1373897296621.JavaMail.sonicle@www>
+	<17355183.354.1373898881952.JavaMail.sonicle@www>', in_reply_to='<17355183.354.1373898881952.JavaMail.sonicle@www>')>

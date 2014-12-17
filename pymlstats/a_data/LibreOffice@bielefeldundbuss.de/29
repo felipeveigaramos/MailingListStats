@@ -1,0 +1,57 @@
+<Messages(message_id='<4FE9E128.7040207@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-26 18:19:52', first_date_tz='7200', arrival_date='2012-06-26 09:19:52', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Petr Mladek schrieb:
+
+> I am a bit confused. Could I push the patch now or should I wait for
+> some other action?
+
+Hi Petr,
+
+if there are no 3rd parties concerns Patches generally should be pushed 
+after review with a note in the bug so that I know that it will be 
+available for the next Assistant-Update (What I am currently planning to 
+do for LibO 3.5.5.2.).
+
+Best regards
+
+Rainer
+
+
+', is_response_of='<4FE4CD23.30209@ertai.nl>', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>
+	<1340366943.10027.23.camel@Brinn>
+	<4FE4A331.50605@bielefeldundbuss.de> <4FE4CD23.30209@ertai.nl>
+	<1340726339.6136.2143.camel@walk.suse.cz>', in_reply_to='<1340726339.6136.2143.camel@walk.suse.cz>')>
+****************************************
+<Messages(message_id='<4FEB4A51.3080301@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-27 20:00:49', first_date_tz='7200', arrival_date='2012-06-27 11:00:49', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Petr Mladek schrieb:
+
+> I am still confused. I am talking about Rob's
+> 0001-Localisation-changed-to-Localization.patch. I guess that we want to
+> rename the component but I am not sure about the push timing. Do you
+> need to do some changes in bugzilla first?
+
+
+Hi Petr,
+
+no need to be confused. All fixes can (and should) be pushed immediately 
+when review has showed that the patch is sane. The push is without any 
+influence to the Assistant until the update of the Assistant due to 
+<https://wiki.documentfoundation.org/Bug_Submission_Assistant#Installation_and_maintenance> 
+will have been done.
+
+I consider that these updates only can be done when Bugzilla, Wiki and 
+may be patches all are prepared. Currently these Updates generally are 
+done By Thorsten Behrens (I did not understand the SSH proceeding), and 
+I initiate the the update only
+
+So please push Rob's latest patch.
+
+Best regards
+
+Rainer
+
+', is_response_of='<4FE9E128.7040207@bielefeldundbuss.de>', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>
+	<1340366943.10027.23.camel@Brinn>
+	<4FE4A331.50605@bielefeldundbuss.de> <4FE4CD23.30209@ertai.nl>
+	<1340726339.6136.2143.camel@walk.suse.cz>
+	<4FE9E128.7040207@bielefeldundbuss.de>
+	<1340801544.6136.2177.camel@walk.suse.cz>', in_reply_to='<1340801544.6136.2177.camel@walk.suse.cz>')>

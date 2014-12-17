@@ -1,0 +1,33 @@
+<Messages(message_id='<CAFrS=rcUM5PsJP2d3uzaNA5_A4oR-St1sVM+SVOsef2Rh3PU-Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-09 08:06:56', first_date_tz='19800', arrival_date='2013-04-08 19:36:56', arrival_date_tz='None', subject='[PATCH]BUG#57950 Replace chained O(U)StringBuffer::append() with
+	operator+', message_body='Hey Thorsten,
+I am not pretty sure how can that be possible but yes i would clean the
+patch up and then mail it .
+
+Regards,
+Janit
+
+
+On Tue, Apr 9, 2013 at 4:02 AM, Thorsten Behrens <thb at documentfoundation.org
+> wrote:
+
+> Janit Anjaria wrote:
+> > I am hereby submitting my patch for review on the bug/feature which
+> > i had worked long back which replaces all the .append() calls witha
+> > + operator.
+> >
+> Hi Janit,
+>
+> thanks for that patch - it needs some cleanup, too, though. String
+> literals can be appended without explicit OUString constructor
+> calls. And why is there code that is now commented out?
+>
+> Cheers,
+>
+> -- Thorsten
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130409/7bd340ad/attachment-0001.html>
+
+', is_response_of='<20130408223254.GY475@thinkpad.thebehrens.net>', mail_path='None', references='<CAFrS=rdTTiWjSk2SLQJwUh2OrmZiqvw+QdU-jCb=k6sE+YiArw@mail.gmail.com>
+	<20130408223254.GY475@thinkpad.thebehrens.net>', in_reply_to='<20130408223254.GY475@thinkpad.thebehrens.net>')>

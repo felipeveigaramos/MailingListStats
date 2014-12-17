@@ -1,0 +1,70 @@
+<Messages(message_id='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-27 12:37:59', first_date_tz='10800', arrival_date='2013-07-27 02:37:59', arrival_date_tz='None', subject='Invalid Entry in Po Files', message_body='Dear All,
+
+After we did a 100%, we decided to change some of owr strings to a  new
+terminology. As a result I did a "Find and Replace in All Files" using
+Sublime Text 2 to change the terms.
+
+After this I started building entire LO,(libreoffice-4-1 branch), but it
+failed to include the new terms saying invalid entry like
+"git/libowin/translations/source/sid/scp2/source/base.po contains invalid
+entry".
+
+
+What mistake did I do? How may i resolve this?
+-- 
+Regards,*
+___________________________
+Tadele Assefa***
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130727/980d15f6/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<CACVjhxXomzEQ8Hw-HMpxs6roVkCdZ4PT1TAZk-RSJh762hQoyg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-27 11:41:04', first_date_tz='7200', arrival_date='2013-07-27 02:41:04', arrival_date_tz='None', subject='[libreoffice-l10n] Invalid Entry in Po Files', message_body='It's fairly simple, assuming you have the gettext tools installed, if not
+just send me the file and I'll scan it for you.
+
+With gettext the command would be: msgfmt -vco /dev/null base.po (in the
+same dir of course)
+
+Yaron Shahrabani
+
+<Hebrew translator>
+
+
+
+On Sat, Jul 27, 2013 at 11:37 AM, Tadele Assefa <milkyswd at gmail.com> wrote:
+
+> Dear All,
+>
+> After we did a 100%, we decided to change some of owr strings to a  new
+> terminology. As a result I did a "Find and Replace in All Files" using
+> Sublime Text 2 to change the terms.
+>
+> After this I started building entire LO,(libreoffice-4-1 branch), but it
+> failed to include the new terms saying invalid entry like
+> "git/libowin/translations/source/sid/scp2/source/base.po contains invalid
+> entry".
+>
+>
+> What mistake did I do? How may i resolve this?
+> --
+> Regards,*
+> ___________________________
+> Tadele Assefa***
+>
+> --
+> To unsubscribe e-mail to: l10n+unsubscribe at global.libreoffice.org
+> Problems?
+> http://www.libreoffice.org/get-help/mailing-lists/how-to-unsubscribe/
+> Posting guidelines + more: http://wiki.documentfoundation.org/Netiquette
+> List archive: http://listarchives.libreoffice.org/global/l10n/
+> All messages sent to this list will be publicly archived and cannot be
+> deleted
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130727/bcf86732/attachment.html>
+
+', is_response_of='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>', mail_path='None', references='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>', in_reply_to='<CAO7O0N=9x=2OtTNsccTM9WG5ogJdcgRUvbCjXSyL3oVu=iw+6g@mail.gmail.com>')>

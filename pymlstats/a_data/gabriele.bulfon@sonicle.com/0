@@ -1,0 +1,175 @@
+<Messages(message_id='<10210174.330.1373893660985.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 15:07:40', first_date_tz='7200', arrival_date='2013-07-15 06:07:40', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Ok, I could go over extension by disabling that motif dependent plugin.
+Now, later, it's trying to build xmlsec1, and looks like it can't find libs I actually have!
+checking for pkg-config... yes
+checking for libxslt libraries= 1.0.20... no     [I have it, it's 1.1.26]
+checking for openssl libraries= 0.9.6... no    [I have both 0.9.6 and 1.0.0j]
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for nspr libraries= 4.0... no          [I have nspr 4]
+checking for nss libraries= 3.2... no           [I have nss 3.13.5]
+checking for gnutls libraries= 0.8.1... no    [I have 3.1.9]
+checking for mscrypto libraries... none
+checking for crypto library... configure: error: At least one crypto library should exist for xmlsec1
+I can't find the config.log of this component, this may hold the info I need to solve it.
+Can you help?
+gabriele.
+Da:
+Gabriele Bulfon
+A:
+michael.meeks at suse.com
+Cc:
+Michael Stahl
+libreoffice-dev
+Data:
+15 luglio 2013 10.42.52 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+I momentarily disabled with this patch (treated SunOS as for iOS and Android).
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Michael Meeks
+A: Gabriele Bulfon
+Cc: Michael Stahl
+libreoffice-dev
+Data: 15 luglio 2013 10.15.18 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, 2013-07-15 at 09:44 +0200, Gabriele Bulfon wrote:
+I was wandering why Motif libraries are needed by these extension. Is
+it absolutely necessary?
+I'm amazed to hear that we link to motif in the modern world; it seems
+to be only this extension:
+$W/CxxObject/extensions/source/plugin/unx/npwrap.o
+$W/CxxObject/extensions/source/plugin/unx/npnapi.o
+I'd disable this I guess in configure.ac we have:
+dnl Check for NPAPI interface to plug browser plugins into LibreOffice
+documents
+I imagine we should just disable that for Solaris [ for now ].
+Quite why we think Mozilla requires motif still I'm not sure I'd be
+amazed if they still had a hard dep on that.
+HTH,
+Michael.
+--
+michael.meeks at suse.com
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/326e1785/attachment.html>
+
+', is_response_of='<10471768.209.1372397978141.JavaMail.sonicle@www>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51CC2A45.3050805@redhat.com>
+	<10471768.209.1372397978141.JavaMail.sonicle@www>
+	<51CD5EF3.8010307@redhat.com>
+	<17146763.296.1372491460880.JavaMail.sonicle@www>
+	<CAFWMYEF5r7o4w3iBf2tgJAqKuu8xXHmsGATp1-FPNO447jAcRw@mail.gmail.com>
+	<29287606.323.1372669396453.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>', in_reply_to='<4003364.293.1373877772337.JavaMail.sonicle@www>')>
+****************************************
+<Messages(message_id='<17188041.360.1373900953688.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 17:09:13', first_date_tz='7200', arrival_date='2013-07-15 08:09:13', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='...I also found that the old README.Solaris mentions a "--disable-xmlsec", but the configure script
+doesn't mention it.
+Any other way to avoid building xmlsec?
+Da:
+Gabriele Bulfon
+A:
+Rene Engelhard
+Cc:
+michael.meeks at suse.com libreoffice-dev
+Michael Stahl
+Data:
+15 luglio 2013 16.47.25 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+A deeper check of the xmlsec1 config.log, shows there are many vars that are empty, not passed
+by main configure, such as NSS_LIBS and NSS_CFLAGS.
+These are set up during configure, and I used them to build against system nspr that is in a different
+location, but are empty in this internal xmlsec1 config.log.
+Probably I could pass also other libs like OPENSSL_CFLAGS and OPENSSL_LIBS, but I should
+understand how to pass them.
+Da:
+Gabriele Bulfon
+A:
+Rene Engelhard
+Cc:
+michael.meeks at suse.com libreoffice-dev
+Michael Stahl
+Data:
+15 luglio 2013 16.34.41 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+Or maybe I could build the patched xmlsec1 component out of the LO fetched tarball, as a system
+library (naming it as LO version), then force the LO build not to build that component?
+Da:
+Gabriele Bulfon
+A:
+Rene Engelhard
+Cc:
+michael.meeks at suse.com Michael Stahl
+libreoffice-dev
+Data:
+15 luglio 2013 16.08.16 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+Ok. I see.
+Problem is, I could easily build, package and install my xmlsec1 component in few minutes,
+and it did see all the required libs (openssl, and so on).
+How can I debug why the LO internal configure cannot see the deps?
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Rene Engelhard
+A: Gabriele Bulfon
+Cc: Michael Stahl
+michael.meeks at suse.com libreoffice-dev
+Data: 15 luglio 2013 16.05.26 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On Mon, Jul 15, 2013 at 03:48:15PM +0200, Gabriele Bulfon wrote:
+I see no switch in global configure to force it to use system xmlsec.
+Yes, there is none...
+How does it decide to install its own?
+By just doing it unconditionally and everywhere.
+One possibility is that I make and install my own component of xmlsec.
+Will the build system see it and decide not to build its own?
+Nope. It's so heavily patched that it *might* build but not work afaicr.
+system-xmlsec was once tried by abandonded for that reason. :/
+(It's - besides rhino - the only library which is needed internally...)
+Regards,
+Rene
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/e32f1739/attachment.html>
+
+', is_response_of='<10210174.330.1373893660985.JavaMail.sonicle@www>', mail_path='None', references='<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>
+	<6473580.339.1373896095032.JavaMail.sonicle@www>
+	<20130715140526.GC2015@rene-engelhard.de>
+	<22531545.348.1373897296621.JavaMail.sonicle@www>
+	<17355183.354.1373898881952.JavaMail.sonicle@www>
+	<29636361.357.1373899645539.JavaMail.sonicle@www>', in_reply_to='<29636361.357.1373899645539.JavaMail.sonicle@www>')>

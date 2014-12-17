@@ -1,0 +1,51 @@
+<Messages(message_id='<CAHW+f2JL=g=++mF+4QLaTbMnafgB0dAiucKOGhDgEiiSgPx4rQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-18 18:06:35', first_date_tz='-18000', arrival_date='2013-12-18 15:06:35', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='Hi Kendy,
+
+I had no idea to where to put this so I appreciate your help. I verified
+your idea works for all of the places I worked on so far because it can get
+to a Window. If there were static constructors that loaded and cached
+shared bitmaps, I think it could be a problem, but the earliest I've found
+yet is control instance construction.
+
+Thanks!
+
+-Keith
+
+
+
+On Wed, Dec 18, 2013 at 4:07 PM, Jan Holesovsky <kendy at collabora.com> wrote:
+
+> Hi Keith,
+>
+> Keith Curtis p??e v P? 13. 12. 2013 v 15:58 -0500:
+>
+> > Good to hear from you. I've got a number of things in progress on my
+> > computer beyond the underlines
+> > (https://wiki.documentfoundation.org/Development/HiDpi) but I wait to
+> > get an API first as I'm just writing "if (1) //hidpi".
+>
+> I am sorry it takes me so long to get back to you - I am trying to find
+> out the best place for this, so that we have the smallest amount of
+> places to touch; unfortunately each experiment triggered a ~whole
+> LibreOffice rebuild, so it is progressing slowly.
+>
+> What looks best at the moment is just adding it to OutputDevice, next to
+> mnDPIX and mnDPIY; looks most promising that way.  I believe with this,
+> we will be able to do the scaling directly in vcl in case the
+> OutputDevice is in fact a Window.
+>
+> I hope to have some results tomorrow; again - sorry that it takes so
+> long.
+>
+> All the best,
+> Kendy
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131218/a1276d9e/attachment.html>
+
+', is_response_of='<1387400845.1793.186.camel@lump.site>', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>
+	<1386946478.4321.52.camel@lump.site>
+	<CAHW+f2LeJCMmzTtjnoA94jsE=LrKcW1sABWPUZgT69+cKNVP7A@mail.gmail.com>
+	<1387400845.1793.186.camel@lump.site>', in_reply_to='<1387400845.1793.186.camel@lump.site>')>

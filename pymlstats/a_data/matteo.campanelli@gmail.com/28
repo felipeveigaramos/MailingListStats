@@ -1,0 +1,32 @@
+<Messages(message_id='<CAMuW_XyTBa_dE245QwOEJgtt=Tm_abb-N6=wcNdO_QbWMZtXmQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-06-07 18:02:34', first_date_tz='-14400', arrival_date='2014-06-07 15:02:34', arrival_date_tz='None', subject='Adding a new EE_CHAR_* attrib id', message_body='Hi all,
+I am trying to add a new text attribute in EditEng (background color) and I
+had a couple questions on the process:
+
+*Premise*:
+I already modified some obvious places:
+- i added classes SvxBackgroundColorItem and EditCharAttribBackgroundColor
+- i defined EE_CHAR_BKGCOLOR and included its use in several
+switch...case-s where other EE_CHAR_* tags are dealt with.
+
+1) I'm asking help to understand where these attributes are "created" after
+the document model is modified, for example:
+ - which methods are called to create a Color attribute after fo:color is
+read in a document?
+ - which methods are called to create a Color attribute after the user sets
+a particular font color?
+
+2) SfxItemPool and SfxPoolItem seem important classes for the purposes
+above. I stumbled upon the method SfxItemPool::SetVersionMap used in
+editdoc.cxx to set some "version maps". From some of the comments in that
+file I suspect that these maps may have to be modified to include the new
+EE_CHAR_* I created. But no clue on that.
+Does anyone know what the method SetVersionMap actually does and whether i
+should modify the version maps set in the constructor of EditEngineItemPool?
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140607/1cd062cb/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

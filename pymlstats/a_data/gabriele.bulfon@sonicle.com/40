@@ -1,0 +1,77 @@
+<Messages(message_id='<6473580.339.1373896095032.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-15 15:48:15', first_date_tz='7200', arrival_date='2013-07-15 06:48:15', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='I see no switch in global configure to force it to use system xmlsec.
+How does it decide to install its own?
+One possibility is that I make and install my own component of xmlsec.
+Will the build system see it and decide not to build its own?
+Gabriele.
+Da:
+Gabriele Bulfon
+A:
+Michael Stahl
+Cc:
+michael.meeks at suse.com libreoffice-dev
+Data:
+15 luglio 2013 15.36.11 CEST
+Oggetto:
+Re: Building LO 4.0.4.2 on illumos based OS
+Yes, I could find it, but it says nothing particular, just that it cannot find the libs.
+But I'm sure I have them.....
+Any idea?
+----------------------------------------------------------------------------------
+Da: Michael Stahl
+A: Gabriele Bulfon
+Cc: michael.meeks at suse.com libreoffice-dev
+Data: 15 luglio 2013 15.23.29 CEST
+Oggetto: Re: Building LO 4.0.4.2 on illumos based OS
+On 15/07/13 15:07, Gabriele Bulfon wrote:
+Ok, I could go over extension by disabling that motif dependent plugin.
+Now, later, it's trying to build xmlsec1, and looks like it can't find
+libs I actually have!
+checking for pkg-config... yes
+checking for libxslt libraries= 1.0.20... no [I have it, it's 1.1.26]
+checking for openssl libraries= 0.9.6... no [I have both 0.9.6 and 1.0.0j]
+checking for NSS... no
+checking for NSS... no
+checking for NSS... no
+checking for NSS.... no
+checking for NSS... no
+checking for nspr libraries= 4.0... no [I have nspr 4]
+checking for nss libraries= 3.2... no [I have nss 3.13.5]
+checking for gnutls libraries= 0.8.1... no [I have 3.1.9]
+checking for mscrypto libraries... none
+checking for crypto library... configure: error: At least one crypto
+library should exist for xmlsec1
+I can't find the config.log of this component, this may hold the info I
+need to solve it.
+Can you help?
+it's in workdir/*/UnpackedTarball/xmlsec/config.log
+_______________________________________________
+LibreOffice mailing list
+LibreOffice at lists.freedesktop.org
+http://lists.freedesktop.org/mailman/listinfo/libreoffice
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130715/6c51d2f2/attachment.html>
+
+', is_response_of='<51E3F7D1.9040409@redhat.com>', mail_path='None', references='<14406637.155.1372323121903.JavaMail.sonicle@www>
+	<51D16962.8090404@redhat.com>
+	<4589410.338.1372678766594.JavaMail.sonicle@www>
+	<CAFWMYEEkyAzE_-L_Ye0N_mOiQkdCSho+7bcTt1ewxF=_MRZxhw@mail.gmail.com>
+	<2679386.356.1372683538642.JavaMail.sonicle@www>
+	<51D19582.8060109@redhat.com> <51D19606.9000202@redhat.com>
+	<15683093.380.1372692058640.JavaMail.sonicle@www>
+	<1372936833.13079.17.camel@linux-d2lh.site>
+	<32017269.623.1373004867389.JavaMail.sonicle@www>
+	<1373021699.16440.41.camel@linux-d2lh.site>
+	<23809188.676.1373049210122.JavaMail.sonicle@www>
+	<51D71DA5.3070401@redhat.com>
+	<11144749.716.1373284472418.JavaMail.sonicle@www>
+	<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>', in_reply_to='<2225450.333.1373895371019.JavaMail.sonicle@www>')>

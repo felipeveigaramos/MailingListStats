@@ -1,0 +1,51 @@
+<Messages(message_id='<CANaJiRpEFifv_Er58LmNY9zU8Bp38uASczHi6fOiSWPE50_Cww@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-10-10 16:58:58', first_date_tz='7200', arrival_date='2014-10-10 07:58:58', arrival_date_tz='None', subject='Unittest fails building on OS X 10.9', message_body='Hi Stephan,
+
+I've added a subsection which explains how to install multiple copies of
+MacPorts.
+
+Regards,
+Robert
+
+
+
+On Fri, Oct 10, 2014 at 10:04 AM, Stephan Bergmann <sbergman at redhat.com>
+wrote:
+
+> On 10/10/2014 09:35 AM, Tor Lillqvist wrote:
+>
+>>
+>>     I've added the section "Minimal Setup with MacPorts for external
+>>     dependencies" [1] which can be very helpful to build LO easily.
+>>
+>>
+>> So that is then now our documented and thus "official" way to build on
+>> Mac? If it works, I don't oppose... even if it totally contrary to what
+>> has been the collective wisdom so far.
+>>
+>
+> I assume the sanity of a MacPorts-in-PATH based build env depends on what
+> other stuff you have installed in your MacPorts installation, so I would
+> not generally suggest that route to the uninitiated.
+>
+> Stephan
+>
+>
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+>
+
+
+
+-- 
+http://about.me/rbuj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20141010/64bf1a80/attachment.html>
+
+', is_response_of='<5437930F.1040408@redhat.com>', mail_path='None', references='<CAMGYdVA8BBeDv=JQKZufp-uriSh=Ygm1WiUgmxj7qt=_KELGmQ@mail.gmail.com>
+ <CAMGYdVBxCzs5eVjzbFDUx3VkKqY+HFipT_5HpuJ97KyFM+a=fQ@mail.gmail.com>
+ <CANaJiRqcsBqRaP-WQo8990iQ5kR3CxEL_N=0OqqtPUbSY-gw+Q@mail.gmail.com>
+ <CANGFS+_td2ktV-s69uQ-fr_q+Zs5d1oK0JyZDgTLBF1SKaXppw@mail.gmail.com>
+ <5437930F.1040408@redhat.com>', in_reply_to='<5437930F.1040408@redhat.com>')>

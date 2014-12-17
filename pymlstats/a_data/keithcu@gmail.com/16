@@ -1,0 +1,65 @@
+<Messages(message_id='<CAHW+f2K3TV7aaPaL6AJZUaCFwyZmghw3grvfogC_gte+RuC=QQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-12 15:56:31', first_date_tz='-18000', arrival_date='2013-12-12 12:56:31', arrival_date_tz='None', subject='Font style and size dropdown widths', message_body='One thing I'm looking at right now is changing the font style and size
+dropdown width. With Gnome 3.10 out of the box, I can fit 7 digits into the
+size box ;-) The font style dropdown also feels a bit too big. So I trimmed
+25% off the style name and 33% from the font size which still leaves plenty
+of room. I didn't consider to change the font name because it seems fine
+and they are often longer than style names.
+
+The first change is in a .src file so I can't do any special logic coding
+and it doesn't seem like it should be necessary with APPFONT dimensions.
+Would it be okay if we trimmed those values somewhat? I haven't looked yet
+if logical dimensions are based on dpi or font size so maybe that should be
+changed. My fixes can mostly be proven to not break the standard-res
+behavior, but these two can't, And they might not necessarily look good on
+Macs or various other scripts either.
+
+Thanks!
+
+-Keith
+--------
+diff --git a/svx/source/tbxctrls/tbcontrl.src
+b/svx/source/tbxctrls/tbcontrl.src
+index 4d2cfbc..665f0fa 100644
+--- a/svx/source/tbxctrls/tbcontrl.src
++++ b/svx/source/tbxctrls/tbcontrl.src
+@@ -74,7 +74,7 @@ String RID_SVXSTR_FRAME_COLOR
+ ComboBox RID_SVXTBX_STYLE
+ {
+     HelpId = HID_STYLE_LISTBOX ;
+-    Size = MAP_APPFONT ( 67 , 86 ) ;
++    Size = MAP_APPFONT ( 50 , 86 ) ;
+     DropDown = TRUE ;
+     Sort = TRUE ;
+     AutoHScroll = TRUE ;
+diff --git a/svx/source/tbxctrls/tbunocontroller.cxx
+b/svx/source/tbxctrls/tbunocontroller.cxx
+index 36e257e..c343844 100644
+--- a/svx/source/tbxctrls/tbunocontroller.cxx
++++ b/svx/source/tbxctrls/tbunocontroller.cxx
+@@ -85,7 +85,7 @@ SvxFontSizeBox_Impl::SvxFontSizeBox_Impl(
+     FontSizeBox( _pParent, WinBits( WB_DROPDOWN ) ),
+
+     m_pCtrl             ( &_rCtrl ),
+-    m_aLogicalSize      ( 30,100 ),
++    m_aLogicalSize      ( 20,100 ),
+     m_bRelease          ( true ),
+     m_xDispatchProvider ( _rDispatchProvider ),
+     m_xFrame            ( _xFrame )
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131212/484f0c8b/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1391774670.9109.9.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-07 12:04:30', first_date_tz='0', arrival_date='2014-02-07 04:04:30', arrival_date_tz='None', subject='Font style and size dropdown widths', message_body='On Thu, 2013-12-12 at 15:56 -0500, Keith Curtis wrote:
+> One thing I'm looking at right now is changing the font style and size
+> dropdown width.
+
+FWIW, for the font size we ended up with
+http://cgit.freedesktop.org/libreoffice/core/commit/?id=780eb9f704e7a61f43624a2c03b4f6a15647a1a1 to set the optimal width on it. Might be worth someone investigating is the style drop down would benefit from similar love.
+
+C.
+
+
+
+', is_response_of='<CAHW+f2K3TV7aaPaL6AJZUaCFwyZmghw3grvfogC_gte+RuC=QQ@mail.gmail.com>', mail_path='None', references='<CAHW+f2K3TV7aaPaL6AJZUaCFwyZmghw3grvfogC_gte+RuC=QQ@mail.gmail.com>', in_reply_to='<CAHW+f2K3TV7aaPaL6AJZUaCFwyZmghw3grvfogC_gte+RuC=QQ@mail.gmail.com>')>

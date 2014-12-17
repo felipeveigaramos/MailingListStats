@@ -1,0 +1,69 @@
+<Messages(message_id='<CAMuW_XxjXutysFwv2M_PGDzP4XiTY2=EhkKa2zWdSEpaJDKsVQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-24 20:10:14', first_date_tz='10800', arrival_date='2014-07-24 10:10:14', arrival_date_tz='None', subject='On extending SdrTextPrimitive2D', message_body='In one of my latest commits
+<http://cgit.freedesktop.org/libreoffice/core/commit/?h=feature/gsoc14-draw-chained-text-boxes&id=be897ed79d331276e8d686ac35956cdd57e24615>
+I
+created a class that extends SdrTextPrimitive2D.
+The derived class - SdrChainedTextPrimitive2D - should be used for dealing
+with text in chained text boxes.
+
+I have a couple concerns about the overriding of two virtual methods:
+1) SdrChainedTextPrimitive2D::create2DDecomposition should return a
+Primitive2DSequence. What is this for?
+Currently I'm returning an empty sequence on which I apply the following
+mysterious method other similar classes are using:
+encapsulateWithTextHierarchyBlockPrimitive2D(aEmptySequence)
+
+2) SdrChainedTextPrimitive2D::createTransformedClone, I have no idea what
+this is for.
+My temporary solution was puttin an "assert(0)" in it, so far it seems its'
+never been called.
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140724/7925935f/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140724202731.GG3106@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-07-24 22:27:31', first_date_tz='7200', arrival_date='2014-07-24 13:27:31', arrival_date_tz='None', subject='On extending SdrTextPrimitive2D', message_body='Matteo Campanelli wrote:
+> I created a class that extends SdrTextPrimitive2D.  The derived
+> class - SdrChainedTextPrimitive2D - should be used for dealing with
+> text in chained text boxes.
+> 
+Cool!
+
+> 1) SdrChainedTextPrimitive2D::create2DDecomposition should return a
+> Primitive2DSequence. What is this for?
+>
+That's a one-level-more-simpler version of the scene graph. If
+e.g. you've already plain text portions, their decomposition would
+then yield poly-polygons of the glyphs.
+
+For your case: return a single SdrBlockTextPrimitive2D (or
+SdrAutoFitTextPrimitive2D, depending on the setup), with the text that
+should be in the current shape.
+
+> Currently I'm returning an empty sequence on which I apply the following
+> mysterious method other similar classes are using:
+> encapsulateWithTextHierarchyBlockPrimitive2D(aEmptySequence)
+> 
+With the above change, that should no longer be necessary.
+
+> 2) SdrChainedTextPrimitive2D::createTransformedClone, I have no idea what
+> this is for.
+>
+Just fold in the transformation matrix, like e.g. for
+SdrAutoFitTextPrimitive2D.
+
+HTH,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140724/0dad7ed3/attachment.sig>
+
+', is_response_of='<CAMuW_XxjXutysFwv2M_PGDzP4XiTY2=EhkKa2zWdSEpaJDKsVQ@mail.gmail.com>', mail_path='None', references='<CAMuW_XxjXutysFwv2M_PGDzP4XiTY2=EhkKa2zWdSEpaJDKsVQ@mail.gmail.com>', in_reply_to='<CAMuW_XxjXutysFwv2M_PGDzP4XiTY2=EhkKa2zWdSEpaJDKsVQ@mail.gmail.com>')>

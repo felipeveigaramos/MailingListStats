@@ -1,0 +1,147 @@
+<Messages(message_id='<CA+_jvaxqV5_mf77Xa3i32aYWoXUu_nzJF1ykNKW1nWjnS_8QbQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-19 19:24:50', first_date_tz='19800', arrival_date='2013-07-19 06:54:50', arrival_date_tz='None', subject='Unit-Test Fail Error[GSOC: Slide Layout Extendibility]', message_body='Hi Markus,
+Thanks for your reply.
+
+Actually I did make right entry in the makefile('test/Package_unittest.mk')
+and also added a test-profile at appropriate
+location('test/user-template/user/config/soffice.cfg/simpress/layoutlist.xml').But
+this commit<http://cgit.freedesktop.org/libreoffice/core/commit/?h=feature/gsoc-impresslayout&id=a837a7c573c5f35fbcf7b9375725282496b0f4c9>
+had
+only partially solved the problem(for the unit-test). Because as per my
+discussion with Thorsten,it seems that there is some problem with how
+"brandbasedir"(i.e vnd.sun.star.expand:$BRAND_BASE_DIR) is expanded for the
+"*unit-test*".
+
+Can you please suggest me appropriate pointer to the makefile,so I can
+either change how "brandbasedir" is expanded for "unit tests" or may be I
+could stick the xml files into a different directory.
+
+Thanks and Regards,
+Vishv
+
+On Fri, Jul 5, 2013 at 9:26 PM, Markus Mohrhard <
+markus.mohrhard at googlemail.com> wrote:
+
+> Hey Vishv,
+>
+> 2013/7/5 Vishv Brahmbhatt <vishvbrahmbhatt19 at gmail.com>:
+> > Hi,
+> >
+> > I am working on "Slide Layout Extendibility" project for GSOC. As for
+> one of
+> > my initial task,I had to set up XML file and parser which reads
+> information
+> > from that XML file.So as of now the parser is working perfectly and even
+> > compilation works perfectly.But the "unit test" fails.I have been stuck
+> on
+> > this error for last 4 days and it seems that,there is a bug in the
+> > "unit-test" process(for XML configuration files in Impress). And I am
+> > sharing this problem as per the advice of my mentor Thorsten(Please
+> refer to
+> > my commit & Error links at the end):
+> >
+> > (1) So for setting up the configuration path of "layoutlist.xml" ,I have
+> > made an entry of "LayoutListFiles",similar to that of "EffectFiles" in
+> > "Impress.xcs:457".
+> >
+> > (2) The code processing of XML is similar to that in
+> > "core/sd/source/core/CustomAnimationPreset.cxx:300".
+> >
+> > (3) After using xNameAccess->getByName( "LayoutListFiles" ) >>= aFiles
+> and
+> > expandMacros() function.The configuration file-path
+> >
+> "vnd.sun.star.expand:$BRAND_BASE_DIR/share/config/soffice.cfg/simpress/layoutlist.xml"
+> > expands to
+> >
+> "/home/vishv/Libre_Git/core/solver/unxlngx6/installation/opt/program/../share/config/soffice.cfg/simpress/layoutlist.xml"
+> > for "installation" process.
+> >
+> > But for "Unit-Test" ,it expands to
+> >
+> "/home/vishv/Libre_Git/core/solver/unxlngx6/unittest/install/share/config/soffice.cfg/simpress/layoutlist.xml".
+>
+> Ok so some background knowdlege about why our unittests work
+> differently than a normal start. For unit tests we use a clean minimal
+> user profile that contains exactly the few entries that are necessary
+> to run the tests during a build.
+>
+> >
+> > I am using the above generated string in parseURI(string filepath) to get
+> > DOM structure and then traverse through XML for information.
+> >
+> > (4)So in-spite of unit-test errors, XML parser works perfectly,because
+> > correct path goes into the parseURI() in the installation process(i.e
+> > .install/program/simpress works well without any crashes).
+> >
+> > (5)The problem here is that path generated for unit-test check is wrong:
+> >
+> > Correct path should be:
+> >
+> "/home/vishv/Libre_Git/core/solver/unxlngx6/unittest/install/../user/share/config/soffice.cfg/simpress/layoutlist.xml"
+> > , because at this place a new "layoutlist.xml" is generated after
+> packaging.
+> > But the wrong path generated as stated above is
+> >
+> :"/home/vishv/Libre_Git/core/solver/unxlngx6/unittest/install/share/config/soffice.cfg/simpress/layoutlist.xml"
+> > It leads to errors (i.e failed to load external entity  at "filepath..."
+> )
+> >
+> > Also this scenario happens for the current configuration "effects.xml"
+> file
+> > as well.
+> >
+> > It would be great ,if someone can guide in correcting the "unit-test"
+> path
+> > and indeed removing the error.Also please correct me,if I am wrong in my
+> > observations.
+>
+> So if you need these files for the unit tests you need to tell the
+> tests that they should be copied to the tests profile. You can find
+> the test profile at test/user-template/ and the makefile copying them
+> to their destination folder at test/Package_unittest.mk. You might
+> just want to add some code to the makefile that takes your xml files
+> and copies them to the correct location.
+>
+> Regards,
+> Markus
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130719/46ec1748/attachment.html>
+
+', is_response_of='<CA+_jvazDM_9RKS15V3XF7Ny4EgPXPed2CFhgUws48rjYdNiTYA@mail.gmail.com>', mail_path='None', references='<CA+_jvazDM_9RKS15V3XF7Ny4EgPXPed2CFhgUws48rjYdNiTYA@mail.gmail.com>
+	<CAEDdEt6s6D1HRdKD5AkCnsUv3-91k9fE3ckisZBWK_fyRSGPHA@mail.gmail.com>', in_reply_to='<CAEDdEt6s6D1HRdKD5AkCnsUv3-91k9fE3ckisZBWK_fyRSGPHA@mail.gmail.com>')>
+****************************************
+<Messages(message_id='<20130721225410.GO22599@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-22 00:54:10', first_date_tz='7200', arrival_date='2013-07-21 15:54:10', arrival_date_tz='None', subject='Unit-Test Fail Error[GSOC: Slide Layout Extendibility]', message_body='Vishv Brahmbhatt wrote:
+> Actually I did make right entry in the makefile('test/Package_unittest.mk')
+> and also added a test-profile at appropriate
+> location('test/user-template/user/config/soffice.cfg/simpress/layoutlist.xml').But
+> this commit<http://cgit.freedesktop.org/libreoffice/core/commit/?h=feature/gsoc-impresslayout&id=a837a7c573c5f35fbcf7b9375725282496b0f4c9>
+> had
+> only partially solved the problem(for the unit-test). Because as per my
+> discussion with Thorsten,it seems that there is some problem with how
+> "brandbasedir"(i.e vnd.sun.star.expand:$BRAND_BASE_DIR) is expanded for the
+> "*unit-test*".
+>
+Seems this whole test/user-template/user/config/soffice.cfg thing has
+bitrotted - I presume it can go entirely, can you try & do a fresh
+build for double-checking?
+
+Instead, the impress xml config would need to go to
+solver/<platform>/unittest/install/share/... , just like in the
+regular install.
+
+HTH,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130722/b262ca84/attachment.pgp>
+
+', is_response_of='<CA+_jvaxqV5_mf77Xa3i32aYWoXUu_nzJF1ykNKW1nWjnS_8QbQ@mail.gmail.com>', mail_path='None', references='<CA+_jvazDM_9RKS15V3XF7Ny4EgPXPed2CFhgUws48rjYdNiTYA@mail.gmail.com>
+	<CAEDdEt6s6D1HRdKD5AkCnsUv3-91k9fE3ckisZBWK_fyRSGPHA@mail.gmail.com>
+	<CA+_jvaxqV5_mf77Xa3i32aYWoXUu_nzJF1ykNKW1nWjnS_8QbQ@mail.gmail.com>', in_reply_to='<CA+_jvaxqV5_mf77Xa3i32aYWoXUu_nzJF1ykNKW1nWjnS_8QbQ@mail.gmail.com>')>

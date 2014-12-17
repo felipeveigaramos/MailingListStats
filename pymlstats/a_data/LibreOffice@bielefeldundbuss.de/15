@@ -1,0 +1,88 @@
+<Messages(message_id='<4FCB4A0B.6080907@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-03 13:27:07', first_date_tz='7200', arrival_date='2012-06-03 04:27:07', arrival_date_tz='None', subject='Testing 3.6.0alpha1', message_body='Hi,
+
+we were not lucky, most users will not be able to do ?real life tests? 
+that version because of  ?Bug 48946 ? not find JRE?. I doubt that we 
+will any Bug report for that version because of tests with Alpha1.
+
+What do you think about an alpha2?
+
+More details and a poll here:
+<http://rrbd.wordpress.com/2012/06/03/testing-3-6-0alpha1/>
+
+
+Discussion please at <libreoffice-qa at lists.freedesktop.org> or by 
+comment in the blog!
+
+Of course I can not promise that that we will get an alpha2.
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<4FCB4F88.3090401@gmx.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-03 13:50:32', first_date_tz='7200', arrival_date='2012-06-03 04:50:32', arrival_date_tz='None', subject='[PATCH] fdo#48946 was: Testing 3.6.0alpha1', message_body='Hi,
+
+On 03.06.2012 13:27, Rainer Bielefeld wrote:
+> Hi,
+>
+> we were not lucky, most users will not be able to do ?real life tests? 
+> that version because of  ?Bug 48946 ? not find JRE?. I doubt that we 
+> will any Bug report for that version because of tests with Alpha1.
+>
+I looked at it and it turns out, that it is failing in 
+jvmfwk/source/fwkbase.cxx:181 with:
+
+The file: vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/libsunjavaplugin.dll 
+does not exist."
+But the Library is called sunjavaplugin.dll and not libsunjavaplugin.dll.
+
+So we have really simple workaround for Alpha1:
+go to
+%INSTALL_DIR_LO_ALPHA1%\URE\misc\javavendors.xml
+
+replace
+<library vendor="Sun Microsystems 
+Inc.">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/libsunjavaplugin.dll</library>
+<library vendor="Oracle 
+Corporation">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/libsunjavaplugin.dll</library>
+<library vendor="IBM 
+Corporation">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/libsunjavaplugin.dll</library>
+
+libsunjavaplugin.dll through sunjavaplugin.dll :
+
+<library vendor="Sun Microsystems 
+Inc.">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/sunjavaplugin.dll</library>
+<library vendor="Oracle 
+Corporation">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/sunjavaplugin.dll</library>
+<library vendor="IBM 
+Corporation">vnd.sun.star.expand:$URE_INTERNAL_LIB_DIR/sunjavaplugin.dll</library>
+
+LO -> Java Bridge is working now.
+
+Patch attached and bz is updated.
+
+Regards
+David
+
+> What do you think about an alpha2?
+>
+> More details and a poll here:
+> <http://rrbd.wordpress.com/2012/06/03/testing-3-6-0alpha1/>
+>
+>
+> Discussion please at <libreoffice-qa at lists.freedesktop.org> or by 
+> comment in the blog!
+>
+> Of course I can not promise that that we will get an alpha2.
+>
+> Best regards
+>
+> Rainer
+> _______________________________________________
+> LibreOffice mailing list
+> LibreOffice at lists.freedesktop.org
+> http://lists.freedesktop.org/mailman/listinfo/libreoffice
+
+
+', is_response_of='<4FCB4A0B.6080907@bielefeldundbuss.de>', mail_path='None', references='<4FCB4A0B.6080907@bielefeldundbuss.de>', in_reply_to='<4FCB4A0B.6080907@bielefeldundbuss.de>')>

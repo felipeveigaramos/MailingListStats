@@ -1,0 +1,32 @@
+<Messages(message_id='<CAHW+f2KY_OzZjNYwCMxsyHE0eUyKwWefr0OWW-z0VL5Mtt-tKw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-02-07 19:23:26', first_date_tz='-18000', arrival_date='2014-02-07 16:23:26', arrival_date_tz='None', subject='HiDPI for Mac, Windows, etc.', message_body='Hi;
+
+Norbert has done a patch to master that should turn off the Mac
+auto-doubling mode, but it doesn't appear to be doing anything. This
+is confusing, but once it does work, then people can begin to decide
+whether the benefits outweigh the disadvantages of turning off
+compatibility mode now. (If not, then what should be done to tip the
+balance?)
+
+Also, no one has of yet tried to see what happens on Windows and no
+one has responded with the right hardware on the QA alias:
+http://nabble.documentfoundation.org/Libreoffice-qa-HiDPI-testing-for-LibreOffice-4-2-1-td4095055.html
+
+If the patches can get into a pre-release, it can get out to more
+people who can find or help fix problems.
+
+The change should be quite safe in that it only kicks in when the OS
+returns >=144 dpi. One can almost think of this as an experimental
+mode because so few OSes return that currently. This means it won't
+enable the behavior in a number of machines that need it, but it
+should be enough to be worthwhile, and allow input from more people. I
+could try to submit a patch to enable it for more DEs and versions of
+Windows, but it is perhaps better to be conservative initially. Xfce
+already allows you to set the DPI. Maybe the next version of Unity
+will be smart enough to return 192 dpi sometimes like Gnome 3.10 does?
+It would be nice to get some testing on Ubuntu.
+
+I'm not sure what to do next, and so I email you.
+
+-Keith
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

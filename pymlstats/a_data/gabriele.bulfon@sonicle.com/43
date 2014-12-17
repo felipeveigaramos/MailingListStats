@@ -1,0 +1,47 @@
+<Messages(message_id='<99781.453.1373989651966.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-16 17:47:31', first_date_tz='7200', arrival_date='2013-07-16 08:47:31', arrival_date_tz='None', subject='[solved] sysui CustomTarget_solaris.mk not working', message_body='I found the reason: the solaris taget mk has errors, and a misterious bug.
+1. $(solaris_WORKDIR)/%/mailcap: $(solaris_SRCDIR)/prototype
+there's an error here, mailcap should be prototype, the mailcap target is already defined before correctly.
+2. $(solaris_WORKDIR)/%-desktop-integration.tar.gz: $(solaris_WORKDIR)/copyright $(solaris_WORKDIR)/pkginfo $(solaris_WORKDIR)/depend $(solaris_WORKDIR)/mailcap $(solaris_WORKDIR)/postinstall $(solaris_WORKDIR)/postremove $(solaris_WORKDIR)/prototype $(call gb_CustomTarget_get_workdir,sysui/share)/%/openoffice.org.xml
+the code under this rule is never executed, probably because of the previous mispelling, but also because probably the openoffice.org.xml does not exists.
+I tried removing the dependencies one by one, but misteriously the dependencies were executed, but the tar.gz code was never executed after.
+By doing gmake --debug=v, I could see that gmake was taking into consideration the target of the
+tar.gz, but at the end it was only saying "target done", without executing its code.
+The only way I could force execution of the code to build the tar.gz, was to take away all the dependencies, like this:
+$(solaris_WORKDIR)/%-desktop-integration.tar.gz:
+pkgmk -l 1073741824 -r $(solaris_WORKDIR) -f $(solaris_WORKDIR)/$*/prototype -o -d $(solaris_WORKDIR) ARCH=all VERSION=$(PKGVERSION.$*)
+$(GNUTAR) -cf - -C $(solaris_WORKDIR) $*$(LIBO_MAJOR) -desktop-int | gzip$@
+Also, pkgmk fails, something is missing, so I just commented it because I don't need old style packages.
+If you need the patch files, I have them.
+Gabriele.
+Da:
+Gabriele Bulfon
+A:
+libreoffice-dev
+Data:
+16 luglio 2013 13.30.26 CEST
+Oggetto:
+sysui CustomTarget_solaris.mk not working
+During install create phase, the sysui CustomaTarget_solaris.mk rule to create the desktop integration tar.gz
+is never invoked:
+$(solaris_WORKDIR)/%-desktop-integration.tar.gz: ..................
+So build fails when trying to cp this file later.
+I tried to debug the problem but I still cannot figure out why that rule is never invoked.
+Also, I cannot understand why the Module_sysui.mk always runs slackware even when not building for slackware:
+$(eval $(call gb_Module_add_targets,sysui,\
+CustomTarget_share \
+CustomTarget_slackware \
+Package_share \
+Package_desktop \
+$(if $(filter rpm,$(PKGFORMAT)),CustomTarget_rpm) \
+$(if $(filter deb,$(PKGFORMAT)),CustomTarget_deb) \
+$(if $(filter SOLARIS,$(OS)),CustomTarget_solaris) \
+))
+other targets are considered, while slackware is always built.
+thanks for any help!
+Gabriele.
+_______________________________________________LibreOffice mailing listLibreOffice at lists.freedesktop.orghttp://lists.freedesktop.org/mailman/listinfo/libreoffice
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/53b73061/attachment.html>
+
+', is_response_of='', mail_path='None', references='<32648433.434.1373974226172.JavaMail.sonicle@www>', in_reply_to='<32648433.434.1373974226172.JavaMail.sonicle@www>')>

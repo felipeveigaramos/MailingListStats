@@ -1,0 +1,26 @@
+<Messages(message_id='<50AE46D5.4040404@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-11-22 16:37:57', first_date_tz='3600', arrival_date='2012-11-22 07:37:57', arrival_date_tz='None', subject='[libreoffice-projects] [ANN] LibreOffice 4.0.0 ALPHA1 test builds
+	available', message_body='Fridrich Strba schrieb:
+
+> If you've a bit of time, please give them a try & report bugs not yet in
+> bugzilla.
+
+
+Hi all,
+
+I really would like to learn what the reason of that instruction might 
+be. I can't see any advantage of discussing problems in various lists 
+instead of reporting them in Bugzilla, what's the first place where 99% 
+of interested users will check whether his problem already is known?
+
+I recommend to drop that instruction or to replace it by a more detailed 
+one like
+- for installation problems please
+- for localization problems please
+- for Help problems please wait, Help will be finished ...
+and so on.
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<50AE2CDC.4010303@graduateinstitute.ch>', in_reply_to='<50AE2CDC.4010303@graduateinstitute.ch>')>

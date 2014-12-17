@@ -1,0 +1,81 @@
+<Messages(message_id='<CAMuW_Xys_S6i-H7tOPZaaoHX8gpm2h3ktmLNGdbgSujG=BnUOA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-08 18:18:13', first_date_tz='7200', arrival_date='2014-08-08 09:18:13', arrival_date_tz='None', subject='[GSoC] Chaining overflowing text between boxes does not work when all
+ text overflows', message_body='I have an issue with my current chaining code.
+The current chaining mechanism seems to be working:
+once out of edit mode, when a page overflow occurs, the first paragraph
+that causes it and all the next ones are moved in the next link in the
+chain .
+The problem arises when the first paragraph is the one that overflows
+already.
+Instead of disappearing from the first text box and appearing into the the
+second one, it rather simply disappears from the first.
+
+I have an hypothesis about what goes wrong.
+The following code describes what happens when we get out of edit mode:
+
+// the following is pseudo code
+SdrTextObj::EndTextEdit(...) {
+[...]
+  // ignores overflowing text
+  newText = Non_Overflowing_Paragraphs() // !! It is NULL if all text
+overflows
+  // saves overflowing text for later use from other SdrTextObj-s in the
+chain
+  this->overflowingText = Overflowing_Paragraphs()
+
+  // set truncated text in current SdrTextObj
+  this->SetCurrentText(newText) // this method is SetOutlinerParaObject in
+the original code
+
+[...]
+}
+
+The code above truncates the text in the first box.
+The text in the second paragraph is restored by creating an appropriate
+SdrChainedTextPrimitive object and its create2DDecomposition method.
+It seems that such a method is never called when all text is overflowing,
+i.e. when newText above is NULL.
+The two are plausibly one consequence of the other.
+
+An ideal solution would be to replace that NULL pointer with a dummy
+OutlinerParaObject or something like that.
+Any hint on how to do this?
+
+In case anyone wanted to have a look:
+http://cgit.freedesktop.org/libreoffice/core/tree/svx/source/svdraw/svdotxed.cxx?h=feature/gsoc14-draw-chained-text-boxes#n252
+
+http://cgit.freedesktop.org/libreoffice/core/tree/svx/source/sdr/primitive2d/sdrtextprimitive2d.cxx?h=feature/gsoc14-draw-chained-text-boxes#n488
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140808/ad1ed6e2/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140811230808.GC4071@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-08-12 01:08:08', first_date_tz='7200', arrival_date='2014-08-11 16:08:08', arrival_date_tz='None', subject='[GSoC] Chaining overflowing text between boxes does not work
+ when all text overflows', message_body='Matteo Campanelli wrote:
+> I traced the problem back to SdrTextAttribute objects in
+> createTextPrimitive not having a property isToBeChained set to true.
+> Apparently, this happens because createSdrFooAttribute functions
+> (sdrattributecreator.cxx) ignores chaining property. I fixed the issue for
+> createSdrTextAttribute but it seems not to be that simple for the sibling
+> methods.
+> Working on that...
+> 
+Let's sit down on that tomorrow, curious how that interconnects
+now. :)
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 966 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140812/b1b669d4/attachment.sig>
+
+', is_response_of='<CAMuW_Xys_S6i-H7tOPZaaoHX8gpm2h3ktmLNGdbgSujG=BnUOA@mail.gmail.com>', mail_path='None', references='<CAMuW_Xys_S6i-H7tOPZaaoHX8gpm2h3ktmLNGdbgSujG=BnUOA@mail.gmail.com>
+ <CAMuW_XztwQO7JcDRboPq30a9M9mhc1KfoJQOnXSo3-8nMCB4Tw@mail.gmail.com>', in_reply_to='<CAMuW_XztwQO7JcDRboPq30a9M9mhc1KfoJQOnXSo3-8nMCB4Tw@mail.gmail.com>')>

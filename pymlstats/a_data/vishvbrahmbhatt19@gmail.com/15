@@ -1,0 +1,49 @@
+<Messages(message_id='<CA+_jvaznioe5KPb=v9yEYw2g+0ysL+h5R9chf8Fn5=LtAwsjtw@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-01 20:30:07', first_date_tz='19800', arrival_date='2013-07-01 08:00:07', arrival_date_tz='None', subject='[GSOC]Slide Layout Extendibility :Weekly Report #2', message_body='Hello Everyone,
+
+Here is the  Link<http://vishvbrahmbhatt.wordpress.com/2013/07/01/slide-layout-extendibility-weekly-report-2/>
+to my blog for the weekly report update.
+
+Thanks & Regards,
+Vishv Brahmbhatt
+
+
+On Fri, Jun 21, 2013 at 6:34 PM, Vishv Brahmbhatt <
+vishvbrahmbhatt19 at gmail.com> wrote:
+
+> Hello Everyone,
+>
+> Before the beginning of  this week ,I was debugging on impress slide
+> layouts.Basically,I got to understand the mechanism of creation of slide
+> layouts in the "normal" page,in the master pages like "notes" and "handout"
+> and much more.
+>
+> Currently in the slide layouts, Placeholder object's height,width,position
+> are hard-coded. So,I did following things during this week:
+>
+> +So at first ,I started with creation of XML file  which stores following
+> information:
+> (1) Layout Type
+> (2) "PresObj" Kind
+> (3) Position co-ordinates of "PresObj"
+> (4) Size of "PreObj"(Width and Height)
+>
+> + I have started coding XML parser, which will read this information from
+> XML file and set the appropriate parameters in the function
+> "CalcAutoLayoutRectangles" (This function  calculates/sets  the Top
+> Position,Height and Width of Rectangle "PresObj" used.) And this will
+> parser will help in bringing configurability with Slide Layouts.
+>
+> + So XML parser should be fully completed, probably by "Monday" or
+> "Tuesday"(mostly it should get completed by this weekend).
+>
+> + Next week,I will work on  understanding "Slide Mater View" and  on using
+> "Slide Mater View" to edit the current built-in layouts.
+>
+> Regards,
+> Vishv Brahmbhatt
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130701/f15034ec/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

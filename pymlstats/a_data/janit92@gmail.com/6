@@ -1,0 +1,84 @@
+<Messages(message_id='<CAFrS=rcRJ_BK+LzZA57XiGFx=1j3nxA-guiOasDV1SMfM-yXnA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-05-14 13:16:23', first_date_tz='19800', arrival_date='2013-05-14 00:46:23', arrival_date_tz='None', subject='fdo#41572 Making it possible to add custom animation to master
+	slides', message_body='Hey Tor!
+
+Yeah you got that right. It is actually a GSoC Task and i know it is a
+little early but Thorsten thinks starting a little early would surely help
+because this feature is something we dont want to compromise and more the
+time,better it is ( so we can always keep enhancing and that is why the
+speed of progress is a little delayed,as we keep talking to the UI Team as
+well :D ) .
+And regarding my past work,i am sure my mentor is pretty confident on my
+friendliness with the code as i have been reading quite a lot of code since
+a few months and i am also a contributor now (as mentioned in the
+developers list :) ) :
+https://wiki.documentfoundation.org/Development/Developers#Developers_and_Contributors_list
+
+And yeah i hope we stop running around the fact of syntactical errors i
+made in a few bugs ( because i am sure it is always a learning process) and
+i am also gonna talk to Eike soon about the fdo#55846 as that has been a
+long pending bug which hasnt been verified ( i dont know ,it works solved
+and fine on my machine ) And if you consider the other bug : 59397 , i
+thought someone else had taken up as i had my university exams and so i was
+not able to work on it ( I think we had talked about this on IRC ) .
+
+
+On Tue, May 14, 2013 at 1:13 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Tor!
+>
+> Yeah you got that right. It is actually a GSoC Task and i know it is a
+> little early but Thorsten thinks starting a little early would surely help
+> because this feature is something we dont want to compromise and more the
+> time,better it is ( so we can always keep enhancing and that is why the
+> speed of progress is a little delayed,as we keep talking to the UI Team as
+> well :D ) .
+> And regarding my past work,i am sure my mentor is pretty confident on my
+> friendliness with the code as i have been reading quite a lot of code since
+> a few months and i am also a contributor now (as mentioned in the
+> developers list :) ) :
+>
+> https://wiki.documentfoundation.org/Development/Developers#Developers_and_Contributors_list
+>
+> And yeah i hope we stop running around the fact of syntactical errors i
+> made in a few bugs ( because i am sure it is always a learning process) and
+> i am also gonna talk to Eike soon about the fdo#55846 as that has been a
+> long pending bug which hasnt been verified ( i dont know ,it works solved
+> and fine on my machine ) And if you consider the other bug : 59397 , i
+> thought someone else had taken up as i had my university exams and so i was
+> not able to work on it ( I think we had talked about this on IRC ) .
+>
+> Hope this finds you in good health.
+>
+> Regards,
+> Janit
+>
+>
+> On Tue, May 14, 2013 at 12:36 PM, Tor Lillqvist <tml at iki.fi> wrote:
+>
+>> By the way, I now notice that this bug is not listen as an Easy Hack, but
+>> is an actual GSoC task? So no wonder it is a lot of work and you are just
+>> in the very early beginning of it;)
+>>
+>> There seems to be some misunderstanding here... the intent is that GSoC
+>> applicants do a relatively limited (but still not trivial) and easily
+>> verifiable (compilable, buildable) Easy Hack to show their skills. Not
+>> start on a GSoC task already beforehand...
+>>
+>> --tml
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130514/8723b9bf/attachment.html>
+
+', is_response_of='<CAFrS=rcnZ=w_+JNJTxm5w=hJzD=U_XEW1xPX_qbDX4JSfObFTw@mail.gmail.com>', mail_path='None', references='<CAFrS=rf37Nfq2Jcu5X=uDJce5hFFjrMJ5LELezXnFaH-BrqMEA@mail.gmail.com>
+	<20130506055358.GM2152@thinkpad.thebehrens.net>
+	<CAFrS=rfBZEdPqk=zcaLz20qGpLa3t3Pz9y_KW5ubnHPdj8d+Qg@mail.gmail.com>
+	<20130507093150.GA5315@suse.cz>
+	<CAFrS=reyUk1_iHe8zLW--86WNdPXP_42EVRjGvJPXk0+mwNdEg@mail.gmail.com>
+	<CAFrS=rebEGay5uZMxNr5Tr31iq728vMTiKK4Z24j_qJ87YqyPQ@mail.gmail.com>
+	<CANGFS+-E+XUy1+Gt41B27myYQMRWy-hWcjoBn3wCNCMjq1mmgw@mail.gmail.com>
+	<CAFrS=rcnZ=w_+JNJTxm5w=hJzD=U_XEW1xPX_qbDX4JSfObFTw@mail.gmail.com>
+	<CANGFS+9_xSjCorLASSse5KEQMnOGX2UTboET2B3DLJOvTw7+2g@mail.gmail.com>
+	<CAFrS=reu=Sks+G_oQOZs3E_6VuxOs7Gv9PvKuRc-ZFuxQrdjQQ@mail.gmail.com>', in_reply_to='<CAFrS=reu=Sks+G_oQOZs3E_6VuxOs7Gv9PvKuRc-ZFuxQrdjQQ@mail.gmail.com>')>

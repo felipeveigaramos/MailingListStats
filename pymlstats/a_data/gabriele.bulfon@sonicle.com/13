@@ -1,0 +1,60 @@
+<Messages(message_id='<20696889.664.1373041977412.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-05 18:32:57', first_date_tz='7200', arrival_date='2013-07-05 09:32:57', arrival_date_tz='None', subject='OConnection.cxx patch', message_body='Ok, here I go with the license statement:
+All of my past &future contributions to LibreOffice may be licensed under the MPLv2/LGPLv3+ dual license.
+You can name it under Gabriele Bulfon (gabriele.bulfon at sonicle.com), affiliation Sonicle S.r.l.
+Thanks,
+Gabriele.
+----------------------------------------------------------------------------------
+Da: Lionel Elie Mamane
+A: Gabriele Bulfon
+Cc: libreoffice at lists.freedesktop.org
+Data: 5 luglio 2013 9.20.34 CEST
+Oggetto: Re: OConnection.cxx patch
+On Thu, Jul 04, 2013 at 08:44:52AM +0200, Gabriele Bulfon wrote:
+I had to patch this file to build without errors:
+--- libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:33:42 2013
++++ libreoffice-4.1.0.1/connectivity/source/drivers/odbcbase/OConnection.cxx    Thu Jul  4 08:34:55 2013
+@@ -417,7 +417,7 @@ checkDisposed(OConnection_BASE::rBHelper.bDisposed);
+-    sal_Int32 nValueLen;
++    SQLINTEGER nValueLen;
+This change makes sense. Thank you for your contribution. However,
+before I can use it, could you please confirm that you allow us to use
+it under the MPLv2/LGPLv3+ dual license? I don't find your name on the
+list of people that have already agreed to that
+https://wiki.documentfoundation.org/Development/Developers
+It is customary to do a general statement that covers all your past,
+present and future contributions; see
+https://wiki.documentfoundation.org/Development/Developers#Example_Statement
+and
+https://wiki.documentfoundation.org/Development/Developers#Where_do_I_send_the_Statement.3F
+Also, please send your patches as attachments, to avoid your mail user
+agent (email program) to change spacing, do word wrapping, etc, which
+makes the patch harder to read, and makes the "patch" program fail to
+use it automatically.
+--
+Lionel
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130705/12d101ca/attachment.html>
+
+', is_response_of='<20130705072034.GA25300@capsaicin.mamane.lu>', mail_path='None', references='<33067564.576.1372920292475.JavaMail.sonicle@www>
+	<20130705072034.GA25300@capsaicin.mamane.lu>', in_reply_to='<20130705072034.GA25300@capsaicin.mamane.lu>')>
+****************************************
+<Messages(message_id='<kr7bnn$nu6$1@ger.gmane.org>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-05 22:53:17', first_date_tz='7200', arrival_date='2013-07-05 13:53:17', arrival_date_tz='None', subject='[PUSHED] Re: OConnection.cxx patch', message_body='thanks, pushed your patch to master and libreoffice-4-1 branch
+
+On 05/07/13 18:32, Gabriele Bulfon wrote:
+> Ok, here I go with the license statement:
+> 
+> All of my past & future contributions to LibreOffice may be licensed
+> under the MPLv2/LGPLv3+ dual license.
+> 
+> You can name it under Gabriele Bulfon (gabriele.bulfon at sonicle.com),
+> affiliation Sonicle S.r.l.
+> 
+> Thanks,
+> Gabriele..
+
+
+
+', is_response_of='<20696889.664.1373041977412.JavaMail.sonicle@www>', mail_path='None', references='<33067564.576.1372920292475.JavaMail.sonicle@www>
+	<20130705072034.GA25300@capsaicin.mamane.lu>
+	<20696889.664.1373041977412.JavaMail.sonicle@www>', in_reply_to='<20696889.664.1373041977412.JavaMail.sonicle@www>')>

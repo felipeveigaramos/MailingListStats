@@ -1,0 +1,123 @@
+<Messages(message_id='<CAFrS=rda5-m803S2X-w8jeKCercUF72T74OybBfck9WBJoLN6Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-10 00:42:49', first_date_tz='19800', arrival_date='2013-04-09 12:12:49', arrival_date_tz='None', subject='Re: [PATCH]BUG#55846 Comboboxes arent displayed when the toolbar is vertical', message_body='Hey!
+I am hereby attaching my bug after making all the needed changes :
+*I have removed all the unnecessary changes i had made to the code,i.e. i
+did undo all the useless changes i had made to the code,thereby cleaning up
+the code.
+*removed the command that gave the output :
+debug: max width 78
+debug: max width 55
+[...]
+*now i think the display also seems to be perfect and the purpose of this
+feature seems to be solved.
+
+Any kind of help and suggestions for future hacking would be appreciated.
+
+Regards,
+Janit
+
+
+On Tue, Apr 9, 2013 at 8:10 AM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey Thorsten,Stefan ,
+>
+> I just saw the patch,yes it definitely need clean up based on the white
+> spaces ,and yeah the numbers in the patch are added so that the UI fixes
+> right and hence the toolbar appears to be right.I am not sure about the
+> reason why the icons dont appear in your case,as it does appear when i run
+> the code on my machine.
+>
+> And regarding the following:
+> debug: max width 388
+>       debug: max width 78
+>       debug: max width 55
+>       [...]
+> This is just an output for the debugging i had done for the UI purpose and
+> yeah it would be fine,i would get that part of the code out.
+>
+> Regards,
+> Janit
+>
+>
+> On Tue, Apr 9, 2013 at 8:09 AM, Janit Anjaria <janit92 at gmail.com> wrote:
+>
+>> Hey Thorsten,Stefan ,
+>>
+>> I just saw the patch,yes it definitely need clean up based on the white
+>> spaces ,and yeah the numbers in the patch are added so that the UI fixes
+>> right and hence the toolbar appears to be right.I am not sure about the
+>> reason why the icons dont appear in your case,as it does appear when i run
+>> the code on my machine.
+>>
+>> And regarding the following:
+>> debug: max width 388
+>>       debug: max width 78
+>>       debug: max width 55
+>>       [...]
+>> This is just an output for the debugging i had done for the UI purpose
+>> and yeah it would be fine,i would get that part of the code out.
+>>
+>> Regards,
+>> Janit
+>>
+>>
+>> On Tue, Apr 9, 2013 at 3:54 AM, Thorsten Behrens <
+>> thb at documentfoundation.org> wrote:
+>>
+>>> Janit Anjaria wrote:
+>>> > I am hereby submitting my patch for review on the bug/feature which i
+>>> had
+>>> > worked long back which solves the problem where the comboboxes now do
+>>> > appear when the toolbar is vertical.
+>>> >
+>>> Hi Janit,
+>>>
+>>> the patch contains a lot of changes ala
+>>>
+>>>      if ( eAlign == WINDOWALIGN_TOP )
+>>>      {
+>>> -        rLeft   = borderwidth+dragwidth;
+>>> +        rLeft   = borderwidth+dragwidth-150;
+>>>          rTop    = borderwidth;
+>>>
+>>>  - where do those numbers come from; as Astron points out, it breaks
+>>> more than it fixes?
+>>>
+>>> Also, please remove unrelated whitespace / formatting changes, ala
+>>>
+>>>          {
+>>>              pThis->mpData->mbAssumeDocked = sal_True;   // force
+>>> non-floating mode during calculation
+>>> -            ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+>>> nBottom, pThis );
+>>> +           ImplCalcBorder( WINDOWALIGN_LEFT, nLeft, nTop, nRight,
+>>> nBottom, pThis );
+>>>
+>>> , or submit it separately (the example above though really makes
+>>> matters worse, not better).
+>>>
+>>> Please spend a bit of time on reviewing / cleaning up your patch
+>>> submissions *before* mailing them out. This increases your chances of
+>>> getting useful and timely feedback.
+>>>
+>>> Cheers,
+>>>
+>>> -- Thorsten
+>>>
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/5d34f704/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-55846-Comboboxes-aren-t-displayed-when-the-toolb.patch
+Type: application/octet-stream
+Size: 5135 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130410/5d34f704/attachment.obj>
+
+', is_response_of='<CAFrS=rdovB3SGxR-WqCri2fgjYceDqfHzRjj3f9A090W-DSEtw@mail.gmail.com>', mail_path='None', references='<CAFrS=rfuS_Du6mpJMRPku0Dy8rnJ=bqxBSM0mqSxmG27mcaZzA@mail.gmail.com>
+	<20130408222433.GX475@thinkpad.thebehrens.net>
+	<CAFrS=rcXxgjn-PAcV-dc68WdQd0cpvst4xzfCkTXt8xnpqsdCA@mail.gmail.com>
+	<CAFrS=rdovB3SGxR-WqCri2fgjYceDqfHzRjj3f9A090W-DSEtw@mail.gmail.com>', in_reply_to='<CAFrS=rdovB3SGxR-WqCri2fgjYceDqfHzRjj3f9A090W-DSEtw@mail.gmail.com>')>

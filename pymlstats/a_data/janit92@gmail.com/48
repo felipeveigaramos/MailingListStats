@@ -1,0 +1,110 @@
+<Messages(message_id='<CAFrS=rfzsUyb5=B0Juj9rzcoFpRtQwSZNefQxsvXRmafPbHcHQ@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-04 20:22:53', first_date_tz='19800', arrival_date='2013-02-04 06:52:53', arrival_date_tz='None', subject='BUG#55846', message_body='Hey!
+I wanted to know if someone can tell me what are some key features which
+libreofice needs and they are pretty cool for Impress so i can contribute
+under mentorship!
+
+Regards,
+Janit
+
+
+On Mon, Feb 4, 2013 at 6:45 PM, Jan Holesovsky <kendy at suse.cz> wrote:
+
+> Hi Janit,
+>
+> Janit Anjaria p??e v Ne 03. 02. 2013 v 00:47 +0530:
+>
+> > I have fixed the bug but the UX is still a problem,i am trying my
+> > best,
+>
+> Great, congrats! :-)
+>
+> >  and it would be great if you could provide some help from your end
+> > too.
+>
+> Best is not to leave out the mailing list from CC - please if you get a
+> reply from there, keep the mailing list in your answer too.  That way
+> you have much faster response times - I am not the only one who can
+> answer :-)
+>
+> Having said that - you most probably want to return the real size in
+> ImplToolItem::GetSize() even when the subwindow is larger, and then play
+> with ToolBox::ImplFormat() in vcl/source/window/toolbox.cxx to propagate
+> the size correctly - I hope this will work for you!
+>
+> All the best,
+> Kendy
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130204/57a63f81/attachment-0001.html>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rcuX0RJO3ovmXXF8T1Y-HV6kz+FgVvFxTNg5Ht0RsOwKA@mail.gmail.com>
+	<1359739082.5509.48.camel@ferb.suse.cz>
+	<CAFrS=rcfRi9g9D+TJxx_yHR=q3kHMeC3h-ew+tjiEqWPhNHrEg@mail.gmail.com>
+	<CAFrS=rcC6Y9iFLx8imN=eE-sYv6LcR_C5=GU2J3cDSjRTBNO4g@mail.gmail.com>
+	<1359983727.16261.65.camel@ferb.suse.cz>', in_reply_to='<1359983727.16261.65.camel@ferb.suse.cz>')>
+****************************************
+<Messages(message_id='<CAFrS=reH9Siz3FsqFa8fXdrOTC4AXn8_Hj-zBkXAjuTi8WjE5g@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-02-05 21:01:46', first_date_tz='19800', arrival_date='2013-02-05 07:31:46', arrival_date_tz='None', subject='BUG#55846', message_body='Hey!
+I just completed the concept patch for BUG #55846 , and hence the code
+makes the font size to produce a drop down.
+I played around with the UX quite a lot so as to fix it but i dont find a
+loop hole in it.
+Any help is appreciated.
+
+Regards,
+Janit
+
+
+On Mon, Feb 4, 2013 at 8:22 PM, Janit Anjaria <janit92 at gmail.com> wrote:
+
+> Hey!
+> I wanted to know if someone can tell me what are some key features which
+> libreofice needs and they are pretty cool for Impress so i can contribute
+> under mentorship!
+>
+> Regards,
+> Janit
+>
+>
+> On Mon, Feb 4, 2013 at 6:45 PM, Jan Holesovsky <kendy at suse.cz> wrote:
+>
+>> Hi Janit,
+>>
+>> Janit Anjaria p??e v Ne 03. 02. 2013 v 00:47 +0530:
+>>
+>> > I have fixed the bug but the UX is still a problem,i am trying my
+>> > best,
+>>
+>> Great, congrats! :-)
+>>
+>> >  and it would be great if you could provide some help from your end
+>> > too.
+>>
+>> Best is not to leave out the mailing list from CC - please if you get a
+>> reply from there, keep the mailing list in your answer too.  That way
+>> you have much faster response times - I am not the only one who can
+>> answer :-)
+>>
+>> Having said that - you most probably want to return the real size in
+>> ImplToolItem::GetSize() even when the subwindow is larger, and then play
+>> with ToolBox::ImplFormat() in vcl/source/window/toolbox.cxx to propagate
+>> the size correctly - I hope this will work for you!
+>>
+>> All the best,
+>> Kendy
+>>
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130205/e4f98307/attachment-0001.html>
+
+', is_response_of='<CAFrS=rfzsUyb5=B0Juj9rzcoFpRtQwSZNefQxsvXRmafPbHcHQ@mail.gmail.com>', mail_path='None', references='<CAFrS=rcuX0RJO3ovmXXF8T1Y-HV6kz+FgVvFxTNg5Ht0RsOwKA@mail.gmail.com>
+	<1359739082.5509.48.camel@ferb.suse.cz>
+	<CAFrS=rcfRi9g9D+TJxx_yHR=q3kHMeC3h-ew+tjiEqWPhNHrEg@mail.gmail.com>
+	<CAFrS=rcC6Y9iFLx8imN=eE-sYv6LcR_C5=GU2J3cDSjRTBNO4g@mail.gmail.com>
+	<1359983727.16261.65.camel@ferb.suse.cz>
+	<CAFrS=rfzsUyb5=B0Juj9rzcoFpRtQwSZNefQxsvXRmafPbHcHQ@mail.gmail.com>', in_reply_to='<CAFrS=rfzsUyb5=B0Juj9rzcoFpRtQwSZNefQxsvXRmafPbHcHQ@mail.gmail.com>')>

@@ -1,0 +1,78 @@
+<Messages(message_id='<4FE38A41.2080002@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-21 22:55:29', first_date_tz='7200', arrival_date='2012-06-21 13:55:29', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF Export
+	not available', message_body='Rob Snelders schrieb:
+
+> ... Export are available again.
+
+Hi Rob,
+
+great, thank you very much!
+
+
+> I also think that the component localisation in bugzilla is misspelled.
+
+I think so, too. As far as I know "Localisation" is british, 
+"Localization" USA spelling (and there might be some more differences, 
+I'm not a native English speaker). I will ask on Lists, and if there are 
+no concerns I will change that with the next LibO version release in 
+Buzilla  and in the Wiki.
+
+Best Regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<4FE376F3.6020500@ertai.nl>', in_reply_to='<4FE376F3.6020500@ertai.nl>')>
+****************************************
+<Messages(message_id='<1340366943.10027.23.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-22 13:09:03', first_date_tz='3600', arrival_date='2012-06-22 05:09:03', arrival_date_tz='None', subject='[PATCH] fdo#50871 BUGZILLAASSISTANT: Help Linguistic & PDF
+	Export not available', message_body='On Thu, 2012-06-21 at 22:55 +0200, Rainer Bielefeld wrote:
+> Rob Snelders schrieb:
+> 
+> > ... Export are available again.
+> > I also think that the component localisation in bugzilla is misspelled.
+> 
+> I think so, too. As far as I know "Localisation" is british, 
+> "Localization" USA spelling (and there might be some more differences, 
+> I'm not a native English speaker).
+
+Yeah, localization is the only correct spelling in US English.
+Localization is also a correct spelling in UK English, though
+localisation is an acceptable alternative spelling for UK English.
+
+In UK English, selection between -ise/-ize variants is a matter of
+style. The OED has basically an angry rant about -ise/-ize, which is
+mostly available at http://en.wikipedia.org/wiki/Oxford_spelling 
+
+My OED (UK English) dictionary has...
+
+"localize (also localise) ... derivatives localization (also
+localisation)"
+
+i.e. its not marked as
+"localise (US localize) ..."
+like
+"colour (US color)"
+is.
+
+Use localization, globalization, etc., throughout regardless of US/UK
+English IMO.
+
+C.
+
+p.s.
+
+A panda walks into a caf?. He orders a sandwich, eats it, then draws a
+gun and proceeds to fire it at the other patrons.
+
+'Why?' asks the confused, surviving waiter amidst the carnage, as the
+panda makes towards the exit. The panda produces a badly punctuated
+wildlife manual and tosses it over his shoulder.
+
+'Well, I'm a panda,' he says, at the door. 'Look it up.'
+The waiter turns to the relevant entry in the manual and, sure enough,
+finds an explanation. 'Panda. Large black-and-white bear-like mammal,
+native to China. Eats, shoots and leaves.'
+
+http://en.wikipedia.org/wiki/Eats,_Shoots_%26_Leaves
+
+
+', is_response_of='<4FE38A41.2080002@bielefeldundbuss.de>', mail_path='None', references='<4FE376F3.6020500@ertai.nl> <4FE38A41.2080002@bielefeldundbuss.de>', in_reply_to='<4FE38A41.2080002@bielefeldundbuss.de>')>

@@ -1,0 +1,26 @@
+<Messages(message_id='<4FBF624B.8010602@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-25 12:43:23', first_date_tz='7200', arrival_date='2012-05-25 03:43:23', arrival_date_tz='None', subject='3.5.3rc1 win32 / debug package ...', message_body='Petr Mladek schrieb:
+
+>
+> Norbert, would be possible to hack the tindebox script to upload also
+> the .pdb file?
+
+<https://bugs.freedesktop.org/show_bug.cgi?id=50339>
+
+
+>> I managed to get WinDbg to work
+
+Me too, with build from tinderbox 20, but gives error message "missing 
+symbols".
+
+I will continue when I know how to get symbols. But I'm afraid that that 
+will not work for find the reason for the lost of crashes I observe with 
+latest Master Builds, performance with running WinDbg is too poor.
+
+
+Best regards
+
+Rainer
+
+', is_response_of='<1337940181.21487.15.camel@walk.suse.cz>', mail_path='None', references='<CAG9RhNsE_9-tTjkO-9i6U8kXbbw34+VtuE=1a7euLqGS+oK+kA@mail.gmail.com>
+	<CAG9RhNtmSdP1S_3K4qwoWdyKjXrOrA5hPOs4rzGDpkq+aOiRcQ@mail.gmail.com>
+	<1337940181.21487.15.camel@walk.suse.cz>', in_reply_to='<1337940181.21487.15.camel@walk.suse.cz>')>

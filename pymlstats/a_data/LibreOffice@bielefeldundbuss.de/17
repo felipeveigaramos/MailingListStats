@@ -1,0 +1,26 @@
+<Messages(message_id='<4FCE34DB.4030102@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-05 18:33:31', first_date_tz='7200', arrival_date='2012-06-05 09:33:31', arrival_date_tz='None', subject='[Libreoffice-ux-advise] Disabling file opening and saving in
+	print preview mode', message_body='Stefan Knorr (Astron) schrieb:
+
+
+> might it be worth thinking about just removing the
+> separate print preview feature and making the print preview inside the
+> dialogue a little bigger?
+
+Hi,
+
+better not before we have such a (PDF) Export Preview.
+
+But of course, advantage with this page preview excluding solution is 
+that it saves much work with Page Preview cleanup (lots of menus 
+containing only disabled items, Find bar appears after <control+f> 
+without function, ...
+
+I don't know how many users use the Page settings possibility in Page 
+preview (Regina Henschel broght up this point).
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<1338479308.4602.6.camel@dell-t3500>
+	<CALWO78fMfqCKkj2gs=EYnR+ahcvJ-OXjJ-E-XEUw2vT3OedzLA@mail.gmail.com>', in_reply_to='<CALWO78fMfqCKkj2gs=EYnR+ahcvJ-OXjJ-E-XEUw2vT3OedzLA@mail.gmail.com>')>

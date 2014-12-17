@@ -1,0 +1,17 @@
+<Messages(message_id='<1386075415636-4086248.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-03 04:56:55', first_date_tz='-28800', arrival_date='2013-12-03 04:56:55', arrival_date_tz='None', subject='Labels generation: CTR+A does not work', message_body='Hi everyone,I've noticed 2 points when generating labels: - With LO 3.x
+generation => Opening result document in LO 4.x versions lets you select all
+labels by pressing CTR+A. - With LO 4.x generation => Opening result
+document in LO 4.x versions does not allow you  to select all labels by
+pressing CTR+A.It seems we have a problem with  L0 4.x in labels
+generation.Any ideas about how to fix the bug ?
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Labels-generation-CTR-A-does-not-work-tp4086248.html
+Sent from the Dev mailing list archive at Nabble.com.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20131203/1a485034/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

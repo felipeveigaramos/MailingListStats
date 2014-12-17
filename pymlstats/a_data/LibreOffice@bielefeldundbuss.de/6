@@ -1,0 +1,57 @@
+<Messages(message_id='<4FBBCEB4.2010000@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-22 19:36:52', first_date_tz='7200', arrival_date='2012-05-22 10:36:52', arrival_date_tz='None', subject='How to improve our Bug tracking system', message_body='Hi all,
+
+as a consequence of our QA related discussions at Hackfest April 2012 in 
+Hamburg
+<http://rrbd.wordpress.com/2012/04/14/hackfest-hamburg-2012/>
+I now want to start to collect ideas how we can make a big step 
+improving our (Bugzilla) Bug tracking system. The goal is that after we 
+will have finished work (end 2012?) we will have a system what will work 
+without bigger changes at least for the next 5 years for our growing 
+contributors community.
+
+As a tool for that I created 
+<https://wiki.documentfoundation.org/How_to_Improve_Bugzilla>, I hope 
+that we so can get an overview
+what our needs are and how we can reach the goals.
+
+Your contribution to complete the contents on that page will be 
+appreciated.
+
+Especially for the listed Problems we will need some expert knowledge
+
+I hope that end of July we will have finished research and a clear 
+concept how we can reach most goals with acceptable costs.
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1C7DB273-F7C6-464A-95B6-3452EA57779D@gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-05-23 13:45:11', first_date_tz='7200', arrival_date='2012-05-23 04:45:11', arrival_date_tz='None', subject='How to improve our Bug tracking system', message_body='I wouldn't say no, but sadly i lack the C/C++ knowledge :( 
+
+Regards
+
+Jonathan Aquilina
+
+
+
+On 23 May 2012, at 13:42, Noel Grandin wrote:
+
+> 
+> 
+> On 2012-05-23 09:38, Jonathan Aquilina wrote:
+>> I have a suggestion and this kinda stems from what I have seen on Kubuntu.
+>> 
+>> Is it possible to add a feature under help that says Report bug that then opens a wizard in LO that will gather all the required details that would make for a good bug report, and then automatically submit it to bugzilla?
+> 
+> A lot of things are possible - are you offering to help develop such a feature?
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20120523/9d9546a9/attachment.htm>
+
+', is_response_of='<4FBBCEB4.2010000@bielefeldundbuss.de>', mail_path='None', references='<4FBBCEB4.2010000@bielefeldundbuss.de>
+	<F531B410-8C7E-4CE3-AF17-6E2D6555799E@gmail.com>
+	<4FBCCD09.8020006@gmail.com>', in_reply_to='<4FBCCD09.8020006@gmail.com>')>

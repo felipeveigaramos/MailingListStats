@@ -1,0 +1,32 @@
+<Messages(message_id='<4FC8F401.5020305@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-01 18:55:29', first_date_tz='7200', arrival_date='2012-06-01 09:55:29', arrival_date_tz='None', subject='[ANN] LibreOffice 3.6.0 ALPHA1 test builds available', message_body='Fridrich Strba schrieb:
+
+> for the upcoming new version 3.6.0, the first public ALPHA1
+
+Hi,
+
+did we already Branch to 3.6 or is this only a "very complete" Master Build?
+
+To be honest: I will not use that version for intensive tests (= "real 
+life work"), because of "[Bug 50344] Basic Macro will not run because of 
+missing Java" and "[Bug 50344] Basic Macro will not run because of 
+missing Java" I only can do some smaller tests with it.
+
+Best regards
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<4FC8DBD3.10104@graduateinstitute.ch>', in_reply_to='<4FC8DBD3.10104@graduateinstitute.ch>')>
+****************************************
+<Messages(message_id='<1338638039353-3987554.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-06-02 04:53:59', first_date_tz='-25200', arrival_date='2012-06-02 04:53:59', arrival_date_tz='None', subject='[ANN] LibreOffice 3.6.0 ALPHA1 test builds available', message_body='Hi Rainer,
+You write The Bug_50344 "Basic Macro" about. This error  is a duplicate of
+the bug_48946 (https://bugs.freedesktop.org/show_bug.cgi?id=48946).
+LibO-Dev_3.6.0alpha1 released without removal of this stop error.
+--
+ape
+
+--
+View this message in context: http://nabble.documentfoundation.org/ANN-LibreOffice-3-6-0-ALPHA1-test-builds-available-tp3987410p3987554.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='<4FC8F401.5020305@bielefeldundbuss.de>', mail_path='None', references='<4FC8DBD3.10104@graduateinstitute.ch>
+	<4FC8F401.5020305@bielefeldundbuss.de>', in_reply_to='<4FC8F401.5020305@bielefeldundbuss.de>')>

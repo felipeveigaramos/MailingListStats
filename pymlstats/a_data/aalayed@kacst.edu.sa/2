@@ -1,0 +1,42 @@
+<Messages(message_id='<1384161087296-4082485.post@n3.nabble.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-11 01:11:27', first_date_tz='-28800', arrival_date='2013-11-11 01:11:27', arrival_date_tz='None', subject='Need for  starmath expert', message_body='Hi all ;
+
+we have an idea for RTL (arabic) support in Math and we want someone who 
+expert in starmath to answering   the following questions : 
+
+1- is it possible to add an arabic mathematical unicode (*nowadays , there
+is no full mathematical  unicode for arabic* )to the module /starmath ?
+
+2-is it possible to rearrange the formula from Right to Left in both edit
+and formula windows?
+
+3- what is the good way to add this feature to /starmath module , as an
+extiontion or as optsion in menu ?
+
+
+*Thanks in advance ...*
+
+
+
+
+--
+View this message in context: http://nabble.documentfoundation.org/Need-for-starmath-expert-tp4082485.html
+Sent from the Dev mailing list archive at Nabble.com.
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1384343935.2051.2.camel@Brinn>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-11-13 11:58:55', first_date_tz='0', arrival_date='2013-11-13 03:58:55', arrival_date_tz='None', subject='Need for  starmath expert', message_body='On Mon, 2013-11-11 at 01:11 -0800, abdulaziz wrote:
+> Hi all ;
+> 
+> we have an idea for RTL (arabic) support in Math and we want someone who 
+> expert in starmath to answering   the following questions : 
+> 
+> 1- is it possible to add an arabic mathematical unicode (*nowadays , there
+> is no full mathematical  unicode for arabic* )to the module /starmath ?
+
+For adding symbols to OpenSymbol, there's a README as
+extras/source/truetype/symbol/README on that.
+
+C.
+
+
+', is_response_of='<1384161087296-4082485.post@n3.nabble.com>', mail_path='None', references='<1384161087296-4082485.post@n3.nabble.com>', in_reply_to='<1384161087296-4082485.post@n3.nabble.com>')>

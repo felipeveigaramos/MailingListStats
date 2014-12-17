@@ -1,0 +1,42 @@
+<Messages(message_id='<5037A344.6040703@bielefeldundbuss.de>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2012-08-24 17:52:36', first_date_tz='7200', arrival_date='2012-08-24 08:52:36', arrival_date_tz='None', subject='Announcing LibreOffice HardHacks!', message_body='Hi all,
+
+and here is the list of bugs we selected during QA Call from a long list:
+
+ID      OS      Component - Summary
+--------------------------------------------------------------------
+38913   Linux	Libreoffice - CRASH when loading Danish dictionary at
+                 startup citing msvcr90.dll after upgrade
+32948   Linux   Libreoffice/Database(?) - Address Book Data Source
+                 Wizard fails with message "No SDBC driver was found"
+34548   All     Presentation - EDITING: CRASH in action after Undo
+36681   All     Writer - EDITING: after insert/removal of a picture (or
+                 alike) view scrolls to begin/end of document
+33302   Mac     Libreoffice - FILEOPEN/EDITING RTL text: parentheses and
+                 brackets "(...) [...]" inverted to ")...( ]...["
+                 with some fonts
+
+Our additional criteria for long pending Most Annoying Bugs were:
+
+- Large public interest (many users in CC)
+- The list should not prefer a particular Operating System
+- Bugs should be divided to several developers so that not a single one
+   has to do all additional work
+- Good triaged, all preconditions for developer to start bugfixing are
+   in the bug report and comments (I hope our rating is correct)
+- a realistic chance that it will be possible to fix the bug within 2
+   Weeks
+
+It would be great if developers could take care on these bugs. For 
+questions please ping me, all further discussion should be in next ESC 
+Call 2012-08-30
+
+Some other candidates still need some additional research and might 
+appear on the next selection list
+
+
+Best regards
+
+
+Rainer
+
+', is_response_of='', mail_path='None', references='<20120820004039.GA27969@michaelsen.dyndns.org>', in_reply_to='<20120820004039.GA27969@michaelsen.dyndns.org>')>

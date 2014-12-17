@@ -1,0 +1,26 @@
+<Messages(message_id='<CAHW+f2LmTnZxKr439cdGrPV0yqGNOqVCH4DvdKTQiVYvNXd4Yg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-01-28 16:33:44', first_date_tz='-18000', arrival_date='2014-01-28 13:33:44', arrival_date_tz='None', subject='Font size dropdown regression', message_body='Just a quick follow up. After sending that mail, I noticed Caol?n made
+a better fix:
+http://cgit.freedesktop.org/libreoffice/core/commit/?id=780eb9f704e7a61f43624a2c03b4f6a15647a1a1
+
+I've just now finished a build and can confirm it looks great. Thank you...
+
+-Keith
+
+On Tue, Jan 28, 2014 at 12:00 PM, Keith Curtis <keithcu at gmail.com> wrote:
+> Hi;
+>
+> Sorry for causing bug:
+> http://cgit.freedesktop.org/libreoffice/core/commit/?id=8138c07b984ba1654483b4dc3488820ca4deaaca
+> https://bugs.freedesktop.org/show_bug.cgi?id=73051
+>
+> I'm not exactly sure what is going on, but on my HiDPI machine with
+> the 30 value I can fit 7 digits! Too many is better than too few but I
+> had tried to improve.
+>
+> I have been worried about that change so now that it is reverted, I
+> don't have to anymore:
+> http://nabble.documentfoundation.org/Font-style-and-size-dropdown-widths-td4087999.html
+>
+> -Keith
+
+', is_response_of='', mail_path='None', references='<CAHW+f2+5RbTAFG8MLygQNx2SVi0ReDjFqRv0RO2-NZ+X=UuMRA@mail.gmail.com>', in_reply_to='<CAHW+f2+5RbTAFG8MLygQNx2SVi0ReDjFqRv0RO2-NZ+X=UuMRA@mail.gmail.com>')>

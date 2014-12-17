@@ -1,0 +1,53 @@
+<Messages(message_id='<CAFrS=rdkMDRM8f3F48aFBa70yj3-G6asRusZ7RMKML5EPoG5MA@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-20 01:17:28', first_date_tz='19800', arrival_date='2013-04-19 12:47:28', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+i am here by attaching my patch for fdo#62096.
+
+Regards,
+Janit
+
+
+On Sat, Apr 20, 2013 at 12:47 AM, Eike Rathke <erack at redhat.com> wrote:
+
+> Hi Janit,
+>
+> On Wednesday, 2013-04-17 00:00:39 +0530, Janit Anjaria wrote:
+>
+> > -            if ( sInstModel.compareTo( pProps->Name ) == 0 )
+> > +            if ( sInstModel == ( pProps->Name ) )
+>
+> I'd prefer if you removed also the now extraneous parenthesis
+> additionally to the .compareTo, so that would look like
+>
+>                if ( sInstModel == pProps->Name )
+>
+> It's just easier to parse for the eye ;-)  Maybe it's just me, but
+> I feel tricked into "that's a function lacking the function name" ...
+>
+> And please, use fdo#62096 instead of BUG#62096
+>
+> Thanks
+>   Eike
+>
+> --
+> LibreOffice Calc developer. Number formatter stricken i18n
+> transpositionizer.
+> GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563 2D3A
+> For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+> Support the FSFE, care about Free Software!
+> https://fsfe.org/support/?erack
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130420/21a251a9/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replace-OUString-compareTo-wiht-operator.patch
+Type: application/octet-stream
+Size: 2591 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130420/21a251a9/attachment.obj>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rdZbR34wzfOk-Z5ghHpEfR-ENZdyatYBF0QXHc5CqduFw@mail.gmail.com>
+	<516D4B78.3040004@redhat.com>
+	<CAFrS=reG1ARmO0KKvJydWVQsP44-f83Dw_c_-PspAyV9SAdVdg@mail.gmail.com>
+	<CAFrS=rfJk-k4Ze3wiCtx7O2-njBCNqdqex-76i9tB3X1YhrUqQ@mail.gmail.com>
+	<20130419191704.GC29425@isigqoko.erack.de>', in_reply_to='<20130419191704.GC29425@isigqoko.erack.de>')>

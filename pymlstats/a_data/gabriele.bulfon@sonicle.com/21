@@ -1,0 +1,79 @@
+<Messages(message_id='<23126411.556.1374226562052.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-19 11:36:02', first_date_tz='7200', arrival_date='2013-07-19 02:36:02', arrival_date_tz='None', subject='CppunitTest_basic_scanner failing', message_body='Hi,
+going on building on XStream/illumos, gbuild runs a unit test and fails:
+[build CUT] basic_scanner
+DynamicLibraryManagerException: "Failed to load dynamic library: /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/CppunitTest/libtest_basic_scanner.so
+"
+Error: a unit test failed, please do one of:
+export DEBUGCPPUNIT=TRUE            # for exception catching
+export GDBCPPUNITTRACE="gdb --args" # for interactive debugging
+export VALGRIND=memcheck            # for memory checking
+and retry using: make CppunitTest_basic_scanner
+So I went into the "basic" folder, and ran the first suggested option:
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/basic$ export DEBUGCPPUNIT=TRUE
+sonicle at vbxstreamdev:/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/basic$ gmake CppunitTest_basic_scanner LD_ALTEXEC=/usr/gnu/bin/ld
+[build CUT] basic_scanner
+S=/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1 & O=$S/solver/unxsogi.pro & W=$S/workdir/unxsogi.pro &  mkdir -p $W/CppunitTest/ &   rm -fr $W/CppunitTest/basic_scanner.test.core & mkdir $W/CppunitTest/basic_scanner.test.core & cd $W/CppunitTest/basic_scanner.test.core & (LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}"$O/lib:$S/instdir/unxsogi.pro/program":$O/lib/sqlite   DBGSV_ERROR_OUT=shell DISABLE_SAL_DBGBOX=t   gdb -nx -ex "add-auto-load-safe-path $O/lib" --command=$S/solenv/bin/gdbtrycatchtrace-stdout -return-child-result --args  $O/bin/cppunit/cppunittester $W/LinkTarget/CppunitTest/libtest_basic_scanner.so --headless "-env:BRAND_BASE_DIR=file://$O/unittest/install"$W/CppunitTest/basic_scanner.test.log 2&1;|| (RET=$? & cat $W/CppunitTest/basic_scanner.test.log & printf '\nError: a unit test failed, please do one of:\n\nexport DEBUGCPPUNIT=TRUE            # for exception catching\nexport GDBCPPUNITTRACE="gdb --args" # for interactive debugging\nexport VALGRIND=memcheck            # for memory checking\n\nand retry using: make %sTest_%s\n\n' Cppunit basic_scanner  & $S/solenv/bin/gdb-core-bt.sh $O/bin/cppunit/cppunittester $W/CppunitTest/basic_scanner.test.core $RET & false))
+GNU gdb (GDB) 7.2
+Copyright (C) 2010 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-pc-solaris2.11".
+For bug reporting instructions, please see:
+...
+Reading symbols from /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/bin/cppunit/cppunittester...(no debugging symbols found)...done.
+Undefined command: "add-auto-load-safe-path".  Try "help".
+Catchpoint 1 (throw)
+Catchpoint 2 (catch)
+Traceback (most recent call last):
+File "/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/solver/unxsogi.pro/lib/libuno_sal.so.3-gdb.py", line 12, in
+import importlib
+ImportError: No module named importlib
+[Thread debugging using libthread_db enabled]
+[New Thread 1 (LWP 1)]
+[New LWP    2        ]
+[Switching to Thread 1 (LWP 1)]
+Catchpoint 1 (exception thrown), __cxxabiv1::__cxa_throw (obj=0x80511f0, tinfo=0xfef32bb4, dest=0xfeedfa20
+) at /sources/userlands/xstream-userland-gate/components/gcc44/gcc-4.4.7/libstdc++-v3/libsupc++/eh_throw.cc:66
+66          = __get_refcounted_exception_header_from_obj (obj);
+#0  __cxxabiv1::__cxa_throw (obj=0x80511f0, tinfo=0xfef32bb4, dest=0xfeedfa20
+) at /sources/userlands/xstream-userland-gate/components/gcc44/gcc-4.4.7/libstdc++-v3/libsupc++/eh_throw.cc:66
+#1  0xfeedf9c6 in CppUnit::DynamicLibraryManager::loadLibrary(std::basic_string
+, std::allocator
+const& () from /usr/lib/libcppunit-1.12.so.1
+#2  0xfeedf715 in CppUnit::DynamicLibraryManager::DynamicLibraryManager(std::basic_string
+, std::allocator
+const& () from /usr/lib/libcppunit-1.12.so.1
+#3  0xfeee56e7 in CppUnit::PlugInManager::load(std::basic_string
+, std::allocator
+const& CppUnit::PlugInParameters const& () from /usr/lib/libcppunit-1.12.so.1
+#4  0x0804a5f6 in (anonymous namespace)::ProtectedFixtureFunctor::run() const ()
+#5  0x0804afd7 in sal_main() ()
+#6  0x0804aaaf in main ()
+Catchpoint 2 (exception caught), __cxxabiv1::__cxa_begin_catch (exc_obj_in=0x80511d0) at /sources/userlands/xstream-userland-gate/components/gcc44/gcc-4.4.7/libstdc++-v3/libsupc++/eh_catch.cc:43
+43          = reinterpret_cast
+(exc_obj_in);
+#0  __cxxabiv1::__cxa_begin_catch (exc_obj_in=0x80511d0) at /sources/userlands/xstream-userland-gate/components/gcc44/gcc-4.4.7/libstdc++-v3/libsupc++/eh_catch.cc:43
+#1  0x0804a646 in (anonymous namespace)::ProtectedFixtureFunctor::run() const ()
+#2  0x0804afd7 in sal_main() ()
+#3  0x0804aaaf in main ()
+DynamicLibraryManagerException: "Failed to load dynamic library: /sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/LinkTarget/CppunitTest/libtest_basic_scanner.so
+"
+[LWP    2         exited]
+[New Thread 2        ]
+Program exited with code 01.
+No stack.
+Error: a unit test failed, please do one of:
+export DEBUGCPPUNIT=TRUE            # for exception catching
+export GDBCPPUNITTRACE="gdb --args" # for interactive debugging
+export VALGRIND=memcheck            # for memory checking
+and retry using: make CppunitTest_basic_scanner
+gmake: *** [/sources/userlands/xstream-userland-gate/components/libreoffice/libreoffice-4.1.0.1/workdir/unxsogi.pro/CppunitTest/basic_scanner.test] Error 1
+What's happening?
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130719/ea55b5dd/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>

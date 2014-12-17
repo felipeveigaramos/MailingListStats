@@ -1,0 +1,124 @@
+<Messages(message_id='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-09 19:36:57', first_date_tz='-18000', arrival_date='2013-12-09 16:36:57', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='Hi;
+
+LibreOffice looks good on a HiDPI screens but there are a few small
+bugs such as (fdo#51735)
+
+So I'm working on fixing the squiggly underlines. Patch included below.
+
+Instead of drawing them one pixel wide and 3 pixels tall as the code
+does today, what looks great is 2 pixels wide and 5 pixels tall. Also
+shifting down an additional pixel is helpful to make more of a visual
+separation. The current code had shifted it down 1, and now it needs 2
+;-)
+
+The current patch enables this new behavior unconditionally, which is
+good for testing purposes but needs to be changed. I have one big
+question: under what conditions do I use those different constants?
+
+I considered making something that was based on underline size alone
+because it has all that information already, but I think the current
+behavior looks fine on current screens and it is best not to touch it.
+
+I believe it is helpful to have a flag or function that tells you
+whether the screen is hidpi. 1 pixel lines got LibreOffice very far
+but now it needs to move to 2 in the few places that aren't currently
+scaling. You probably wouldn't need to move to 3 pixels for years on
+laptops so worrying about general scalability is less important than
+just being reasonable on the retina Macs and HiDPI PCs out there
+today.
+
+This Gerrit entry has some code checking font size which is a
+(hopefully) OS portable way to check whether the screen is HiDPI:
+https://gerrit.libreoffice.org/#/c/6994/
+
+But the logic isn't currently something that can be used in other
+places and it is nice to centralize this sort of policy decision.
+
+This change doesn't alter the wave underline drawing when set as a
+font property as that goes through another codepath. It does change
+something known as DrawGreyWave() but I don't know what that is used
+for.  Otherwise, this function should only in practice used for
+spelling / grammar.
+
+I didn't see any junk. There is a check that should be preventing it.
+
+I didn't change any of the logic for when it chooses smaller waves and
+what happens then, but it looks fine at all font sizes and zooms in my
+testing. I saw various things that look like they could be improved,
+but it makes for a riskier diff.
+
+It would be great to have HiDPI bitmaps one day but in the meanwhile,
+a few small code changes will make LibreOffice look good. I'd like to
+work on a few more but I start with this.
+
+Comments appreciated. Please CC, not on list.
+
+Thanks,
+
+-Keith
+-------------
+diff --git a/vcl/source/gdi/outdev3.cxx b/vcl/source/gdi/outdev3.cxx
+index f3f5a77..6e142fd 100644
+--- a/vcl/source/gdi/outdev3.cxx
++++ b/vcl/source/gdi/outdev3.cxx
+@@ -5301,9 +5301,12 @@ void OutputDevice::DrawWaveLine( const Point&
+rStartPos, const Point& rEndPos,
+     long nWaveHeight;
+     if ( nStyle == WAVE_NORMAL )
+     {
+-        nWaveHeight = 3;
++        nWaveHeight = 5;
+         nStartY++;
+         nEndY++;
++
++        nStartY++; //Shift down additional for hidpi screens
++                   //TODO: Probably should be done above, before the
+rotation happens
+     }
+     else if( nStyle == WAVE_SMALL )
+     {
+@@ -5320,7 +5323,7 @@ void OutputDevice::DrawWaveLine( const Point&
+rStartPos, const Point& rEndPos,
+          nWaveHeight = pFontEntry->maMetric.mnWUnderlineSize;
+
+      ImplDrawWaveLine( nStartX, nStartY, 0, 0,
+-                      nEndX-nStartX, nWaveHeight, 1,
++                      nEndX-nStartX, nWaveHeight, 2,
+                       nOrientation, GetLineColor() );
+     if( mpAlphaVDev )
+         mpAlphaVDev->DrawWaveLine( rStartPos, rEndPos, nStyle );
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<1386946478.4321.52.camel@lump.site>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-12-13 15:54:38', first_date_tz='3600', arrival_date='2013-12-13 06:54:38', arrival_date_tz='None', subject='[PATCH] HiDPI fixes for squiggly underlines', message_body='Hi Keith,
+
+Keith Curtis p??e v Po 09. 12. 2013 v 19:36 -0500:
+
+> LibreOffice looks good on a HiDPI screens but there are a few small
+> bugs such as (fdo#51735)
+> 
+> So I'm working on fixing the squiggly underlines. Patch included below.
+
+First of all, thank you so much for the patches you have submitted so
+far!
+
+I looked at them, and what I think fits best at the moment is a kind of
+float mfHidpiRatio (or so) set on the startup that will tell internally
+how much should we scale the various UI elements in order to look
+correctly on the given device.
+
+With that, we should be able to touch as low level parts as possible to
+get the effect that is desirable; I'd hope that for example for the
+squiggly lines, we would be able to modify ImplDrawWaveLine() directly
+so that all the callers immediately get the waves that fit the hidpi
+screen nicely.
+
+Unfortunately I cannot do much on this / integrate your patches this
+week yet [4.2 UI freeze on Monday ;-)], but I'll do that early next week
+- I hope that is OK for you?
+
+All the best,
+Kendy
+
+
+', is_response_of='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>', mail_path='None', references='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>', in_reply_to='<CAHW+f2L6OL7hR=U9Fdt5yvb-ZZRXw4cVGqj_WEJuF_enKs-J8Q@mail.gmail.com>')>

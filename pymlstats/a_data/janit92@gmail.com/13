@@ -1,0 +1,42 @@
+<Messages(message_id='<CAFrS=rd=A+7Cvbj2WDLJpZFFxubya47EHUr6Tce7g0ZdZNEV6w@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-20 01:32:11', first_date_tz='19800', arrival_date='2013-04-19 13:02:11', arrival_date_tz='None', subject='[PATCH] BUG#62096 Replace O(U)String compareTo with ==', message_body='Hey!
+I am hereby submitting my patches for review.
+
+
+Regards,
+Janit
+
+
+On Sat, Apr 20, 2013 at 12:53 AM, Eike Rathke <erack at redhat.com> wrote:
+
+> Hi Janit,
+>
+> On Friday, 2013-04-19 02:09:55 +0530, Janit Anjaria wrote:
+>
+> > -    if ( 0 == PropertyName.compareTo( FM_PROP_TEXTLINECOLOR ) )
+> > +    if ( PropertyName == ( FM_PROP_TEXTLINECOLOR ) )
+>
+> Same nitpick as in my previous mail, please remove the now extraneous ()
+>
+>   Eike
+>
+> --
+> LibreOffice Calc developer. Number formatter stricken i18n
+> transpositionizer.
+> GPG key ID: 0x65632D3A - 2265 D7F3 A7B0 95CC 3918  630B 6A6C D5B7 6563 2D3A
+> For key transition see http://erack.de/key-transition-2013-01-10.txt.asc
+> Support the FSFE, care about Free Software!
+> https://fsfe.org/support/?erack
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130420/9ff5f217/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-62096-Replace-O-U-String-compareTo-with.patch
+Type: application/octet-stream
+Size: 9494 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130420/9ff5f217/attachment.obj>
+
+', is_response_of='', mail_path='None', references='<CAFrS=rfu5=sgJfJhT+GVeMXNtSAaB1g-fjFsSYG2eCQtySWJCA@mail.gmail.com>
+	<20130419192322.GD29425@isigqoko.erack.de>', in_reply_to='<20130419192322.GD29425@isigqoko.erack.de>')>

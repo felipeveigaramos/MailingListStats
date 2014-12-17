@@ -1,0 +1,65 @@
+<Messages(message_id='<4663970.378.1373954956154.JavaMail.sonicle@www>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-16 08:09:16', first_date_tz='7200', arrival_date='2013-07-15 23:09:16', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='Now I noticed the config.log of xmlsec shows the configure switches like this:
+./configure --with-pic --disable-shared --disable-crypto-dl --without-libxslt --without-gnutls --without-openssl
+This is why it's not picking up my system openssl not the other crypto libs.
+I bet it's trying to build it only with NSS libs, but they're not passed correctly (they resides
+in /usr/lib/mps in my environment) from base env.
+Is it absolutely necessary that it builds without those crypto libs?
+Gabriele.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130716/8b6ce68a/attachment.html>
+
+', is_response_of='<29636361.357.1373899645539.JavaMail.sonicle@www>', mail_path='None', references='<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>
+	<6473580.339.1373896095032.JavaMail.sonicle@www>
+	<20130715140526.GC2015@rene-engelhard.de>
+	<22531545.348.1373897296621.JavaMail.sonicle@www>
+	<17355183.354.1373898881952.JavaMail.sonicle@www>
+	<29636361.357.1373899645539.JavaMail.sonicle@www>
+	<51E43E16.2060609@redhat.com>', in_reply_to='<51E43E16.2060609@redhat.com>')>
+****************************************
+<Messages(message_id='<51E50795.8020408@redhat.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-07-16 10:43:01', first_date_tz='7200', arrival_date='2013-07-16 01:43:01', arrival_date_tz='None', subject='Building LO 4.0.4.2 on illumos based OS', message_body='On 16/07/13 08:09, Gabriele Bulfon wrote:
+> Now I noticed the config.log of xmlsec shows the configure switches like
+> this:
+> 
+> ./configure --with-pic --disable-shared --disable-crypto-dl
+> --without-libxslt --without-gnutls --without-openssl
+> 
+> This is why it's not picking up my system openssl not the other crypto libs.
+> I bet it's trying to build it only with NSS libs, but they're not passed
+> correctly (they resides
+> in /usr/lib/mps in my environment) from base env.
+> 
+> Is it absolutely necessary that it builds without those crypto libs?
+
+i'm not entirely sure but i think that the ODF encryption support (which
+is the only use of libxmlsec) on Unixes is implemented by using keys
+added by Firefox/Thunderbird UI to their user profiles; there is no UI
+in LO for adding/removing keys.  probably only NSS can read the
+Firefox/Thunderbird key database, so i'm afraid that if you build xmlsec
+with anything other than NSS it won't work in practice.
+
+
+', is_response_of='<4663970.378.1373954956154.JavaMail.sonicle@www>', mail_path='None', references='<51DAB718.5050404@redhat.com>
+	<2595970.131.1373385268190.JavaMail.sonicle@www>
+	<2365186.137.1373385679267.JavaMail.sonicle@www>
+	<27315122.287.1373874263958.JavaMail.sonicle@www>
+	<1373876118.25792.273.camel@linux-d2lh.site>
+	<4003364.293.1373877772337.JavaMail.sonicle@www>
+	<10210174.330.1373893660985.JavaMail.sonicle@www>
+	<51E3F7D1.9040409@redhat.com>
+	<2225450.333.1373895371019.JavaMail.sonicle@www>
+	<6473580.339.1373896095032.JavaMail.sonicle@www>
+	<20130715140526.GC2015@rene-engelhard.de>
+	<22531545.348.1373897296621.JavaMail.sonicle@www>
+	<17355183.354.1373898881952.JavaMail.sonicle@www>
+	<29636361.357.1373899645539.JavaMail.sonicle@www>
+	<51E43E16.2060609@redhat.com>
+	<4663970.378.1373954956154.JavaMail.sonicle@www>', in_reply_to='<4663970.378.1373954956154.JavaMail.sonicle@www>')>

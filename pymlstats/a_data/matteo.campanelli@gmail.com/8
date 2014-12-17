@@ -1,0 +1,63 @@
+<Messages(message_id='<CAMuW_XwkBegmH7SGSFgfJa6qxdYiuryWT+wVkmc7rnbngVvCMg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-05 10:24:55', first_date_tz='-14400', arrival_date='2014-05-05 07:24:55', arrival_date_tz='None', subject='[GSoC 2014] Code pointers for text properties in Draw', message_body='Hi all,
+I'm working on adding text background color to Draw text frames but I
+suspect I'm having troubles finding my way through the basics of the whole
+application's architecture.
+Browsing through code in sd/,  I haven't found anything that seemed to deal
+specifically with text properties.
+I suppose most of the responsibility for text features is in some external
+module (editeng, by any chance?), but I don't understand where it is that
+Draw-specific code makes use of these features.
+
+Could anyone point to any documentation/code I could look at or could
+anyone help me get clarity on this point?
+
+Cheers,
+Matteo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140505/2a7d9b89/attachment.html>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20140506072153.GE12006@collabora.co.uk>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2014-05-06 09:21:54', first_date_tz='7200', arrival_date='2014-05-06 00:21:54', arrival_date_tz='None', subject='[GSoC 2014] Code pointers for text properties in Draw', message_body='Hi Matteo,
+
+On Mon, May 05, 2014 at 10:24:55AM -0400, Matteo Campanelli <matteo.campanelli at gmail.com> wrote:
+> I'm working on adding text background color to Draw text frames but I
+> suspect I'm having troubles finding my way through the basics of the whole
+> application's architecture.
+
+In general, TextFrame is a Writer concept, what you want to improve here
+is the shape text of drawinglayer shapes, I guess. ;-)
+
+> Browsing through code in sd/,  I haven't found anything that seemed to deal
+> specifically with text properties.
+> I suppose most of the responsibility for text features is in some external
+> module (editeng, by any chance?), but I don't understand where it is that
+> Draw-specific code makes use of these features.
+
+Yes, it's editeng that provides the shape text functionality in
+Impress/Draw.
+
+> Could anyone point to any documentation/code I could look at or could
+> anyone help me get clarity on this point?
+
+include/editeng/eeitem.hxx provides the identifiers for editeng
+properties, EE_CHAR_GRABBAG and EE_CHAR_CASEMAP are quite recent
+additions, they may serve as a good example on how to add a new editeng
+character (i.e. when the property is not for the paragraph, but only for
+a portion of it) property.
+
+That's the document model. Once you are done with that, the next steps
+are dealing with UNO API, layout, filters, tests, UI -- but one step at
+a time. :-)
+
+Miklos
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20140506/6175d246/attachment.sig>
+
+', is_response_of='<CAMuW_XwkBegmH7SGSFgfJa6qxdYiuryWT+wVkmc7rnbngVvCMg@mail.gmail.com>', mail_path='None', references='<CAMuW_XwkBegmH7SGSFgfJa6qxdYiuryWT+wVkmc7rnbngVvCMg@mail.gmail.com>', in_reply_to='<CAMuW_XwkBegmH7SGSFgfJa6qxdYiuryWT+wVkmc7rnbngVvCMg@mail.gmail.com>')>

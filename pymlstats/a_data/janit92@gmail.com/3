@@ -1,0 +1,54 @@
+<Messages(message_id='<CAFrS=rcLgLWdCNkiqXked_fWZDPmEeiPTHA-t-YRCnw_Lmqugg@mail.gmail.com>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-12 21:57:15', first_date_tz='19800', arrival_date='2013-04-12 09:27:15', arrival_date_tz='None', subject='Regadring help on the bug#42893', message_body='Hey!
+I have been working on this bug and would like to get some help on teh same
+as i am not able to get the desired output.Though i think the
+method/concept/logic i have used is similar to the one mentioned in the
+attachment on :
+
+https://bugs.freedesktop.org/show_bug.cgi?id=42893
+
+Any help would be appreciated.
+
+Regards,
+Janit
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130412/d9bfde85/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 0001-fdo-42893-Improve-Capitalize-first-letter-of-sentenc.patch
+Type: application/octet-stream
+Size: 1297 bytes
+Desc: not available
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130412/d9bfde85/attachment.obj>
+
+', is_response_of='', mail_path='None', references='', in_reply_to='None')>
+****************************************
+<Messages(message_id='<20130415105249.GO2421@thinkpad.thebehrens.net>', mailing_list_url='http://lists.freedesktop.org/archives/libreoffice/', mailing_list='None', first_date='2013-04-15 12:52:49', first_date_tz='7200', arrival_date='2013-04-15 03:52:49', arrival_date_tz='None', subject='Regadring help on the bug#42893', message_body='Janit Anjaria wrote:
+> I have been working on this bug and would like to get some help on
+> teh same as i am not able to get the desired output.Though i think
+> the method/concept/logic i have used is similar to the one mentioned
+> in the attachment on :
+> 
+> https://bugs.freedesktop.org/show_bug.cgi?id=42893
+> 
+Hi Janit,
+
+this is a very unspecific question - unless you're asking something
+very close to writing the patch ourselves. Have you debugged the code
+yet?
+
+Please ask specific, actionable questions, else you risk not getting
+an answer at all.
+
+Cheers,
+
+-- Thorsten
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <http://lists.freedesktop.org/archives/libreoffice/attachments/20130415/98891973/attachment.pgp>
+
+', is_response_of='<CAFrS=rcLgLWdCNkiqXked_fWZDPmEeiPTHA-t-YRCnw_Lmqugg@mail.gmail.com>', mail_path='None', references='<CAFrS=rcLgLWdCNkiqXked_fWZDPmEeiPTHA-t-YRCnw_Lmqugg@mail.gmail.com>', in_reply_to='<CAFrS=rcLgLWdCNkiqXked_fWZDPmEeiPTHA-t-YRCnw_Lmqugg@mail.gmail.com>')>
